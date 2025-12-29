@@ -1,0 +1,86 @@
+# docker-compose.yml (V3.0 - 终极实验环境版)
+# -----------------------------------------------------------------------------
+# 本文件定义了我们研究项目所需的所有外部服务。
+# 核心设计思想：为每个知识图谱基线（Ours, Monolithic, Naive）都创建一个
+# 完全隔离的、独立的Neo4j数据库实例，以确保实验之间的纯净性和可复现性。
+# -----------------------------------------------------------------------------
+
+version: '3.8'
+
+services:
+  # ----------------------------------------------------
+  # Neo4j 实例一：用于我们的最终方案 (Ours)
+  # ----------------------------------------------------
+  neo4j_ours:
+    image: neo4j:5.21.0
+    container_name: kpe_neo4j_ours
+    ports:
+      - "7474:7474"  # 主方案的Web浏览器访问端口
+      - "7687:7687"  # 主方案的Bolt驱动连接端口
+    volumes:
+      - neo4j_data_ours:/data
+    environment:
+      # --- 基础配置 ---
+      - NEO4J_AUTH=neo4j/password123
+      - NEO4J_PLUGINS=["apoc"] # 预装APOC库，用于UUID生成等功能
+
+      # --- **核心修复与增强** ---
+      # 显式授权并启用数据库内置的向量索引功能。
+      # 'db.index.vector.*' 解锁了所有向量相关的存储过程 (创建、查询、删除索引)。
+      # 'apoc.*' 确保APOC库的功能也能被正常调用。
+      - NEO4J_dbms_security_procedures_unrestricted=db.index.vector.*,apoc.*
+
+  # ----------------------------------------------------
+  # Neo4j 实例二：用于单体知识图谱基线 (Monolithic-KG)
+  # ----------------------------------------------------
+  neo4j_mono:
+    image: neo4j:5.21.0
+    container_name: kpe_neo4j_mono
+    ports:
+      - "7475:7474" # 映射到主机端口 7475，避免与主方案冲突
+      - "7688:7687" # 映射到主机端口 7688
+    volumes:
+      - neo4j_data_mono:/data
+    environment:
+      - NEO4J_AUTH=neo4j/password123
+      - NEO4J_PLUGINS=["apoc"]
+      # 【保持一致】同样为这个实例启用向量功能，因为我们后续也需要在这个图谱上进行Graph RAG
+      - NEO4J_dbms_security_procedures_unrestricted=db.index.vector.*,apoc.*
+
+  # ----------------------------------------------------
+  # Neo4j 实例三：用于朴素知识图谱基线 (Naive-KG)
+  # ----------------------------------------------------
+  neo4j_naive:
+    image: neo4j:5.21.0
+    container_name: kpe_neo4j_naive
+    ports:
+      - "7476:7474"  # 映射到全新的主机端口 7476
+      - "7689:7687"  # 映射到全新的主机端口 7689
+    volumes:
+      - neo4j_data_naive:/data
+    environment:
+      - NEO4J_AUTH=neo4j/password123
+      - NEO4J_PLUGINS=["apoc"]
+      # 【保持一致】同样为这个实例启用向量功能，以修复当前遇到的ProcedureNotFound错误
+      - NEO4J_dbms_security_procedures_unrestricted=db.index.vector.*,apoc.*
+
+  # ----------------------------------------------------
+  # Redis 服务 (所有实验共享)
+  # ----------------------------------------------------
+  redis:
+    image: redis:7.2.5
+    container_name: kpe_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+# ----------------------------------------------------
+# 声明所有独立的命名卷 (Named Volumes)
+# 这确保了每个数据库实例的数据都持久化到各自隔离的空间。
+# ----------------------------------------------------
+volumes:
+  neo4j_data_ours:
+  neo4j_data_mono:
+  neo4j_data_naive:
+  redis_data:

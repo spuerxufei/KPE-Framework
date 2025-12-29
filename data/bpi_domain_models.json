@@ -1,0 +1,48 @@
+{
+   "信贷业务领域": {
+    "description": "关注贷款申请的核心业务信息，包括金额、用途及Offer详情。",
+    "focus_rules": [
+      { "priority": 1, "if_contains": "贷款申请", "focus_on": "贷款申请" }
+    ],
+    "role_mapping": {
+      "贷款申请": "信贷申请单",
+      "员工": "经办人"
+    },
+    "schema_rules": [
+      "核心实体类型应为 '信贷申请记录'。",
+      "必须包含 :loanGoal (对应 loan_goal) 和 :requestedAmount (对应 requested_amount) 属性。",
+      "如果有 offered_amount，必须创建 'Offer' 节点或属性。",
+      "必须包含 :monthlyCost 和 :numberOfTerms 属性。"
+    ]
+  },
+  "银行人力资源领域": {
+    "description": "关注银行员工处理贷款业务的操作记录。",
+    "focus_rules": [
+      { "priority": 1, "if_contains": "员工", "focus_on": "员工" }
+    ],
+    "role_mapping": {
+      "员工": "信贷专员",
+      "贷款申请": "经办案件"
+    },
+    "schema_rules": [
+      "核心实体类型应为 '信贷操作记录'。",
+      "必须包含 :handledBy 关系指向 '信贷专员'。",
+      "必须包含 :activityName (对应 activity_name) 属性。",
+      "必须包含 :lifecycleStatus (对应 lifecycle_status) 属性。"
+    ]
+  },
+  "风险控制领域": {
+    "description": "关注申请人的信用评分及申请结果状态。",
+    "focus_rules": [
+      { "priority": 1, "if_contains": "贷款申请", "focus_on": "贷款申请" }
+    ],
+    "role_mapping": {
+      "贷款申请": "风险评估对象"
+    },
+    "schema_rules": [
+      "核心实体类型应为 '信用评估记录'。",
+      "必须包含 :creditScore (对应 credit_score) 属性。",
+      "必须包含 :offerAccepted (对应 accepted) 和 :offerSelected (对应 selected) 状态。"
+    ]
+  }
+}

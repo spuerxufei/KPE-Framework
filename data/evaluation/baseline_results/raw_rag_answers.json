@@ -1,0 +1,62 @@
+[
+  {
+    "qid": "Q1",
+    "question": "在'红色文献数字化'项目中，老王（员工ID 1012）处理的文献是什么？该文献的数字化成果最终存储在哪台服务器上？",
+    "generated_answer": "在“红色文献数字化”项目中，老王（员工ID 1012）处理的文献是“人民日报创刊号”。该文献的数字化成果最终存储在服务器SRV-NEWS-ARCH上。",
+    "retrieved_context": "事件ID为 EVENT-031, 类型为 DIGITIZATION_RARE_BOOK。 asset_system_id是 NEWS-1949。 title是 人民日报创刊号。 operator_id是 1012。 operator_name是 老王。 scan_details是 file_count: 8, resolution_dpi: 300, format: PDF/A。 storage_info是 server_name: SRV-NEWS-ARCH, path: /archive/newspapers/1949/。 workload_hours是 4。 project是 红色文献数字化。\n\n事件ID为 EVENT-017, 类型为 DIGITIZATION_RARE_BOOK。 asset_system_id是 GJ-007。 title是 永乐北藏。 operator_id是 1012。 operator_name是 老王。 scan_details是 None。 storage_info是 server_name: SRV-RARE-03, path: /data/yanglebeizang/。\n\n事件ID为 EVENT-006, 类型为 DIGITIZATION_RARE_BOOK。 asset_system_id是 NEWS-1949。 title是 人民日报创刊号。 operator_id是 1012。 operator_name是 老王。 scan_details是 file_count: 8, resolution_dpi: 300, format: PDF/A。 storage_info是 server_name: SRV-NEWS-ARCH, path: /archive/newspapers/1949/。\n\n"
+  },
+  {
+    "qid": "Q2",
+    "question": "大飞（员工ID 1009）处理过的、且已被确认为公共领域的古籍有哪些？请列出它们的名称。",
+    "generated_answer": "根据现有信息无法回答。",
+    "retrieved_context": "事件ID为 EVENT-036, 类型为 DIGITIZATION_RARE_BOOK。 asset_system_id是 GJ-004。 title是 四库全书文渊阁本。 operator_id是 1009。 operator_name是 大飞。 scan_details是 file_count: 36000, resolution_dpi: 600, format: TIFF。 storage_info是 server_name: SRV-RARE-03, path: /data/siku/wenyuan/。 related_publication是 ISBN:978-7-101-05242-7。\n\n事件ID为 EVENT-013, 类型为 DIGITIZATION_RARE_BOOK。 asset_system_id是 GJ-004。 title是 四库全书文渊阁本。 operator_id是 1009。 operator_name是 大飞。 scan_details是 file_count: 36000, resolution_dpi: 600, format: TIFF。 storage_info是 server_name: SRV-RARE-03, path: /data/siku/wenyuan/。\n\n事件ID为 EVENT-026, 类型为 DIGITIZATION_RARE_BOOK。 asset_system_id是 GJ-001。 title是 永乐大典嘉靖副本残卷。 operator_id是 1009。 operator_name是 大飞。 scan_details是 file_count: 1200, resolution_dpi: 600, format: TIFF。 storage_info是 server_name: SRV-RARE-01, path: /data/rare/GJ-001/。 physical_condition是 纸张脆弱，有虫蛀痕迹。\n\n"
+  },
+  {
+    "qid": "Q3",
+    "question": "请找出所有由“国家电影资料馆”资助的，并且数字化文件格式为DPX的项目资产。",
+    "generated_answer": "大都会原始胶片",
+    "retrieved_context": "事件ID为 EVENT-035, 类型为 DIGITIZATION_RARE_BOOK。 asset_system_id是 FILM-METROPOLIS。 title是 大都会原始胶片。 operator_id是 1012。 operator_name是 老王。 scan_details是 file_count: 150000, resolution_dpi: 8000, format: DPX。 storage_info是 server_name: SRV-FILM-ARCH, path: /film/metropolis/。 project_budget_cny是 200000。 funder是 国家电影资料馆。\n\n事件ID为 EVENT-010, 类型为 DIGITIZATION_RARE_BOOK。 asset_system_id是 FILM-METROPOLIS。 title是 大都会原始胶片。 operator_id是 1012。 operator_name是 老王。 scan_details是 file_count: 150000, resolution_dpi: 8000, format: DPX。 storage_info是 server_name: SRV-FILM-ARCH, path: /film/metropolis/。\n\n事件ID为 EVENT-028, 类型为 DIGITIZATION_RARE_BOOK。 asset_system_id是 MSS-005。 title是 达芬奇手稿。 operator_id是 1009。 operator_name是 大飞。 scan_details是 file_count: 350, resolution_dpi: 1200, format: PNG。 storage_info是 server_name: SRV-RARE-01, path: /data/rare/MSS-005/。 budget_code是 PROJ-2024-01。 cost_usd是 5000。\n\n"
+  },
+  {
+    "qid": "Q4",
+    "question": "对于资产'达芬奇手稿'的数字化，其项目预算成本是多少？同时，这次操作对资产的物理状况有记录吗？",
+    "generated_answer": "对于资产“达芬奇手稿”的数字化，项目预算成本是5000美元。上下文中没有记录这次操作对资产物理状况的影响。",
+    "retrieved_context": "事件ID为 EVENT-028, 类型为 DIGITIZATION_RARE_BOOK。 asset_system_id是 MSS-005。 title是 达芬奇手稿。 operator_id是 1009。 operator_name是 大飞。 scan_details是 file_count: 350, resolution_dpi: 1200, format: PNG。 storage_info是 server_name: SRV-RARE-01, path: /data/rare/MSS-005/。 budget_code是 PROJ-2024-01。 cost_usd是 5000。\n\n事件ID为 EVENT-003, 类型为 DIGITIZATION_RARE_BOOK。 asset_system_id是 MSS-005。 title是 达芬奇手稿。 operator_id是 1009。 operator_name是 大飞。 scan_details是 file_count: 350, resolution_dpi: 1200, format: PNG。 storage_info是 server_name: SRV-RARE-01, path: /data/rare/MSS-005/。\n\n事件ID为 EVENT-035, 类型为 DIGITIZATION_RARE_BOOK。 asset_system_id是 FILM-METROPOLIS。 title是 大都会原始胶片。 operator_id是 1012。 operator_name是 老王。 scan_details是 file_count: 150000, resolution_dpi: 8000, format: DPX。 storage_info是 server_name: SRV-FILM-ARCH, path: /film/metropolis/。 project_budget_cny是 200000。 funder是 国家电影资料馆。\n\n"
+  },
+  {
+    "qid": "Q5",
+    "question": "列出所有由修复专家-孙师傅（员工ID 3001）进行过物理修复（如去酸、加固）的资产。",
+    "generated_answer": "永乐大典嘉靖副本残卷",
+    "retrieved_context": "事件ID为 EVENT-046, 类型为 RARE_BOOK_REPAIR。 asset_system_id是 GJ-001。 title是 永乐大典嘉靖副本残卷。 operator_id是 3001。 operator_name是 修复专家-孙师傅。 action是 页面去酸、加固。\n\n事件ID为 EVENT-040, 类型为 DIGITIZATION_RARE_BOOK。 asset_system_id是 GJ-015。 title是 梦溪笔谈。 operator_id是 1012。 operator_name是 老王。 scan_details是 file_count: 720。 storage_info是 server_name: SRV-RARE-02。 restoration_log是 进行了脱酸处理。\n\n事件ID为 EVENT-015, 类型为 DIGITIZATION_RARE_BOOK。 asset_system_id是 GJ-002。 title是 赵城金藏。 operator_id是 1009。 operator_name是 大飞。 scan_details是 file_count: 300, resolution_dpi: 800, format: JPEG2000。 storage_info是 server_name: SRV-RARE-02, path: /data/archive/ZCJZ-001/part2/。\n\n"
+  },
+  {
+    "qid": "Q6",
+    "question": "存储在服务器'SRV-RARE-02'上的数字化资产中，有哪些是由小倩（员工ID 1010）处理的？",
+    "generated_answer": "赵城金藏",
+    "retrieved_context": "事件ID为 EVENT-027, 类型为 DIGITIZATION_RARE_BOOK。 asset_system_id是 GJ-002。 title是 赵城金藏。 operator_id是 1010。 operator_name是 小倩。 scan_details是 file_count: 850, resolution_dpi: 800, format: JPEG2000。 storage_info是 server_name: SRV-RARE-02, path: /data/archive/ZCJZ-001/。 copyright_assessment是 经法务部门确认为公共领域作品。\n\n事件ID为 EVENT-002, 类型为 DIGITIZATION_RARE_BOOK。 asset_system_id是 GJ-002。 title是 赵城金藏。 operator_id是 1010。 operator_name是 小倩。 scan_details是 file_count: 850, resolution_dpi: 800, format: JPEG2000。 storage_info是 server_name: SRV-RARE-02, path: /data/archive/ZCJZ-001/。\n\n事件ID为 EVENT-025, 类型为 DIGITIZATION_RARE_BOOK。 asset_system_id是 GJ-015。 title是 梦溪笔谈。 operator_id是 1012。 scan_details是 file_count: 约七百。 storage_info是 server_name: SRV-RARE-02。\n\n"
+  },
+  {
+    "qid": "Q7",
+    "question": "对于'爱因斯坦吐舌头原版照片'，它的保险估值是多少？其数字副本的版权状态是什么？",
+    "generated_answer": "对于“爱因斯坦吐舌头原版照片”，它的保险估值是 100000。根据现有信息无法回答其数字副本的版权状态。",
+    "retrieved_context": "事件ID为 EVENT-032, 类型为 DIGITIZATION_RARE_BOOK。 asset_system_id是 PHOTO-EINSTEIN。 title是 爱因斯坦吐舌头原版照片。 operator_id是 1009。 operator_name是 大飞。 scan_details是 file_count: 1, resolution_dpi: 2400, format: RAW。 storage_info是 server_name: SRV-PHOTOS-01, path: /photos/originals/einstein/。 insurance_value是 100000。\n\n事件ID为 EVENT-007, 类型为 DIGITIZATION_RARE_BOOK。 asset_system_id是 PHOTO-EINSTEIN。 title是 爱因斯坦吐舌头原版照片。 operator_id是 1009。 operator_name是 大飞。 scan_details是 file_count: 1, resolution_dpi: 2400, format: RAW。 storage_info是 server_name: SRV-PHOTOS-01, path: /photos/originals/einstein/。\n\n事件ID为 EVENT-038, 类型为 DIGITIZATION_RARE_BOOK。 asset_system_id是 GJ-005。 title是 本草纲目金陵本。 operator_id是 1010。 operator_name是 小倩。 scan_details是 file_count: 1900, resolution_dpi: 400, format: JPEG。 storage_info是 server_name: SRV-RARE-02, path: /data/archive/bencao/。 asset_value是 500000。 valuation_date是 2024-05-29。\n\n"
+  },
+  {
+    "qid": "Q8",
+    "question": "请描述对资产'敦煌写经'的数字化备份策略，并说明其数字副本的访问权限政策。",
+    "generated_answer": "对资产“敦煌写经”的数字化备份策略是LTO-8磁带归档。\n\n根据现有信息无法回答其数字副本的访问权限政策。",
+    "retrieved_context": "事件ID为 EVENT-033, 类型为 DIGITIZATION_RARE_BOOK。 asset_system_id是 GJ-003。 title是 敦煌写经。 operator_id是 1010。 operator_name是 小倩。 scan_details是 file_count: 5300, resolution_dpi: 800, format: JPEG2000。 storage_info是 server_name: SRV-RARE-02, path: /data/archive/dunhuang/。 data_size_gb是 500。 backup_policy是 LTO-8磁带归档。\n\n事件ID为 EVENT-008, 类型为 DIGITIZATION_RARE_BOOK。 asset_system_id是 GJ-003。 title是 敦煌写经。 operator_id是 1010。 operator_name是 小倩。 scan_details是 file_count: 5300, resolution_dpi: 800, format: JPEG2000。 storage_info是 server_name: SRV-RARE-02, path: /data/archive/dunhuang/。\n\n事件ID为 EVENT-027, 类型为 DIGITIZATION_RARE_BOOK。 asset_system_id是 GJ-002。 title是 赵城金藏。 operator_id是 1010。 operator_name是 小倩。 scan_details是 file_count: 850, resolution_dpi: 800, format: JPEG2000。 storage_info是 server_name: SRV-RARE-02, path: /data/archive/ZCJZ-001/。 copyright_assessment是 经法务部门确认为公共领域作品。\n\n"
+  },
+  {
+    "qid": "Q9",
+    "question": "员工'阿强'（ID 1011）参与的、并且发布了CC-BY-NC 4.0使用许可的数字化项目是哪个？",
+    "generated_answer": "根据现有信息无法回答。",
+    "retrieved_context": "事件ID为 EVENT-039, 类型为 DIGITIZATION_RARE_BOOK。 asset_system_id是 GJ-014。 title是 武经总要。 operator_id是 1011。 operator_name是 阿强。 scan_details是 file_count: 1400。 storage_info是 。 security_level是 内部公开。\n\n事件ID为 EVENT-016, 类型为 DIGITIZATION_RARE_BOOK。 asset_system_id是 GJ-006。 title是 天工开物初刻本。 operator_id是 1011。 operator_name是 阿强。 scan_details是 file_count: 450。 storage_info是 None。\n\n事件ID为 EVENT-020, 类型为 DIGITIZATION_RARE_BOOK。 asset_system_id是 GJ-010。 title是 太平御览。 operator_name是 外包团队A。 scan_details是 file_count: 3000, resolution_dpi: 400。\n\n"
+  },
+  {
+    "qid": "Q10",
+    "question": "员工'大飞'（ID 1009）是否有过任何数据删除操作的记录？如果有，目标路径是什么？",
+    "generated_answer": "有。目标路径是 /data/temp/old_scans/。",
+    "retrieved_context": "事件ID为 EVENT-048, 类型为 DATA_DELETION。 path是 /data/temp/old_scans/。 operator_id是 1009。\n\n事件ID为 EVENT-015, 类型为 DIGITIZATION_RARE_BOOK。 asset_system_id是 GJ-002。 title是 赵城金藏。 operator_id是 1009。 operator_name是 大飞。 scan_details是 file_count: 300, resolution_dpi: 800, format: JPEG2000。 storage_info是 server_name: SRV-RARE-02, path: /data/archive/ZCJZ-001/part2/。\n\n事件ID为 EVENT-026, 类型为 DIGITIZATION_RARE_BOOK。 asset_system_id是 GJ-001。 title是 永乐大典嘉靖副本残卷。 operator_id是 1009。 operator_name是 大飞。 scan_details是 file_count: 1200, resolution_dpi: 600, format: TIFF。 storage_info是 server_name: SRV-RARE-01, path: /data/rare/GJ-001/。 physical_condition是 纸张脆弱，有虫蛀痕迹。\n\n"
+  }
+]

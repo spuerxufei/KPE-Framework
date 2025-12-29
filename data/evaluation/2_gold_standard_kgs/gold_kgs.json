@@ -1,0 +1,191 @@
+{
+  "EVENT-001": {
+    "特藏保护领域": {"@context": "https://schema.org/", "@id": "evt-001-preservation", "@type": "抢救性保护事件", "hasTarget": {"@id": "proxy-gj001-preservation", "@type": "受保护资产", "isA": {"@id": "UUID-GJ-001"}}, "hasMeasure": {"@type": "数字化措施", "description": "数字化扫描"}, "hasParticipant": {"@id": "role-e1009-preservation", "@type": "古籍维护员", "isA": {"@id": "UUID-E1009"}}},
+    "数字资源管理领域": {"@context": "https://schema.org/", "@id": "dobj-001-digital", "@type": "数字对象", "sourceAsset": {"@id": "proxy-gj001-digital", "@type": "源物理资产", "isA": {"@id": "UUID-GJ-001"}}, "fileCount": 1200, "resolution": {"@type": "QuantitativeValue", "value": 600, "unitText": "dpi"}, "format": "TIFF", "persistentIdentifier": "hdl:university/GJ-001"},
+    "IT/数据管理领域": {"@context": "https://schema.org/", "@id": "it-asset-001", "@type": "IT数据资产", "storageLocation": "/data/rare/GJ-001/", "serverName": "SRV-RARE-01", "sourceAsset": {"@id": "proxy-gj001-it", "@type": "源数据资产", "isA": {"@id": "UUID-GJ-001"}}},
+    "人力资源领域": {"@context": "https://schema.org/", "@id": "workload-001-1009", "@type": "员工工作量记录", "assignedTo": {"@id": "role-e1009-hr", "@type": "公司员工", "isA": {"@id": "UUID-E1009"}}, "activityDescription": "对古籍'永乐大典嘉靖副本残卷'进行数字化扫描", "relatedAsset": {"@id": "proxy-gj001-hr", "@type": "工作相关资产", "isA": {"@id": "UUID-GJ-001"}}},
+    "知识产权领域": {"@context": "https://schema.org/", "@id": "cp-stmt-001", "@type": "数字资源版权声明", "appliesTo": {"@id": "proxy-gj001-ip", "@type": "版权对象", "isA": {"@id": "UUID-GJ-001"}}, "copyrightStatus": "Public Domain"}
+  },
+  "EVENT-002": {
+    "特藏保护领域": {"@context": "https://schema.org/", "@id": "evt-002-preservation", "@type": "抢救性保护事件", "hasTarget": {"@id": "proxy-gj002-preservation", "@type": "受保护资产", "isA": {"@id": "UUID-GJ-002"}}, "hasMeasure": {"@type": "数字化措施", "description": "数字化扫描"}, "hasParticipant": {"@id": "role-e1010-preservation", "@type": "古籍维护员", "isA": {"@id": "UUID-E1010"}}},
+    "数字资源管理领域": {"@context": "https://schema.org/", "@id": "dobj-002-digital", "@type": "数字对象", "sourceAsset": {"@id": "proxy-gj002-digital", "@type": "源物理资产", "isA": {"@id": "UUID-GJ-002"}}, "fileCount": 850, "resolution": {"@type": "QuantitativeValue", "value": 800, "unitText": "dpi"}, "format": "JPEG2000"},
+    "IT/数据管理领域": {"@context": "https://schema.org/", "@id": "it-asset-002", "@type": "IT数据资产", "storageLocation": "/data/archive/ZCJZ-001/", "serverName": "SRV-RARE-02", "sourceAsset": {"@id": "proxy-gj002-it", "@type": "源数据资产", "isA": {"@id": "UUID-GJ-002"}}},
+    "人力资源领域": {"@context": "https://schema.org/", "@id": "workload-002-1010", "@type": "员工工作量记录", "assignedTo": {"@id": "role-e1010-hr", "@type": "公司员工", "isA": {"@id": "UUID-E1010"}}, "activityDescription": "对古籍'赵城金藏'进行数字化扫描", "relatedAsset": {"@id": "proxy-gj002-hr", "@type": "工作相关资产", "isA": {"@id": "UUID-GJ-002"}}},
+    "知识产权领域": {"@context": "https://schema.org/", "@id": "cp-stmt-002", "@type": "数字资源版权声明", "appliesTo": {"@id": "proxy-gj002-ip", "@type": "版权对象", "isA": {"@id": "UUID-GJ-002"}}, "copyrightStatus": "Public Domain"}
+  },
+  "EVENT-003": {
+    "特藏保护领域": {"@context": "https://schema.org/", "@id": "evt-003-preservation", "@type": "抢救性保护事件", "hasTarget": {"@id": "proxy-mss005-preservation", "@type": "受保护手稿", "isA": {"@id": "UUID-MSS-005"}}, "hasMeasure": {"@type": "数字化措施", "description": "数字化扫描"}, "hasParticipant": {"@id": "role-e1009-preservation", "@type": "古籍维护员", "isA": {"@id": "UUID-E1009"}}},
+    "数字资源管理领域": {"@context": "https://schema.org/", "@id": "dobj-003-digital", "@type": "数字对象", "sourceAsset": {"@id": "proxy-mss005-digital", "@type": "源物理资产", "isA": {"@id": "UUID-MSS-005"}}, "fileCount": 350, "resolution": {"@type": "QuantitativeValue", "value": 1200, "unitText": "dpi"}, "format": "PNG"},
+    "IT/数据管理领域": {"@context": "https://schema.org/", "@id": "it-asset-003", "@type": "IT数据资产", "storageLocation": "/data/rare/MSS-005/", "serverName": "SRV-RARE-01", "sourceAsset": {"@id": "proxy-mss005-it", "@type": "源数据资产", "isA": {"@id": "UUID-MSS-005"}}},
+    "人力资源领域": {"@context": "https://schema.org/", "@id": "workload-003-1009", "@type": "员工工作量记录", "assignedTo": {"@id": "role-e1009-hr", "@type": "公司员工", "isA": {"@id": "UUID-E1009"}}, "activityDescription": "对'达芬奇手稿'进行数字化扫描", "relatedAsset": {"@id": "proxy-mss005-hr", "@type": "工作相关资产", "isA": {"@id": "UUID-MSS-005"}}},
+    "知识产权领域": {"@context": "https://schema.org/", "@id": "cp-stmt-003", "@type": "数字资源版权声明", "appliesTo": {"@id": "proxy-mss005-ip", "@type": "版权对象", "isA": {"@id": "UUID-MSS-005"}}, "copyrightStatus": "Public Domain"}
+  },
+  "EVENT-004": {
+    "特藏保护领域": {"@context": "https://schema.org/", "@id": "evt-004-preservation", "@type": "抢救性保护事件", "hasTarget": {"@id": "proxy-map012-preservation", "@type": "受保护地图", "isA": {"@id": "UUID-MAP-012"}}, "hasMeasure": {"@type": "数字化措施", "description": "数字化扫描"}, "hasParticipant": {"@id": "role-e1011-preservation", "@type": "古籍维护员", "isA": {"@id": "UUID-E1011"}}},
+    "数字资源管理领域": {"@context": "https://schema.org/", "@id": "dobj-004-digital", "@type": "数字对象", "sourceAsset": {"@id": "proxy-map012-digital", "@type": "源物理资产", "isA": {"@id": "UUID-MAP-012"}}, "fileCount": 25, "resolution": {"@type": "QuantitativeValue", "value": 400, "unitText": "dpi"}, "format": "TIFF"},
+    "IT/数据管理领域": {"@context": "https://schema.org/", "@id": "it-asset-004", "@type": "IT数据资产", "storageLocation": "/data/maps/KYWGQT/", "serverName": "SRV-MAPS-01", "sourceAsset": {"@id": "proxy-map012-it", "@type": "源数据资产", "isA": {"@id": "UUID-MAP-012"}}},
+    "人力资源领域": {"@context": "https://schema.org/", "@id": "workload-004-1011", "@type": "员工工作量记录", "assignedTo": {"@id": "role-e1011-hr", "@type": "公司员工", "isA": {"@id": "UUID-E1011"}}, "activityDescription": "对地图'坤舆万国全图'进行数字化扫描", "relatedAsset": {"@id": "proxy-map012-hr", "@type": "工作相关资产", "isA": {"@id": "UUID-MAP-012"}}},
+    "知识产权领域": {"@context": "https://schema.org/", "@id": "cp-stmt-004", "@type": "数字资源版权声明", "appliesTo": {"@id": "proxy-map012-ip", "@type": "版权对象", "isA": {"@id": "UUID-MAP-012"}}, "copyrightStatus": "Public Domain"}
+  },
+  "EVENT-005": {
+    "特藏保护领域": {"@context": "https://schema.org/", "@id": "evt-005-preservation", "@type": "抢救性保护事件", "hasTarget": {"@id": "proxy-gj001-preservation", "@type": "受保护资产", "isA": {"@id": "UUID-GJ-001"}}, "hasMeasure": {"@type": "数字化措施", "description": "补充扫描"}, "hasParticipant": {"@id": "role-e1010-preservation", "@type": "古籍维护员", "isA": {"@id": "UUID-E1010"}}},
+    "数字资源管理领域": {"@context": "https://schema.org/", "@id": "dobj-005-digital", "@type": "数字对象", "sourceAsset": {"@id": "proxy-gj001-digital", "@type": "源物理资产", "isA": {"@id": "UUID-GJ-001"}}, "fileCount": 50, "resolution": {"@type": "QuantitativeValue", "value": 600, "unitText": "dpi"}, "format": "TIFF", "description": "对主体内容的补充扫描"},
+    "IT/数据管理领域": {"@context": "https://schema.org/", "@id": "it-asset-005", "@type": "IT数据资产", "storageLocation": "/data/rare/GJ-001/supplement/", "serverName": "SRV-RARE-01", "sourceAsset": {"@id": "proxy-gj001-it", "@type": "源数据资产", "isA": {"@id": "UUID-GJ-001"}}},
+    "人力资源领域": {"@context": "https://schema.org/", "@id": "workload-005-1010", "@type": "员工工作量记录", "assignedTo": {"@id": "role-e1010-hr", "@type": "公司员工", "isA": {"@id": "UUID-E1010"}}, "activityDescription": "对古籍'永乐大典嘉靖副本残卷'进行补充数字化扫描", "relatedAsset": {"@id": "proxy-gj001-hr", "@type": "工作相关资产", "isA": {"@id": "UUID-GJ-001"}}}
+  },
+  "EVENT-006": {
+    "特藏保护领域": {"@context": "https://schema.org/", "@id": "evt-006-preservation", "@type": "抢救性保护事件", "hasTarget": {"@id": "proxy-news1949-preservation", "@type": "受保护报纸", "isA": {"@id": "UUID-NEWS-1949"}}, "hasMeasure": {"@type": "数字化措施", "description": "数字化扫描"}, "hasParticipant": {"@id": "role-e1012-preservation", "@type": "档案管理员", "isA": {"@id": "UUID-E1012"}}},
+    "数字资源管理领域": {"@context": "https://schema.org/", "@id": "dobj-006-digital", "@type": "数字对象", "sourceAsset": {"@id": "proxy-news1949-digital", "@type": "源物理资产", "isA": {"@id": "UUID-NEWS-1949"}}, "fileCount": 8, "resolution": {"@type": "QuantitativeValue", "value": 300, "unitText": "dpi"}, "format": "PDF/A"},
+    "IT/数据管理领域": {"@context": "https://schema.org/", "@id": "it-asset-006", "@type": "IT数据资产", "storageLocation": "/archive/newspapers/1949/", "serverName": "SRV-NEWS-ARCH", "sourceAsset": {"@id": "proxy-news1949-it", "@type": "源数据资产", "isA": {"@id": "UUID-NEWS-1949"}}},
+    "人力资源领域": {"@context": "https://schema.org/", "@id": "workload-006-1012", "@type": "员工工作量记录", "assignedTo": {"@id": "role-e1012-hr", "@type": "公司员工", "isA": {"@id": "UUID-E1012"}}, "activityDescription": "对报纸'人民日报创刊号'进行数字化扫描", "relatedAsset": {"@id": "proxy-news1949-hr", "@type": "工作相关资产", "isA": {"@id": "UUID-NEWS-1949"}}},
+    "知识产权领域": {"@context": "https://schema.org/", "@id": "cp-stmt-006", "@type": "数字资源版权声明", "appliesTo": {"@id": "proxy-news1949-ip", "@type": "版权对象", "isA": {"@id": "UUID-NEWS-1949"}}, "copyrightStatus": "In Copyright"}
+  },
+  "EVENT-007": {
+    "特藏保护领域": {"@context": "https://schema.org/", "@id": "evt-007-preservation", "@type": "抢救性保护事件", "hasTarget": {"@id": "proxy-photo-einstein-preservation", "@type": "受保护照片", "isA": {"@id": "UUID-PHOTO-EINSTEIN"}}, "hasMeasure": {"@type": "数字化措施", "description": "数字化扫描"}, "hasParticipant": {"@id": "role-e1009-preservation", "@type": "古籍维护员", "isA": {"@id": "UUID-E1009"}}},
+    "数字资源管理领域": {"@context": "https://schema.org/", "@id": "dobj-007-digital", "@type": "数字对象", "sourceAsset": {"@id": "proxy-photo-einstein-digital", "@type": "源物理资产", "isA": {"@id": "UUID-PHOTO-EINSTEIN"}}, "fileCount": 1, "resolution": {"@type": "QuantitativeValue", "value": 2400, "unitText": "dpi"}, "format": "RAW"},
+    "IT/数据管理领域": {"@context": "https://schema.org/", "@id": "it-asset-007", "@type": "IT数据资产", "storageLocation": "/photos/originals/einstein/", "serverName": "SRV-PHOTOS-01", "sourceAsset": {"@id": "proxy-photo-einstein-it", "@type": "源数据资产", "isA": {"@id": "UUID-PHOTO-EINSTEIN"}}},
+    "人力资源领域": {"@context": "https://schema.org/", "@id": "workload-007-1009", "@type": "员工工作量记录", "assignedTo": {"@id": "role-e1009-hr", "@type": "公司员工", "isA": {"@id": "UUID-E1009"}}, "activityDescription": "对照片'爱因斯坦吐舌头原版照片'进行数字化扫描", "relatedAsset": {"@id": "proxy-photo-einstein-hr", "@type": "工作相关资产", "isA": {"@id": "UUID-PHOTO-EINSTEIN"}}},
+    "知识产权领域": {"@context": "https://schema.org/", "@id": "cp-stmt-007", "@type": "数字资源版权声明", "appliesTo": {"@id": "proxy-photo-einstein-ip", "@type": "版权对象", "isA": {"@id": "UUID-PHOTO-EINSTEIN"}}, "copyrightStatus": "In Copyright"}
+  },
+  "EVENT-008": {
+    "特藏保护领域": {"@context": "https://schema.org/", "@id": "evt-008-preservation", "@type": "抢救性保护事件", "hasTarget": {"@id": "proxy-gj003-preservation", "@type": "受保护资产", "isA": {"@id": "UUID-GJ-003"}}, "hasMeasure": {"@type": "数字化措施", "description": "数字化扫描"}, "hasParticipant": {"@id": "role-e1010-preservation", "@type": "古籍维护员", "isA": {"@id": "UUID-E1010"}}},
+    "数字资源管理领域": {"@context": "https://schema.org/", "@id": "dobj-008-digital", "@type": "数字对象", "sourceAsset": {"@id": "proxy-gj003-digital", "@type": "源物理资产", "isA": {"@id": "UUID-GJ-003"}}, "fileCount": 5300, "resolution": {"@type": "QuantitativeValue", "value": 800, "unitText": "dpi"}, "format": "JPEG2000"},
+    "IT/数据管理领域": {"@context": "https://schema.org/", "@id": "it-asset-008", "@type": "IT数据资产", "storageLocation": "/data/archive/dunhuang/", "serverName": "SRV-RARE-02", "sourceAsset": {"@id": "proxy-gj003-it", "@type": "源数据资产", "isA": {"@id": "UUID-GJ-003"}}},
+    "人力资源领域": {"@context": "https://schema.org/", "@id": "workload-008-1010", "@type": "员工工作量记录", "assignedTo": {"@id": "role-e1010-hr", "@type": "公司员工", "isA": {"@id": "UUID-E1010"}}, "activityDescription": "对古籍'敦煌写经'进行数字化扫描", "relatedAsset": {"@id": "proxy-gj003-hr", "@type": "工作相关资产", "isA": {"@id": "UUID-GJ-003"}}},
+    "知识产权领域": {"@context": "https://schema.org/", "@id": "cp-stmt-008", "@type": "数字资源版权声明", "appliesTo": {"@id": "proxy-gj003-ip", "@type": "版权对象", "isA": {"@id": "UUID-GJ-003"}}, "copyrightStatus": "Public Domain"}
+  },
+  "EVENT-009": {
+    "特藏保护领域": {"@context": "https://schema.org/", "@id": "evt-009-preservation", "@type": "抢救性保护事件", "hasTarget": {"@id": "proxy-music-beethoven-preservation", "@type": "受保护手稿", "isA": {"@id": "UUID-MUSIC-BEETHOVEN"}}, "hasMeasure": {"@type": "数字化措施", "description": "数字化扫描"}, "hasParticipant": {"@id": "role-e1011-preservation", "@type": "古籍维护员", "isA": {"@id": "UUID-E1011"}}},
+    "数字资源管理领域": {"@context": "https://schema.org/", "@id": "dobj-009-digital", "@type": "数字对象", "sourceAsset": {"@id": "proxy-music-beethoven-digital", "@type": "源物理资产", "isA": {"@id": "UUID-MUSIC-BEETHOVEN"}}, "fileCount": 210, "resolution": {"@type": "QuantitativeValue", "value": 1200, "unitText": "dpi"}, "format": "TIFF"},
+    "IT/数据管理领域": {"@context": "https://schema.org/", "@id": "it-asset-009", "@type": "IT数据资产", "storageLocation": "/manuscripts/beethoven/sym9/", "serverName": "SRV-MUSIC-01", "sourceAsset": {"@id": "proxy-music-beethoven-it", "@type": "源数据资产", "isA": {"@id": "UUID-MUSIC-BEETHOVEN"}}},
+    "人力资源领域": {"@context": "https://schema.org/", "@id": "workload-009-1011", "@type": "员工工作量记录", "assignedTo": {"@id": "role-e1011-hr", "@type": "公司员工", "isA": {"@id": "UUID-E1011"}}, "activityDescription": "对'贝多芬第九交响曲手稿'进行数字化扫描", "relatedAsset": {"@id": "proxy-music-beethoven-hr", "@type": "工作相关资产", "isA": {"@id": "UUID-MUSIC-BEETHOVEN"}}},
+    "知识产权领域": {"@context": "https://schema.org/", "@id": "cp-stmt-009", "@type": "数字资源版权声明", "appliesTo": {"@id": "proxy-music-beethoven-ip", "@type": "版权对象", "isA": {"@id": "UUID-MUSIC-BEETHOVEN"}}, "copyrightStatus": "Public Domain"}
+  },
+  "EVENT-010": {
+    "特藏保护领域": {"@context": "https://schema.org/", "@id": "evt-010-preservation", "@type": "抢救性保护事件", "hasTarget": {"@id": "proxy-film-metropolis-preservation", "@type": "受保护胶片", "isA": {"@id": "UUID-FILM-METROPOLIS"}}, "hasMeasure": {"@type": "数字化措施", "description": "数字化扫描"}, "hasParticipant": {"@id": "role-e1012-preservation", "@type": "档案管理员", "isA": {"@id": "UUID-E1012"}}},
+    "数字资源管理领域": {"@context": "https://schema.org/", "@id": "dobj-010-digital", "@type": "数字对象", "sourceAsset": {"@id": "proxy-film-metropolis-digital", "@type": "源物理资产", "isA": {"@id": "UUID-FILM-METROPOLIS"}}, "fileCount": 150000, "resolution": {"@type": "QuantitativeValue", "value": 8000, "unitText": "dpi"}, "format": "DPX"},
+    "IT/数据管理领域": {"@context": "https://schema.org/", "@id": "it-asset-010", "@type": "IT数据资产", "storageLocation": "/film/metropolis/", "serverName": "SRV-FILM-ARCH", "sourceAsset": {"@id": "proxy-film-metropolis-it", "@type": "源数据资产", "isA": {"@id": "UUID-FILM-METROPOLIS"}}},
+    "人力资源领域": {"@context": "https://schema.org/", "@id": "workload-010-1012", "@type": "员工工作量记录", "assignedTo": {"@id": "role-e1012-hr", "@type": "公司员工", "isA": {"@id": "UUID-E1012"}}, "activityDescription": "对'大都会原始胶片'进行数字化扫描", "relatedAsset": {"@id": "proxy-film-metropolis-hr", "@type": "工作相关资产", "isA": {"@id": "UUID-FILM-METROPOLIS"}}},
+    "知识产权领域": {"@context": "https://schema.org/", "@id": "cp-stmt-010", "@type": "数字资源版权声明", "appliesTo": {"@id": "proxy-film-metropolis-ip", "@type": "版权对象", "isA": {"@id": "UUID-FILM-METROPOLIS"}}, "copyrightStatus": "In Copyright"}
+  },
+  "EVENT-011": {
+    "人力资源领域": {"@context": "https://schema.org/", "@id": "workload-011-2001", "@type": "员工工作量记录", "assignedTo": {"@id": "role-e2001-hr", "@type": "公司员工", "isA": {"@id": "UUID-E2001"}}, "activityDescription": "对古籍'Yongle Dadian (Jiajing copy fragment)'进行数字化扫描", "relatedAsset": {"@id": "proxy-gj001-hr", "@type": "工作相关资产", "isA": {"@id": "UUID-GJ-001"}}}
+  },
+  "EVENT-012": {
+    "特藏保护领域": {"@context": "https://schema.org/", "@id": "evt-012-preservation", "@type": "抢救性保护事件", "hasTarget": {"@id": "proxy-code-apollo-preservation", "@type": "受保护文档", "isA": {"@id": "UUID-CODE-APOLLO"}}, "hasMeasure": {"@type": "数字化措施", "description": "数字化扫描"}, "hasParticipant": {"@id": "role-e2002-preservation", "@type": "档案管理员", "isA": {"@id": "UUID-E2002"}}},
+    "数字资源管理领域": {"@context": "https://schema.org/", "@id": "dobj-012-digital", "@type": "数字对象", "sourceAsset": {"@id": "proxy-code-apollo-digital", "@type": "源物理资产", "isA": {"@id": "UUID-CODE-APOLLO"}}, "fileCount": 1, "format": "TEXT"},
+    "知识产权领域": {"@context": "https://schema.org/", "@id": "cp-stmt-012", "@type": "数字资源版权声明", "appliesTo": {"@id": "proxy-code-apollo-ip", "@type": "版权对象", "isA": {"@id": "UUID-CODE-APOLLO"}}, "copyrightStatus": "Public Domain"}
+  },
+  "EVENT-013": {
+    "特藏保护领域": {"@context": "https://schema.org/", "@id": "evt-013-preservation", "@type": "抢救性保护事件", "hasTarget": {"@id": "proxy-gj004-preservation", "@type": "受保护资产", "isA": {"@id": "UUID-GJ-004"}}, "hasMeasure": {"@type": "数字化措施", "description": "数字化扫描"}, "hasParticipant": {"@id": "role-e1009-preservation", "@type": "古籍维护员", "isA": {"@id": "UUID-E1009"}}}
+  },
+  "EVENT-014": {
+    "特藏保护领域": {"@context": "https://schema.org/", "@id": "evt-014-preservation", "@type": "抢救性保护事件", "hasTarget": {"@id": "proxy-gj005-preservation", "@type": "受保护资产", "isA": {"@id": "UUID-GJ-005"}}, "hasMeasure": {"@type": "数字化措施", "description": "数字化扫描"}, "hasParticipant": {"@id": "role-e1010-preservation", "@type": "古籍维护员", "isA": {"@id": "UUID-E1010"}}}
+  },
+  "EVENT-015": {
+    "特藏保护领域": {"@context": "https://schema.org/", "@id": "evt-015-preservation", "@type": "抢救性保护事件", "hasTarget": {"@id": "proxy-gj002-preservation", "@type": "受保护资产", "isA": {"@id": "UUID-GJ-002"}}, "hasMeasure": {"@type": "数字化措施", "description": "补充扫描"}, "hasParticipant": {"@id": "role-e1009-preservation", "@type": "古籍维护员", "isA": {"@id": "UUID-E1009"}}}
+  },
+  "EVENT-016": {
+    "特藏保护领域": {"@context": "https://schema.org/", "@id": "evt-016-preservation", "@type": "抢救性保护事件", "hasTarget": {"@id": "proxy-gj006-preservation", "@type": "受保护资产", "isA": {"@id": "UUID-GJ-006"}}, "hasMeasure": {"@type": "数字化措施", "description": "数字化扫描"}, "hasParticipant": {"@id": "role-e1011-preservation", "@type": "古籍维护员", "isA": {"@id": "UUID-E1011"}}}
+  },
+  "EVENT-017": {
+    "特藏保护领域": {"@context": "https://schema.org/", "@id": "evt-017-preservation", "@type": "抢救性保护事件", "hasTarget": {"@id": "proxy-gj007-preservation", "@type": "受保护资产", "isA": {"@id": "UUID-GJ-007"}}, "hasParticipant": {"@id": "role-e1012-preservation", "@type": "档案管理员", "isA": {"@id": "UUID-E1012"}}}
+  },
+  "EVENT-018": {
+    "特藏保护领域": {"@context": "https://schema.org/", "@id": "evt-018-preservation", "@type": "抢救性保护事件", "hasTarget": {"@id": "proxy-gj008-preservation", "@type": "受保护资产", "isA": {"@id": "UUID-GJ-008"}}, "hasMeasure": {"@type": "数字化措施", "description": "数字化扫描"}}
+  },
+  "EVENT-019": {
+    "数字资源管理领域": {"@context": "https://schema.org/", "@id": "dobj-019-digital", "@type": "数字对象", "sourceAsset": {"@id": "proxy-gj009-digital", "@type": "源物理资产", "isA": {"@id": "UUID-GJ-009"}}, "fileCount": 2200}
+  },
+  "EVENT-020": {
+    "特藏保护领域": {"@context": "https://schema.org/", "@id": "evt-020-preservation", "@type": "抢救性保护事件", "hasTarget": {"@id": "proxy-gj010-preservation", "@type": "受保护资产", "isA": {"@id": "UUID-GJ-010"}}, "hasParticipant": {"@id": "role-org001-preservation", "@type": "外部合作方", "isA": {"@id": "UUID-ORG-001"}}}
+  },
+  "EVENT-021": {
+    "特藏保护领域": {"@context": "https://schema.org/", "@id": "evt-021-preservation", "@type": "抢救性保护事件", "hasTarget": {"@id": "proxy-gj011-preservation", "@type": "受保护资产", "isA": {"@id": "UUID-GJ-011"}}, "hasMeasure": {"@type": "数字化措施", "description": "数字化扫描《说文解字》大徐本"}}
+  },
+  "EVENT-022": {
+    "特藏保护领域": {"@context": "https://schema.org/", "@id": "evt-022-preservation", "@type": "抢救性保护事件", "hasTarget": {"@id": "proxy-gj012-preservation", "@type": "受保护资产", "isA": {"@id": "UUID-GJ-012"}}, "hasParticipant": {"@id": "role-e1009-preservation", "@type": "古籍维护员", "isA": {"@id": "UUID-E1009"}}}
+  },
+  "EVENT-023": {
+    "特藏保护领域": {"@context": "https://schema.org/", "@id": "evt-023-preservation", "@type": "抢救性保护事件", "hasTarget": {"@id": "proxy-gj013-preservation", "@type": "受保护资产", "isA": {"@id": "UUID-GJ-013"}}, "hasParticipant": {"@id": "role-e1010-preservation", "@type": "古籍维护员", "isA": {"@id": "UUID-E1010"}}}
+  },
+  "EVENT-024": {
+    "特藏保护领域": {"@context": "https://schema.org/", "@id": "evt-024-preservation", "@type": "抢救性保护事件", "hasTarget": {"@id": "proxy-gj014-preservation", "@type": "受保护资产", "isA": {"@id": "UUID-GJ-014"}}, "hasParticipant": {"@id": "role-e1011-preservation", "@type": "古籍维护员", "isA": {"@id": "UUID-E1011"}}}
+  },
+  "EVENT-025": {
+    "特藏保护领域": {"@context": "https://schema.org/", "@id": "evt-025-preservation", "@type": "抢救性保护事件", "hasTarget": {"@id": "proxy-gj015-preservation", "@type": "受保护资产", "isA": {"@id": "UUID-GJ-015"}}, "hasMeasure": {"@type": "数字化措施", "description": "数字化扫描"}, "hasParticipant": {"@id": "role-e1012-preservation", "@type": "档案管理员", "isA": {"@id": "UUID-E1012"}}}
+  },
+  "EVENT-026": {
+    "特藏保护领域": {"@context": "https://schema.org/", "@id": "evt-026-preservation", "@type": "抢救性保护事件", "hasTarget": {"@id": "proxy-gj001-preservation", "@type": "受保护资产", "isA": {"@id": "UUID-GJ-001"}}, "hasMeasure": {"@type": "数字化措施", "description": "数字化扫描"}, "hasParticipant": {"@id": "role-e1009-preservation", "@type": "古籍维护员", "isA": {"@id": "UUID-E1009"}}, "originalCopyCondition": "纸张脆弱，有虫蛀痕迹"},
+    "数字资源管理领域": {"@context": "https://schema.org/", "@id": "dobj-026-digital", "@type": "数字对象", "sourceAsset": {"@id": "proxy-gj001-digital", "@type": "源物理资产", "isA": {"@id": "UUID-GJ-001"}}, "fileCount": 1200, "resolution": {"@type": "QuantitativeValue", "value": 600, "unitText": "dpi"}, "format": "TIFF"}
+  },
+  "EVENT-027": {
+    "特藏保护领域": {"@context": "https://schema.org/", "@id": "evt-027-preservation", "@type": "抢救性保护事件", "hasTarget": {"@id": "proxy-gj002-preservation", "@type": "受保护资产", "isA": {"@id": "UUID-GJ-002"}}, "hasParticipant": {"@id": "role-e1010-preservation", "@type": "古籍维护员", "isA": {"@id": "UUID-E1010"}}},
+    "知识产权领域": {"@context": "https://schema.org/", "@id": "cp-stmt-027", "@type": "数字资源版权声明", "appliesTo": {"@id": "proxy-gj002-ip", "@type": "版权对象", "isA": {"@id": "UUID-GJ-002"}}, "copyrightStatus": "Public Domain", "evidence": "经法务部门确认为公共领域作品"}
+  },
+  "EVENT-028": {
+    "财务/资产领域": {"@context": "https://schema.org/", "@id": "fin-028", "@type": "项目成本记录", "about": {"@id": "proj-2024-01", "@type": "Project", "name": "2024年特藏数字化项目"}, "cost": {"@type": "MonetaryAmount", "value": 5000, "currency": "USD"}, "relatedAsset": {"@id": "proxy-mss005-finance", "@type": "无形资产", "isA": {"@id": "UUID-MSS-005"}}},
+    "特藏保护领域": {"@context": "https://schema.org/", "@id": "evt-028-preservation", "@type": "抢救性保护事件", "hasTarget": {"@id": "proxy-mss005-preservation", "@type": "受保护手稿", "isA": {"@id": "UUID-MSS-005"}}, "hasParticipant": {"@id": "role-e1009-preservation", "@type": "古籍维护员", "isA": {"@id": "UUID-E1009"}}}
+  },
+  "EVENT-029": {
+    "知识产权领域": {"@context": "https://schema.org/", "@id": "cp-stmt-029", "@type": "数字资源版权声明", "appliesTo": {"@id": "proxy-map012-ip", "@type": "版权对象", "isA": {"@id": "UUID-MAP-012"}}, "accessPolicy": "Restricted Access", "description": "仅限校内授权用户访问"}
+  },
+  "EVENT-030": {
+    "特藏保护领域": {"@context": "https://schema.org/", "@id": "evt-030-preservation", "@type": "抢救性保护事件", "hasTarget": {"@id": "proxy-gj001-preservation", "@type": "受保护资产", "isA": {"@id": "UUID-GJ-001"}}, "hasMeasure": {"@type": "数字化措施", "description": "修复前数字化存档"}, "hasParticipant": {"@id": "role-e1010-preservation", "@type": "古籍维护员", "isA": {"@id": "UUID-E1010"}}}
+  },
+  "EVENT-031": {
+    "人力资源领域": {"@context": "https://schema.org/", "@id": "workload-031-1012", "@type": "员工工作量记录", "assignedTo": {"@id": "role-e1012-hr", "@type": "公司员工", "isA": {"@id": "UUID-E1012"}}, "workload": {"@type": "QuantitativeValue", "value": 4, "unitCode": "HUR"}, "about": {"@type": "Project", "name": "红色文献数字化"}}
+  },
+  "EVENT-032": {
+    "财务/资产领域": {"@context": "https://schema.org/", "@id": "fin-032", "@type": "资产评估记录", "relatedAsset": {"@id": "proxy-photo-einstein-finance", "@type": "收藏品资产", "isA": {"@id": "UUID-PHOTO-EINSTEIN"}}, "assetValue": {"@type": "MonetaryAmount", "value": 100000, "currency": "USD"}}
+  },
+  "EVENT-033": {
+    "IT/数据管理领域": {"@context": "https://schema.org/", "@id": "it-asset-033", "@type": "IT数据资产", "dataSize": {"@type": "QuantitativeValue", "value": 500, "unitCode": "GB"}, "backupPolicy": "LTO-8磁带归档", "sourceAsset": {"@id": "proxy-gj003-it", "@type": "源数据资产", "isA": {"@id": "UUID-GJ-003"}}}
+  },
+  "EVENT-034": {
+    "知识产权领域": {"@context": "https://schema.org/", "@id": "cp-stmt-034", "@type": "数字资源版权声明", "appliesTo": {"@id": "proxy-music-beethoven-ip", "@type": "版权对象", "isA": {"@id": "UUID-MUSIC-BEETHOVEN"}}, "usageLicense": "https://creativecommons.org/licenses/by-nc/4.0/"}
+  },
+  "EVENT-035": {
+    "财务/资产领域": {"@context": "https://schema.org/", "@id": "fin-035", "@type": "项目资金记录", "budget": {"@type": "MonetaryAmount", "value": 200000, "currency": "CNY"}, "funder": {"@type": "Organization", "name": "国家电影资料馆"}}
+  },
+  "EVENT-036": {
+    "数字资源管理领域": {"@context": "https://schema.org/", "@id": "dobj-036-digital", "@type": "数字对象", "sourceAsset": {"@id": "proxy-gj004-digital", "@type": "源物理资产", "isA": {"@id": "UUID-GJ-004"}}, "relatedPublication": {"@type": "Book", "isbn": "978-7-101-05242-7"}}
+  },
+  "EVENT-037": {
+    "知识产权领域": {"@context": "https://schema.org/", "@id": "cp-stmt-037", "@type": "数字资源版权声明", "appliesTo": {"@id": "proxy-code-apollo-ip", "@type": "版权对象", "isA": {"@id": "UUID-CODE-APOLLO"}}, "copyrightStatus": "Public Domain", "description": "作为美国联邦政府的作品，属于公共领域。"}
+  },
+  "EVENT-038": {
+    "财务/资产领域": {"@context": "https://schema.org/", "@id": "fin-038", "@type": "资产评估记录", "relatedAsset": {"@id": "proxy-gj005-finance", "@type": "固定资产", "isA": {"@id": "UUID-GJ-005"}}, "assetValue": {"@type": "MonetaryAmount", "value": 500000, "currency": "CNY"}, "valuationDate": "2024-05-29"}
+  },
+  "EVENT-039": {
+    "知识产权领域": {"@context": "https://schema.org/", "@id": "cp-stmt-039", "@type": "数字资源版权声明", "appliesTo": {"@id": "proxy-gj014-ip", "@type": "版权对象", "isA": {"@id": "UUID-GJ-014"}}, "accessPolicy": "内部公开"}
+  },
+  "EVENT-040": {
+    "特藏保护领域": {"@context": "https://schema.org/", "@id": "evt-040-preservation", "@type": "抢救性保护事件", "hasTarget": {"@id": "proxy-gj015-preservation", "@type": "受保护资产", "isA": {"@id": "UUID-GJ-015"}}, "hasMeasure": [{"@type": "数字化措施", "description": "数字化扫描"}, {"@type": "物理修复措施", "description": "进行了脱酸处理"}]}
+  },
+  "EVENT-041": {
+    "图书馆流通领域": {"@context": "https://schema.org/", "@id": "circ-evt-041", "@type": "借阅事件", "borrower": {"@id": "role-s2023001-circulation", "@type": "注册读者", "isA": {"@id": "UUID-S2023001"}}, "itemBorrowed": {"@id": "proxy-book-csapp-circulation", "@type": "可流通馆藏", "isA": {"@id": "UUID-BOOK-CSAPP"}}, "dueDate": "2024-07-05"}
+  },
+  "EVENT-042": {},
+  "EVENT-043": {
+    "财务/资产领域": {"@context": "https://schema.org/", "@id": "fin-evt-043", "@type": "资产采购记录", "assetName": "服务器", "assetModel": "Dell R740", "purchasePrice": {"@type": "MonetaryAmount", "value": 30000, "currency": "CNY"}, "vendor": {"@type": "Organization", "name": "某某科技"}}
+  },
+  "EVENT-044": {},
+  "EVENT-045": {
+    "财务/资产领域": {"@context": "https://schema.org/", "@id": "fin-evt-045", "@type": "资源采购记录", "resourceName": "Web of Science", "subscriptionPeriod": "2025", "cost": {"@type": "MonetaryAmount", "value": 500000, "currency": "CNY"}}
+  },
+  "EVENT-046": {
+    "特藏保护领域": {"@context": "https://schema.org/", "@id": "evt-046-preservation", "@type": "抢救性保护事件", "hasTarget": {"@id": "proxy-gj001-preservation", "@type": "受保护资产", "isA": {"@id": "UUID-GJ-001"}}, "hasMeasure": {"@type": "物理修复措施", "description": "页面去酸、加固"}, "hasParticipant": {"@id": "role-e3001-preservation", "@type": "修复专家", "isA": {"@id": "UUID-E3001"}}},
+    "人力资源领域": {"@context": "https://schema.org/", "@id": "workload-046-3001", "@type": "员工工作量记录", "assignedTo": {"@id": "role-e3001-hr", "@type": "公司员工", "isA": {"@id": "UUID-E3001"}}, "activityDescription": "对古籍'永乐大典嘉靖副本残卷'进行页面去酸、加固", "relatedAsset": {"@id": "proxy-gj001-hr", "@type": "工作相关资产", "isA": {"@id": "UUID-GJ-001"}}}
+  },
+  "EVENT-047": {},
+  "EVENT-048": {
+    "IT/数据管理领域": {"@context": "https://schema.org/", "@id": "it-op-048", "@type": "数据操作事件", "action": "删除", "target": "/data/temp/old_scans/", "operator": {"@id": "role-e1009-it", "@type": "系统管理员", "isA": {"@id": "UUID-E1009"}}}
+  },
+  "EVENT-049": {
+    "人力资源领域": {"@context": "https://schema.org/", "@id": "hr-event-049", "@type": "员工培训记录", "trainee": {"@id": "role-e1010-hr", "@type": "公司员工", "isA": {"@id": "UUID-E1010"}}, "course": "古籍数字化标准操作流程", "duration": {"@type": "QuantitativeValue", "value": 8, "unitCode": "HUR"}}
+  },
+  "EVENT-050": {
+    "IT/数据管理领域": {"@context": "https://schema.org/", "@id": "it-op-050", "@type": "系统变更事件", "systemName": "RareBookProcessingSystem", "version": "2.0", "description": "优化扫描流程"}
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "特藏保护领域": {
+    "description": "关注珍贵实体文献（如古籍、手稿、照片）的物理保存、修复、使用规程和抢救性保护措施。",
+    "focus_rules": [
+      { "priority": 1, "if_contains": "古籍", "focus_on": "古籍" },
+      { "priority": 1, "if_contains": "手稿", "focus_on": "手稿" },
+      { "priority": 1, "if_contains": "照片", "focus_on": "照片" }
+    ],
+    "role_mapping": {
+      "古籍": "受保护资产",
+      "手稿": "受保护资产",
+      "照片": "受保护资产",
+      "员工": "特藏维护员"
+    },
+    "schema_rules": [
+      "核心知识片段的类型应为 '抢救性保护事件'。",
+      "应包含一个 'eventDate' 属性，其值为事件发生的时间戳，以记录操作时间。",
+      "必须包含 :hasTarget 关系，指向一个类型为 '受保护资产' 的领域角色节点。",
+      "应包含 :hasMeasure 属性或关系，描述具体的保护措施（如数字化、修复）。",
+      "如果数据中提及，应包含 :hasParticipant 关系，指向一个类型为 '特藏维护员' 的领域角色节点。",
+      "如果数据中提及，应包含 :originalCopyCondition 属性，描述原件的物理状况。"
+    ],
+    "relationship_guidance": []
+  },
+  "数字资源管理领域": {
+    "description": "关注数字化产物（如扫描件、电子书）的元数据创建、格式规范、永久标识符和长期保存策略。",
+    "focus_rules": [
+      { "priority": 1, "if_contains": "古籍", "focus_on": "古籍" },
+      { "priority": 1, "if_contains": "手稿", "focus_on": "手稿" },
+      { "priority": 1, "if_contains": "照片", "focus_on": "照片" }
+    ],
+    "role_mapping": {
+      "古籍": "源物理资产",
+      "手稿": "源物理资产",
+      "照片": "源物理资产",
+      "员工": "数字化操作员"
+    },
+    "schema_rules": [
+      "核心知识片段的类型应为 '数字对象'。",
+      "应包含一个 'creationDate' 属性，记录该数字对象的创建时间，其值源于事件时间戳。",
+      "必须包含 :sourceAsset 关系，指向一个类型为 '源物理资产' 的领域角色节点。",
+      "应从数据中提取并包含 :fileCount, :resolution, :format 等技术元数据作为属性。",
+      "必须为其分配合理的 :persistentIdentifier 属性（如Handle或DOI）。",
+      "如果数据中提及操作者，应创建一个 :digitizedBy 关系，指向一个类型为 '数字化操作员' 的领域角色节点。"
+    ],
+    "relationship_guidance": []
+  },
+  "知识产权领域": {
+    "description": "关注版权状态、许可协议、合理使用和公共领域（Public Domain）作品的传播与利用政策。",
+    "focus_rules": [
+      { "priority": 1, "if_contains": "古籍", "focus_on": "古籍" },
+      { "priority": 1, "if_contains": "照片", "focus_on": "照片" },
+      { "priority": 2, "if_contains": "员工", "focus_on": "员工", "note": "例如员工发表的论文" }
+    ],
+    "role_mapping": {
+      "古籍": "版权标的物",
+      "照片": "版权标的物",
+      "员工": "著作权人"
+    },
+    "schema_rules": [
+      "核心知识片段的类型应为 '数字资源版权声明'。",
+      "可以包含一个 'assessmentDate' 属性，记录版权评估的日期（如果信息可用）。",
+      "必须包含 :appliesTo 关系，指向一个类型为 '版权标的物' 的领域角色节点。",
+      "必须包含 :copyrightStatus 属性，其值应为 'Public Domain', 'In Copyright', 'Unknown' 等标准值。",
+      "对于年代久远的古籍，如果无特殊说明，其 :copyrightStatus 通常可推断为 'Public Domain'。",
+      "如果数据中提及，应包含 :accessPolicy 或 :usageLicense 属性。"
+    ],
+    "relationship_guidance": []
+  },
+  "IT/数据管理领域": {
+    "description": "关注数据存储、服务器管理、网络带宽、数据备份与恢复、以及信息系统的技术性能。",
+    "focus_rules": [
+      { "priority": 1, "if_contains": "古籍", "focus_on": "古籍" }
+    ],
+    "role_mapping": {
+      "古籍": "源数据资产",
+      "员工": "系统操作员"
+    },
+    "schema_rules": [
+      "核心知识片段的类型应为 'IT数据资产'。",
+      "可以包含一个 'lastModified' 属性，记录资产信息的最后更新时间，其值源于事件时间戳。",
+      "必须包含 :storageLocation 属性，描述存储路径。",
+      "应从数据中提取 :serverName 属性。",
+      "如果数据中提及，应包含 :backupPolicy 属性。"
+    ],
+    "relationship_guidance": [
+      {
+        "condition": {
+          "focus_on": "古籍",
+          "if_contains": ["员工"]
+        },
+        "instruction": "这个IT数据资产源于一个“古籍”实体，并由一个“员工”操作产生。建模时，主要的、必须创建的关系是指向类型为 '源数据资产' 的古籍领域角色的关系（如 :sourceAsset）。关于“员工”的信息，可以创建一个指向类型为 '系统操作员' 的员工领域角色的次要关系（如 :operatedBy）。"
+      }
+    ]
+  },
+  "人力资源领域": {
+    "description": "关注员工的工作活动记录、绩效和相关职责。",
+    "focus_rules": [
+      { "priority": 1, "if_contains": "员工", "focus_on": "员工" }
+    ],
+    "role_mapping": {
+      "员工": "受雇员工",
+      "古籍": "工作相关资产"
+    },
+    "schema_rules": [
+      "核心知识片段的类型应为 '员工工作量记录'。",
+      "必须包含一个 'activityDate' 属性，记录工作活动的发生日期，其值源于事件时间戳。",
+      "必须包含 :assignedTo 关系，指向一个类型为 '受雇员工' 的领域角色节点。",
+      "必须包含 :activityDescription 属性，用自然语言详细描述工作内容。",
+      "如果工作内容涉及某个具体资产，应创建一个 :relatedAsset 关系，指向一个类型为 '工作相关资产' 的领域角色节点。"
+    ],
+    "relationship_guidance": []
+  },
+  "财务/资产领域": {
+    "description": "关注资产的采购成本、评估价值、折旧、核销和相关的财务入账流程。",
+    "focus_rules": [
+      { "priority": 1, "if_contains": "古籍", "focus_on": "古籍" }
+    ],
+     "role_mapping": {
+      "古籍": "固定资产",
+      "员工": "经办人"
+    },
+    "schema_rules": [
+        "核心知识片段的类型可以是 '资产评估记录' 或 '项目成本记录'。",
+        "应包含一个 'transactionDate' 或 'valuationDate' 属性，记录财务活动的日期。",
+        "必须包含 :relatedAsset 关系，指向一个类型为 '固定资产' 的领域角色节点。",
+        "如果涉及成本或价值，应使用 'MonetaryAmount' 结构化对象来表示。"
+    ],
+    "relationship_guidance": []
+  },
+  "图书馆流通领域": {
+    "description": "关注普通图书的借阅、归还、续借、逾期和罚款等日常流通服务。",
+    "focus_rules": [
+      { "priority": 1, "if_contains": "读者", "focus_on": "读者" },
+      { "priority": 2, "if_contains": "图书", "focus_on": "图书" }
+    ],
+    "role_mapping": {
+        "员工": "注册读者",
+        "读者": "注册读者",
+        "图书": "可流通馆藏"
+    },
+    "schema_rules": [
+        "核心知识片段的类型应为 '借阅事件'。",
+        "必须包含一个 'eventTimestamp' 属性，记录借阅发生的精确时间。",
+        "必须包含 :borrower 关系，指向一个类型为 '注册读者' 的领域角色节点。",
+        "必须包含 :itemBorrowed 关系，指向一个类型为 '可流通馆藏' 的领域角色节点。"
+    ],
+    "relationship_guidance": []
+  }
+}

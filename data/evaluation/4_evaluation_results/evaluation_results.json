@@ -1,0 +1,2087 @@
+{
+  "EVENT-001": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "eventDate",
+            "is_supported": false,
+            "reason": "原始数据中没有提供具体的事件日期。"
+          },
+          {
+            "field": "hasParticipant",
+            "is_supported": true,
+            "reason": "通过ID映射关系，'operator_id' 1009 对应的UUID是 '604d1fd1-9c69-431d-b877-fbb77bbbe189'，与生成知识中的UUID一致。"
+          },
+          {
+            "field": "hasMeasure",
+            "is_supported": true,
+            "reason": "从 'scan_details' 中的 'file_count', 'resolution_dpi', 'format' 可以合理推断出 'digitizationDetails'。"
+          },
+          {
+            "field": "storageInfo",
+            "is_supported": true,
+            "reason": "原始数据中提供了 'storage_info'，与生成知识中的 'storageInfo' 一致。"
+          },
+          {
+            "field": "hasTarget",
+            "is_supported": true,
+            "reason": "通过ID映射关系，'asset_system_id' GJ-001 对应的UUID是 'f3953584-56b6-45b7-b238-05e165a88e46'，与生成知识中的UUID一致。"
+          }
+        ],
+        "score": 0.8
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "生成的类型 '特藏维护员' 与领域模型中的 '特藏维护员' 语义等价。"
+      },
+      "completeness": {
+        "summary": "信息完整性良好，所有关键信息均已体现。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在建模上表现出了一定的简洁性和专业性。首先，它遵循了设计规范中的大部分要求，特别是在'hasTarget'和'hasParticipant'关系的使用上，符合领域模型的指导原则。其次，待评作品在表达力上也表现良好，详细描述了数字化措施的具体细节，如文件数量、分辨率和格式，这些信息在专家参考作品中没有明确列出，显示了更高的细节关注度和洞察力。此外，待评作品在术语使用上也较为专业，使用了'特藏维护员'这一术语，符合领域模型的角色映射规则。然而，待评作品在简洁性上略显不足，特别是在'hasMeasure'部分，使用了多个嵌套的空白节点（bnode），这可能会增加理解的复杂性。总体而言，待评作品在结构上与专家参考作品不同，但这种不同在某些方面提供了更丰富的信息，因此给予4分的高分。"
+      }
+    },
+    "人力资源领域": {
+      "fidelity": {
+        "summary": "高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "activityDate",
+            "is_supported": false,
+            "reason": "原始数据中没有提供具体的活动日期，生成知识中的日期可能是推断或假设的。"
+          },
+          {
+            "field": "activityDescription",
+            "is_supported": true,
+            "reason": "描述中提到的数字化处理、文件数量、分辨率和存储路径都可以在原始数据中找到，符合条件(A)和(B)。"
+          },
+          {
+            "field": "relatedAsset",
+            "is_supported": true,
+            "reason": "UUID 'f3953584-56b6-45b7-b238-05e165a88e46'通过ID映射关系对应到原始数据中的业务ID 'GJ-001'，符合条件(C)。"
+          },
+          {
+            "field": "assignedTo",
+            "is_supported": true,
+            "reason": "UUID '604d1fd1-9c69-431d-b877-fbb77bbbe189'通过ID映射关系对应到原始数据中的业务ID '1009'，符合条件(C)。"
+          }
+        ],
+        "score": 0.75
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "生成的类型和关系名与领域模型规范完全一致，没有语义偏差。"
+      },
+      "completeness": {
+        "summary": "信息完整性良好，所有关键信息均已体现。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有一些不同，但这些不同在某些方面体现了合理性和优越性。首先，待评作品在'activityDescription'中提供了更详细的信息，包括文件数量、分辨率、格式和存储路径，这增强了表达力和信息的完整性。其次，待评作品使用了UUID作为'@id'，这在某种程度上提高了唯一性和可追溯性，符合专业术语的使用标准。尽管待评作品在简洁性上略逊于专家参考作品，但其详细的描述和信息的完整性弥补了这一点。最后，待评作品在术语使用上与领域模型的设计规范一致，体现了对规则的良好遵循。因此，综合考虑简洁性、表达力、创造性/洞察力和术语专业性，给予4分的评分。"
+      }
+    }
+  },
+  "EVENT-002": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "eventDate",
+            "is_supported": false,
+            "reason": "原始数据中没有提供具体的事件日期。"
+          },
+          {
+            "field": "hasTarget",
+            "is_supported": true,
+            "reason": "通过ID映射关系，业务ID 'GJ-002' 对应的UUID '1a3e206c-dced-4d24-a344-cb73d3cad673'与原始数据中的'asset_system_id'一致。"
+          },
+          {
+            "field": "hasMeasure",
+            "is_supported": true,
+            "reason": "从'scan_details'中推断出操作是'数字化'，并且细节如'file_count', 'resolution_dpi', 'format'与原始数据一致。"
+          },
+          {
+            "field": "hasParticipant",
+            "is_supported": true,
+            "reason": "通过ID映射关系，业务ID '1010' 对应的UUID 'e914fd5e-fe6d-440d-8343-e650e5ac741d'与原始数据中的'operator_id'一致。"
+          }
+        ],
+        "score": 0.75
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "生成的类型和关系名与领域模型规范完全一致，'特藏维护员'与'古籍维护员'语义等价。"
+      },
+      "completeness": {
+        "summary": "信息完整性良好，所有关键信息均已体现。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在建模上表现出色，展示了对领域模型的深刻理解和合理应用。首先，待评作品在简洁性方面表现良好，尽管包含了详细的数字化信息，但这些信息是相关且必要的，增强了模型的表达力。其次，待评作品在表达力上优于专家参考作品，因为它详细描述了数字化过程的具体参数（如文件数量、分辨率和格式），以及存储信息，这些细节为理解保护措施提供了更丰富的背景。第三，待评作品在创造性和洞察力方面表现出色，通过引入详细的数字化参数和存储信息，展示了对保护事件的深刻理解和对数据完整性的关注。最后，术语专业性方面，待评作品使用了与领域模型一致的术语，如'受保护资产'和'特藏维护员'，并且在角色映射上与设计规范保持一致。尽管待评作品在结构上与专家参考作品略有不同，但这种不同是合理的，并且在某些方面更优，因此给予高分。"
+      }
+    }
+  },
+  "EVENT-003": {
+    "人力资源领域": {
+      "fidelity": {
+        "summary": "高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "activityDate",
+            "is_supported": true,
+            "reason": "日期和时间是合理的推断，基于操作的上下文和常规工作时间。"
+          },
+          {
+            "field": "activityDescription",
+            "is_supported": true,
+            "reason": "描述中提到的数字化处理、文件数量、分辨率、格式和存储路径都可以直接从原始数据中找到或合理推断。"
+          },
+          {
+            "field": "relatedAsset",
+            "is_supported": true,
+            "reason": "UUID 'b855a333-7840-46b1-a3e1-4e93c339debe'通过ID映射关系对应到原始数据中的业务ID 'MSS-005'。"
+          },
+          {
+            "field": "assignedTo",
+            "is_supported": true,
+            "reason": "UUID '604d1fd1-9c69-431d-b877-fbb77bbbe189'通过ID映射关系对应到原始数据中的业务ID '1009'。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "生成的类型和关系名与领域模型规范完全一致。"
+      },
+      "completeness": {
+        "summary": "信息完整性良好，所有关键信息均已体现。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有一些不同，但这些不同在某些方面体现了合理性和优越性。首先，待评作品在'activityDescription'中提供了更详细的信息，包括文件数量、分辨率、格式和存储路径，这增强了表达力和信息的完整性。其次，待评作品使用了UUID作为'@id'，这在某种程度上提高了标识的唯一性和一致性。虽然待评作品没有使用'@context'和'isA'结构，但在简洁性上有所提升，减少了冗余信息。术语使用上，待评作品保持了专业性，符合领域模型的要求。综合来看，待评作品在表达力和简洁性上表现出色，尽管在某些细节上与专家参考作品不同，但这些差异是合理的建模选择，因此给予4分。"
+      }
+    }
+  },
+  "EVENT-004": {
+    "人力资源领域": {
+      "fidelity": {
+        "summary": "高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "activityDate",
+            "is_supported": true,
+            "reason": "日期 '2024-02-01T09:00:00Z' 是合理的推断，假设为操作日期。"
+          },
+          {
+            "field": "activityDescription",
+            "is_supported": true,
+            "reason": "描述中提到的数字化处理、文件数量、分辨率和存储路径均可在原始数据中找到。"
+          },
+          {
+            "field": "assignedTo",
+            "is_supported": true,
+            "reason": "UUID '3252a9e8-bfa9-481a-abf3-392a51c58f3a' 对应的业务ID '1011' 与原始数据中的 'operator_id' 一致。"
+          },
+          {
+            "field": "relatedAsset",
+            "is_supported": true,
+            "reason": "UUID 'a17483a5-c758-4265-92a6-7607c16edcf7' 对应的业务ID 'MAP-012' 与原始数据中的 'asset_system_id' 一致。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "生成的类型和关系名与领域模型规范完全一致。"
+      },
+      "completeness": {
+        "summary": "所有关键信息均在生成知识中得到了体现。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有一些不同，但这些不同在某些方面体现了更高的表达力和细节丰富性。首先，待评作品在activityDescription中详细描述了数字化处理的具体细节，包括文件数量、分辨率、格式和存储路径，这为理解工作内容提供了更丰富的信息，体现了较高的表达力。其次，待评作品在assignedTo和relatedAsset的UUID映射上是准确的，符合ID映射关系的要求，显示了术语的专业性。待评作品还包含了activityDate属性，符合设计规范中的schema_rules要求，增加了时间维度的信息，这在专家参考作品中是缺失的，体现了合理的建模选择。然而，待评作品在简洁性上稍显不足，过多的细节可能会影响信息的快速获取和理解。综合考虑，待评作品在表达力和细节丰富性上表现出色，但在简洁性上略有欠缺，因此给予4分。"
+      }
+    }
+  },
+  "EVENT-005": {
+    "人力资源领域": {
+      "fidelity": {
+        "summary": "高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "activityDate",
+            "is_supported": true,
+            "reason": "日期 '2024-02-05T16:00:00Z' 是合理的推断，假设为操作完成日期，尽管原始数据中未明确给出。"
+          },
+          {
+            "field": "activityDescription",
+            "is_supported": true,
+            "reason": "描述中提到的数字化处理、文件数量、分辨率、格式和存储路径均可在原始数据中找到，或是合理的推断。"
+          },
+          {
+            "field": "relatedAsset",
+            "is_supported": true,
+            "reason": "UUID 'f3953584-56b6-45b7-b238-05e165a88e46' 对应的业务ID 'GJ-001' 在原始数据中存在。"
+          },
+          {
+            "field": "assignedTo",
+            "is_supported": true,
+            "reason": "UUID 'e914fd5e-fe6d-440d-8343-e650e5ac741d' 对应的业务ID '1010' 在原始数据中存在。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "生成的类型和关系名完全符合领域模型规范。"
+      },
+      "completeness": {
+        "summary": "信息完整性良好，所有关键信息均已体现。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有一些不同，但这些不同在某些方面体现了合理性和优越性。首先，待评作品包含了一个 'activityDate' 属性，这符合设计规范中的要求，增加了时间维度的信息，使得记录更加完整和有用。其次，待评作品的 'activityDescription' 更加详细，包含了处理文件的数量、分辨率、格式以及存储路径，这些信息为工作活动提供了更全面的背景，增强了表达力。待评作品在 'relatedAsset' 和 'assignedTo' 的映射中使用了UUID，这与ID映射关系一致，确保了术语的专业性和一致性。然而，待评作品在 'assignedTo' 的 '@type' 使用了 '受雇员工'，而不是专家参考作品中的 '公司员工'，这可能导致一些语义上的不一致。总体而言，待评作品在简洁性、表达力和术语专业性方面表现良好，展示了创造性和洞察力，因此给予4分。"
+      }
+    }
+  },
+  "EVENT-006": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "业务ID",
+            "is_supported": true,
+            "reason": "通过ID映射关系，业务ID 'NEWS-1949' 对应的UUID 'a73da3f0-eb1d-495f-b64d-07881561656d' 在生成知识中正确体现。"
+          },
+          {
+            "field": "题名",
+            "is_supported": true,
+            "reason": "题名 '人民日报创刊号' 直接在原始数据中找到。"
+          },
+          {
+            "field": "eventDate",
+            "is_supported": false,
+            "reason": "原始数据中没有提供事件发生的时间戳，生成知识中的时间戳无法溯源。"
+          },
+          {
+            "field": "hasParticipant",
+            "is_supported": true,
+            "reason": "通过ID映射关系，操作员ID '1012' 对应的UUID 'ad5fc993-5dd5-433b-b464-d61720083627' 在生成知识中正确体现。"
+          },
+          {
+            "field": "hasTarget",
+            "is_supported": true,
+            "reason": "生成知识中 'hasTarget' 指向的UUID 'a73da3f0-eb1d-495f-b64d-07881561656d' 与业务ID 'NEWS-1949' 的映射一致。"
+          },
+          {
+            "field": "hasMeasure",
+            "is_supported": true,
+            "reason": "从 'scan_details' 可以合理推断出操作是“数字化”，并且存储信息与原始数据一致。"
+          },
+          {
+            "field": "存储信息",
+            "is_supported": true,
+            "reason": "存储信息中的 'server_name' 和 'path' 直接在原始数据中找到。"
+          },
+          {
+            "field": "数字化详情",
+            "is_supported": true,
+            "reason": "数字化详情中的 'file_count', 'resolution_dpi', 'format' 直接在原始数据中找到。"
+          }
+        ],
+        "score": 0.875
+      },
+      "conformance": {
+        "overall_conformance": "Partial",
+        "violations": [
+          {
+            "field": "eventDate",
+            "reason": "领域模型规范要求 'eventDate' 属性，但生成知识中的时间戳无法溯源。"
+          }
+        ],
+        "positive_notes": "生成知识中的 '特藏维护员' 与领域模型中的 '古籍维护员' 在语义上等价。"
+      },
+      "completeness": {
+        "summary": "生成知识基本完整地体现了原始数据中的关键信息。",
+        "missed_information": [
+          {
+            "info": "事件发生的时间戳",
+            "reason": "原始数据中没有提供事件发生的时间，生成知识中的时间戳无法溯源。"
+          }
+        ]
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在建模上展现了较高的创造性和洞察力，尽管与专家参考作品在结构上有所不同，但这种不同在某些方面提供了更为详细的信息。首先，待评作品将'人民日报创刊号'建模为'古籍'，这与领域模型的关注点一致，尽管在专家参考作品中被建模为'受保护报纸'。这种选择可能是基于对文献重要性的不同理解。其次，待评作品详细记录了数字化过程的细节，包括文件数量、分辨率和格式，这些信息在专家参考作品中没有明确体现，显示了对保护措施的深入理解。待评作品还包含了存储信息，进一步增强了对保护措施的描述。术语使用上，待评作品使用了'特藏维护员'，与领域模型的角色映射一致。尽管待评作品在简洁性上略逊于专家参考作品，但其表达力和信息丰富度弥补了这一不足。因此，综合考虑待评作品的创造性、表达力和术语专业性，给予4分的评分。"
+      }
+    },
+    "人力资源领域": {
+      "fidelity": {
+        "summary": "高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "activityDate",
+            "is_supported": false,
+            "reason": "原始数据中没有提供具体的活动日期，生成知识中的日期可能是推断或假设的。"
+          },
+          {
+            "field": "activityDescription",
+            "is_supported": true,
+            "reason": "描述中提到的数字化处理、文件数量、分辨率、格式和存储路径均可在原始数据中找到，符合条件(B)的合理概括。"
+          },
+          {
+            "field": "relatedAsset",
+            "is_supported": true,
+            "reason": "通过ID映射关系，'NEWS-1949'对应的UUID 'a73da3f0-eb1d-495f-b64d-07881561656d'与原始数据中的资产ID一致，符合条件(C)。"
+          },
+          {
+            "field": "assignedTo",
+            "is_supported": true,
+            "reason": "通过ID映射关系，'1012'对应的UUID 'ad5fc993-5dd5-433b-b464-d61720083627'与原始数据中的操作员ID一致，符合条件(C)。"
+          }
+        ],
+        "score": 0.75
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "生成的类型和关系名与领域模型规范完全一致，且描述详细，符合语义要求。"
+      },
+      "completeness": {
+        "summary": "信息完整性良好，所有关键信息均已体现。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有一些不同，但这些不同在某些方面体现了合理性和优越性。首先，待评作品包含了一个 'activityDate' 属性，记录了工作活动的发生日期，这符合设计规范中的要求，并且为知识片段增加了时间维度的信息，这是一种合理的建模选择。其次，待评作品的 'activityDescription' 提供了更详细的工作内容描述，包括文件数量、分辨率、格式和存储路径，这增强了表达力和信息的完整性。待评作品在 'relatedAsset' 和 'assignedTo' 的映射中使用了UUID，确保了唯一性和一致性，符合专业术语的使用标准。然而，待评作品在简洁性上稍显不足，信息量较大，可能影响快速理解。综合考虑，待评作品在表达力和术语专业性上表现出色，结构上的不同也体现了合理性，因此给予4分。"
+      }
+    }
+  },
+  "EVENT-007": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "eventDate",
+            "is_supported": false,
+            "reason": "原始数据中没有提供具体的事件日期。"
+          },
+          {
+            "field": "hasTarget",
+            "is_supported": true,
+            "reason": "通过ID映射，'PHOTO-EINSTEIN'对应的UUID与生成知识中的UUID一致。"
+          },
+          {
+            "field": "hasMeasure",
+            "is_supported": true,
+            "reason": "从'scan_details'推断出数字化措施，符合合理推断。"
+          },
+          {
+            "field": "hasParticipant",
+            "is_supported": true,
+            "reason": "通过ID映射，'1009'对应的UUID与生成知识中的UUID一致。"
+          },
+          {
+            "field": "storage_info",
+            "is_supported": true,
+            "reason": "原始数据中提供了存储信息，直接支持生成知识中的内容。"
+          }
+        ],
+        "score": 0.8
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "生成的类型和关系名与领域模型规范完全一致，特藏维护员的表述符合语义要求。"
+      },
+      "completeness": {
+        "summary": "信息完整性良好，所有关键信息均已体现。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在建模上表现出了一定的专业性和创造性。首先，它遵循了领域模型的核心规则，定义了一个'抢救性保护事件'，并包含了'hasTarget'、'hasMeasure'和'hasParticipant'等关键属性。与专家参考作品相比，待评作品在表达力上有所不同，特别是在'hasMeasure'部分，提供了更详细的数字化措施信息，包括文件数量、分辨率和格式，这增加了模型的细节和实用性。此外，待评作品还包含了存储信息，这在某些情况下可能是有用的补充。术语使用上，待评作品准确地使用了'特藏维护员'这一角色名称，符合领域模型的要求。然而，待评作品在简洁性上稍显不足，特别是在'hasMeasure'部分的详细信息可能会导致模型的复杂性增加。总体而言，待评作品在结构上与专家参考作品不同，但这种不同在某些方面提供了更丰富的信息，因此给予4分的高分。"
+      }
+    },
+    "人力资源领域": {
+      "fidelity": {
+        "summary": "高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "activityDate",
+            "is_supported": false,
+            "reason": "原始数据中没有提供具体的活动日期，生成知识中的日期可能是推断或假设的。"
+          },
+          {
+            "field": "activityDescription",
+            "is_supported": true,
+            "reason": "描述中提到的所有细节（如文件数量、分辨率、格式、存储路径）都可以在原始数据中找到，且对操作的描述是合理的推断。"
+          },
+          {
+            "field": "assignedTo",
+            "is_supported": true,
+            "reason": "通过ID映射关系，业务ID '1009' 对应的UUID '604d1fd1-9c69-431d-b877-fbb77bbbe189' 可以验证。"
+          },
+          {
+            "field": "relatedAsset",
+            "is_supported": true,
+            "reason": "通过ID映射关系，业务ID 'PHOTO-EINSTEIN' 对应的UUID '9c2660b2-bc8e-44a5-a586-3abb90bc32c1' 可以验证。"
+          }
+        ],
+        "score": 0.75
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "生成的类型和关系名完全符合领域模型规范，且描述详细，符合语义要求。"
+      },
+      "completeness": {
+        "summary": "信息完整性良好，所有关键信息均已体现。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有一些不同，但这些不同在某些方面体现了合理性和优越性。首先，待评作品在activityDescription中提供了更详细的信息，包括文件数量、分辨率、格式以及存储路径，这增强了表达力和信息的完整性。其次，待评作品使用了UUID作为@id，这在系统集成和唯一性识别方面具有优势。待评作品在术语使用上也符合领域模型的要求，使用了'受雇员工'和'工作相关资产'等术语。尽管待评作品在简洁性上略逊于专家参考作品，但其详细的描述和信息的完整性弥补了这一点。因此，综合考虑简洁性、表达力、创造性/洞察力和术语专业性，给予4分的评分。"
+      }
+    }
+  },
+  "EVENT-008": {
+    "人力资源领域": {
+      "fidelity": {
+        "summary": "高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "activityDate",
+            "is_supported": true,
+            "reason": "日期是生成知识中的一个新信息，符合领域模型规范要求，但在原始数据中没有直接对应。"
+          },
+          {
+            "field": "activityDescription",
+            "is_supported": true,
+            "reason": "描述中提到的数字化处理、文件数量、分辨率、格式和存储路径均可在原始数据中找到，符合条件(A)。"
+          },
+          {
+            "field": "assignedTo",
+            "is_supported": true,
+            "reason": "通过ID映射关系，operator_id '1010' 对应的UUID 'e914fd5e-fe6d-440d-8343-e650e5ac741d'，符合条件(C)。"
+          },
+          {
+            "field": "relatedAsset",
+            "is_supported": true,
+            "reason": "通过ID映射关系，asset_system_id 'GJ-003' 对应的UUID '937aa894-0faa-49cf-b668-d17d757768ef'，符合条件(C)。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "生成知识严格遵循了领域模型规范，类型和关系名与规范一致。"
+      },
+      "completeness": {
+        "summary": "信息完整性良好，所有关键信息均已体现。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有一些不同，但这些不同在某些方面体现了合理性和优越性。首先，待评作品包含了一个 'activityDate' 属性，符合设计规范中的要求，记录了工作活动的发生日期，这一点是专家参考作品中所缺乏的。其次，待评作品的 'activityDescription' 更加详细，包含了具体的文件数量、分辨率、格式和存储路径，这为理解工作内容提供了更丰富的信息，增强了表达力。待评作品在术语使用上也符合设计规范，使用了 '受雇员工' 和 '工作相关资产' 的类型定义。唯一的不足可能在于待评作品的描述过于详细，可能影响简洁性，但这种详细性也为理解工作内容提供了更深刻的洞察。因此，综合考虑待评作品在表达力和术语专业性上的表现，给予4分的评分。"
+      }
+    }
+  },
+  "EVENT-009": {
+    "人力资源领域": {
+      "fidelity": {
+        "summary": "高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "activityDate",
+            "is_supported": true,
+            "reason": "日期是合理的推断，基于生成知识的上下文和领域模型的要求。"
+          },
+          {
+            "field": "activityDescription",
+            "is_supported": true,
+            "reason": "描述中提到的数字化处理细节直接来自于原始数据的scan_details和storage_info。"
+          },
+          {
+            "field": "relatedAsset",
+            "is_supported": true,
+            "reason": "UUID 'c8a5a206-32b5-4fbf-87df-c5d4866c22ae'通过ID映射关系对应到原始数据中的asset_system_id 'MUSIC-BEETHOVEN'。"
+          },
+          {
+            "field": "assignedTo",
+            "is_supported": true,
+            "reason": "UUID '3252a9e8-bfa9-481a-abf3-392a51c58f3a'通过ID映射关系对应到原始数据中的operator_id '1011'。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "生成的类型和关系名完全符合领域模型规范，且描述详细，符合语义要求。"
+      },
+      "completeness": {
+        "summary": "信息完整性良好，所有关键信息均已体现。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有一些不同，但这些不同在某些方面体现了更高的表达力和细节丰富性。首先，待评作品在activityDescription中详细描述了数字化处理的具体细节，如文件数量、分辨率和格式，以及存储路径，这些信息在专家参考作品中没有体现。这种细节的增加提升了表达力和信息的完整性。其次，待评作品使用了UUID来标识relatedAsset和assignedTo，这种做法在某种程度上提高了模型的专业性和一致性，因为UUID是一种标准化的标识符，便于系统间的集成和数据管理。然而，待评作品在简洁性上稍显不足，信息量较大，可能会影响快速理解。此外，待评作品在术语使用上与专家参考作品略有不同，例如'受雇员工'与'公司员工'的选择，但这并不影响整体的专业性。因此，综合考虑待评作品在细节表达、专业性和合理的结构选择上的表现，给予4分的评分。"
+      }
+    }
+  },
+  "EVENT-010": {
+    "人力资源领域": {
+      "fidelity": {
+        "summary": "高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "activityDate",
+            "is_supported": true,
+            "reason": "日期信息在原始数据中未明确给出，但可以合理推断为活动发生的日期。"
+          },
+          {
+            "field": "activityDescription",
+            "is_supported": true,
+            "reason": "描述中提到的数字化处理、文件数量、分辨率、格式和存储路径均可在原始数据中找到或合理推断。"
+          },
+          {
+            "field": "relatedAsset",
+            "is_supported": true,
+            "reason": "通过ID映射关系，'FILM-METROPOLIS'对应的UUID与生成知识中的UUID一致。"
+          },
+          {
+            "field": "assignedTo",
+            "is_supported": true,
+            "reason": "通过ID映射关系，'1012'对应的UUID与生成知识中的UUID一致。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "生成的类型和关系名与领域模型规范完全一致。"
+      },
+      "completeness": {
+        "summary": "信息完整性良好，所有关键信息均已体现。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有一些不同，但这些不同在某些方面体现了合理性和优越性。首先，待评作品包含了一个明确的 'activityDate' 属性，这符合设计规范中的要求，并且为记录提供了时间背景，这在实际应用中是非常有价值的。其次，待评作品的 'activityDescription' 提供了更详细的工作内容描述，包括文件数量、分辨率、格式和存储路径，这种详细性增强了表达力和信息的完整性。待评作品在 'relatedAsset' 和 'assignedTo' 的映射上使用了UUID，这与ID映射关系保持一致，确保了术语的专业性和一致性。然而，待评作品在简洁性上稍显不足，描述过于详细，可能会影响信息的快速获取和理解。总体而言，待评作品在表达力和术语专业性上表现出色，结构上的不同也体现了一定的创造性和洞察力，因此给予4分。"
+      }
+    }
+  },
+  "EVENT-011": {
+    "人力资源领域": {
+      "fidelity": {
+        "summary": "高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "activityDate",
+            "is_supported": true,
+            "reason": "活动日期直接在生成知识中提供，符合领域模型要求。"
+          },
+          {
+            "field": "activityDescription",
+            "is_supported": true,
+            "reason": "描述中提到的数字化处理、文件数量、分辨率和格式均可从原始数据中推断或直接找到。"
+          },
+          {
+            "field": "relatedAsset",
+            "is_supported": true,
+            "reason": "UUID 'f3953584-56b6-45b7-b238-05e165a88e46'通过ID映射关系对应到原始数据中的业务ID 'GJ-001'。"
+          },
+          {
+            "field": "assignedTo",
+            "is_supported": true,
+            "reason": "UUID '737ab4da-6ac5-44dc-829a-b2926de96870'通过ID映射关系对应到原始数据中的业务ID '2001'。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "生成的类型和关系名与领域模型规范完全一致，且描述详细，符合语义要求。"
+      },
+      "completeness": {
+        "summary": "信息完整性良好，所有关键信息均已体现。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品存在一些差异，但这些差异在某些方面体现了更高的表达力和细节丰富性。首先，待评作品在activityDescription中详细描述了数字化处理的具体细节，如文件数量、分辨率和格式，以及存储路径，这些信息在专家参考作品中没有体现，增加了信息的完整性和实用性。其次，待评作品使用了UUID来标识relatedAsset和assignedTo，符合ID映射关系的要求，确保了数据的一致性和可追溯性。待评作品在术语使用上也较为专业，符合领域模型的设计规范。唯一的不足是待评作品在简洁性上稍显不足，信息量较大，可能影响快速理解。但总体而言，待评作品在表达力和细节丰富性上表现出色，值得较高的评分。"
+      }
+    }
+  },
+  "EVENT-013": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "通过ID映射关系，业务ID 'GJ-004' 对应的内部UUID '4f025f0d-ef47-4fb6-8b03-38e0dfb63501' 可以在原始数据中找到。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "类型 '抢救性保护事件' 是对原始数据中 'scan_details' 的合理推断，符合领域模型中对数字化的描述。"
+          },
+          {
+            "field": "eventDate",
+            "is_supported": false,
+            "reason": "原始数据中没有提供具体的事件日期，因此无法直接支持此断言。"
+          },
+          {
+            "field": "hasMeasure",
+            "is_supported": true,
+            "reason": "从 'scan_details' 中的 'file_count', 'resolution_dpi', 'format' 可以合理推断出 '数字化' 作为保护措施。"
+          },
+          {
+            "field": "hasParticipant",
+            "is_supported": true,
+            "reason": "通过ID映射关系，业务ID '1009' 对应的内部UUID '604d1fd1-9c69-431d-b877-fbb77bbbe189' 可以在原始数据中找到，并且角色 '特藏维护员' 是合理的语义转换。"
+          },
+          {
+            "field": "hasTarget",
+            "is_supported": true,
+            "reason": "通过ID映射关系，业务ID 'GJ-004' 对应的内部UUID '4f025f0d-ef47-4fb6-8b03-38e0dfb63501' 可以在原始数据中找到。"
+          }
+        ],
+        "score": 0.83
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "角色 '特藏维护员' 与领域模型中的 '古籍维护员' 在语义上等价或更优。"
+      },
+      "completeness": {
+        "summary": "信息完整性良好，所有关键信息均已体现。",
+        "missed_information": [
+          {
+            "info": "eventDate",
+            "reason": "原始数据中没有提供具体的事件日期。"
+          }
+        ]
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在建模上表现出色，展示了对领域模型的深刻理解和合理应用。首先，待评作品在简洁性方面表现良好，尽管包含了详细的数字化信息（如文件数量、分辨率和格式），但这些信息是对保护措施的具体化描述，符合领域模型中对 'hasMeasure' 的要求。其次，待评作品在表达力上也很强，清晰地展示了事件的参与者和目标资产，并且通过 'eventDate' 属性记录了事件的时间，这一点在专家参考作品中未明确体现。待评作品在创造性/洞察力方面表现出色，通过详细的 'hasMeasure' 描述，提供了对数字化过程的深入洞察，这种细节在专家参考作品中未被强调。术语专业性方面，待评作品使用了领域模型中定义的术语，如 '抢救性保护事件' 和 '特藏维护员'，并且在 'hasMeasure' 中引入了 'StorageInfo' 作为存储信息的描述，展示了对领域模型的灵活应用。尽管待评作品在结构上与专家参考作品有所不同，但这种不同是合理的，甚至在某些方面更优，因此给予较高评分。"
+      }
+    }
+  },
+  "EVENT-014": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "eventDate",
+            "is_supported": false,
+            "reason": "原始数据中没有提供具体的事件日期。"
+          },
+          {
+            "field": "hasParticipant",
+            "is_supported": true,
+            "reason": "通过ID映射关系，'operator_id' 1010 对应的UUID是 'e914fd5e-fe6d-440d-8343-e650e5ac741d'，与生成知识中的UUID一致。"
+          },
+          {
+            "field": "hasTarget",
+            "is_supported": true,
+            "reason": "通过ID映射关系，'asset_system_id' GJ-005 对应的UUID是 '86ae421a-6f8c-431c-987b-56234d319347'，与生成知识中的UUID一致。"
+          },
+          {
+            "field": "hasMeasure",
+            "is_supported": true,
+            "reason": "从'scan_details'推断出操作是“数字化”，符合合理推断。"
+          },
+          {
+            "field": "storage_info",
+            "is_supported": true,
+            "reason": "原始数据中提供了'storage_info'，与生成知识中的信息一致。"
+          }
+        ],
+        "score": 0.8
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "生成的类型和关系名与领域模型规范在语义上等价或更优，'特藏维护员'与'古籍维护员'语义等价。"
+      },
+      "completeness": {
+        "summary": "信息完整性良好，所有关键信息均已体现。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在建模上表现出色，展示了对领域模型的深刻理解和创造性应用。首先，它遵循了核心知识片段的类型要求，正确标识为'抢救性保护事件'。其次，待评作品包含了'eventDate'属性，记录了事件发生的时间戳，符合设计规范的要求。'hasTarget'和'hasParticipant'关系的使用也符合领域模型的要求，指向了正确的领域角色节点。特别值得称赞的是，待评作品在'hasMeasure'部分提供了详细的数字化措施信息，包括文件数量、分辨率、格式和存储信息，这种细致的描述增强了模型的表达力和实用性。虽然与专家参考作品在结构上略有不同，但这种不同体现了对信息的更全面捕捉和更高的细节关注度，尤其是在存储信息的建模上，展示了更高的洞察力和专业性。因此，综合考虑简洁性、表达力、创造性和术语专业性，给予4分的高分评价。"
+      }
+    }
+  },
+  "EVENT-016": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "通过ID映射关系，业务ID 'GJ-006' 对应的内部UUID '6a92383a-f8d9-4bbb-bb34-4a4d575a76d4' 可以在原始数据中找到。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "根据领域模型规范，'古籍'是合理的类型推断，因为标题中包含'天工开物初刻本'，符合'古籍'的定义。"
+          },
+          {
+            "field": "file_count",
+            "is_supported": true,
+            "reason": "原始数据中的 'scan_details' 包含 'file_count': 450，直接支持此断言。"
+          },
+          {
+            "field": "hasMeasure",
+            "is_supported": true,
+            "reason": "从 'scan_details' 中的 'file_count' 可以合理推断出操作是'数字化'。"
+          },
+          {
+            "field": "eventDate",
+            "is_supported": false,
+            "reason": "原始数据中没有提供事件发生的具体时间戳，因此无法直接支持此断言。"
+          },
+          {
+            "field": "RELATES_TO",
+            "is_supported": true,
+            "reason": "通过ID映射关系，业务ID 'GJ-006' 对应的内部UUID '6a92383a-f8d9-4bbb-bb34-4a4d575a76d4' 可以在原始数据中找到，且类型为'受保护资产'符合领域模型规范。"
+          },
+          {
+            "field": "hasParticipant",
+            "is_supported": true,
+            "reason": "通过ID映射关系，业务ID '1011' 对应的内部UUID '3252a9e8-bfa9-481a-abf3-392a51c58f3a' 可以在原始数据中找到，且类型为'特藏维护员'符合领域模型规范。"
+          }
+        ],
+        "score": 0.857
+      },
+      "conformance": {
+        "overall_conformance": "Partial",
+        "violations": [
+          {
+            "field": "eventDate",
+            "reason": "缺少原始数据支持的事件发生时间。"
+          }
+        ],
+        "positive_notes": "类型 '古籍' 和 '特藏维护员' 符合领域模型规范的语义要求。"
+      },
+      "completeness": {
+        "summary": "信息基本完整，缺少事件发生时间的直接支持。",
+        "missed_information": [
+          {
+            "info": "eventDate",
+            "reason": "原始数据中没有提供事件发生的具体时间戳。"
+          }
+        ]
+      },
+      "elegance": {
+        "elegance_score": 3,
+        "reasoning": "待评作品在建模上有一些优点和不足之处。首先，它在简洁性方面表现良好，直接使用UUID作为@id，避免了冗长的标识符。然而，它在表达力上存在不足，未能清晰地表达出事件的类型（如'抢救性保护事件'），而是直接将'古籍'作为@type，这与领域模型的核心知识片段类型不符。待评作品在术语专业性上表现一般，使用了'数字化'作为保护措施，但未能详细描述为'数字化扫描'，缺乏具体性。此外，待评作品在结构上与专家参考作品不同，未能体现出'hasTarget'关系，而是使用了'RELATES_TO'，这可能导致语义上的模糊。尽管如此，待评作品在创造性/洞察力方面表现出色，尝试了不同的结构和关系表达方式，这在某些情况下可能更为灵活。因此，综合考虑这些因素，给予3分的评分。"
+      }
+    }
+  },
+  "EVENT-017": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "eventDate",
+            "is_supported": false,
+            "reason": "原始数据中没有提供具体的事件日期，无法直接验证。"
+          },
+          {
+            "field": "hasParticipant",
+            "is_supported": true,
+            "reason": "通过ID映射关系，业务ID '1012' 对应的UUID 'ad5fc993-5dd5-433b-b464-d61720083627'，与原始数据中的operator_id匹配。"
+          },
+          {
+            "field": "hasMeasure",
+            "is_supported": true,
+            "reason": "原始数据中scan_details为None，推断出操作是“数字化”，符合合理推断条件。"
+          },
+          {
+            "field": "hasTarget",
+            "is_supported": true,
+            "reason": "通过ID映射关系，业务ID 'GJ-007' 对应的UUID '8989c6a6-77c0-4450-913d-addeb1ccfaac'，与原始数据中的asset_system_id匹配。"
+          },
+          {
+            "field": "storageInfo",
+            "is_supported": true,
+            "reason": "原始数据中提供了storage_info，直接匹配生成知识中的信息。"
+          }
+        ],
+        "score": 0.8
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "生成的类型和关系名与领域模型规范完全一致，特藏维护员与古籍维护员在语义上等价。"
+      },
+      "completeness": {
+        "summary": "信息完整性良好，所有关键信息均已体现。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在建模上表现出色，展示了对领域模型的深刻理解和合理应用。首先，待评作品遵循了设计规范中的大部分要求，特别是在'抢救性保护事件'的类型定义、'hasTarget'和'hasParticipant'关系的使用上，符合领域模型的预期。其次，待评作品在表达力上表现出色，清晰地描述了事件的参与者和目标资产，并且通过'hasMeasure'属性详细记录了保护措施，展示了对保护过程的全面理解。待评作品在术语专业性上也表现良好，使用了'特藏维护员'这一术语，符合领域模型的角色映射规则。然而，待评作品在简洁性上略显不足，特别是在'hasTarget'的UUID重复使用上，可能导致理解上的混淆。此外，待评作品在创造性/洞察力上表现出色，通过详细的存储信息展示了对保护措施的深入理解，这一细节在专家参考作品中未被体现。因此，综合考虑待评作品在简洁性、表达力、创造性/洞察力和术语专业性方面的表现，给予4分的高分评价。"
+      }
+    }
+  },
+  "EVENT-018": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "hasMeasure",
+            "is_supported": true,
+            "reason": "从'scan_details'推断出操作是'数字化'，符合条件(B)。"
+          },
+          {
+            "field": "eventDate",
+            "is_supported": false,
+            "reason": "原始数据中没有提供事件发生的时间戳，不符合条件(A)或(B)。"
+          },
+          {
+            "field": "hasTarget",
+            "is_supported": true,
+            "reason": "UUID 'b56e5978-94e4-4976-bdb7-91f9724a219b'通过ID映射关系对应到原始数据中的业务ID 'GJ-008'，符合条件(C)。"
+          },
+          {
+            "field": "storageInfo",
+            "is_supported": true,
+            "reason": "存储信息与原始数据中的'storage_info'直接匹配，符合条件(A)。"
+          },
+          {
+            "field": "digitalizationDetails",
+            "is_supported": true,
+            "reason": "数字化细节与原始数据中的'scan_details'直接匹配，符合条件(A)。"
+          }
+        ],
+        "score": 0.8
+      },
+      "conformance": {
+        "overall_conformance": "Partial",
+        "violations": [
+          {
+            "field": "eventDate",
+            "reason": "缺少事件发生的时间戳，违反了领域模型的'schema_rules'。"
+          }
+        ],
+        "positive_notes": "生成的类型'抢救性保护事件'和关系'hasTarget'符合领域模型规范。"
+      },
+      "completeness": {
+        "summary": "信息基本完整，缺少事件时间信息。",
+        "missed_information": [
+          {
+            "info": "事件发生的时间戳",
+            "reason": "原始数据中没有提供，导致生成知识中缺失。"
+          }
+        ]
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在建模上展现了较高的专业性和创造性。首先，它遵循了领域模型的核心要求，定义了一个'抢救性保护事件'，并包含了'hasTarget'和'hasMeasure'属性。与专家参考作品相比，待评作品在结构上有所不同，但这种不同是合理的，并且在某些方面更为详细和全面。具体来说，待评作品引入了'storageInfo'和'digitalizationDetails'，提供了关于存储和数字化过程的详细信息，这增强了模型的表达力和信息的完整性。此外，待评作品使用了UUID作为标识符，确保了实体的唯一性和可追溯性。尽管待评作品在简洁性上略逊于专家参考作品，但其在表达力和信息丰富度上的提升是显著的。因此，综合考虑其在表达力、创造性和术语专业性方面的表现，给予4分的高分评价。"
+      }
+    }
+  },
+  "EVENT-019": {
+    "数字资源管理领域": {
+      "fidelity": {
+        "summary": "总体评价为高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "ID '2a7902d3-222d-4f91-832e-22d0220d6474' 可以通过ID映射关系对应到原始数据中的业务ID 'GJ-009'。"
+          },
+          {
+            "field": "@type",
+            "is_supported": false,
+            "reason": "类型 '抢救性保护事件' 无法直接在原始数据中找到，也不属于合理推断。"
+          },
+          {
+            "field": "hasMeasure",
+            "is_supported": true,
+            "reason": "从 'scan_details' 中的 'file_count' 可以合理推断出操作是 '数字化'。"
+          },
+          {
+            "field": "eventDate",
+            "is_supported": false,
+            "reason": "事件日期 '2024-04-05T09:30:00Z' 无法在原始数据中找到。"
+          },
+          {
+            "field": "hasTarget",
+            "is_supported": true,
+            "reason": "ID '2a7902d3-222d-4f91-832e-22d0220d6474' 可以通过ID映射关系对应到原始数据中的业务ID 'GJ-009'。"
+          },
+          {
+            "field": "digitalizationDetails.file_count",
+            "is_supported": true,
+            "reason": "文件数量 '2200' 可以直接在原始数据的 'scan_details' 中找到。"
+          },
+          {
+            "field": "digitalizationDetails.storage_path",
+            "is_supported": true,
+            "reason": "存储路径 '/data/temp/gj009/' 可以直接在原始数据的 'storage_info' 中找到。"
+          }
+        ],
+        "score": 0.71
+      },
+      "conformance": {
+        "overall_conformance": "Partial",
+        "violations": [
+          {
+            "field": "@type",
+            "reason": "生成的类型 '抢救性保护事件' 不符合领域模型中要求的 '数字对象' 类型。"
+          },
+          {
+            "field": "eventDate",
+            "reason": "缺少领域模型中要求的 'creationDate' 属性。"
+          },
+          {
+            "field": ":sourceAsset",
+            "reason": "缺少指向 '源物理资产' 的关系。"
+          },
+          {
+            "field": ":persistentIdentifier",
+            "reason": "缺少领域模型中要求的 'persistentIdentifier' 属性。"
+          }
+        ],
+        "positive_notes": "生成的 'hasMeasure' 属性与领域模型的 '数字化' 语义等价。"
+      },
+      "completeness": {
+        "summary": "信息完整性较高，但缺少领域模型中要求的某些关键属性。",
+        "missed_information": [
+          {
+            "info": "creationDate",
+            "reason": "领域模型中要求的 'creationDate' 属性未在生成知识中体现。"
+          },
+          {
+            "info": ":sourceAsset 关系",
+            "reason": "领域模型中要求的指向 '源物理资产' 的关系未在生成知识中体现。"
+          },
+          {
+            "info": ":persistentIdentifier",
+            "reason": "领域模型中要求的 'persistentIdentifier' 属性未在生成知识中体现。"
+          }
+        ]
+      },
+      "elegance": {
+        "elegance_score": 3,
+        "reasoning": "待评作品在结构上与专家参考作品有显著不同，采用了事件驱动的建模方式，而非直接的数字对象描述。这种选择在某些情况下可能更适合描述复杂的数字化过程，尤其是当需要强调事件和过程时。然而，这种建模方式在简洁性和直接表达数字对象的元数据方面有所欠缺。待评作品中缺少了对数字对象的直接描述（如 '@type': '数字对象'），以及与源物理资产的直接关联（如 ':sourceAsset' 关系）。此外，待评作品未能体现领域模型中建议的 'persistentIdentifier' 和 'creationDate' 属性，这些都是数字对象元数据的重要组成部分。尽管如此，待评作品在表达数字化过程的细节（如 'digitalizationDetails'）方面表现出一定的创造性和洞察力，尤其是在描述文件数量和存储路径时。术语使用上，待评作品引入了 '抢救性保护事件' 和 '受保护资产' 的概念，这在某些领域可能是合理的，但与领域模型的预期不完全一致。因此，综合考虑简洁性、表达力、创造性和术语专业性，给予3分。"
+      }
+    }
+  },
+  "EVENT-020": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "eventDate",
+            "is_supported": false,
+            "reason": "原始数据中没有提供具体的事件日期，无法直接验证。"
+          },
+          {
+            "field": "hasMeasure.type",
+            "is_supported": true,
+            "reason": "从'scan_details'中的信息可以合理推断出操作是'数字化'。"
+          },
+          {
+            "field": "hasMeasure.details.file_count",
+            "is_supported": true,
+            "reason": "直接在原始数据的'scan_details'中找到。"
+          },
+          {
+            "field": "hasMeasure.details.resolution_dpi",
+            "is_supported": true,
+            "reason": "直接在原始数据的'scan_details'中找到。"
+          },
+          {
+            "field": "hasTarget",
+            "is_supported": true,
+            "reason": "通过ID映射关系，业务ID 'GJ-010' 对应的内部UUID '7cf9bd87-3bf3-4521-8cb5-5935fb387b33'可以在原始数据中找到。"
+          }
+        ],
+        "score": 0.8
+      },
+      "conformance": {
+        "overall_conformance": "Partial",
+        "violations": [
+          {
+            "field": "eventDate",
+            "reason": "领域模型规范要求事件发生的时间戳，但原始数据中未提供。"
+          }
+        ],
+        "positive_notes": "生成的类型'抢救性保护事件'与领域模型规范一致。'hasTarget'和'hasMeasure'关系符合领域模型要求。"
+      },
+      "completeness": {
+        "summary": "信息基本完整，缺少事件日期的直接体现。",
+        "missed_information": [
+          {
+            "info": "事件日期",
+            "reason": "原始数据中未提供具体的事件日期，生成知识中包含的日期无法验证其来源。"
+          }
+        ]
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在建模上表现出色，展示了良好的简洁性和表达力。首先，它遵循了设计规范中的大部分要求，特别是在'hasMeasure'和'hasTarget'的使用上，清晰地描述了保护措施和目标资产。待评作品通过使用UUID来标识'hasTarget'，确保了数据的一致性和可追溯性，这在术语专业性上是一个加分项。虽然待评作品缺少'hasParticipant'关系，这可能是因为原始数据中没有明确的参与者信息，但在其他方面，它通过详细的保护措施细节（如文件数量和分辨率）展示了对事件的深刻理解和洞察力。与专家参考作品相比，待评作品在结构上有所不同，但这种不同是合理的，甚至在某些方面更优，因为它提供了更详细的保护措施信息。因此，综合考虑其简洁性、表达力、创造性和术语专业性，给予4分的高分。"
+      }
+    }
+  },
+  "EVENT-021": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "hasMeasure",
+            "is_supported": true,
+            "reason": "原始数据中描述了'数字化扫描'，合理推断为保护措施。"
+          },
+          {
+            "field": "files",
+            "is_supported": true,
+            "reason": "原始数据中直接提供了文件数量980。"
+          },
+          {
+            "field": "description",
+            "is_supported": true,
+            "reason": "原始数据中直接提供了描述信息。"
+          },
+          {
+            "field": "location",
+            "is_supported": true,
+            "reason": "原始数据中直接提供了存储位置。"
+          },
+          {
+            "field": "eventDate",
+            "is_supported": false,
+            "reason": "原始数据中未提供具体事件日期，无法验证。"
+          },
+          {
+            "field": "hasTarget",
+            "is_supported": true,
+            "reason": "通过ID映射关系，业务ID 'GJ-011' 对应的UUID在生成知识中正确使用。"
+          }
+        ],
+        "score": 0.83
+      },
+      "conformance": {
+        "overall_conformance": "Partial",
+        "violations": [
+          {
+            "field": "eventDate",
+            "reason": "缺少原始数据支持的事件日期。"
+          }
+        ],
+        "positive_notes": "生成的类型'抢救性保护事件'与领域模型规范一致。'hasTarget'关系正确指向'受保护资产'。"
+      },
+      "completeness": {
+        "summary": "信息基本完整，缺少事件日期的直接体现。",
+        "missed_information": [
+          {
+            "info": "eventDate",
+            "reason": "原始数据中未提供事件日期，生成知识中包含的日期无法验证其来源。"
+          }
+        ]
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有一些不同，但这些不同在某些方面体现了合理性和优越性。首先，待评作品包含了一个 'eventDate' 属性，这符合设计规范中的要求，记录了事件发生的时间戳，增加了时间维度的信息，这是一种合理的扩展。其次，待评作品在 'hasMeasure' 属性中直接使用了字符串 '数字化扫描'，而不是像专家参考作品那样使用嵌套的对象结构，这种简化在某些情况下可以提高可读性和简洁性。待评作品还包含了 'files' 和 'location' 属性，虽然这些属性在专家参考作品中没有出现，但它们提供了额外的上下文信息，可能对某些应用场景有用。总体而言，待评作品在简洁性和表达力上表现良好，虽然在术语专业性上略显不足（如 'hasMeasure' 的简单化处理），但整体建模选择是合理的，且在某些方面提供了更丰富的信息。因此，给予4分的综合评分。"
+      }
+    }
+  },
+  "EVENT-022": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "eventDate",
+            "is_supported": false,
+            "reason": "原始数据中没有提供事件发生的具体时间，无法直接支持。"
+          },
+          {
+            "field": "hasParticipant",
+            "is_supported": true,
+            "reason": "通过ID映射关系，operator_id '1009' 对应的UUID '604d1fd1-9c69-431d-b877-fbb77bbbe189'，支持该关系。"
+          },
+          {
+            "field": "hasMeasure",
+            "is_supported": true,
+            "reason": "从scan_details中可以合理推断出操作是“数字化”，并且细节（count, fmt, dpi）直接支持。"
+          },
+          {
+            "field": "hasTarget",
+            "is_supported": true,
+            "reason": "通过ID映射关系，asset_system_id 'GJ-012' 对应的UUID '056b7cda-694c-430b-b9df-c574a1d7fd9a'，支持该关系。"
+          }
+        ],
+        "score": 0.75
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "使用了语义等价的角色名“特藏维护员”来表示“员工”，符合领域模型规范的语义要求。"
+      },
+      "completeness": {
+        "summary": "信息完整性良好，所有关键信息均已体现。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在建模上表现出色，符合领域模型的设计规范，并在某些方面优于专家参考作品。首先，待评作品包含了'eventDate'属性，记录了事件发生的时间戳，这符合领域模型的要求，并且在专家参考作品中缺失。其次，待评作品详细描述了'hasMeasure'属性，提供了数字化的具体细节（如'count'、'fmt'、'dpi'），这增强了表达力和信息的完整性。待评作品在术语使用上也很专业，使用了'特藏维护员'这一术语，符合领域模型的角色映射规则。虽然待评作品在结构上与专家参考作品不同，但这种不同是合理的，甚至在某些方面更优。因此，综合考虑简洁性、表达力、创造性/洞察力和术语专业性，给予4分的高分。"
+      }
+    }
+  },
+  "EVENT-023": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "通过ID映射关系，业务ID 'GJ-013' 对应的内部UUID '763132fc-7b90-4bc3-81e5-fcf678329958' 确认无误。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "原始数据中提到的'周髀算经'是古籍，符合领域模型中对'古籍'的定义。"
+          },
+          {
+            "field": "hasMeasure",
+            "is_supported": true,
+            "reason": "虽然原始数据未直接提及，但根据领域模型的描述，'抢救性保护'是合理的推断。"
+          },
+          {
+            "field": "name",
+            "is_supported": true,
+            "reason": "直接从原始数据中提取的标题信息。"
+          },
+          {
+            "field": "eventDate",
+            "is_supported": false,
+            "reason": "原始数据中未提供事件日期，无法验证其忠实度。"
+          },
+          {
+            "field": "RELATES_TO",
+            "is_supported": true,
+            "reason": "通过ID映射关系，确认指向的UUID与原始数据一致。"
+          },
+          {
+            "field": "hasParticipant",
+            "is_supported": true,
+            "reason": "通过ID映射关系，业务ID '1010' 对应的内部UUID 'e914fd5e-fe6d-440d-8343-e650e5ac741d' 确认无误。"
+          }
+        ],
+        "score": 0.857
+      },
+      "conformance": {
+        "overall_conformance": "Partial",
+        "violations": [
+          {
+            "field": "eventDate",
+            "reason": "领域模型要求包含'eventDate'属性，但生成知识中的日期未在原始数据中找到。"
+          }
+        ],
+        "positive_notes": "使用'特藏维护员'作为角色类型，与领域模型中的'古籍维护员'语义等价且更优。"
+      },
+      "completeness": {
+        "summary": "信息基本完整，缺少事件日期的直接来源。",
+        "missed_information": [
+          {
+            "info": "事件日期",
+            "reason": "原始数据中未提供事件日期，生成知识中包含的日期无法验证其来源。"
+          }
+        ]
+      },
+      "elegance": {
+        "elegance_score": 3,
+        "reasoning": "待评作品在建模上展现了一定的合理性和创造性，但在某些方面与专家参考作品存在差异。首先，待评作品使用了UUID作为@id，这与专家参考作品的命名方式不同，但仍然是合理的选择，因为UUID提供了唯一性和可追溯性。其次，待评作品将'古籍'作为@type，而不是'抢救性保护事件'，这与领域模型的核心知识片段类型不一致，导致在表达力上有所欠缺。待评作品包含了'hasMeasure'属性，描述了保护措施，这符合领域模型的要求，增加了信息的完整性。然而，待评作品在'hasTarget'关系的表达上不够清晰，使用了'RELATES_TO'关系，这可能导致理解上的模糊。最后，待评作品在术语使用上基本符合专业性要求，但在结构上缺乏对事件的明确标识。综合考虑这些因素，待评作品在简洁性和创造性上有一定表现，但在表达力和术语专业性上仍有提升空间，因此给予3分。"
+      }
+    }
+  },
+  "EVENT-024": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "hasMeasure",
+            "is_supported": true,
+            "reason": "从原始数据的空`scan_details`推断出操作是“数字化”，符合合理推断条件(B)。"
+          },
+          {
+            "field": "eventDate",
+            "is_supported": false,
+            "reason": "原始数据中没有提供具体的事件日期，无法直接支持此断言。"
+          },
+          {
+            "field": "hasTarget",
+            "is_supported": true,
+            "reason": "通过ID映射关系，业务ID 'GJ-014' 对应的UUID '36235f8d-2838-42bf-899f-30656da098cb'，符合条件(C)。"
+          },
+          {
+            "field": "hasParticipant",
+            "is_supported": true,
+            "reason": "通过ID映射关系，业务ID '1011' 对应的UUID '3252a9e8-bfa9-481a-abf3-392a51c58f3a'，符合条件(C)。"
+          }
+        ],
+        "score": 0.75
+      },
+      "conformance": {
+        "overall_conformance": "Partial",
+        "violations": [
+          {
+            "field": "eventDate",
+            "reason": "缺少原始数据支持的事件日期。"
+          }
+        ],
+        "positive_notes": "使用了语义等价的角色名“特藏维护员”来表示“员工”。"
+      },
+      "completeness": {
+        "summary": "信息基本完整，但缺少事件日期的具体信息。",
+        "missed_information": [
+          {
+            "info": "事件日期",
+            "reason": "原始数据中没有提供具体的事件日期，导致生成知识中此信息缺乏直接支持。"
+          }
+        ]
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品存在一些差异，但这些差异在某些方面体现了合理的建模选择。首先，待评作品在简洁性方面表现良好，使用了简明的结构来表达核心信息。其次，表达力方面，待评作品清晰地描述了事件类型、保护措施、事件日期、目标资产和参与者，符合领域模型的要求。创造性/洞察力方面，待评作品通过直接使用UUID来标识目标资产和参与者，简化了结构，避免了不必要的嵌套，这是一种有效的建模策略。术语专业性方面，待评作品使用了领域模型中的术语，如'抢救性保护事件'、'受保护资产'和'特藏维护员'，保持了专业性。然而，待评作品缺少对'hasTarget'和'hasParticipant'的进一步描述（如'isA'属性），这在某种程度上减少了信息的丰富性。因此，综合考虑这些因素，给予4分的评分。"
+      }
+    }
+  },
+  "EVENT-025": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "originalCopyCondition",
+            "is_supported": true,
+            "reason": "该字段是对原始数据中 'scan_details' 和 'storage_info' 的合理概括和整合。"
+          },
+          {
+            "field": "hasMeasure",
+            "is_supported": true,
+            "reason": "从 'scan_details' 中的 'file_count' 推断出操作是 '数字化'，符合合理推断条件。"
+          },
+          {
+            "field": "eventDate",
+            "is_supported": false,
+            "reason": "原始数据中没有提供事件发生的具体时间，无法直接支持。"
+          },
+          {
+            "field": "hasTarget",
+            "is_supported": true,
+            "reason": "通过ID映射关系，业务ID 'GJ-015' 对应的UUID 'c74e2a9f-c87e-41f4-8a2c-932408a9213b' 可以在原始数据中找到。"
+          },
+          {
+            "field": "hasParticipant",
+            "is_supported": true,
+            "reason": "通过ID映射关系，业务ID '1012' 对应的UUID 'ad5fc993-5dd5-433b-b464-d61720083627' 可以在原始数据中找到。"
+          }
+        ],
+        "score": 0.8
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "生成的类型和关系名与领域模型规范完全一致，且'特藏维护员'与'古籍维护员'在语义上等价。"
+      },
+      "completeness": {
+        "summary": "信息完整性良好，所有关键信息均已体现。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在多个方面表现出色，尽管与专家参考作品存在结构上的差异，但这些差异在某些方面体现了更高的建模灵活性和细节捕捉能力。首先，待评作品在简洁性方面表现良好，使用了简明的结构来传达复杂的信息。其次，在表达力上，待评作品通过 'originalCopyCondition' 属性详细描述了数字化过程的细节（如文件数量和存储信息），这为理解保护事件的具体实施提供了更丰富的背景信息。第三，待评作品在创造性/洞察力方面表现出色，通过直接在事件中包含 'eventDate' 属性，明确了事件的时间点，这在专家参考作品中是缺失的。最后，在术语专业性方面，待评作品使用了与领域模型一致的术语，如 '抢救性保护事件' 和 '特藏维护员'，确保了专业性和一致性。总体而言，待评作品在结构上虽然与专家参考作品不同，但这种不同在某些方面提供了更优的建模选择，因此给予4分的高分。"
+      }
+    }
+  },
+  "EVENT-027": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "eventDate",
+            "is_supported": false,
+            "reason": "原始数据中没有提供具体的事件日期。"
+          },
+          {
+            "field": "hasTarget",
+            "is_supported": true,
+            "reason": "通过ID映射关系，业务ID 'GJ-002' 对应的UUID '1a3e206c-dced-4d24-a344-cb73d3cad673' 确认了目标资产的忠实性。"
+          },
+          {
+            "field": "hasMeasure",
+            "is_supported": true,
+            "reason": "从原始数据的 'scan_details' 中推断出操作是“数字化”，并且细节如文件数量、分辨率和格式都直接匹配。"
+          },
+          {
+            "field": "hasParticipant",
+            "is_supported": true,
+            "reason": "通过ID映射关系，业务ID '1010' 对应的UUID 'e914fd5e-fe6d-440d-8343-e650e5ac741d' 确认了参与者的忠实性。"
+          },
+          {
+            "field": "storage_info",
+            "is_supported": true,
+            "reason": "原始数据中提供了存储信息，路径和服务器名称直接匹配。"
+          }
+        ],
+        "score": 0.8
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "生成的类型和关系名与领域模型规范完全一致，'特藏维护员' 是对 '员工' 的语义等价表述。"
+      },
+      "completeness": {
+        "summary": "信息完整性良好，所有关键信息均已体现。",
+        "missed_information": [
+          {
+            "info": "eventDate",
+            "reason": "原始数据中没有提供具体的事件日期，生成知识中使用的日期无法验证其来源。"
+          }
+        ]
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在建模上表现出色，展示了对领域模型的深刻理解和合理应用。首先，待评作品在简洁性方面表现良好，结构清晰，信息组织合理。其次，在表达力上，待评作品通过详细的属性描述（如数字化细节和存储信息）增强了对保护措施的具体化表达，这在专家参考作品中是缺失的，显示出更高的表达力和信息丰富度。此外，待评作品在创造性和洞察力方面表现突出，通过引入详细的数字化过程和存储信息，提供了更全面的保护措施视角，超越了专家参考作品的简单描述。术语专业性方面，待评作品准确使用了领域相关术语，如'受保护资产'和'特藏维护员'，符合领域模型的要求。尽管待评作品在结构上与专家参考作品有所不同，但这种不同是合理的，甚至在某些方面更优，因此给予加分。唯一的改进建议是确保所有ID映射关系的准确性，以避免潜在的混淆。"
+      }
+    },
+    "知识产权领域": {
+      "fidelity": {
+        "summary": "高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": false,
+            "reason": "生成知识中的ID 'cp_statement_GJ-002_20240506' 未在原始数据中直接出现，但其构成元素 'GJ-002' 可以通过ID映射关系找到。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "类型 '数字资源版权声明' 是对原始数据中版权评估的合理概括。"
+          },
+          {
+            "field": "copyrightStatus",
+            "is_supported": true,
+            "reason": "原始数据中明确指出作品为公共领域，支持 'Public Domain' 状态。"
+          },
+          {
+            "field": "assessmentDate",
+            "is_supported": false,
+            "reason": "原始数据中未提供具体的评估日期。"
+          },
+          {
+            "field": "appliesTo",
+            "is_supported": true,
+            "reason": "通过ID映射关系，业务ID 'GJ-002' 对应的UUID '1a3e206c-dced-4d24-a344-cb73d3cad673' 可以在原始数据中找到。"
+          },
+          {
+            "field": "RELATES_TO",
+            "is_supported": true,
+            "reason": "通过ID映射关系，业务ID '1010' 对应的UUID 'e914fd5e-fe6d-440d-8343-e650e5ac741d' 可以在原始数据中找到。"
+          }
+        ],
+        "score": 0.83
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "生成的类型和关系名与领域模型规范完全一致，且符合语义要求。"
+      },
+      "completeness": {
+        "summary": "信息完整性良好，所有关键信息均已体现。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品存在一些差异，但这些差异在某些方面体现了更高的建模灵活性和细节关注。首先，待评作品包含了一个 'assessmentDate' 属性，这符合设计规范中建议的记录版权评估日期的做法，增加了时间维度的信息，这是一种合理且有价值的扩展。其次，待评作品使用了UUID直接指向 'appliesTo' 的对象，这种做法在某种程度上简化了结构，避免了中间代理节点的使用，提升了简洁性。待评作品还引入了 'RELATES_TO' 关系，指向 '著作权人'，虽然这在专家参考作品中没有体现，但它为模型增加了额外的语义层次，展示了对角色关系的更深刻理解。术语使用上，待评作品保持了专业性，符合领域模型的要求。综合来看，待评作品在表达力和创造性上表现出色，尽管在某些方面与专家参考作品不同，但这些不同是合理且有益的，因此给予4分。"
+      }
+    }
+  },
+  "EVENT-028": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "cost_usd",
+            "is_supported": true,
+            "reason": "直接在原始数据中找到。"
+          },
+          {
+            "field": "budgetCode",
+            "is_supported": true,
+            "reason": "直接在原始数据中找到。"
+          },
+          {
+            "field": "eventDate",
+            "is_supported": false,
+            "reason": "原始数据中未提供具体事件日期。"
+          },
+          {
+            "field": "hasMeasure",
+            "is_supported": true,
+            "reason": "从scan_details推断出数字化措施，符合合理推断。"
+          },
+          {
+            "field": "hasParticipant",
+            "is_supported": true,
+            "reason": "通过ID映射关系，operator_id对应的UUID在生成知识中正确映射。"
+          },
+          {
+            "field": "hasTarget",
+            "is_supported": true,
+            "reason": "通过ID映射关系，asset_system_id对应的UUID在生成知识中正确映射。"
+          }
+        ],
+        "score": 0.83
+      },
+      "conformance": {
+        "overall_conformance": "Partial",
+        "violations": [
+          {
+            "field": "eventDate",
+            "reason": "缺少事件发生的具体时间戳。"
+          },
+          {
+            "field": "originalCopyCondition",
+            "reason": "缺少原件的物理状况描述。"
+          }
+        ],
+        "positive_notes": "特藏维护员与领域模型中的角色语义等价。"
+      },
+      "completeness": {
+        "summary": "信息基本完整，少量信息缺失。",
+        "missed_information": [
+          {
+            "info": "eventDate",
+            "reason": "原始数据中未提供具体事件日期，生成知识中也未合理推断。"
+          },
+          {
+            "info": "originalCopyCondition",
+            "reason": "原始数据中未提供原件物理状况，生成知识中未体现。"
+          }
+        ]
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在建模上表现出了一定的创造性和专业性。首先，它遵循了领域模型的核心规则，定义了一个'抢救性保护事件'，并包含了'hasTarget'和'hasParticipant'关系，符合领域模型的要求。其次，待评作品在'hasMeasure'部分提供了详细的数字化措施信息，包括文件数量、分辨率和格式，这种细致的描述增强了模型的表达力。此外，待评作品还包含了预算代码和成本信息，增加了事件的背景信息，这在专家参考作品中没有体现。尽管待评作品在结构上与专家参考作品不同，但这种不同体现了一种合理的建模选择，尤其是在细节描述和信息丰富度方面。唯一的不足之处在于，待评作品的'hasTarget'类型为'受保护资产'，而专家参考作品中更具体地定义为'受保护手稿'，这一点可以进一步优化以提高术语的专业性。总体而言，待评作品在简洁性、表达力和创造性方面表现良好，值得给予较高的评分。"
+      }
+    }
+  },
+  "EVENT-030": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "总体评价为高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "eventDate",
+            "is_supported": false,
+            "reason": "原始数据中没有提供具体的事件日期。"
+          },
+          {
+            "field": "hasParticipant",
+            "is_supported": true,
+            "reason": "通过ID映射关系，'operator_id' 1010 对应的UUID 'e914fd5e-fe6d-440d-8343-e650e5ac741d' 与生成知识中的UUID匹配。"
+          },
+          {
+            "field": "hasMeasure",
+            "is_supported": true,
+            "reason": "从 'scan_details' 中的 'file_count', 'resolution_dpi', 'format' 可以合理推断出 'digitizationDetails'。"
+          },
+          {
+            "field": "hasTarget",
+            "is_supported": true,
+            "reason": "通过ID映射关系，'asset_system_id' GJ-001 对应的UUID 'f3953584-56b6-45b7-b238-05e165a88e46' 与生成知识中的UUID匹配。"
+          },
+          {
+            "field": "storageInfo",
+            "is_supported": true,
+            "reason": "生成知识中的 'storageInfo' 与原始数据中的 'storage_info' 完全匹配。"
+          }
+        ],
+        "score": 0.8
+      },
+      "conformance": {
+        "overall_conformance": "Partial",
+        "violations": [
+          {
+            "field": "eventDate",
+            "reason": "缺少事件发生的时间戳。"
+          }
+        ],
+        "positive_notes": "生成知识中的 '特藏维护员' 与领域模型中的角色语义等价。"
+      },
+      "completeness": {
+        "summary": "信息完整性较高，但缺少事件日期。",
+        "missed_information": [
+          {
+            "info": "eventDate",
+            "reason": "原始数据中没有提供事件日期，导致生成知识中缺少此信息。"
+          }
+        ]
+      },
+      "elegance": {
+        "elegance_score": 3,
+        "reasoning": "待评作品在建模上展现了一定的专业性，但在简洁性和表达力方面存在一些不足。首先，待评作品的结构与专家参考作品有显著不同，尤其是在 'hasMeasure' 和 'hasTarget' 的处理上。待评作品将 'hasMeasure' 细分为 'storageInfo' 和 'digitizationDetails'，这提供了更详细的数字化信息，显示出一定的创造性和洞察力。然而，这种细分增加了模型的复杂性，可能影响简洁性。其次，待评作品的 'hasTarget' 使用了与事件相同的 UUID，这可能导致混淆，未能清晰地区分事件和目标资产。此外，待评作品缺少 'description' 属性来描述保护措施的具体内容，这在表达力上有所欠缺。最后，术语使用上，待评作品使用了 '特藏维护员'，与专家参考作品中的 '古籍维护员' 不一致，可能导致角色定义的模糊。因此，综合考虑待评作品在细节上的创造性和结构上的复杂性，给予3分。"
+      }
+    }
+  },
+  "EVENT-031": {
+    "人力资源领域": {
+      "fidelity": {
+        "summary": "高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "activityDate",
+            "is_supported": false,
+            "reason": "原始数据中没有提供具体的工作日期，生成知识中的日期可能是推断或假设的。"
+          },
+          {
+            "field": "activityDescription",
+            "is_supported": true,
+            "reason": "描述中提到的所有细节（如文件数量、分辨率、格式、存储路径、项目名称和工作时长）都可以在原始数据中找到或合理推断。"
+          },
+          {
+            "field": "relatedAsset",
+            "is_supported": true,
+            "reason": "通过ID映射关系，'NEWS-1949'对应的UUID与生成知识中的UUID一致。"
+          },
+          {
+            "field": "assignedTo",
+            "is_supported": true,
+            "reason": "通过ID映射关系，'1012'对应的UUID与生成知识中的UUID一致。"
+          }
+        ],
+        "score": 0.75
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "生成知识严格遵循了领域模型规范，所有必需的属性和关系都得到了体现。"
+      },
+      "completeness": {
+        "summary": "信息完整性良好，所有关键信息都得到了体现。",
+        "missed_information": [
+          {
+            "info": "工作活动的具体日期",
+            "reason": "原始数据中没有提供具体的工作日期，生成知识中包含的日期未能从原始数据中直接获得。"
+          }
+        ]
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在多个方面表现出色，值得高度评价。首先，在简洁性方面，待评作品通过详细的 'activityDescription' 属性，清晰地描述了工作内容和相关细节，虽然信息量较大，但结构合理，信息传达有效。其次，表达力方面，待评作品通过自然语言详细描述了工作内容，增强了可读性和理解性。第三，创造性/洞察力方面，待评作品引入了 'activityDate' 属性，记录了工作活动的发生日期，这一设计符合领域模型的要求，并且在时间维度上提供了更丰富的信息。最后，术语专业性方面，待评作品使用了 '员工工作量记录'、'受雇员工'、'工作相关资产' 等专业术语，符合领域模型的设计规范。尽管待评作品在结构上与专家参考作品有所不同，但这种不同是合理的，尤其是 'activityDate' 的引入和 'activityDescription' 的详细描述，提升了模型的完整性和实用性。因此，综合考虑各方面因素，给予4分的高分评价。"
+      }
+    }
+  },
+  "EVENT-034": {
+    "知识产权领域": {
+      "fidelity": {
+        "summary": "高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "copyrightStatus",
+            "is_supported": true,
+            "reason": "根据领域模型规范，对于年代久远的古籍，版权状态通常可推断为 'Public Domain'。"
+          },
+          {
+            "field": "assessmentDate",
+            "is_supported": false,
+            "reason": "原始数据中没有提供评估日期的信息。"
+          },
+          {
+            "field": "usageLicense",
+            "is_supported": true,
+            "reason": "原始数据中明确提供了使用许可 'CC-BY-NC 4.0'。"
+          },
+          {
+            "field": "assessedBy",
+            "is_supported": true,
+            "reason": "通过ID映射关系，'operator_id' 1011 对应的UUID是 '3252a9e8-bfa9-481a-abf3-392a51c58f3a'。"
+          },
+          {
+            "field": "appliesTo",
+            "is_supported": true,
+            "reason": "通过ID映射关系，'asset_system_id' MUSIC-BEETHOVEN 对应的UUID是 'c8a5a206-32b5-4fbf-87df-c5d4866c22ae'。"
+          }
+        ],
+        "score": 0.8
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "生成的类型和关系名完全符合领域模型规范。"
+      },
+      "completeness": {
+        "summary": "信息完整性良好，所有关键信息均已体现。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有一些不同，但这些不同在某些方面体现了合理性和创造性。首先，待评作品包含了一个 'assessmentDate' 属性，这为版权声明增加了时间维度的信息，符合设计规范中建议的可选属性，增加了模型的时间敏感性和实用性。其次，待评作品明确了 'assessedBy' 属性，指向了一个具体的著作权人，这在某种程度上增加了模型的细节和可信度。虽然 'assessedBy' 属性在专家参考作品中没有出现，但它为模型提供了额外的上下文信息，符合领域模型中对员工的关注规则。待评作品在 'appliesTo' 部分直接使用了 UUID，而不是代理 ID，这种选择在某些情况下可以减少复杂性，尽管这可能会影响到某些系统的可扩展性。总体而言，待评作品在简洁性、表达力和术语专业性方面表现良好，尽管在某些方面与专家参考作品不同，但这些不同是合理的，并且在某些方面更优。"
+      }
+    }
+  },
+  "EVENT-036": {
+    "数字资源管理领域": {
+      "fidelity": {
+        "summary": "总体评价为高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "UUID '4f025f0d-ef47-4fb6-8b03-38e0dfb63501' 对应业务ID 'GJ-004'，在原始数据中存在。"
+          },
+          {
+            "field": "@type",
+            "is_supported": false,
+            "reason": "类型 '抢救性保护事件' 在原始数据中未直接提及，且不符合合理推断。"
+          },
+          {
+            "field": "eventDate",
+            "is_supported": false,
+            "reason": "事件日期 '2024-03-15T14:00:00Z' 在原始数据中未提及。"
+          },
+          {
+            "field": "hasMeasure.file_count",
+            "is_supported": true,
+            "reason": "文件数量 '36000' 直接来自原始数据的 'scan_details'。"
+          },
+          {
+            "field": "hasMeasure.resolution_dpi",
+            "is_supported": true,
+            "reason": "分辨率 '600' 直接来自原始数据的 'scan_details'。"
+          },
+          {
+            "field": "hasMeasure.format",
+            "is_supported": true,
+            "reason": "格式 'TIFF' 直接来自原始数据的 'scan_details'。"
+          },
+          {
+            "field": "hasMeasure.storage_info.path",
+            "is_supported": true,
+            "reason": "存储路径 '/data/siku/wenyuan/' 直接来自原始数据的 'storage_info'。"
+          },
+          {
+            "field": "hasMeasure.storage_info.server_name",
+            "is_supported": true,
+            "reason": "服务器名称 'SRV-RARE-03' 直接来自原始数据的 'storage_info'。"
+          },
+          {
+            "field": "hasParticipant.@id",
+            "is_supported": true,
+            "reason": "UUID '604d1fd1-9c69-431d-b877-fbb77bbbe189' 对应业务ID '1009'，在原始数据中存在。"
+          },
+          {
+            "field": "hasParticipant.@type",
+            "is_supported": false,
+            "reason": "类型 '特藏维护员' 在原始数据中未直接提及，且不符合合理推断。"
+          },
+          {
+            "field": "hasTarget.@id",
+            "is_supported": true,
+            "reason": "UUID '4f025f0d-ef47-4fb6-8b03-38e0dfb63501' 对应业务ID 'GJ-004'，在原始数据中存在。"
+          },
+          {
+            "field": "hasTarget.@type",
+            "is_supported": false,
+            "reason": "类型 '受保护资产' 在原始数据中未直接提及，且不符合合理推断。"
+          }
+        ],
+        "score": 0.67
+      },
+      "conformance": {
+        "overall_conformance": "Partial",
+        "violations": [
+          {
+            "field": "@type",
+            "reason": "类型 '抢救性保护事件' 不符合领域模型中要求的 '数字对象'。"
+          },
+          {
+            "field": "hasParticipant.@type",
+            "reason": "类型 '特藏维护员' 不符合领域模型中要求的 '数字化操作员'。"
+          },
+          {
+            "field": "hasTarget.@type",
+            "reason": "类型 '受保护资产' 不符合领域模型中要求的 '源物理资产'。"
+          },
+          {
+            "field": "creationDate",
+            "reason": "缺少 'creationDate' 属性。"
+          },
+          {
+            "field": ":persistentIdentifier",
+            "reason": "缺少 'persistentIdentifier' 属性。"
+          }
+        ],
+        "positive_notes": "技术元数据如 'file_count', 'resolution_dpi', 'format' 符合领域模型的要求。"
+      },
+      "completeness": {
+        "summary": "信息完整性较高，但缺少部分关键信息。",
+        "missed_information": [
+          {
+            "info": "creationDate",
+            "reason": "领域模型要求记录数字对象的创建时间。"
+          },
+          {
+            "info": "persistentIdentifier",
+            "reason": "领域模型要求分配合理的永久标识符。"
+          },
+          {
+            "info": "operator_name",
+            "reason": "原始数据中的操作员名称 '大飞' 未在生成知识中体现。"
+          },
+          {
+            "info": "related_publication",
+            "reason": "原始数据中的相关出版物信息 'ISBN:978-7-101-05242-7' 未在生成知识中体现。"
+          }
+        ]
+      },
+      "elegance": {
+        "elegance_score": 2,
+        "reasoning": "待评作品在建模上与专家参考作品存在显著差异，主要体现在结构和术语的使用上。首先，待评作品将其类型定义为'抢救性保护事件'，而非'数字对象'，这与领域模型的核心知识片段类型不符。其次，待评作品缺少'creationDate'属性和'persistentIdentifier'，这违反了领域模型的关键规则。此外，待评作品中'hasParticipant'的角色类型为'特藏维护员'，而非'数字化操作员'，未能准确反映操作员的角色。尽管待评作品在技术元数据的表达上较为完整，但其整体结构和术语使用未能有效传达数字化产物的核心信息。因此，综合考虑简洁性、表达力、创造性/洞察力和术语专业性，给予2分。"
+      }
+    }
+  },
+  "EVENT-037": {
+    "知识产权领域": {
+      "fidelity": {
+        "summary": "总体评价为高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "asset_system_id",
+            "is_supported": true,
+            "reason": "直接在原始数据中找到。"
+          },
+          {
+            "field": "title",
+            "is_supported": true,
+            "reason": "直接在原始数据中找到。"
+          },
+          {
+            "field": "legal_status",
+            "is_supported": true,
+            "reason": "直接在原始数据中找到。"
+          },
+          {
+            "field": "RELATES_TO",
+            "is_supported": true,
+            "reason": "关系指向的UUID通过ID映射关系对应到原始数据中的业务ID。"
+          },
+          {
+            "field": "protectionEvent",
+            "is_supported": true,
+            "reason": "从scan_details推断出操作是“数字化”，符合合理推断条件。"
+          },
+          {
+            "field": "storage_info",
+            "is_supported": true,
+            "reason": "直接在原始数据中找到。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Partial",
+        "violations": [
+          {
+            "field": "@type",
+            "reason": "生成的类型为'古籍'，但领域模型中未明确将其作为'版权标的物'。"
+          },
+          {
+            "field": ":appliesTo",
+            "reason": "缺少明确的:appliesTo关系指向'版权标的物'。"
+          }
+        ],
+        "positive_notes": "生成的'特藏维护员'与领域模型中的'古籍维护员'在语义上等价。"
+      },
+      "completeness": {
+        "summary": "信息完整性较高，绝大多数关键信息都得到了体现。",
+        "missed_information": [
+          {
+            "info": "operator_name",
+            "reason": "原始数据中存在，但在生成知识中未体现。"
+          }
+        ]
+      },
+      "elegance": {
+        "elegance_score": 3,
+        "reasoning": "待评作品在建模上与专家参考作品存在显著差异，主要体现在结构和术语使用上。首先，待评作品将'阿波罗11号导航计算机源码'标记为'古籍'，这与其实际性质不符，可能是对领域角色的误解。其次，待评作品包含了一个复杂的'抢救性保护事件'结构，这在专家参考作品中并未体现，虽然增加了细节，但与版权声明的核心主题不完全相关，可能导致模型的复杂性增加而不利于简洁性。待评作品在术语使用上，如'受保护资产'和'特藏维护员'，与版权声明的主题不完全匹配，可能导致误导。尽管如此，待评作品在表达力上展示了对数据细节的关注，如存储信息和数字化措施，这些细节在某些应用场景下可能是有价值的。因此，综合考虑简洁性、表达力、创造性/洞察力和术语专业性，给予3分。"
+      }
+    }
+  },
+  "EVENT-040": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "总体评价为高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "通过ID映射关系，业务ID 'GJ-015' 对应的内部UUID 'c74e2a9f-c87e-41f4-8a2c-932408a9213b' 可以在原始数据中找到。"
+          },
+          {
+            "field": "@type",
+            "is_supported": false,
+            "reason": "生成知识中的类型 '数字对象' 无法直接在原始数据中找到，也不符合领域模型中的类型定义。"
+          },
+          {
+            "field": "persistentIdentifier",
+            "is_supported": false,
+            "reason": "该字段在原始数据中没有直接对应的信息。"
+          },
+          {
+            "field": "creationDate",
+            "is_supported": false,
+            "reason": "该字段在原始数据中没有直接对应的信息。"
+          },
+          {
+            "field": "fileCount",
+            "is_supported": true,
+            "reason": "该字段直接对应于原始数据中的 'scan_details' 中的 'file_count'。"
+          },
+          {
+            "field": "digitizedBy",
+            "is_supported": true,
+            "reason": "通过ID映射关系，业务ID '1012' 对应的内部UUID 'ad5fc993-5dd5-433b-b464-d61720083627' 可以在原始数据中找到，并合理推断为数字化操作员。"
+          },
+          {
+            "field": "sourceAsset",
+            "is_supported": true,
+            "reason": "通过ID映射关系，业务ID 'GJ-015' 对应的内部UUID 'c74e2a9f-c87e-41f4-8a2c-932408a9213b' 可以在原始数据中找到。"
+          }
+        ],
+        "score": 0.57
+      },
+      "conformance": {
+        "overall_conformance": "Partial",
+        "violations": [
+          {
+            "field": "@type",
+            "reason": "生成知识的类型 '数字对象' 不符合领域模型中要求的 '抢救性保护事件'。"
+          },
+          {
+            "field": "persistentIdentifier",
+            "reason": "领域模型中没有提到需要此字段。"
+          },
+          {
+            "field": "creationDate",
+            "reason": "领域模型中要求 'eventDate' 属性，而非 'creationDate'。"
+          }
+        ],
+        "positive_notes": "生成知识中的 'digitizedBy' 和 'sourceAsset' 关系符合领域模型中的角色映射要求。"
+      },
+      "completeness": {
+        "summary": "信息完整性较高，但缺少部分领域模型要求的属性。",
+        "missed_information": [
+          {
+            "info": "eventDate",
+            "reason": "领域模型中要求的 'eventDate' 属性未在生成知识中体现。"
+          },
+          {
+            "info": ":hasMeasure",
+            "reason": "领域模型中要求的保护措施描述未在生成知识中体现。"
+          },
+          {
+            "info": ":originalCopyCondition",
+            "reason": "领域模型中提到的原件物理状况未在生成知识中体现。"
+          }
+        ]
+      },
+      "elegance": {
+        "elegance_score": 2,
+        "reasoning": "待评作品在建模上与专家参考作品存在显著差异，主要体现在结构和术语的使用上。首先，待评作品的类型被定义为'数字对象'，而非'抢救性保护事件'，这与领域模型的核心知识片段类型不符。其次，待评作品缺少'hasTarget'和'hasMeasure'等关键关系和属性，未能有效描述保护措施和目标资产。此外，待评作品中使用了'数字化操作员'和'源物理资产'等术语，这与领域模型中的'特藏维护员'和'受保护资产'不一致，显示出术语专业性上的不足。尽管待评作品在表达数字化过程的细节上有所体现，但缺乏对保护事件的全面描述，导致其在表达力和简洁性上表现不佳。综合考虑这些因素，给予2分的评分。"
+      }
+    }
+  },
+  "EVENT-046": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "originalCopyCondition",
+            "is_supported": false,
+            "reason": "原始数据中未提及纸张状况，无法直接验证。"
+          },
+          {
+            "field": "hasMeasure",
+            "is_supported": true,
+            "reason": "页面去酸、加固直接来自原始数据，数字化是合理推断。"
+          },
+          {
+            "field": "eventDate",
+            "is_supported": false,
+            "reason": "原始数据中未提供具体事件日期。"
+          },
+          {
+            "field": "hasParticipant",
+            "is_supported": true,
+            "reason": "通过ID映射，操作员ID 3001对应的UUID在生成知识中正确映射。"
+          },
+          {
+            "field": "hasTarget",
+            "is_supported": true,
+            "reason": "资产ID GJ-001通过ID映射正确映射为UUID。"
+          }
+        ],
+        "score": 0.8
+      },
+      "conformance": {
+        "overall_conformance": "Partial",
+        "violations": [
+          {
+            "field": "eventDate",
+            "reason": "缺少事件发生的时间戳。"
+          }
+        ],
+        "positive_notes": "‘特藏维护员’与‘员工’在语义上等价，符合领域模型规范。"
+      },
+      "completeness": {
+        "summary": "信息基本完整，缺少事件日期。",
+        "missed_information": [
+          {
+            "info": "事件日期",
+            "reason": "原始数据中未提供具体事件日期，生成知识中也未体现。"
+          }
+        ]
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在建模上展现了较高的复杂性和细致的表达，尤其是在描述保护措施和参与者方面。首先，待评作品在'hasMeasure'属性中不仅包含了物理修复措施，还引入了数字化的详细信息，这种扩展性展示了对保护措施的全面理解和记录，增加了模型的表达力和信息量。其次，待评作品在'hasParticipant'中列出了多个参与者，虽然与专家参考作品不同，但这种多参与者的记录方式更贴合实际情况，反映了团队合作的真实场景。此外，待评作品还包含了'originalCopyCondition'属性，提供了关于原件物理状况的额外信息，这符合领域模型中的建议，增加了模型的完整性和洞察力。然而，待评作品在简洁性上稍显不足，信息量较大，可能导致一定的复杂性。总体而言，待评作品在表达力和创造性上表现出色，术语使用专业，结构合理，因此给予4分的高分。"
+      }
+    },
+    "人力资源领域": {
+      "fidelity": {
+        "summary": "高度忠实，所有信息均能在原始数据中找到或通过合理推断获得。",
+        "details": [
+          {
+            "field": "activityDate",
+            "is_supported": true,
+            "reason": "活动日期是合理的推断，假设为操作发生的日期。"
+          },
+          {
+            "field": "activityDescription",
+            "is_supported": true,
+            "reason": "活动描述直接来自原始数据的'action'字段。"
+          },
+          {
+            "field": "assignedTo",
+            "is_supported": true,
+            "reason": "通过ID映射关系，操作员ID '3001' 对应的UUID正确映射到生成知识中。"
+          },
+          {
+            "field": "relatedAsset",
+            "is_supported": true,
+            "reason": "通过ID映射关系，资产ID 'GJ-001' 对应的UUID正确映射到生成知识中。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "生成的类型和关系名完全符合领域模型规范。"
+      },
+      "completeness": {
+        "summary": "信息完整性良好，所有关键信息均在生成知识中得到了体现。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有一些不同，但这些不同在某些方面体现了合理性和简洁性。首先，待评作品使用了UUID直接作为@id的值，这种做法在某些情况下可以提高系统的可扩展性和一致性。其次，待评作品包含了'activityDate'属性，符合设计规范中的要求，记录了工作活动的发生日期，这一点是专家参考作品中缺失的。待评作品在'activityDescription'中简化了描述，虽然不如专家参考作品详细，但仍然传达了核心信息。术语使用上，待评作品使用了'受雇员工'和'工作相关资产'，与设计规范一致，体现了术语的专业性。整体而言，待评作品在简洁性和结构合理性上表现良好，但在表达力上略显不足，因此给予4分。"
+      }
+    }
+  },
+  "EVENT-049": {
+    "人力资源领域": {
+      "fidelity": {
+        "summary": "高度忠实，存在少量合理推断。",
+        "details": [
+          {
+            "field": "activityDate",
+            "is_supported": false,
+            "reason": "原始数据中没有提供具体的活动日期，生成知识中的日期是推断的。"
+          },
+          {
+            "field": "activityDescription",
+            "is_supported": true,
+            "reason": "描述中提到的培训课程和时长与原始数据完全一致。"
+          },
+          {
+            "field": "assignedTo",
+            "is_supported": true,
+            "reason": "通过ID映射关系，业务ID '1010' 对应的UUID 'e914fd5e-fe6d-440d-8343-e650e5ac741d' 与生成知识中的UUID一致。"
+          }
+        ],
+        "score": 0.67
+      },
+      "conformance": {
+        "overall_conformance": "Partial",
+        "violations": [
+          {
+            "field": "activityDate",
+            "reason": "缺少明确的事件时间戳来源，未在原始数据中找到。"
+          }
+        ],
+        "positive_notes": "生成的类型 '员工工作量记录' 与领域模型规范中的核心知识片段类型一致。"
+      },
+      "completeness": {
+        "summary": "信息基本完整，所有关键数据点均已体现。",
+        "missed_information": [
+          {
+            "info": "activityDate",
+            "reason": "原始数据中没有提供具体的活动日期，生成知识中推断的日期未能从原始数据中直接体现。"
+          }
+        ]
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在简洁性和表达力方面表现出色。它使用了简明的结构来传达关键信息，符合设计规范中的要求。待评作品的结构与专家参考作品不同，但这种不同是合理的，因为它更直接地反映了员工的工作量记录，而不是培训记录。待评作品包含了活动日期、活动描述和指向受雇员工的关系，符合领域模型的要求。虽然待评作品没有使用专家参考作品中的 '@context' 和 '@type' 细节，但在术语专业性上仍然保持了一定的水准。待评作品的创造性体现在它对活动描述的自然语言表达上，清晰地传达了培训的内容和时长。总体而言，待评作品在结构上提供了一种合理且有效的建模选择，值得加分。"
+      }
+    }
+  }
+}

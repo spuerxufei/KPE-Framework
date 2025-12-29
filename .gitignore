@@ -1,0 +1,35 @@
+# --- 隐私与安全 (绝对不能上传) ---
+.env
+.env.local
+*.key
+*.pem
+config.py  # 如果里面硬编码了密码。如果是从环境变量读取的，可以上传，但要再次检查。
+
+# --- Python 垃圾文件 ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# --- IDE 配置 (不要上传) ---
+.idea/
+.vscode/
+*.swp
+
+# --- 临时数据或不需要的大文件 ---
+# 如果您不想上传原始的大型CSV（raw_bpi_2017.csv），可以在这里忽略
+# 但建议上传 processed 后的 jsonl 和 gold_standard
+# data/evaluation/0_raw_sources/  <-- 如果文件太大(>100MB)GitHub会拒绝，可以忽略
+
+data/evaluation/0_raw_sources/*.csv
+data/evaluation/0_raw_sources/*.xes
+
+# --- 操作系统 ---
+.DS_Store
+Thumbs.db

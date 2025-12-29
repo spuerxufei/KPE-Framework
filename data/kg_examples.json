@@ -1,0 +1,50 @@
+{
+  "特藏保护领域": [
+    {
+      "@context": "https://schema.org/",
+      "@id": "evt_zxjz_repair_01",
+      "@type": "抢救性保护事件",
+      "hasTarget": { "@id": "UUID-ZCJZ-001" },
+      "hasMeasure": "脱酸加固"
+    }
+  ],
+  "数字资源管理领域": [
+    {
+      "@context": "https://schema.org/",
+      "@id": "d_obj_xyz_01",
+      "@type": "数字对象",
+      "sourceAsset": { "@id": "UUID-PHYSICAL-ASSET-XYZ" },
+      "fileCount": 500,
+      "format": "JPEG",
+      "persistentIdentifier": "hdl:123/456"
+    }
+  ],
+  "知识产权领域": [
+    {
+      "@context": "https://schema.org/",
+      "@id": "cp_statement_005",
+      "@type": "数字资源版权声明",
+      "appliesTo": { "@id": "UUID-DIGITAL-OBJECT-XYZ" },
+      "copyrightStatus": "Public Domain",
+      "accessPolicy": "Open Access"
+    }
+  ],
+  "IT/数据管理领域": [
+    {
+        "@context": "https://schema.org/",
+        "@id": "it_asset_abc",
+        "@type": "IT数据资产",
+        "storageLocation": "/data/archive/set_abc/",
+        "serverName": "SRV-ARCHIVE-02"
+    }
+  ],
+  "人力资源领域": [
+    {
+        "@context": "https://schema.org/",
+        "@id": "workload_1008_240520",
+        "@type": "员工工作量记录",
+        "assignedTo": { "@id": "UUID-E1008" },
+        "activityDescription": "完成季度财务报告"
+    }
+  ]
+}

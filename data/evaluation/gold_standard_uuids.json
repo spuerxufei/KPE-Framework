@@ -1,0 +1,42 @@
+{
+  "古籍": {
+    "GJ-001": "UUID-GJ-001",
+    "GJ-002": "UUID-GJ-002",
+    "MSS-005": "UUID-MSS-005",
+    "MAP-012": "UUID-MAP-012",
+    "NEWS-1949": "UUID-NEWS-1949",
+    "PHOTO-EINSTEIN": "UUID-PHOTO-EINSTEIN",
+    "GJ-003": "UUID-GJ-003",
+    "MUSIC-BEETHOVEN": "UUID-MUSIC-BEETHOVEN",
+    "FILM-METROPOLIS": "UUID-FILM-METROPOLIS",
+    "CODE-APOLLO": "UUID-CODE-APOLLO",
+    "GJ-004": "UUID-GJ-004",
+    "GJ-005": "UUID-GJ-005",
+    "GJ-006": "UUID-GJ-006",
+    "GJ-007": "UUID-GJ-007",
+    "GJ-008": "UUID-GJ-008",
+    "GJ-009": "UUID-GJ-009",
+    "GJ-010": "UUID-GJ-010",
+    "GJ-011": "UUID-GJ-011",
+    "GJ-012": "UUID-GJ-012",
+    "GJ-013": "UUID-GJ-013",
+    "GJ-014": "UUID-GJ-014",
+    "GJ-015": "UUID-GJ-015",
+    "ISBN-9787115428859": "UUID-BOOK-CSAPP"
+  },
+  "员工": {
+    "1009": "UUID-E1009",
+    "1010": "UUID-E1010",
+    "1011": "UUID-E1011",
+    "1012": "UUID-E1012",
+    "2001": "UUID-E2001",
+    "2002": "UUID-E2002",
+    "3001": "UUID-E3001"
+  },
+  "读者": {
+    "S2023001": "UUID-S2023001"
+  },
+  "组织": {
+    "外包团队A": "UUID-ORG-001"
+  }
+}
