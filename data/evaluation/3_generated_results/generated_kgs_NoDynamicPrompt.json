@@ -1,0 +1,3081 @@
+{
+  "EVENT-001": {
+    "特藏保护领域": [
+      {
+        "@id": "a732221b-290f-488f-9154-8273614138e9",
+        "@type": "抢救性保护事件",
+        "eventDate": "2024-01-15T10:00:00Z",
+        "hasParticipant": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "PreservationSpecialist"
+        },
+        "hasMeasure": {
+          "@id": "bnode_Measure_f4803701bea946a0ae468b0246b70bbe",
+          "@type": "Measure",
+          "存储信息": "server_name: SRV-RARE-01, path: /data/rare/GJ-001/",
+          "数字化详情": "file_count: 1200, resolution_dpi: 600, format: TIFF"
+        },
+        "hasTarget": {
+          "@id": "87b1e908-1cd4-46f7-9a3d-7875b3f3d885",
+          "@type": "ProtectedItem"
+        }
+      }
+    ],
+    "数字资源管理领域": [
+      {
+        "@id": "a739502b-a01c-4395-8854-822839217066",
+        "@type": "DigitalObject",
+        "persistentIdentifier": "pending:handle/doi",
+        "format": "TIFF",
+        "creationDate": "2024-01-15T10:00:00Z",
+        "resolution": "600dpi",
+        "fileCount": 1200,
+        "sourceAsset": {
+          "@id": "87b1e908-1cd4-46f7-9a3d-7875b3f3d885",
+          "@type": "SourceMaterial"
+        },
+        "digitizedBy": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "DigitizationOperator"
+        }
+      }
+    ],
+    "人力资源领域": [
+      {
+        "@id": "a739502b-103e-462a-8742-16723223126f",
+        "@type": "员工工作量记录",
+        "activityDate": "2024-01-15T10:00:00Z",
+        "activityDescription": "员工 XuSW (工号: 1009) 对珍善本 '永乐大典嘉靖副本残卷' (统一编号: GJ-001) 进行了数字化处理。数字化详情包括文件数量 1200, 分辨率 600 dpi, 格式为 TIFF。数据存储在服务器 SRV-RARE-01 的路径 /data/rare/GJ-001/。",
+        "assignedTo": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "Employee"
+        },
+        "relatedAsset": {
+          "@id": "87b1e908-1cd4-46f7-9a3d-7875b3f3d885",
+          "@type": "WorkObject"
+        }
+      }
+    ]
+  },
+  "EVENT-002": {
+    "特藏保护领域": [
+      {
+        "@id": "a7322960-4412-421b-801b-107021303864",
+        "@type": "抢救性保护事件",
+        "eventDate": "2024-01-16T11:00:00Z",
+        "hasParticipant": {
+          "@id": "93104d52-2c8d-4777-ba14-4c59981e2026",
+          "@type": "PreservationSpecialist"
+        },
+        "hasTarget": {
+          "@id": "6b679ab8-9afd-43af-86cf-bc4695cca223",
+          "@type": "ProtectedItem"
+        },
+        "hasMeasure": {
+          "@id": "bnode_MeasureDetails_63e821f664447ad226c67d7d3513dfaf",
+          "@type": "MeasureDetails",
+          "存储信息": "server_name: SRV-RARE-02, path: /data/archive/ZCJZ-001/",
+          "数字化详情": "file_count: 850, resolution_dpi: 800, format: JPEG2000"
+        }
+      }
+    ],
+    "数字资源管理领域": [
+      {
+        "@id": "a904221a-6415-460d-8526-791118182967",
+        "@type": "DigitalObject",
+        "persistentIdentifier": "pending",
+        "format": "JPEG2000",
+        "creationDate": "2024-01-16T11:00:00Z",
+        "resolution": "800dpi",
+        "fileCount": 850,
+        "sourceAsset": {
+          "@id": "6b679ab8-9afd-43af-86cf-bc4695cca223",
+          "@type": "SourceMaterial"
+        },
+        "digitizedBy": {
+          "@id": "93104d52-2c8d-4777-ba14-4c59981e2026",
+          "@type": "DigitizationOperator"
+        }
+      }
+    ],
+    "IT数据管理领域": [
+      {
+        "@id": "a739527a-8777-4017-8025-132717912440",
+        "@type": "IT数据资产",
+        "storageLocation": "/data/archive/ZCJZ-001/",
+        "serverName": "SRV-RARE-02",
+        "lastModified": "2024-01-16T11:00:00Z",
+        "operatedBy": {
+          "@id": "93104d52-2c8d-4777-ba14-4c59981e2026",
+          "@type": "SysAdmin"
+        },
+        "sourceAsset": {
+          "@id": "6b679ab8-9afd-43af-86cf-bc4695cca223",
+          "@type": "DataOrigin"
+        }
+      }
+    ],
+    "人力资源领域": [
+      {
+        "@id": "a9273766-390b-465b-8012-073103233856",
+        "@type": "EmployeeWorkloadRecord",
+        "activityDate": "2024-01-16T11:00:00Z",
+        "activityDescription": "员工小倩（工号1010）对珍善本《赵城金藏》（统一编号GJ-002）进行了数字化处理，共生成850个文件，分辨率为800 DPI，格式为JPEG2000，并存储在服务器SRV-RARE-02的路径/data/archive/ZCJZ-001/下。",
+        "relatedAsset": {
+          "@id": "6b679ab8-9afd-43af-86cf-bc4695cca223",
+          "@type": "WorkObject"
+        },
+        "assignedTo": {
+          "@id": "93104d52-2c8d-4777-ba14-4c59981e2026",
+          "@type": "Employee"
+        }
+      }
+    ]
+  },
+  "EVENT-003": {
+    "特藏保护领域": [
+      {
+        "@id": "a7251782-2057-427f-836f-239433140502",
+        "@type": "抢救性保护事件",
+        "eventDate": "2024-01-18T14:30:00Z",
+        "hasTarget": {
+          "@id": "dd170142-bfbd-4849-9080-3cb2c074146a",
+          "@type": "ProtectedItem"
+        },
+        "hasParticipant": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "PreservationSpecialist"
+        },
+        "hasMeasure": {
+          "@id": "bnode_Measure_1a5351d05852965c4a2d584e10cb9480",
+          "@type": "Measure",
+          "存储信息": "server_name: SRV-RARE-01, path: /data/rare/MSS-005/",
+          "数字化详情": "file_count: 350, resolution_dpi: 1200, format: PNG"
+        }
+      }
+    ],
+    "数字资源管理领域": [
+      {
+        "@id": "a739502b-103e-460d-8547-020967262450",
+        "@type": "DigitalObject",
+        "persistentIdentifier": "pending",
+        "format": "PNG",
+        "creationDate": "2024-01-18T14:30:00Z",
+        "resolution": "1200dpi",
+        "fileCount": 350,
+        "digitizedBy": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "DigitizationOperator"
+        },
+        "sourceAsset": {
+          "@id": "dd170142-bfbd-4849-9080-3cb2c074146a",
+          "@type": "SourceMaterial"
+        }
+      }
+    ],
+    "IT数据管理领域": [
+      {
+        "@id": "a9270034-722a-4416-8360-142277028131",
+        "@type": "IT数据资产",
+        "storageLocation": "/data/rare/MSS-005/",
+        "serverName": "SRV-RARE-01",
+        "lastModified": "2024-01-18T14:30:00Z",
+        "sourceAsset": {
+          "@id": "dd170142-bfbd-4849-9080-3cb2c074146a",
+          "@type": "DataOrigin"
+        },
+        "operatedBy": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "SysAdmin"
+        }
+      }
+    ],
+    "人力资源领域": [
+      {
+        "@id": "a7924250-137a-430c-8025-06721021481b",
+        "@type": "员工工作量记录",
+        "activityDate": "2024-01-18T14:30:00Z",
+        "activityDescription": "员工 XuSW (工号 1009) 对珍善本 '达芬奇手稿' (统一编号 MSS-005) 进行了数字化处理，共生成 350 个文件，分辨率为 1200 DPI，格式为 PNG。数字化成果存储在服务器 SRV-RARE-01 的路径 /data/rare/MSS-005/ 下。",
+        "assignedTo": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "Employee"
+        },
+        "relatedAsset": {
+          "@id": "dd170142-bfbd-4849-9080-3cb2c074146a",
+          "@type": "WorkObject"
+        }
+      }
+    ]
+  },
+  "EVENT-004": {
+    "IT数据管理领域": [
+      {
+        "@id": "a9277114-1111-4111-b111-111111111111",
+        "@type": "IT数据资产",
+        "storageLocation": "/data/maps/KYWGQT/",
+        "serverName": "SRV-MAPS-01",
+        "lastModified": "2024-02-01T09:00:00Z",
+        "operatedBy": {
+          "@id": "621f4d77-6710-47f1-bb78-72fa1bcb90b0",
+          "@type": "SysAdmin"
+        },
+        "sourceAsset": {
+          "@id": "a01cc8f5-4316-4428-a265-47e9490f292e",
+          "@type": "DataOrigin"
+        }
+      }
+    ],
+    "特藏保护领域": [
+      {
+        "@id": "a7391917-1049-4325-8321-17937748464a",
+        "@type": "抢救性保护事件",
+        "eventDate": "2024-02-01T09:00:00Z",
+        "hasParticipant": {
+          "@id": "621f4d77-6710-47f1-bb78-72fa1bcb90b0",
+          "@type": "PreservationSpecialist"
+        },
+        "hasMeasure": {
+          "@id": "bnode_RescueProtectionMeasure_99914b932bd37a50b983c5e7c90ae93b",
+          "@type": "RescueProtectionMeasure",
+          "存储信息": [
+            {
+              "@id": "bnode_StorageInformation_2101f8787e3482511fdb596f0d484a35",
+              "@type": "StorageInformation",
+              "path": "/data/archive/bencao/",
+              "server_name": "SRV-RARE-02"
+            },
+            {
+              "@id": "bnode_StorageInformation_3624014d25fe20c0d710984a434e32ba",
+              "@type": "StorageInformation",
+              "path": "/data/siku/wenyuan/",
+              "server_name": "SRV-RARE-03"
+            },
+            {
+              "@id": "bnode_StorageInfo_2461423e58f78a62c7dbfe6bb7809bc6",
+              "@type": "StorageInfo",
+              "path": "/data/rare/GJ-001/",
+              "server_name": "SRV-RARE-01"
+            },
+            {
+              "@id": "bnode_StorageInformation_68de0cee25002fb6dab28e395aea1af3",
+              "@type": "StorageInformation",
+              "path": "/data/maps/KYWGQT/",
+              "server_name": "SRV-MAPS-01"
+            }
+          ],
+          "数字化详情": [
+            {
+              "@id": "bnode_DigitizationDetails_19b71e77a3faffc52a4fe10015e459dd",
+              "@type": "DigitizationDetails",
+              "file_count": 1900,
+              "resolution_dpi": 400,
+              "format": "JPEG"
+            },
+            {
+              "@id": "bnode_DigitizationDetails_bab6cb5d3423d6a090444e7bc30c7d4f",
+              "@type": "DigitizationDetails",
+              "file_count": 36000,
+              "resolution_dpi": 600,
+              "format": "TIFF"
+            },
+            {
+              "@id": "bnode_DigitalizationDetails_b3c3a77420605f91ba61e177ce86b3ae",
+              "@type": "DigitalizationDetails",
+              "file_count": "1200",
+              "resolution_dpi": "600",
+              "format": "TIFF"
+            }
+          ],
+          "数字化": {
+            "@id": "bnode_Digitalization_d8fb79e1145340d8aca1b93c176d3f7c",
+            "@type": "Digitalization",
+            "file_count": "25",
+            "resolution_dpi": "400",
+            "format": "TIFF"
+          }
+        },
+        "hasTarget": {
+          "@id": "a01cc8f5-4316-4428-a265-47e9490f292e",
+          "@type": "ProtectedItem"
+        }
+      }
+    ],
+    "数字资源管理领域": [
+      {
+        "@id": "a7391124-7776-474c-813c-049870830424",
+        "@type": "DigitalObject",
+        "format": "TIFF",
+        "creationDate": "2024-02-01T09:00:00Z",
+        "resolution": "400dpi",
+        "fileCount": 25,
+        "sourceAsset": {
+          "@id": "a01cc8f5-4316-4428-a265-47e9490f292e",
+          "@type": "SourceMaterial"
+        },
+        "digitizedBy": {
+          "@id": "621f4d77-6710-47f1-bb78-72fa1bcb90b0",
+          "@type": "DigitizationOperator"
+        }
+      }
+    ]
+  },
+  "EVENT-005": {},
+  "EVENT-006": {
+    "特藏保护领域": [
+      {
+        "@id": "a732296d-357a-4286-9051-402435773177",
+        "@type": "抢救性保护事件",
+        "eventDate": "2024-02-10T10:20:00Z",
+        "hasParticipant": {
+          "@id": "495502d3-e20d-4f60-bed9-7446c468bb70",
+          "@type": "PreservationSpecialist"
+        },
+        "hasMeasure": {
+          "@id": "bnode_RescueProtectionEventMeasure_99914b932bd37a50b983c5e7c90ae93b",
+          "@type": "RescueProtectionEventMeasure",
+          "存储信息": [
+            {
+              "@id": "bnode_StorageInformation_3624014d25fe20c0d710984a434e32ba",
+              "@type": "StorageInformation",
+              "path": "/data/siku/wenyuan/",
+              "server_name": "SRV-RARE-03"
+            },
+            {
+              "@id": "bnode_StorageInformation_6432bb100a4610dda4206413a39b91de",
+              "@type": "StorageInformation",
+              "path": "/data/archive/dunhuang/",
+              "server_name": "SRV-RARE-02"
+            },
+            {
+              "@id": "bnode_StorageInformation_5380db41285a2f56e86fe0bd1b960cfa",
+              "@type": "StorageInformation",
+              "path": "/archive/newspapers/1949/",
+              "server_name": "SRV-NEWS-ARCH"
+            }
+          ],
+          "数字化详情": [
+            {
+              "@id": "bnode_DigitalizationDetails_bab6cb5d3423d6a090444e7bc30c7d4f",
+              "@type": "DigitalizationDetails",
+              "file_count": 36000,
+              "resolution_dpi": 600,
+              "format": "TIFF"
+            },
+            {
+              "@id": "bnode_RescueProtectionEventMeasureDigitizationDetails_03d091495da656235885a3f036beb36a",
+              "@type": "RescueProtectionEventMeasureDigitizationDetails",
+              "file_count": 5300,
+              "resolution_dpi": 800,
+              "format": "JPEG2000"
+            },
+            {
+              "@id": "bnode_DigitalizationDetails_c1aee3844cf86dcdad22e383d6cd6404",
+              "@type": "DigitalizationDetails",
+              "file_count": 8,
+              "resolution_dpi": 300,
+              "format": "PDF/A"
+            }
+          ]
+        },
+        "hasTarget": {
+          "@id": "507db019-4547-4db4-819b-5e3a7b91cc03",
+          "@type": "ProtectedItem"
+        }
+      }
+    ],
+    "数字资源管理领域": [
+      {
+        "@id": "a904221a-6415-4674-849c-323214013149",
+        "@type": "数字对象",
+        "format": "PDF/A",
+        "creationDate": "2024-02-10T10:20:00Z",
+        "resolution": "300dpi",
+        "fileCount": 8,
+        "sourceAsset": {
+          "@id": "507db019-4547-4db4-819b-5e3a7b91cc03",
+          "@type": "SourceMaterial"
+        },
+        "digitizedBy": {
+          "@id": "495502d3-e20d-4f60-bed9-7446c468bb70",
+          "@type": "DigitizationOperator"
+        }
+      }
+    ],
+    "IT数据管理领域": [
+      {
+        "@id": "a725178f-5182-411a-826a-92142272820a",
+        "@type": "IT数据资产",
+        "storageLocation": "/archive/newspapers/1949/",
+        "serverName": "SRV-NEWS-ARCH",
+        "lastModified": "2024-02-10T10:20:00Z",
+        "operatedBy": {
+          "@id": "495502d3-e20d-4f60-bed9-7446c468bb70",
+          "@type": "SysAdmin"
+        },
+        "sourceAsset": {
+          "@id": "507db019-4547-4db4-819b-5e3a7b91cc03",
+          "@type": "DataOrigin"
+        }
+      }
+    ],
+    "人力资源领域": [
+      {
+        "@id": "a732296d-3172-4613-9037-33671239121a",
+        "@type": "员工工作量记录",
+        "activityDate": "2024-02-10T10:20:00Z",
+        "activityDescription": "员工老王对珍善本《人民日报创刊号》进行了数字化处理，包括8个文件，分辨率300 DPI，格式为PDF/A，并存储在服务器SRV-NEWS-ARCH的路径/archive/newspapers/1949/。",
+        "relatedAsset": {
+          "@id": "507db019-4547-4db4-819b-5e3a7b91cc03",
+          "@type": "WorkObject"
+        },
+        "assignedTo": {
+          "@id": "495502d3-e20d-4f60-bed9-7446c468bb70",
+          "@type": "Employee"
+        }
+      }
+    ]
+  },
+  "EVENT-007": {
+    "特藏保护领域": [
+      {
+        "@id": "a732296d-357d-4171-859a-24545524317b",
+        "@type": "抢救性保护事件",
+        "eventDate": "2024-02-12T13:00:00Z",
+        "hasTarget": {
+          "@id": "550c0505-974c-4b9c-9bdf-880dc3d5c17d",
+          "@type": "ProtectedItem"
+        },
+        "hasMeasure": {
+          "@id": "bnode_Measure_99914b932bd37a50b983c5e7c90ae93b",
+          "@type": "Measure",
+          "数字化详情": {
+            "@id": "bnode_DigitizationDetails_845d4e6e4f311c88df502b937f08f818",
+            "@type": "DigitizationDetails",
+            "file_count": 1,
+            "resolution_dpi": 2400,
+            "format": "RAW"
+          },
+          "存储信息": {
+            "@id": "bnode_StorageInfo_4d2eccb7e6ea44b39ee8c994a101a717",
+            "@type": "StorageInfo",
+            "path": "/photos/originals/einstein/",
+            "server_name": "SRV-PHOTOS-01"
+          }
+        },
+        "hasParticipant": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "PreservationSpecialist"
+        }
+      }
+    ],
+    "数字资源管理领域": [
+      {
+        "@id": "a927376a-5431-417d-8153-651167406734",
+        "@type": "DigitalObject",
+        "persistentIdentifier": "handle:PHOTO-EINSTEIN-DIGITAL",
+        "format": "RAW",
+        "creationDate": "2024-02-12T13:00:00Z",
+        "resolution": "2400dpi",
+        "fileCount": 1,
+        "digitizedBy": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "DigitizationOperator"
+        },
+        "sourceAsset": {
+          "@id": "550c0505-974c-4b9c-9bdf-880dc3d5c17d",
+          "@type": "SourceMaterial"
+        }
+      }
+    ],
+    "人力资源领域": [
+      {
+        "@id": "a7251141-2679-411a-9653-532431713589",
+        "@type": "员工工作量记录",
+        "activityDate": "2024-02-12T13:00:00Z",
+        "activityDescription": "员工 XuSW (工号: 1009) 对珍善本 '爱因斯坦吐舌头原版照片' (统一编号: PHOTO-EINSTEIN) 进行了数字化操作。数字化详情包括: 文件数量 1, 分辨率 2400 dpi, 格式 RAW。存储信息为服务器 SRV-PHOTOS-01, 路径 /photos/originals/einstein/。",
+        "assignedTo": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "Employee"
+        },
+        "relatedAsset": {
+          "@id": "550c0505-974c-4b9c-9bdf-880dc3d5c17d",
+          "@type": "WorkObject"
+        }
+      }
+    ]
+  },
+  "EVENT-008": {
+    "特藏保护领域": [
+      {
+        "@id": "a794121a-6101-4470-8208-812061092040",
+        "@type": "抢救性保护事件",
+        "eventDate": "2024-02-20T15:45:00Z",
+        "hasTarget": {
+          "@id": "b6c5e4bf-f40c-48a5-af87-2c24af5bc584",
+          "@type": "ProtectedItem"
+        },
+        "hasParticipant": {
+          "@id": "93104d52-2c8d-4777-ba14-4c59981e2026",
+          "@type": "PreservationSpecialist"
+        },
+        "hasMeasure": {
+          "@id": "bnode_RescueProtectionEventMeasure_99914b932bd37a50b983c5e7c90ae93b",
+          "@type": "RescueProtectionEventMeasure",
+          "存储信息": [
+            {
+              "@id": "bnode_StorageInformation_3624014d25fe20c0d710984a434e32ba",
+              "@type": "StorageInformation",
+              "path": "/data/siku/wenyuan/",
+              "server_name": "SRV-RARE-03"
+            },
+            {
+              "@id": "bnode_StorageInformation_6432bb100a4610dda4206413a39b91de",
+              "@type": "StorageInformation",
+              "path": "/data/archive/dunhuang/",
+              "server_name": "SRV-RARE-02"
+            },
+            {
+              "@id": "bnode_StorageInformation_5380db41285a2f56e86fe0bd1b960cfa",
+              "@type": "StorageInformation",
+              "path": "/archive/newspapers/1949/",
+              "server_name": "SRV-NEWS-ARCH"
+            }
+          ],
+          "数字化详情": [
+            {
+              "@id": "bnode_DigitalizationDetails_bab6cb5d3423d6a090444e7bc30c7d4f",
+              "@type": "DigitalizationDetails",
+              "file_count": 36000,
+              "resolution_dpi": 600,
+              "format": "TIFF"
+            },
+            {
+              "@id": "bnode_RescueProtectionEventMeasureDigitizationDetails_03d091495da656235885a3f036beb36a",
+              "@type": "RescueProtectionEventMeasureDigitizationDetails",
+              "file_count": 5300,
+              "resolution_dpi": 800,
+              "format": "JPEG2000"
+            },
+            {
+              "@id": "bnode_DigitalizationDetails_c1aee3844cf86dcdad22e383d6cd6404",
+              "@type": "DigitalizationDetails",
+              "file_count": 8,
+              "resolution_dpi": 300,
+              "format": "PDF/A"
+            }
+          ]
+        }
+      }
+    ],
+    "IT数据管理领域": [
+      {
+        "@id": "a7e6d2f3-1c8b-4e0a-9f5d-6b7c8a9d0e1f",
+        "@type": "IT数据资产",
+        "storageLocation": "/data/archive/dunhuang/",
+        "serverName": "SRV-RARE-02",
+        "lastModified": "2024-02-20T15:45:00Z",
+        "sourceAsset": {
+          "@id": "b6c5e4bf-f40c-48a5-af87-2c24af5bc584",
+          "@type": "DataOrigin"
+        },
+        "operatedBy": {
+          "@id": "93104d52-2c8d-4777-ba14-4c59981e2026",
+          "@type": "SysAdmin"
+        }
+      }
+    ],
+    "人力资源领域": [
+      {
+        "@id": "a612502c-473c-4444-934c-210172620710",
+        "@type": "员工工作量记录",
+        "activityDate": "2024-02-20T15:45:00Z",
+        "activityDescription": "员工小倩对珍善本《敦煌写经》(统一编号: GJ-003) 进行了数字化处理。数字化详情包括：文件数量5300，分辨率800DPI，格式为JPEG2000。处理后的文件存储在服务器SRV-RARE-02的路径/data/archive/dunhuang/下。",
+        "assignedTo": {
+          "@id": "93104d52-2c8d-4777-ba14-4c59981e2026",
+          "@type": "Employee"
+        },
+        "relatedAsset": {
+          "@id": "b6c5e4bf-f40c-48a5-af87-2c24af5bc584",
+          "@type": "WorkObject"
+        }
+      }
+    ]
+  },
+  "EVENT-009": {
+    "特藏保护领域": [
+      {
+        "@id": "urn:uuid:1796122d-1262-4318-8097-281008272900",
+        "@type": "抢救性保护事件",
+        "eventDate": "2024-03-01T11:10:00Z",
+        "hasMeasure": {
+          "@id": "bnode_MeasureDetails_8c449016a5305ac1fd4759155a26b799",
+          "@type": "MeasureDetails",
+          "file_count": 210,
+          "resolution_dpi": 1200,
+          "format": "TIFF",
+          "type": "数字化",
+          "storage_info": {
+            "@id": "bnode_StorageInfo_1be8a1bef24e76985549f6f0bb966544",
+            "@type": "StorageInfo",
+            "path": "/manuscripts/beethoven/sym9/",
+            "server_name": "SRV-MUSIC-01"
+          }
+        },
+        "hasTarget": {
+          "@id": "6579681e-8954-4487-94e6-e06942199e28",
+          "@type": "ProtectedItem"
+        },
+        "hasParticipant": {
+          "@id": "621f4d77-6710-47f1-bb78-72fa1bcb90b0",
+          "@type": "PreservationSpecialist"
+        }
+      }
+    ],
+    "数字资源管理领域": [
+      {
+        "@id": "a0121112-2e86-4217-814c-1130e611364d",
+        "@type": "DigitalObject",
+        "format": "TIFF",
+        "creationDate": "2024-03-01T11:10:00Z",
+        "resolution": "1200dpi",
+        "fileCount": 210,
+        "sourceAsset": {
+          "@id": "6579681e-8954-4487-94e6-e06942199e28",
+          "@type": "SourceMaterial"
+        },
+        "digitizedBy": {
+          "@id": "621f4d77-6710-47f1-bb78-72fa1bcb90b0",
+          "@type": "DigitizationOperator"
+        }
+      }
+    ],
+    "IT数据管理领域": [
+      {
+        "@id": "a9277114-1218-4033-9112-211425812921",
+        "@type": "IT数据资产",
+        "storageLocation": "/manuscripts/beethoven/sym9/",
+        "serverName": "SRV-MUSIC-01",
+        "lastModified": "2024-03-01T11:10:00Z",
+        "sourceAsset": {
+          "@id": "6579681e-8954-4487-94e6-e06942199e28",
+          "@type": "DataOrigin"
+        },
+        "operatedBy": {
+          "@id": "621f4d77-6710-47f1-bb78-72fa1bcb90b0",
+          "@type": "SysAdmin"
+        }
+      }
+    ],
+    "人力资源领域": [
+      {
+        "@id": "a7e1b2c3-d4e5-6f78-90ab-cdef12345678",
+        "@type": "员工工作量记录",
+        "activityDate": "2024-03-01T11:10:00Z",
+        "activityDescription": "员工阿强（工号1011）对珍善本“贝多芬第九交响曲手稿”（统一编号MUSIC-BEETHOVEN）进行了数字化处理，共生成210个文件，分辨率为1200 DPI，格式为TIFF。数字化成果存储在服务器SRV-MUSIC-01的路径/manuscripts/beethoven/sym9/下。",
+        "assignedTo": {
+          "@id": "621f4d77-6710-47f1-bb78-72fa1bcb90b0",
+          "@type": "Employee"
+        },
+        "relatedAsset": {
+          "@id": "6579681e-8954-4487-94e6-e06942199e28",
+          "@type": "WorkObject"
+        }
+      }
+    ]
+  },
+  "EVENT-010": {
+    "特藏保护领域": [
+      {
+        "@id": "a907246b-8877-4475-8025-93721343751c",
+        "@type": "抢救性保护事件",
+        "eventDate": "2024-03-05T17:00:00Z",
+        "hasTarget": {
+          "@id": "5fc6bc0b-a86b-46e1-b5c4-7d16ae2da8b0",
+          "@type": "ProtectedItem"
+        },
+        "hasParticipant": {
+          "@id": "495502d3-e20d-4f60-bed9-7446c468bb70",
+          "@type": "PreservationSpecialist"
+        },
+        "hasMeasure": {
+          "@id": "bnode_Measure_2aec690c402bbc4a1784de8f14bd746b",
+          "@type": "Measure",
+          "存储信息": "server_name: SRV-FILM-ARCH, path: /film/metropolis/",
+          "数字化详情": "file_count: 150000, resolution_dpi: 8000, format: DPX"
+        }
+      }
+    ],
+    "数字资源管理领域": [
+      {
+        "@id": "a725178f-5118-4721-a477-900593432098",
+        "@type": "DigitalObject",
+        "persistentIdentifier": "pending",
+        "format": "DPX",
+        "creationDate": "2024-03-05T17:00:00Z",
+        "resolution": "8000dpi",
+        "fileCount": 150000,
+        "sourceAsset": {
+          "@id": "5fc6bc0b-a86b-46e1-b5c4-7d16ae2da8b0",
+          "@type": "SourceMaterial"
+        },
+        "digitizedBy": {
+          "@id": "495502d3-e20d-4f60-bed9-7446c468bb70",
+          "@type": "DigitizationOperator"
+        }
+      }
+    ],
+    "人力资源领域": [
+      {
+        "@id": "a7251786-8228-444e-9189-9832269a2399",
+        "@type": "EmployeeWorkloadRecord",
+        "activityDate": "2024-03-05T17:00:00Z",
+        "activityDescription": "老王对珍善本“大都会原始胶片”进行了数字化处理，数字化详情包括：文件数量150000，分辨率8000 DPI，格式为DPX。处理后的文件存储在服务器SRV-FILM-ARCH的路径/film/metropolis/下。",
+        "assignedTo": {
+          "@id": "495502d3-e20d-4f60-bed9-7446c468bb70",
+          "@type": "Employee"
+        },
+        "relatedAsset": {
+          "@id": "5fc6bc0b-a86b-46e1-b5c4-7d16ae2da8b0",
+          "@type": "WorkObject"
+        }
+      }
+    ],
+    "IT数据管理领域": [
+      {
+        "@id": "a739502b-1234-4567-89ab-cdef01234567",
+        "@type": "IT数据资产",
+        "storageLocation": "/film/metropolis/",
+        "serverName": "SRV-FILM-ARCH",
+        "lastModified": "2024-03-05T17:00:00Z",
+        "operatedBy": [
+          {
+            "@id": "495502d3-e20d-4f60-bed9-7446c468bb70",
+            "@type": "SysAdmin"
+          },
+          {
+            "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+            "@type": "SysAdmin"
+          }
+        ],
+        "sourceAsset": [
+          {
+            "@id": "5fc6bc0b-a86b-46e1-b5c4-7d16ae2da8b0",
+            "@type": "DataOrigin"
+          },
+          {
+            "@id": "87b1e908-1cd4-46f7-9a3d-7875b3f3d885",
+            "@type": "DataOrigin"
+          }
+        ]
+      }
+    ]
+  },
+  "EVENT-011": {
+    "特藏保护领域": [
+      {
+        "@id": "a9277028-1025-4191-912c-982859187313",
+        "@type": "抢救性保护事件",
+        "eventDate": "2024-03-10T10:00:00Z",
+        "hasParticipant": {
+          "@id": "8bf78442-0cae-4702-99ca-efe7e07b1df2",
+          "@type": "PreservationSpecialist"
+        },
+        "hasTarget": {
+          "@id": "87b1e908-1cd4-46f7-9a3d-7875b3f3d885",
+          "@type": "ProtectedItem"
+        },
+        "hasMeasure": {
+          "@id": "bnode_RescueProtectionEventMeasure_f4803701bea946a0ae468b0246b70bbe",
+          "@type": "RescueProtectionEventMeasure",
+          "存储信息": "server_name: SRV-RARE-01, path: /data/rare/GJ-001/",
+          "数字化详情": "file_count: 1200, resolution_dpi: 600, format: TIFF"
+        }
+      }
+    ],
+    "IT数据管理领域": [
+      {
+        "@id": "a7322964-162e-4176-9051-24203173512a",
+        "@type": "IT数据资产",
+        "storageLocation": "/data/rare/GJ-001/",
+        "serverName": "SRV-RARE-01",
+        "lastModified": "2024-03-10T10:00:00Z",
+        "operatedBy": {
+          "@id": "8bf78442-0cae-4702-99ca-efe7e07b1df2",
+          "@type": "SysAdmin"
+        },
+        "sourceAsset": {
+          "@id": "87b1e908-1cd4-46f7-9a3d-7875b3f3d885",
+          "@type": "DataOrigin"
+        }
+      }
+    ],
+    "人力资源领域": [
+      {
+        "@id": "a7251785-533d-429d-8373-31122171120f",
+        "@type": "员工工作量记录",
+        "activityDate": "2024-03-10T10:00:00Z",
+        "activityDescription": "员工 David (工号: 2001) 对珍善本 Yongle Dadian (Jiajing copy fragment) (统一编号: GJ-001) 进行了数字化操作。数字化详情包括：文件数量 1200，分辨率 600 dpi，格式 TIFF。存储信息为服务器 SRV-RARE-01 上的路径 /data/rare/GJ-001/。",
+        "assignedTo": {
+          "@id": "8bf78442-0cae-4702-99ca-efe7e07b1df2",
+          "@type": "Employee"
+        },
+        "relatedAsset": {
+          "@id": "87b1e908-1cd4-46f7-9a3d-7875b3f3d885",
+          "@type": "WorkObject"
+        }
+      }
+    ]
+  },
+  "EVENT-012": {
+    "特藏保护领域": [
+      {
+        "@id": "a7924151-2481-4325-8321-419083321521",
+        "@type": "抢救性保护事件",
+        "hasMeasure": "数字化",
+        "eventDate": "2024-03-12T11:30:00Z",
+        "digitizationDetails": {
+          "@id": "bnode_DigitizationDetails_6a6f3d04431ca62a72715ae43e7168b9",
+          "@type": "DigitizationDetails",
+          "file_count": "1",
+          "format": "TEXT"
+        },
+        "hasTarget": {
+          "@id": "9182f2d5-b032-4a08-8884-43d651f54ab1",
+          "@type": "ProtectedItem"
+        },
+        "hasParticipant": {
+          "@id": "d48c9885-ce7e-46f9-bbe7-f70a93898521",
+          "@type": "PreservationSpecialist"
+        },
+        "storageInformation": {
+          "@id": "bnode_StorageInformation_9d9f1b9b67cba2f22389d915637f97cc",
+          "@type": "StorageInformation",
+          "path": "/code/apollo11/",
+          "server_name": "SRV-CODE-ARCH"
+        }
+      }
+    ],
+    "数字资源管理领域": [
+      {
+        "@id": "a7187118-2856-4277-9002-390771501721",
+        "@type": "数字对象",
+        "persistentIdentifier": "a7187118-2856-4277-9002-390771501721",
+        "format": "TEXT",
+        "creationDate": "2024-03-12T11:30:00Z",
+        "fileCount": 1,
+        "RELATES_TO": {
+          "@id": "d48c9885-ce7e-46f9-bbe7-f70a93898521",
+          "@type": "DigitizationOperator"
+        },
+        "sourceAsset": {
+          "@id": "9182f2d5-b032-4a08-8884-43d651f54ab1",
+          "@type": "SourceMaterial"
+        }
+      }
+    ],
+    "IT数据管理领域": [
+      {
+        "@id": "a927708c-0283-4903-8884-257850849313",
+        "@type": "IT数据资产",
+        "storageLocation": "/code/apollo11/",
+        "serverName": "SRV-CODE-ARCH",
+        "lastModified": "2024-03-12T11:30:00Z",
+        "operatedBy": {
+          "@id": "d48c9885-ce7e-46f9-bbe7-f70a93898521",
+          "@type": "SysAdmin"
+        },
+        "sourceAsset": {
+          "@id": "9182f2d5-b032-4a08-8884-43d651f54ab1",
+          "@type": "DataOrigin"
+        }
+      }
+    ],
+    "人力资源领域": [
+      {
+        "@id": "a7391122-3c1e-451e-876a-297779261271",
+        "@type": "员工工作量记录",
+        "activityDate": "2024-03-12T11:30:00Z",
+        "activityDescription": "操作人员 Lucy (工号: 2002) 对珍善本 '阿波罗11号导航计算机源码' (统一编号: CODE-APOLLO) 进行了数字化处理。数字化详情包括文件数量: 1, 分辨率: None, 格式: TEXT。存储信息为服务器: SRV-CODE-ARCH, 路径: /code/apollo11/。",
+        "relatedAsset": {
+          "@id": "9182f2d5-b032-4a08-8884-43d651f54ab1",
+          "@type": "WorkObject"
+        },
+        "assignedTo": {
+          "@id": "d48c9885-ce7e-46f9-bbe7-f70a93898521",
+          "@type": "Employee"
+        }
+      }
+    ]
+  },
+  "EVENT-013": {
+    "特藏保护领域": [
+      {
+        "@id": "a9254316-2415-4613-888e-67a65977114b",
+        "@type": "抢救性保护事件",
+        "eventDate": "2024-03-15T14:00:00Z",
+        "hasParticipant": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "PreservationSpecialist"
+        },
+        "hasMeasure": {
+          "@id": "bnode_RescueProtectionEventMeasure_99914b932bd37a50b983c5e7c90ae93b",
+          "@type": "RescueProtectionEventMeasure",
+          "存储信息": [
+            {
+              "@id": "bnode_StorageInformation_3624014d25fe20c0d710984a434e32ba",
+              "@type": "StorageInformation",
+              "path": "/data/siku/wenyuan/",
+              "server_name": "SRV-RARE-03"
+            },
+            {
+              "@id": "bnode_StorageInformation_6432bb100a4610dda4206413a39b91de",
+              "@type": "StorageInformation",
+              "path": "/data/archive/dunhuang/",
+              "server_name": "SRV-RARE-02"
+            },
+            {
+              "@id": "bnode_StorageInformation_5380db41285a2f56e86fe0bd1b960cfa",
+              "@type": "StorageInformation",
+              "path": "/archive/newspapers/1949/",
+              "server_name": "SRV-NEWS-ARCH"
+            }
+          ],
+          "数字化详情": [
+            {
+              "@id": "bnode_DigitalizationDetails_bab6cb5d3423d6a090444e7bc30c7d4f",
+              "@type": "DigitalizationDetails",
+              "file_count": 36000,
+              "resolution_dpi": 600,
+              "format": "TIFF"
+            },
+            {
+              "@id": "bnode_RescueProtectionEventMeasureDigitizationDetails_03d091495da656235885a3f036beb36a",
+              "@type": "RescueProtectionEventMeasureDigitizationDetails",
+              "file_count": 5300,
+              "resolution_dpi": 800,
+              "format": "JPEG2000"
+            },
+            {
+              "@id": "bnode_DigitalizationDetails_c1aee3844cf86dcdad22e383d6cd6404",
+              "@type": "DigitalizationDetails",
+              "file_count": 8,
+              "resolution_dpi": 300,
+              "format": "PDF/A"
+            }
+          ]
+        },
+        "hasTarget": {
+          "@id": "10cabb37-d120-4c7e-b6af-e2016443f013",
+          "@type": "ProtectedItem"
+        }
+      }
+    ],
+    "数字资源管理领域": [
+      {
+        "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73-digital-object",
+        "@type": "DigitalObject",
+        "format": "TIFF",
+        "creationDate": "2024-03-15T14:00:00Z",
+        "fileCount": 36000,
+        "resolution": "600dpi",
+        "digitizedBy": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "DigitizationOperator"
+        },
+        "sourceAsset": {
+          "@id": "10cabb37-d120-4c7e-b6af-e2016443f013",
+          "@type": "SourceMaterial"
+        }
+      }
+    ],
+    "IT数据管理领域": [
+      {
+        "@id": "a90123e4-3b2d-4c8f-9a1b-2c3d4e5f6a7b",
+        "@type": "IT数据资产",
+        "storageLocation": "/data/siku/wenyuan/",
+        "serverName": "SRV-RARE-03",
+        "lastModified": "2024-03-15T14:00:00Z",
+        "operatedBy": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "SysAdmin"
+        },
+        "sourceAsset": {
+          "@id": "10cabb37-d120-4c7e-b6af-e2016443f013",
+          "@type": "DataOrigin"
+        }
+      }
+    ],
+    "人力资源领域": [
+      {
+        "@id": "a7e1124f-2178-4389-8926-224424367313",
+        "@type": "员工工作量记录",
+        "activityDate": "2024-03-15T14:00:00Z",
+        "activityDescription": "对珍善本《四库全书文渊阁本》进行了数字化处理，包括36000个文件，分辨率600DPI，格式为TIFF，并存储在服务器SRV-RARE-03的路径/data/siku/wenyuan/下。",
+        "relatedAsset": {
+          "@id": "10cabb37-d120-4c7e-b6af-e2016443f013",
+          "@type": "WorkObject"
+        },
+        "assignedTo": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "Employee"
+        }
+      }
+    ]
+  },
+  "EVENT-014": {
+    "数字资源管理领域": [
+      {
+        "@id": "a9277114-1110-4416-880c-261541172605",
+        "@type": "DigitalObject",
+        "persistentIdentifier": "pending",
+        "format": "JPEG",
+        "creationDate": "2024-03-20T16:20:00Z",
+        "resolution": "400dpi",
+        "fileCount": 1900,
+        "digitizedBy": {
+          "@id": "93104d52-2c8d-4777-ba14-4c59981e2026",
+          "@type": "DigitizationOperator"
+        },
+        "sourceAsset": {
+          "@id": "305652fb-3112-47e9-bf65-cb3df3693247",
+          "@type": "SourceMaterial"
+        }
+      }
+    ],
+    "IT数据管理领域": [
+      {
+        "@id": "a9271618-1960-496a-912f-683100342939",
+        "@type": "IT数据资产",
+        "storageLocation": "/data/archive/bencao/",
+        "serverName": "SRV-RARE-02",
+        "lastModified": "2024-03-20T16:20:00Z",
+        "sourceAsset": {
+          "@id": "305652fb-3112-47e9-bf65-cb3df3693247",
+          "@type": "DataOrigin"
+        },
+        "operatedBy": {
+          "@id": "93104d52-2c8d-4777-ba14-4c59981e2026",
+          "@type": "SysAdmin"
+        }
+      }
+    ]
+  },
+  "EVENT-015": {
+    "特藏保护领域": [
+      {
+        "@id": "a739127e-4122-4919-9418-472491176587",
+        "@type": "Event",
+        "name": "数字化保护事件",
+        "eventDate": "2024-03-22T12:00:00Z",
+        "hasTarget": {
+          "@id": "6b679ab8-9afd-43af-86cf-bc4695cca223",
+          "@type": "ProtectedItem"
+        },
+        "hasParticipant": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "PreservationSpecialist"
+        },
+        "hasMeasure": {
+          "@id": "bnode_DigitalizationMeasure_977ee4c26f02b379b2b83ac8d9df1ca3",
+          "@type": "DigitalizationMeasure",
+          "format": "JPEG2000",
+          "resolutionDpi": 800,
+          "fileCount": 300,
+          "storageInfo": {
+            "@id": "bnode_StorageInfo_9e7a32b02fdcf85af2568edfca36be07",
+            "@type": "StorageInfo",
+            "path": "/data/archive/ZCJZ-001/part2/",
+            "serverName": "SRV-RARE-02"
+          }
+        }
+      }
+    ],
+    "IT数据管理领域": [
+      {
+        "@id": "a7251761-105c-4235-8120-103328574127",
+        "@type": "IT数据资产",
+        "serverName": "SRV-RARE-02",
+        "storageLocation": "/data/archive/ZCJZ-001/part2/",
+        "lastModified": "2024-03-22T12:00:00Z",
+        "sourceAsset": {
+          "@id": "6b679ab8-9afd-43af-86cf-bc4695cca223",
+          "@type": "DataOrigin"
+        },
+        "operatedBy": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "SysAdmin"
+        }
+      }
+    ],
+    "人力资源领域": [
+      {
+        "@id": "a721730f-217f-431e-8418-450917615024",
+        "@type": "员工工作量记录",
+        "activityDate": "2024-03-22T12:00:00Z",
+        "activityDescription": "员工 XuSW (工号: 1009) 对珍善本 '赵城金藏' (统一编号: GJ-002) 进行了数字化处理，共生成 300 个文件，分辨率为 800 DPI，格式为 JPEG2000。数字化成果存储在服务器 SRV-RARE-02 的路径 /data/archive/ZCJZ-001/part2/。",
+        "relatedAsset": {
+          "@id": "6b679ab8-9afd-43af-86cf-bc4695cca223",
+          "@type": "WorkObject"
+        },
+        "assignedTo": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "Employee"
+        }
+      }
+    ]
+  },
+  "EVENT-016": {
+    "特藏保护领域": [
+      {
+        "@id": "a9042526-9635-433b-8167-731304221773",
+        "@type": "抢救性保护事件",
+        "hasMeasure": "数字化: file_count: 450",
+        "eventDate": "2024-04-01T10:00:00Z",
+        "hasTarget": {
+          "@id": "7a2ad322-14cc-45da-8808-b78580cfc3c7",
+          "@type": "ProtectedItem"
+        },
+        "hasParticipant": {
+          "@id": "621f4d77-6710-47f1-bb78-72fa1bcb90b0",
+          "@type": "PreservationSpecialist"
+        }
+      }
+    ],
+    "人力资源领域": [
+      {
+        "@id": "a901248a-6695-4653-847c-720138981242",
+        "@type": "员工工作量记录",
+        "activityDate": "2024-04-01T10:00:00Z",
+        "activityDescription": "员工阿强对珍善本天工开物初刻本(GJ-006)进行了数字化处理，共处理了450个文件。",
+        "assignedTo": {
+          "@id": "621f4d77-6710-47f1-bb78-72fa1bcb90b0",
+          "@type": "Employee"
+        },
+        "relatedAsset": {
+          "@id": "7a2ad322-14cc-45da-8808-b78580cfc3c7",
+          "@type": "WorkObject"
+        }
+      }
+    ]
+  },
+  "EVENT-017": {
+    "特藏保护领域": [
+      {
+        "@id": "a732296d-3172-4630-9118-24953723381a",
+        "@type": "抢救性保护事件",
+        "hasMeasure": "数字化",
+        "eventDate": "2024-04-02T11:00:00Z",
+        "hasParticipant": {
+          "@id": "495502d3-e20d-4f60-bed9-7446c468bb70",
+          "@type": "PreservationSpecialist"
+        },
+        "hasTarget": {
+          "@id": "5ded4204-910f-4913-887e-fe7a0bacda6e",
+          "@type": "ProtectedItem"
+        }
+      }
+    ],
+    "IT数据管理领域": [
+      {
+        "@id": "a9277123-8646-4444-8888-028a71536732",
+        "@type": "IT数据资产",
+        "storageLocation": "/data/yanglebeizang/",
+        "serverName": "SRV-RARE-03",
+        "lastModified": "2024-04-02T11:00:00Z",
+        "sourceAsset": {
+          "@id": "5ded4204-910f-4913-887e-fe7a0bacda6e",
+          "@type": "DataOrigin"
+        },
+        "operatedBy": {
+          "@id": "495502d3-e20d-4f60-bed9-7446c468bb70",
+          "@type": "SysAdmin"
+        }
+      }
+    ]
+  },
+  "EVENT-018": {
+    "特藏保护领域": [
+      {
+        "@id": "a9277028-1111-4654-8250-136195861111",
+        "@type": "抢救性保护事件",
+        "eventDate": "2024-04-03T14:00:00Z",
+        "hasMeasure": {
+          "@id": "bnode_数字化_fb6651de42cf8b53ebb6c032b89df997",
+          "@type": "数字化",
+          "file_count": 10000,
+          "format": "TIFF",
+          "storage_info": {
+            "@id": "bnode_StorageInfo_78b514da3ac1ff4e10091d591c0e2ec0",
+            "@type": "StorageInfo",
+            "path": "/data/gjtsjc/",
+            "server_name": "SRV-RARE-04"
+          }
+        },
+        "hasTarget": {
+          "@id": "0ea799f6-41c0-452b-815e-d59cabd88f6c",
+          "@type": "ProtectedItem"
+        }
+      }
+    ],
+    "数字资源管理领域": [
+      {
+        "@id": "a907291a-7512-4217-8025-27464670058b",
+        "@type": "DigitalObject",
+        "format": "TIFF",
+        "creationDate": "2024-04-03T14:00:00Z",
+        "fileCount": 10000,
+        "sourceAsset": {
+          "@id": "0ea799f6-41c0-452b-815e-d59cabd88f6c",
+          "@type": "SourceMaterial"
+        }
+      }
+    ],
+    "IT数据管理领域": [
+      {
+        "@id": "e003184d-2d4e-4682-8418-454728511736",
+        "@type": "IT数据资产",
+        "serverName": "SRV-RARE-04",
+        "storageLocation": "/data/gjtsjc/",
+        "lastModified": "2024-04-03T14:00:00Z",
+        "sourceAsset": {
+          "@id": "0ea799f6-41c0-452b-815e-d59cabd88f6c",
+          "@type": "DataOrigin"
+        }
+      }
+    ]
+  },
+  "EVENT-019": {
+    "特藏保护领域": [
+      {
+        "@id": "a7c4c20e-68fb-4465-a2cb-e85d515b9f0f_rescue_event",
+        "@type": "抢救性保护事件",
+        "hasMeasure": "数字化，文件数量：2200，存储路径：/data/temp/gj009/",
+        "eventDate": "2024-04-05T09:30:00Z",
+        "hasTarget": {
+          "@id": "a7c4c20e-68fb-4465-a2cb-e85d515b9f0f",
+          "@type": "ProtectedItem"
+        }
+      }
+    ],
+    "数字资源管理领域": [
+      {
+        "@id": "a7c4c20e-68fb-4465-a2cb-e85d515b9f0f_digital_object",
+        "@type": "DigitalObject",
+        "persistentIdentifier": "handle/GJ-009",
+        "creationDate": "2024-04-05T09:30:00Z",
+        "fileCount": 2200,
+        "sourceAsset": {
+          "@id": "a7c4c20e-68fb-4465-a2cb-e85d515b9f0f",
+          "@type": "SourceMaterial"
+        }
+      }
+    ],
+    "IT数据管理领域": [
+      {
+        "@id": "a7c4c20e-68fb-4465-a2cb-e85d515b9f0f",
+        "@type": "IT数据资产",
+        "storageLocation": "/data/temp/gj009/",
+        "lastModified": "2024-04-05T09:30:00Z",
+        "sourceAsset": {
+          "@id": "a7c4c20e-68fb-4465-a2cb-e85d515b9f0f",
+          "@type": "DataOrigin"
+        }
+      }
+    ]
+  },
+  "EVENT-020": {
+    "特藏保护领域": [
+      {
+        "@id": "a7e1f2b3-4c5d-6e7f-8a9b-0c1d2e3f4a5b",
+        "@type": "Event",
+        "name": "抢救性保护事件",
+        "eventDate": "2024-04-08T15:00:00Z",
+        "hasTarget": {
+          "@id": "dd5ea141-2eb8-4882-9e01-1c92fe912d9d",
+          "@type": "ProtectedItem"
+        },
+        "hasParticipant": {
+          "@id": "bnode_PreservationSpecialist_96ce2bcd69e41cf2227c2eb066ea3e4c",
+          "@type": "PreservationSpecialist",
+          "name": "外包团队A"
+        },
+        "hasMeasure": {
+          "@id": "bnode_Measure_3f2c73bc981d228fcda0d77ebe1f5673",
+          "@type": "Measure",
+          "file_count": "3000",
+          "resolution_dpi": "400",
+          "measureType": "数字化"
+        }
+      }
+    ]
+  },
+  "EVENT-021": {
+    "特藏保护领域": [
+      {
+        "@id": "a902029e-269c-448c-9076-200155054170",
+        "@type": "抢救性保护事件",
+        "hasMeasure": "数字化扫描",
+        "description": "数字化扫描《说文解字》大徐本",
+        "eventDate": "2024-04-10T16:00:00Z",
+        "hasTarget": {
+          "@id": "b022c04b-ef6d-4644-a394-d66b471a1edb",
+          "@type": "ProtectedItem"
+        }
+      }
+    ],
+    "数字资源管理领域": [
+      {
+        "@id": "b022c04b-ef6d-4644-a394-d66b471a1edb",
+        "@type": "DigitalObject",
+        "persistentIdentifier": "nas://archive/swjz/",
+        "description": "数字化扫描《说文解字》大徐本",
+        "creationDate": "2024-04-10T16:00:00Z",
+        "fileCount": 980,
+        "sourceAsset": {
+          "@id": "b022c04b-ef6d-4644-a394-d66b471a1edb",
+          "@type": "SourceMaterial"
+        }
+      }
+    ],
+    "IT数据管理领域": [
+      {
+        "@id": "b022c04b-ef6d-4644-a394-d66b471a1edb",
+        "@type": "DigitalObject",
+        "persistentIdentifier": "nas://archive/swjz/",
+        "description": "数字化扫描《说文解字》大徐本",
+        "creationDate": "2024-04-10T16:00:00Z",
+        "fileCount": 980,
+        "sourceAsset": {
+          "@id": "b022c04b-ef6d-4644-a394-d66b471a1edb",
+          "@type": "SourceMaterial"
+        }
+      }
+    ]
+  },
+  "EVENT-022": {
+    "特藏保护领域": [
+      {
+        "@id": "a9117188-3069-4235-8597-28503893693a",
+        "@type": "抢救性保护事件",
+        "hasMeasure": "数字化",
+        "eventDate": "2024-04-12T11:00:00Z",
+        "hasParticipant": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "PreservationSpecialist"
+        },
+        "数字化详情": {
+          "@id": "bnode_DigitizationDetails_84e27506406abe578a184dbc8e373b01",
+          "@type": "DigitizationDetails",
+          "count": 150,
+          "fmt": "PNG",
+          "dpi": 600
+        },
+        "hasTarget": {
+          "@id": "efd2a84f-5917-4d9b-b11f-28277bfd399f",
+          "@type": "ProtectedItem"
+        }
+      }
+    ],
+    "数字资源管理领域": [
+      {
+        "@id": "a732296d-357d-4115-998f-092211477759",
+        "@type": "DigitalObject",
+        "persistentIdentifier": "handle/GJ-012-20240412",
+        "format": "PNG",
+        "creationDate": "2024-04-12T11:00:00Z",
+        "resolution": "600dpi",
+        "fileCount": 150,
+        "sourceAsset": {
+          "@id": "efd2a84f-5917-4d9b-b11f-28277bfd399f",
+          "@type": "SourceMaterial"
+        },
+        "digitizedBy": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "DigitizationOperator"
+        }
+      }
+    ],
+    "人力资源领域": [
+      {
+        "@id": "a9223326-822e-4055-9273-04021221764b",
+        "@type": "员工工作量记录",
+        "activityDate": "2024-04-12T11:00:00Z",
+        "activityDescription": "员工 1009 对古籍 '山海经图' (GJ-012) 进行了数字化处理，生成了 150 张 PNG 格式、600 DPI 的图像。",
+        "assignedTo": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "Employee"
+        },
+        "relatedAsset": {
+          "@id": "efd2a84f-5917-4d9b-b11f-28277bfd399f",
+          "@type": "WorkObject"
+        }
+      }
+    ]
+  },
+  "EVENT-023": {
+    "人力资源领域": [
+      {
+        "@id": "f8a7b3c2-1e9d-4f5a-8b6c-7d0e1f2a3b4c",
+        "@type": "员工工作量记录",
+        "activityDate": "2024-04-15T13:20:00Z",
+        "activityDescription": "处理了古籍《周髀算经》的相关事务。",
+        "assignedTo": {
+          "@id": "93104d52-2c8d-4777-ba14-4c59981e2026",
+          "@type": "Employee"
+        },
+        "relatedAsset": {
+          "@id": "ed3bf4cb-1973-4e18-b342-86d9db8cd2a5",
+          "@type": "WorkObject"
+        }
+      }
+    ],
+    "财务资产领域": [
+      {
+        "@id": "a901010a-2c8d-4777-ba14-4c59981e2026",
+        "@type": "资产评估记录",
+        "valuationDate": "2024-04-15T13:20:00Z",
+        "relatedAsset": {
+          "@id": "ed3bf4cb-1973-4e18-b342-86d9db8cd2a5",
+          "@type": "FixedAsset"
+        },
+        "financialHandler": {
+          "@id": "93104d52-2c8d-4777-ba14-4c59981e2026",
+          "@type": "FinancialHandler"
+        }
+      }
+    ]
+  },
+  "EVENT-024": {
+    "人力资源领域": [
+      {
+        "@id": "a9e6e0b0-3c1d-4f8e-8a2b-7d5c7f9e0a1b",
+        "@type": "员工工作量记录",
+        "activityDate": "2024-04-18T10:40:00Z",
+        "activityDescription": "员工 1011 对古籍 '武经总要' (GJ-014) 进行了数字化操作。",
+        "assignedTo": {
+          "@id": "621f4d77-6710-47f1-bb78-72fa1bcb90b0",
+          "@type": "Employee"
+        },
+        "relatedAsset": {
+          "@id": "b7f8d861-25d3-4c68-a410-faf3f34de12c",
+          "@type": "WorkObject"
+        }
+      }
+    ]
+  },
+  "EVENT-025": {
+    "特藏保护领域": [
+      {
+        "@id": "a732296d-2321-4965-8120-79883582103f",
+        "@type": "抢救性保护事件",
+        "hasMeasure": "数字化, file_count: 约七百; 存储信息: server_name: SRV-RARE-02",
+        "eventDate": "2024-04-20T17:00:00Z",
+        "hasTarget": {
+          "@id": "fe87894e-b923-4ffe-ab36-a760aba5c4f6",
+          "@type": "ProtectedItem"
+        },
+        "hasParticipant": {
+          "@id": "495502d3-e20d-4f60-bed9-7446c468bb70",
+          "@type": "PreservationSpecialist"
+        }
+      }
+    ],
+    "数字资源管理领域": [
+      {
+        "@id": "a760aba5c4f6-4ffe-ab36-b923-fe87894e",
+        "@type": "DigitalObject",
+        "persistentIdentifier": "a760aba5c4f6-4ffe-ab36-b923-fe87894e",
+        "creationDate": "2024-04-20T17:00:00Z",
+        "fileCount": "约七百",
+        "sourceAsset": {
+          "@id": "fe87894e-b923-4ffe-ab36-a760aba5c4f6",
+          "@type": "SourceMaterial"
+        },
+        "digitizedBy": {
+          "@id": "495502d3-e20d-4f60-bed9-7446c468bb70",
+          "@type": "DigitizationOperator"
+        }
+      }
+    ],
+    "IT数据管理领域": [
+      {
+        "@id": "e7221123-010e-436f-8700-111111111111",
+        "@type": "IT数据资产",
+        "storageLocation": "file_count: 约七百",
+        "serverName": "SRV-RARE-02",
+        "lastModified": "2024-04-20T17:00:00Z",
+        "sourceAsset": {
+          "@id": "fe87894e-b923-4ffe-ab36-a760aba5c4f6",
+          "@type": "DataOrigin"
+        },
+        "operatedBy": {
+          "@id": "495502d3-e20d-4f60-bed9-7446c468bb70",
+          "@type": "SysAdmin"
+        }
+      }
+    ],
+    "人力资源领域": [
+      {
+        "@id": "a9103236-4279-4228-984e-333142277428",
+        "@type": "员工工作量记录",
+        "activityDate": "2024-04-20T17:00:00Z",
+        "activityDescription": "员工对古籍《梦溪笔谈》进行了数字化处理，涉及约七百个文件，并将其存储在服务器SRV-RARE-02上。",
+        "relatedAsset": {
+          "@id": "fe87894e-b923-4ffe-ab36-a760aba5c4f6",
+          "@type": "WorkObject"
+        },
+        "assignedTo": {
+          "@id": "495502d3-e20d-4f60-bed9-7446c468bb70",
+          "@type": "Employee"
+        }
+      }
+    ]
+  },
+  "EVENT-026": {
+    "特藏保护领域": [
+      {
+        "@id": "a7391a13-8120-424a-874b-325547432360",
+        "@type": "抢救性保护事件",
+        "originalCopyCondition": "纸张脆弱，有虫蛀痕迹",
+        "eventDate": "2024-05-05T10:00:00Z",
+        "hasMeasure": {
+          "@id": "bnode_RescueProtectionMeasure_99914b932bd37a50b983c5e7c90ae93b",
+          "@type": "RescueProtectionMeasure",
+          "存储信息": [
+            {
+              "@id": "bnode_StorageInformation_2101f8787e3482511fdb596f0d484a35",
+              "@type": "StorageInformation",
+              "path": "/data/archive/bencao/",
+              "server_name": "SRV-RARE-02"
+            },
+            {
+              "@id": "bnode_StorageInformation_3624014d25fe20c0d710984a434e32ba",
+              "@type": "StorageInformation",
+              "path": "/data/siku/wenyuan/",
+              "server_name": "SRV-RARE-03"
+            },
+            {
+              "@id": "bnode_StorageInfo_2461423e58f78a62c7dbfe6bb7809bc6",
+              "@type": "StorageInfo",
+              "path": "/data/rare/GJ-001/",
+              "server_name": "SRV-RARE-01"
+            },
+            {
+              "@id": "bnode_StorageInformation_68de0cee25002fb6dab28e395aea1af3",
+              "@type": "StorageInformation",
+              "path": "/data/maps/KYWGQT/",
+              "server_name": "SRV-MAPS-01"
+            }
+          ],
+          "数字化详情": [
+            {
+              "@id": "bnode_DigitizationDetails_19b71e77a3faffc52a4fe10015e459dd",
+              "@type": "DigitizationDetails",
+              "file_count": 1900,
+              "resolution_dpi": 400,
+              "format": "JPEG"
+            },
+            {
+              "@id": "bnode_DigitizationDetails_bab6cb5d3423d6a090444e7bc30c7d4f",
+              "@type": "DigitizationDetails",
+              "file_count": 36000,
+              "resolution_dpi": 600,
+              "format": "TIFF"
+            },
+            {
+              "@id": "bnode_DigitalizationDetails_b3c3a77420605f91ba61e177ce86b3ae",
+              "@type": "DigitalizationDetails",
+              "file_count": "1200",
+              "resolution_dpi": "600",
+              "format": "TIFF"
+            }
+          ],
+          "数字化": {
+            "@id": "bnode_Digitalization_d8fb79e1145340d8aca1b93c176d3f7c",
+            "@type": "Digitalization",
+            "file_count": "25",
+            "resolution_dpi": "400",
+            "format": "TIFF"
+          }
+        },
+        "hasTarget": {
+          "@id": "87b1e908-1cd4-46f7-9a3d-7875b3f3d885",
+          "@type": "ProtectedItem"
+        },
+        "hasParticipant": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "PreservationSpecialist"
+        }
+      }
+    ],
+    "IT数据管理领域": [
+      {
+        "@id": "a7b1e908-1cd4-46f7-9a3d-7875b3f3d885",
+        "@type": "IT数据资产",
+        "storageLocation": "/data/rare/GJ-001/",
+        "serverName": "SRV-RARE-01",
+        "lastModified": "2024-05-05T10:00:00Z",
+        "sourceAsset": {
+          "@id": "87b1e908-1cd4-46f7-9a3d-7875b3f3d885",
+          "@type": "DataOrigin"
+        },
+        "operatedBy": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "SysAdmin"
+        },
+        "digitalDetails": {
+          "@id": "bnode_DigitalDetails_1b142e3e94674764dee1d8101294d7ae",
+          "@type": "DigitalDetails",
+          "file_count": 1200,
+          "resolution_dpi": 600,
+          "format": "TIFF"
+        }
+      }
+    ],
+    "人力资源领域": [
+      {
+        "@id": "a904221a-2216-4315-992a-71171442111d",
+        "@type": "员工工作量记录",
+        "activityDate": "2024-05-05T10:00:00Z",
+        "activityDescription": "员工 XuSW (工号: 1009) 对古籍 '永乐大典嘉靖副本残卷' (统一编号: GJ-001) 进行了数字化处理。数字化详情包括文件数量 1200, 分辨率 600 DPI, 格式为 TIFF。数据存储在服务器 SRV-RARE-01 的路径 /data/rare/GJ-001/。古籍物理状况为纸张脆弱，有虫蛀痕迹。",
+        "assignedTo": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "Employee"
+        },
+        "relatedAsset": {
+          "@id": "87b1e908-1cd4-46f7-9a3d-7875b3f3d885",
+          "@type": "WorkObject"
+        }
+      }
+    ]
+  },
+  "EVENT-027": {
+    "特藏保护领域": [
+      {
+        "@id": "a739502b-103e-462a-9213-33230d319803",
+        "@type": "抢救性保护事件",
+        "eventDate": "2024-05-06T11:00:00Z",
+        "hasParticipant": {
+          "@id": "93104d52-2c8d-4777-ba14-4c59981e2026",
+          "@type": "PreservationSpecialist"
+        },
+        "hasTarget": {
+          "@id": "6b679ab8-9afd-43af-86cf-bc4695cca223",
+          "@type": "ProtectedItem"
+        },
+        "hasMeasure": {
+          "@id": "bnode_RescueProtectionEventMeasure_ff1b1f6a25d94dbadaff3d30ba96f2df",
+          "@type": "RescueProtectionEventMeasure",
+          "版权评估": "经法务部门确认为公共领域作品",
+          "数字化详情": {
+            "@id": "bnode_DigitalizationDetails_16946d89b81f5b497bae3b768d665130",
+            "@type": "DigitalizationDetails",
+            "file_count": 850,
+            "resolution_dpi": 800,
+            "format": "JPEG2000"
+          },
+          "存储信息": {
+            "@id": "bnode_StorageInformation_4ae46b4fde22a69b4b898dcd3091bb4a",
+            "@type": "StorageInformation",
+            "path": "/data/archive/ZCJZ-001/",
+            "server_name": "SRV-RARE-02"
+          }
+        }
+      }
+    ],
+    "数字资源管理领域": [
+      {
+        "@id": "a0210e30-b217-4861-893f-350730336214",
+        "@type": "DigitalObject",
+        "persistentIdentifier": "pending",
+        "format": "JPEG2000",
+        "creationDate": "2024-05-06T11:00:00Z",
+        "resolution": "800dpi",
+        "fileCount": 850,
+        "sourceAsset": {
+          "@id": "6b679ab8-9afd-43af-86cf-bc4695cca223",
+          "@type": "SourceMaterial"
+        },
+        "digitizedBy": {
+          "@id": "93104d52-2c8d-4777-ba14-4c59981e2026",
+          "@type": "DigitizationOperator"
+        }
+      }
+    ],
+    "知识产权领域": [
+      {
+        "@id": "a904221a-313e-4361-9426-38472545063c",
+        "@type": "DigitalResourceCopyrightDeclaration",
+        "copyrightStatus": "Public Domain",
+        "assessmentDate": "2024-05-06T11:00:00Z",
+        "RELATES_TO": {
+          "@id": "93104d52-2c8d-4777-ba14-4c59981e2026",
+          "@type": "RightsHolder"
+        },
+        "appliesTo": {
+          "@id": "6b679ab8-9afd-43af-86cf-bc4695cca223",
+          "@type": "CopyrightSubject"
+        }
+      }
+    ],
+    "IT数据管理领域": [
+      {
+        "@id": "a7395279-722a-4379-8802-901171810419",
+        "@type": "IT数据资产",
+        "storageLocation": "/data/archive/ZCJZ-001/",
+        "serverName": "SRV-RARE-02",
+        "lastModified": "2024-05-06T11:00:00Z",
+        "operatedBy": {
+          "@id": "93104d52-2c8d-4777-ba14-4c59981e2026",
+          "@type": "SysAdmin"
+        },
+        "sourceAsset": {
+          "@id": "6b679ab8-9afd-43af-86cf-bc4695cca223",
+          "@type": "DataOrigin"
+        }
+      }
+    ],
+    "人力资源领域": [
+      {
+        "@id": "a739527e-8561-4176-a07c-941838634823",
+        "@type": "员工工作量记录",
+        "activityDate": "2024-05-06T11:00:00Z",
+        "activityDescription": "员工小倩（工号1010）对珍善本《赵城金藏》（统一编号GJ-002）进行了数字化处理。数字化详情包括850个文件，分辨率为800 DPI，格式为JPEG2000。处理后的数据存储在服务器SRV-RARE-02的路径/data/archive/ZCJZ-001/下。该作品经法务部门评估确认为公共领域作品。",
+        "assignedTo": {
+          "@id": "93104d52-2c8d-4777-ba14-4c59981e2026",
+          "@type": "Employee"
+        },
+        "relatedAsset": {
+          "@id": "6b679ab8-9afd-43af-86cf-bc4695cca223",
+          "@type": "WorkObject"
+        }
+      }
+    ]
+  },
+  "EVENT-028": {
+    "特藏保护领域": [
+      {
+        "@id": "a7322960-4221-412e-9336-673192257216",
+        "@type": "抢救性保护事件",
+        "eventDate": "2024-05-08T14:30:00Z",
+        "hasParticipant": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "PreservationSpecialist"
+        },
+        "hasMeasure": {
+          "@id": "bnode_RescueProtectionEventMeasure_eae389b8cb15c0806c0f273a7dd256fd",
+          "@type": "RescueProtectionEventMeasure",
+          "cost_usd": 5000,
+          "预算代码": "PROJ-2024-01",
+          "数字化详情": {
+            "@id": "bnode_DigitalizationDetails_2e63dffcb88e958195603610e4626222",
+            "@type": "DigitalizationDetails",
+            "file_count": 350,
+            "resolution_dpi": 1200,
+            "format": "PNG"
+          },
+          "存储信息": {
+            "@id": "bnode_StorageInformation_fd512305a31514959ddea34c86b3654b",
+            "@type": "StorageInformation",
+            "path": "/data/rare/MSS-005/",
+            "server_name": "SRV-RARE-01"
+          }
+        },
+        "hasTarget": {
+          "@id": "dd170142-bfbd-4849-9080-3cb2c074146a",
+          "@type": "ProtectedItem"
+        }
+      }
+    ],
+    "数字资源管理领域": [
+      {
+        "@id": "a732296d-357d-417d-9477-767931c34139",
+        "@type": "DigitalObject",
+        "persistentIdentifier": "handle:10.1000/MSS-005-DIGITAL",
+        "format": "PNG",
+        "creationDate": "2024-05-08T14:30:00Z",
+        "fileCount": 350,
+        "resolution": "1200dpi",
+        "sourceAsset": {
+          "@id": "dd170142-bfbd-4849-9080-3cb2c074146a",
+          "@type": "SourceMaterial"
+        },
+        "digitizedBy": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "DigitizationOperator"
+        }
+      }
+    ],
+    "IT数据管理领域": [
+      {
+        "@id": "a792472d-1234-4567-89ab-cdef01234567",
+        "@type": "IT数据资产",
+        "storageLocation": "/data/rare/MSS-005/",
+        "serverName": "SRV-RARE-01",
+        "lastModified": "2024-05-08T14:30:00Z",
+        "sourceAsset": {
+          "@id": "dd170142-bfbd-4849-9080-3cb2c074146a",
+          "@type": "DataOrigin"
+        },
+        "operatedBy": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "SysAdmin"
+        }
+      }
+    ],
+    "人力资源领域": [
+      {
+        "@id": "a739824f-722a-431e-9226-10257404104d",
+        "@type": "员工工作量记录",
+        "activityDate": "2024-05-08T14:30:00Z",
+        "activityDescription": "员工XuSW（工号1009）对珍善本“达芬奇手稿”（统一编号MSS-005）进行了数字化处理，共生成350个文件，分辨率为1200 DPI，格式为PNG。处理后的文件存储在服务器SRV-RARE-01的路径/data/rare/MSS-005/下。此项工作的预算代码为PROJ-2024-01，成本为5000美元。",
+        "relatedAsset": {
+          "@id": "dd170142-bfbd-4849-9080-3cb2c074146a",
+          "@type": "WorkObject"
+        },
+        "assignedTo": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "Employee"
+        }
+      }
+    ],
+    "财务资产领域": [
+      {
+        "@id": "a9048a14-434a-4309-801b-927976822262",
+        "@type": "ProjectCostRecord",
+        "budgetCode": "PROJ-2024-01",
+        "transactionDate": "2024-05-08T14:30:00Z",
+        "relatedAsset": {
+          "@id": "dd170142-bfbd-4849-9080-3cb2c074146a",
+          "@type": "FixedAsset"
+        },
+        "storageInformation": {
+          "@id": "bnode_StorageInformation_d3f1ae9ea1dfc5f8a775f920106c709c",
+          "@type": "StorageInformation",
+          "path": "/data/rare/MSS-005/",
+          "serverName": "SRV-RARE-01"
+        },
+        "financialHandler": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "FinancialHandler"
+        },
+        "digitalizationDetails": {
+          "@id": "bnode_DigitalizationDetails_d30934fdeb6223c5f4c82c3822c947a4",
+          "@type": "DigitalizationDetails",
+          "format": "PNG",
+          "resolutionDpi": 1200,
+          "fileCount": 350
+        },
+        "cost": {
+          "@id": "bnode_MonetaryAmount_fb7664e39239bc579c25facb5d2ff674",
+          "@type": "MonetaryAmount",
+          "currency": "USD"
+        }
+      }
+    ]
+  },
+  "EVENT-029": {
+    "特藏保护领域": [
+      {
+        "@id": "a739502b-1234-4567-89ab-cdef12345678",
+        "@type": "IT数据资产",
+        "serverName": "SRV-PHOTOS-01",
+        "storageLocation": "/photos/originals/einstein/",
+        "lastModified": "2024-05-17T13:00:00Z",
+        "operatedBy": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "SysAdmin"
+        },
+        "sourceAsset": {
+          "@id": "550c0505-974c-4b9c-9bdf-880dc3d5c17d",
+          "@type": "DataOrigin"
+        }
+      }
+    ],
+    "数字资源管理领域": [
+      {
+        "@id": "b7280036-724e-4613-8012-045330312683",
+        "@type": "DigitalObject",
+        "format": "TIFF",
+        "creationDate": "2024-05-10T09:00:00Z",
+        "resolution": "400dpi",
+        "fileCount": 25,
+        "sourceAsset": {
+          "@id": "a01cc8f5-4316-4428-a265-47e9490f292e",
+          "@type": "SourceMaterial"
+        },
+        "digitizedBy": {
+          "@id": "621f4d77-6710-47f1-bb78-72fa1bcb90b0",
+          "@type": "DigitizationOperator"
+        }
+      }
+    ],
+    "知识产权领域": [
+      {
+        "@id": "a739502b-632b-472b-871d-19192461944e",
+        "@type": "数字资源版权声明",
+        "copyrightStatus": "Public Domain",
+        "assessmentDate": "2024-05-10T09:00:00Z",
+        "accessPolicy": "仅限校内授权用户访问",
+        "rightsHolder": {
+          "@id": "621f4d77-6710-47f1-bb78-72fa1bcb90b0",
+          "@type": "RightsHolder"
+        },
+        "appliesTo": {
+          "@id": "a01cc8f5-4316-4428-a265-47e9490f292e",
+          "@type": "CopyrightSubject"
+        }
+      }
+    ],
+    "IT数据管理领域": [
+      {
+        "@id": "a732223a-590f-4881-8078-472097072049",
+        "@type": "IT数据资产",
+        "storageLocation": "/data/maps/KYWGQT/",
+        "serverName": "SRV-MAPS-01",
+        "lastModified": "2024-05-10T09:00:00Z",
+        "sourceAsset": {
+          "@id": "a01cc8f5-4316-4428-a265-47e9490f292e",
+          "@type": "DataOrigin"
+        },
+        "operatedBy": {
+          "@id": "621f4d77-6710-47f1-bb78-72fa1bcb90b0",
+          "@type": "SysAdmin"
+        }
+      }
+    ],
+    "人力资源领域": [
+      {
+        "@id": "a7924372-8812-4217-910a-377041477717",
+        "@type": "员工工作量记录",
+        "activityDate": "2024-05-10T09:00:00Z",
+        "activityDescription": "员工阿强对古籍《坤舆万国全图》进行了数字化处理，包括25个文件，分辨率400DPI，格式为TIFF。处理后的文件存储在服务器SRV-MAPS-01的路径/data/maps/KYWGQT/下，访问策略为仅限校内授权用户访问。",
+        "assignedTo": {
+          "@id": "621f4d77-6710-47f1-bb78-72fa1bcb90b0",
+          "@type": "Employee"
+        },
+        "relatedAsset": {
+          "@id": "a01cc8f5-4316-4428-a265-47e9490f292e",
+          "@type": "WorkObject"
+        }
+      }
+    ]
+  },
+  "EVENT-030": {
+    "特藏保护领域": [
+      {
+        "@id": "a953335b-1033-4017-8176-138356193798",
+        "@type": "PreservationEvent",
+        "hasMeasure": "修复前数字化存档",
+        "eventDate": "2024-05-12T16:00:00Z",
+        "hasParticipant": {
+          "@id": "93104d52-2c8d-4777-ba14-4c59981e2026",
+          "@type": "PreservationSpecialist"
+        },
+        "digitalizationDetails": {
+          "@id": "bnode_DigitalizationDetails_611520cf9dfdc991d7565b5e50f039aa",
+          "@type": "DigitalizationDetails",
+          "file_count": 50,
+          "resolution_dpi": 600,
+          "format": "TIFF"
+        },
+        "hasTarget": {
+          "@id": "87b1e908-1cd4-46f7-9a3d-7875b3f3d885",
+          "@type": "ProtectedItem"
+        },
+        "storageInformation": {
+          "@id": "bnode_StorageInformation_a69156937a2e2099edc4d5122264b698",
+          "@type": "StorageInformation",
+          "server_name": "SRV-RARE-01",
+          "path": "/data/rare/GJ-001/supplement/"
+        }
+      }
+    ],
+    "数字资源管理领域": [
+      {
+        "@id": "a739191c-1647-4933-8756-118128038752",
+        "@type": "DigitalObject",
+        "persistentIdentifier": "hdl:20.1000/GJ-001-supplement-digital",
+        "format": "TIFF",
+        "creationDate": "2024-05-12T16:00:00Z",
+        "fileCount": 50,
+        "resolution": "600dpi",
+        "digitizedBy": {
+          "@id": "93104d52-2c8d-4777-ba14-4c59981e2026",
+          "@type": "DigitizationOperator"
+        },
+        "sourceAsset": {
+          "@id": "87b1e908-1cd4-46f7-9a3d-7875b3f3d885",
+          "@type": "SourceMaterial"
+        }
+      }
+    ],
+    "IT数据管理领域": [
+      {
+        "@id": "a7251786-2183-424a-8106-191012171120",
+        "@type": "IT数据资产",
+        "file_count": 50,
+        "resolution_dpi": 600,
+        "name": "永乐大典嘉靖副本残卷",
+        "format": "TIFF",
+        "serverName": "SRV-RARE-01",
+        "storageLocation": "/data/rare/GJ-001/supplement/",
+        "preservation_action": "修复前数字化存档",
+        "lastModified": "2024-05-12T16:00:00Z",
+        "sourceAsset": {
+          "@id": "87b1e908-1cd4-46f7-9a3d-7875b3f3d885",
+          "@type": "DataOrigin"
+        },
+        "operatedBy": {
+          "@id": "93104d52-2c8d-4777-ba14-4c59981e2026",
+          "@type": "SysAdmin"
+        }
+      }
+    ],
+    "人力资源领域": [
+      {
+        "@id": "a021245b-213c-4235-8141-17761141381e",
+        "@type": "员工工作量记录",
+        "activityDate": "2024-05-12T16:00:00Z",
+        "activityDescription": "对《永乐大典嘉靖副本残卷》进行了修复前数字化存档，数字化详情包括：文件数量50，分辨率600dpi，格式为TIFF。存储在服务器SRV-RARE-01的路径/data/rare/GJ-001/supplement/。",
+        "assignedTo": {
+          "@id": "93104d52-2c8d-4777-ba14-4c59981e2026",
+          "@type": "Employee"
+        },
+        "relatedAsset": {
+          "@id": "87b1e908-1cd4-46f7-9a3d-7875b3f3d885",
+          "@type": "WorkObject"
+        }
+      }
+    ]
+  },
+  "EVENT-031": {
+    "IT数据管理领域": [
+      {
+        "@id": "a739103c-848e-4934-8219-58380277864f",
+        "@type": "IT数据资产",
+        "file_count": 8,
+        "resolution_dpi": 300,
+        "format": "PDF/A",
+        "storageLocation": "/archive/newspapers/1949/",
+        "project": "红色文献数字化",
+        "serverName": "SRV-NEWS-ARCH",
+        "workload_hours": 4,
+        "lastModified": "2024-05-15T10:20:00Z",
+        "operatedBy": {
+          "@id": "495502d3-e20d-4f60-bed9-7446c468bb70",
+          "@type": "SysAdmin"
+        },
+        "sourceAsset": {
+          "@id": "507db019-4547-4db4-819b-5e3a7b91cc03",
+          "@type": "DataOrigin"
+        }
+      }
+    ],
+    "人力资源领域": [
+      {
+        "@id": "a9501509-026d-4952-9721-34015022807e",
+        "@type": "员工工作量记录",
+        "activityDate": "2024-05-15T10:20:00Z",
+        "activityDescription": "老王于2024-05-15T10:20:00Z对人民日报创刊号进行了数字化工作，包括8个文件，分辨率300 DPI，格式为PDF/A，存储在SRV-NEWS-ARCH服务器的/archive/newspapers/1949/路径下。该工作属于红色文献数字化项目，耗时4小时。",
+        "assignedTo": {
+          "@id": "495502d3-e20d-4f60-bed9-7446c468bb70",
+          "@type": "Employee"
+        },
+        "relatedAsset": {
+          "@id": "507db019-4547-4db4-819b-5e3a7b91cc03",
+          "@type": "WorkObject"
+        }
+      }
+    ]
+  },
+  "EVENT-032": {
+    "IT数据管理领域": [
+      {
+        "@id": "a739502b-1234-4567-89ab-cdef12345678",
+        "@type": "IT数据资产",
+        "serverName": "SRV-PHOTOS-01",
+        "storageLocation": "/photos/originals/einstein/",
+        "lastModified": "2024-05-17T13:00:00Z",
+        "operatedBy": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "SysAdmin"
+        },
+        "sourceAsset": {
+          "@id": "550c0505-974c-4b9c-9bdf-880dc3d5c17d",
+          "@type": "DataOrigin"
+        }
+      }
+    ],
+    "特藏保护领域": [
+      {
+        "@id": "a9277255-0810-449e-8219-411231610424",
+        "@type": "抢救性保护事件",
+        "eventDate": "2024-05-17T13:00:00Z",
+        "hasTarget": {
+          "@id": "550c0505-974c-4b9c-9bdf-880dc3d5c17d",
+          "@type": "ProtectedItem"
+        },
+        "hasParticipant": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "PreservationSpecialist"
+        },
+        "hasMeasure": {
+          "@id": "bnode_RescueProtectionEventMeasure_48e8012cbe37dd03b0d0e1895c4cc353",
+          "@type": "RescueProtectionEventMeasure",
+          "存储信息": "server_name: SRV-PHOTOS-01, path: /photos/originals/einstein/",
+          "数字化详情": "file_count: 1, resolution_dpi: 2400, format: RAW"
+        }
+      }
+    ],
+    "数字资源管理领域": [
+      {
+        "@id": "a739818e-494a-431e-9275-52013897116f",
+        "@type": "DigitalObject",
+        "persistentIdentifier": "handle:PHOTO-EINSTEIN-DIGITAL",
+        "format": "RAW",
+        "creationDate": "2024-05-17T13:00:00Z",
+        "resolution": "2400dpi",
+        "fileCount": 1,
+        "digitizedBy": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "DigitizationOperator"
+        },
+        "sourceAsset": {
+          "@id": "550c0505-974c-4b9c-9bdf-880dc3d5c17d",
+          "@type": "SourceMaterial"
+        }
+      }
+    ],
+    "人力资源领域": [
+      {
+        "@id": "a7395221-177b-449e-8629-948123223030",
+        "@type": "EmployeeWorkRecord",
+        "activityDate": "2024-05-17T13:00:00Z",
+        "activityDescription": "员工 XuSW (工号: 1009) 对珍善本 '爱因斯坦吐舌头原版照片' (统一编号: PHOTO-EINSTEIN) 进行了数字化处理。数字化详情包括文件数量: 1, 分辨率: 2400 dpi, 格式: RAW。存储在服务器 SRV-PHOTOS-01 的路径 /photos/originals/einstein/。该珍善本的保险价值为 100000。",
+        "relatedAsset": {
+          "@id": "550c0505-974c-4b9c-9bdf-880dc3d5c17d",
+          "@type": "WorkObject"
+        },
+        "assignedTo": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "Employee"
+        }
+      }
+    ]
+  },
+  "EVENT-033": {
+    "数字资源管理领域": [
+      {
+        "@id": "a7b8c9d0-e1f2-3456-7890-abcd1234efgh",
+        "@type": "DigitalObject",
+        "persistentIdentifier": "handle:10.12345/GJ-003-DIGITAL",
+        "format": "JPEG2000",
+        "creationDate": "2024-05-20T15:45:00Z",
+        "fileCount": 5300,
+        "resolution": "800dpi",
+        "digitizedBy": {
+          "@id": "93104d52-2c8d-4777-ba14-4c59981e2026",
+          "@type": "DigitizationOperator"
+        },
+        "sourceAsset": {
+          "@id": "b6c5e4bf-f40c-48a5-af87-2c24af5bc584",
+          "@type": "SourceMaterial"
+        }
+      }
+    ],
+    "特藏保护领域": [
+      {
+        "@id": "a794711f-827c-482f-897d-606277636184",
+        "@type": "抢救性保护事件",
+        "eventDate": "2024-05-20T15:45:00Z",
+        "hasMeasure": {
+          "@id": "bnode_RescueProtectionMeasure_112ac331a709462fbaa4db490f991aa3",
+          "@type": "RescueProtectionMeasure",
+          "存储信息": "server_name: SRV-RARE-02, path: /data/archive/dunhuang/",
+          "数字化详情": "file_count: 5300, resolution_dpi: 800, format: JPEG2000",
+          "data_size_gb": "500",
+          "backup_policy": "LTO-8磁带归档"
+        },
+        "hasParticipant": {
+          "@id": "93104d52-2c8d-4777-ba14-4c59981e2026",
+          "@type": "PreservationSpecialist"
+        },
+        "hasTarget": {
+          "@id": "b6c5e4bf-f40c-48a5-af87-2c24af5bc584",
+          "@type": "ProtectedItem"
+        }
+      }
+    ],
+    "IT数据管理领域": [
+      {
+        "@id": "b6c5e4bf-f40c-48a5-af87-2c24af5bc584-IT数据资产",
+        "@type": "IT数据资产",
+        "backupPolicy": "LTO-8磁带归档",
+        "storageLocation": "/data/archive/dunhuang/",
+        "serverName": "SRV-RARE-02",
+        "lastModified": "2024-05-20T15:45:00Z",
+        "operatedBy": {
+          "@id": "93104d52-2c8d-4777-ba14-4c59981e2026",
+          "@type": "SysAdmin"
+        },
+        "sourceAsset": {
+          "@id": "b6c5e4bf-f40c-48a5-af87-2c24af5bc584",
+          "@type": "DataOrigin"
+        }
+      }
+    ],
+    "人力资源领域": [
+      {
+        "@id": "a732296d-2396-4114-876a-54316629910e",
+        "@type": "EmployeeWorkloadRecord",
+        "activityDate": "2024-05-20T15:45:00Z",
+        "activityDescription": "员工小倩对珍善本“敦煌写经”进行了数字化处理，生成了5300个JPEG2000格式的图像文件，分辨率为800DPI。处理后的数据大小为500GB，存储在服务器SRV-RARE-02的/data/archive/dunhuang/路径下，并按照LTO-8磁带归档策略进行备份。",
+        "relatedAsset": {
+          "@id": "b6c5e4bf-f40c-48a5-af87-2c24af5bc584",
+          "@type": "WorkObject"
+        },
+        "assignedTo": {
+          "@id": "93104d52-2c8d-4777-ba14-4c59981e2026",
+          "@type": "Employee"
+        }
+      }
+    ]
+  },
+  "EVENT-034": {
+    "特藏保护领域": [
+      {
+        "@id": "e0e84176-132d-4114-813c-743015497217",
+        "@type": "抢救性保护事件",
+        "eventDate": "2024-05-22T11:10:00Z",
+        "hasParticipant": {
+          "@id": "621f4d77-6710-47f1-bb78-72fa1bcb90b0",
+          "@type": "PreservationSpecialist"
+        },
+        "hasTarget": {
+          "@id": "6579681e-8954-4487-94e6-e06942199e28",
+          "@type": "ProtectedItem"
+        },
+        "hasMeasure": {
+          "@id": "bnode_MeasureDetails_539fd520ae89acfddf07350ce2883014",
+          "@type": "MeasureDetails",
+          "usage_license": "CC-BY-NC 4.0",
+          "存储信息": {
+            "@id": "bnode_StorageInfo_1be8a1bef24e76985549f6f0bb966544",
+            "@type": "StorageInfo",
+            "path": "/manuscripts/beethoven/sym9/",
+            "server_name": "SRV-MUSIC-01"
+          },
+          "数字化详情": {
+            "@id": "bnode_DigitalizationDetails_c2fb6cd6b7b01dc9e965bb69b6c81afe",
+            "@type": "DigitalizationDetails",
+            "file_count": 210,
+            "resolution_dpi": 1200,
+            "format": "TIFF"
+          }
+        }
+      }
+    ],
+    "数字资源管理领域": [
+      {
+        "@id": "a900983a-4813-4603-a320-10174154433d",
+        "@type": "DigitalObject",
+        "usage_license": "CC-BY-NC 4.0",
+        "persistentIdentifier": "pending",
+        "format": "TIFF",
+        "creationDate": "2024-05-22T11:10:00Z",
+        "resolution": "1200dpi",
+        "fileCount": 210,
+        "digitizedBy": {
+          "@id": "621f4d77-6710-47f1-bb78-72fa1bcb90b0",
+          "@type": "DigitizationOperator"
+        },
+        "sourceAsset": {
+          "@id": "6579681e-8954-4487-94e6-e06942199e28",
+          "@type": "SourceMaterial"
+        }
+      }
+    ],
+    "知识产权领域": [
+      {
+        "@id": "a072111a-0518-4547-8323-01822838321a",
+        "@type": "数字资源版权声明",
+        "copyrightStatus": "Public Domain",
+        "assessmentDate": "2024-05-22T11:10:00Z",
+        "usageLicense": "CC-BY-NC 4.0",
+        "rightsHolder": {
+          "@id": "621f4d77-6710-47f1-bb78-72fa1bcb90b0",
+          "@type": "RightsHolder"
+        },
+        "appliesTo": {
+          "@id": "6579681e-8954-4487-94e6-e06942199e28",
+          "@type": "CopyrightSubject"
+        }
+      }
+    ],
+    "IT数据管理领域": [
+      {
+        "@id": "a9040924-3420-4114-8742-031121966033",
+        "@type": "IT数据资产",
+        "storageLocation": "/manuscripts/beethoven/sym9/",
+        "serverName": "SRV-MUSIC-01",
+        "lastModified": "2024-05-22T11:10:00Z",
+        "sourceAsset": {
+          "@id": "6579681e-8954-4487-94e6-e06942199e28",
+          "@type": "DataOrigin"
+        },
+        "operatedBy": {
+          "@id": "621f4d77-6710-47f1-bb78-72fa1bcb90b0",
+          "@type": "SysAdmin"
+        }
+      }
+    ],
+    "人力资源领域": [
+      {
+        "@id": "a9042502-180b-402a-971c-79965042817d",
+        "@type": "员工工作量记录",
+        "activityDate": "2024-05-22T11:10:00Z",
+        "activityDescription": "员工阿强对珍善本“贝多芬第九交响曲手稿”进行了数字化处理。数字化详情包括文件数量210，分辨率1200dpi，格式为TIFF。存储在服务器SRV-MUSIC-01的路径/manuscripts/beethoven/sym9/下。该数字化成果的使用许可为CC-BY-NC 4.0。",
+        "relatedAsset": {
+          "@id": "6579681e-8954-4487-94e6-e06942199e28",
+          "@type": "WorkObject"
+        },
+        "assignedTo": {
+          "@id": "621f4d77-6710-47f1-bb78-72fa1bcb90b0",
+          "@type": "Employee"
+        }
+      }
+    ]
+  },
+  "EVENT-035": {
+    "特藏保护领域": [
+      {
+        "@id": "a794017b-402c-4734-8259-2191b7908320",
+        "@type": "RescuePreservationEvent",
+        "eventDate": "2024-05-24T17:00:00Z",
+        "hasMeasure": {
+          "@id": "bnode_Measure_57d4e63dea54d6151f760fc7048c62c2",
+          "@type": "Measure",
+          "funder": "国家电影资料馆",
+          "projectBudgetCNY": 200000,
+          "digitalizationDetails": {
+            "@id": "bnode_DigitalizationDetails_2970ffa41c996b56b1653d7786a24643",
+            "@type": "DigitalizationDetails",
+            "file_count": 150000,
+            "resolution_dpi": 8000,
+            "format": "DPX"
+          },
+          "storageInformation": {
+            "@id": "bnode_StorageInformation_b6c020fd45af2e7d1d0b827cd984e433",
+            "@type": "StorageInformation",
+            "path": "/film/metropolis/",
+            "server_name": "SRV-FILM-ARCH"
+          }
+        },
+        "hasTarget": {
+          "@id": "5fc6bc0b-a86b-46e1-b5c4-7d16ae2da8b0",
+          "@type": "ProtectedItem"
+        },
+        "hasParticipant": {
+          "@id": "495502d3-e20d-4f60-bed9-7446c468bb70",
+          "@type": "PreservationSpecialist"
+        }
+      }
+    ],
+    "数字资源管理领域": [
+      {
+        "@id": "a732296d-3575-4228-9842-20163351230e",
+        "@type": "DigitalObject",
+        "persistentIdentifier": "handle:FILM-METROPOLIS-DIGITAL",
+        "format": "DPX",
+        "creationDate": "2024-05-24T17:00:00Z",
+        "resolution": "8000 dpi",
+        "fileCount": 150000,
+        "digitizedBy": {
+          "@id": "495502d3-e20d-4f60-bed9-7446c468bb70",
+          "@type": "DigitizationOperator"
+        },
+        "sourceAsset": {
+          "@id": "5fc6bc0b-a86b-46e1-b5c4-7d16ae2da8b0",
+          "@type": "SourceMaterial"
+        }
+      }
+    ],
+    "IT数据管理领域": [
+      {
+        "@id": "a901844e-128f-431e-8419-72535031b262",
+        "@type": "IT数据资产",
+        "serverName": "SRV-FILM-ARCH",
+        "storageLocation": "/film/metropolis/",
+        "lastModified": "2024-05-24T17:00:00Z",
+        "operatedBy": {
+          "@id": "495502d3-e20d-4f60-bed9-7446c468bb70",
+          "@type": "SysAdmin"
+        },
+        "sourceAsset": {
+          "@id": "5fc6bc0b-a86b-46e1-b5c4-7d16ae2da8b0",
+          "@type": "DataOrigin"
+        }
+      }
+    ],
+    "人力资源领域": [
+      {
+        "@id": "a7342628-9715-464a-974d-736287951566",
+        "@type": "EmployeeWorkloadRecord",
+        "activityDate": "2024-05-24T17:00:00Z",
+        "activityDescription": "老王于2024-05-24T17:00:00Z对珍善本统一编号为FILM-METROPOLIS，题名为大都会原始胶片的古籍进行了数字化处理。数字化详情包括文件数量150000，分辨率8000 DPI，格式为DPX。存储信息为服务器SRV-FILM-ARCH上的路径/film/metropolis/。该项目预算为200000人民币，资助方为国家电影资料馆。",
+        "assignedTo": {
+          "@id": "495502d3-e20d-4f60-bed9-7446c468bb70",
+          "@type": "Employee"
+        },
+        "relatedAsset": {
+          "@id": "5fc6bc0b-a86b-46e1-b5c4-7d16ae2da8b0",
+          "@type": "WorkObject"
+        }
+      }
+    ],
+    "财务资产领域": [
+      {
+        "@id": "a6711202-0994-436f-824a-10492190300a",
+        "@type": "项目成本记录",
+        "funder": "国家电影资料馆",
+        "digitalizationDetails": "file_count: 150000, resolution_dpi: 8000, format: DPX",
+        "storageInformation": "server_name: SRV-FILM-ARCH, path: /film/metropolis/",
+        "transactionDate": "2024-05-24T17:00:00Z",
+        "projectBudget": {
+          "@id": "bnode_MonetaryAmount_fe183b0d097660f78d24331974658ba1",
+          "@type": "MonetaryAmount",
+          "currency": "CNY"
+        },
+        "handler": {
+          "@id": "495502d3-e20d-4f60-bed9-7446c468bb70",
+          "@type": "FinancialHandler"
+        },
+        "relatedAsset": {
+          "@id": "5fc6bc0b-a86b-46e1-b5c4-7d16ae2da8b0",
+          "@type": "FixedAsset"
+        }
+      }
+    ]
+  },
+  "EVENT-036": {
+    "特藏保护领域": [
+      {
+        "@id": "a7395276-8149-432a-9213-911135249110",
+        "@type": "抢救性保护事件",
+        "eventDate": "2024-05-26T10:00:00Z",
+        "hasMeasure": {
+          "@id": "bnode_RescueProtectionMeasure_99914b932bd37a50b983c5e7c90ae93b",
+          "@type": "RescueProtectionMeasure",
+          "存储信息": [
+            {
+              "@id": "bnode_StorageInformation_2101f8787e3482511fdb596f0d484a35",
+              "@type": "StorageInformation",
+              "path": "/data/archive/bencao/",
+              "server_name": "SRV-RARE-02"
+            },
+            {
+              "@id": "bnode_StorageInformation_3624014d25fe20c0d710984a434e32ba",
+              "@type": "StorageInformation",
+              "path": "/data/siku/wenyuan/",
+              "server_name": "SRV-RARE-03"
+            },
+            {
+              "@id": "bnode_StorageInfo_2461423e58f78a62c7dbfe6bb7809bc6",
+              "@type": "StorageInfo",
+              "path": "/data/rare/GJ-001/",
+              "server_name": "SRV-RARE-01"
+            },
+            {
+              "@id": "bnode_StorageInformation_68de0cee25002fb6dab28e395aea1af3",
+              "@type": "StorageInformation",
+              "path": "/data/maps/KYWGQT/",
+              "server_name": "SRV-MAPS-01"
+            }
+          ],
+          "数字化详情": [
+            {
+              "@id": "bnode_DigitizationDetails_19b71e77a3faffc52a4fe10015e459dd",
+              "@type": "DigitizationDetails",
+              "file_count": 1900,
+              "resolution_dpi": 400,
+              "format": "JPEG"
+            },
+            {
+              "@id": "bnode_DigitizationDetails_bab6cb5d3423d6a090444e7bc30c7d4f",
+              "@type": "DigitizationDetails",
+              "file_count": 36000,
+              "resolution_dpi": 600,
+              "format": "TIFF"
+            },
+            {
+              "@id": "bnode_DigitalizationDetails_b3c3a77420605f91ba61e177ce86b3ae",
+              "@type": "DigitalizationDetails",
+              "file_count": "1200",
+              "resolution_dpi": "600",
+              "format": "TIFF"
+            }
+          ],
+          "数字化": {
+            "@id": "bnode_Digitalization_d8fb79e1145340d8aca1b93c176d3f7c",
+            "@type": "Digitalization",
+            "file_count": "25",
+            "resolution_dpi": "400",
+            "format": "TIFF"
+          }
+        },
+        "hasParticipant": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "PreservationSpecialist"
+        },
+        "hasTarget": {
+          "@id": "10cabb37-d120-4c7e-b6af-e2016443f013",
+          "@type": "ProtectedItem"
+        }
+      }
+    ],
+    "数字资源管理领域": [
+      {
+        "@id": "a9291122-3860-496a-8526-724811094013",
+        "@type": "DigitalObject",
+        "persistentIdentifier": "handle:10.12345/GJ-004-DIGITAL",
+        "format": "TIFF",
+        "creationDate": "2024-05-26T10:00:00Z",
+        "fileCount": 36000,
+        "resolution": "600dpi",
+        "digitizedBy": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "DigitizationOperator"
+        },
+        "sourceAsset": {
+          "@id": "10cabb37-d120-4c7e-b6af-e2016443f013",
+          "@type": "SourceMaterial"
+        }
+      }
+    ],
+    "IT数据管理领域": [
+      {
+        "@id": "a9291196-189f-431e-9276-851508209210",
+        "@type": "IT数据资产",
+        "storageLocation": "/data/siku/wenyuan/",
+        "serverName": "SRV-RARE-03",
+        "lastModified": "2024-05-26T10:00:00Z",
+        "operatedBy": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "SysAdmin"
+        },
+        "sourceAsset": {
+          "@id": "10cabb37-d120-4c7e-b6af-e2016443f013",
+          "@type": "DataOrigin"
+        }
+      }
+    ],
+    "人力资源领域": [
+      {
+        "@id": "a798532f-4107-4277-94d0-60787127110e",
+        "@type": "员工工作量记录",
+        "activityDate": "2024-05-26T10:00:00Z",
+        "activityDescription": "员工 XuSW (工号: 1009) 对古籍 '四库全书文渊阁本' (统一编号: GJ-004) 进行了数字化处理。数字化详情包括文件数量: 36000, 分辨率: 600 dpi, 格式: TIFF。存储在服务器 SRV-RARE-03 的路径 /data/siku/wenyuan/。",
+        "relatedAsset": {
+          "@id": "10cabb37-d120-4c7e-b6af-e2016443f013",
+          "@type": "WorkObject"
+        },
+        "assignedTo": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "Employee"
+        }
+      }
+    ]
+  },
+  "EVENT-037": {
+    "特藏保护领域": [
+      {
+        "@id": "9182f2d5-b032-4a08-8884-43d651f54ab1-rescue-event",
+        "@type": "抢救性保护事件",
+        "legal_status": "Public domain as a work of the U.S. federal government.",
+        "eventDate": "2024-05-28T11:30:00Z",
+        "hasMeasure": {
+          "@id": "bnode_数字化_7c39a5a688225419a6a52278987df7b9",
+          "@type": "数字化",
+          "file_count": "1",
+          "format": "TEXT",
+          "storage_info": {
+            "@id": "bnode_StorageInfo_9d9f1b9b67cba2f22389d915637f97cc",
+            "@type": "StorageInfo",
+            "path": "/code/apollo11/",
+            "server_name": "SRV-CODE-ARCH"
+          }
+        },
+        "hasParticipant": {
+          "@id": "d48c9885-ce7e-46f9-bbe7-f70a93898521",
+          "@type": "PreservationSpecialist"
+        },
+        "hasTarget": {
+          "@id": "9182f2d5-b032-4a08-8884-43d651f54ab1",
+          "@type": "ProtectedItem"
+        }
+      }
+    ],
+    "数字资源管理领域": [
+      {
+        "@id": "a739527a-8611-462f-9810-74563467645d",
+        "@type": "DigitalObject",
+        "persistentIdentifier": "hdl:20.500.12345/CODE-APOLLO-DIGITAL",
+        "format": "TEXT",
+        "legal_status": "Public domain as a work of the U.S. federal government.",
+        "creationDate": "2024-05-28T11:30:00Z",
+        "fileCount": 1,
+        "digitizedBy": {
+          "@id": "d48c9885-ce7e-46f9-bbe7-f70a93898521",
+          "@type": "DigitizationOperator"
+        },
+        "sourceAsset": {
+          "@id": "9182f2d5-b032-4a08-8884-43d651f54ab1",
+          "@type": "SourceMaterial"
+        }
+      }
+    ],
+    "知识产权领域": [
+      {
+        "@id": "a739572b-0925-419b-9860-21011853612f",
+        "@type": "数字资源版权声明",
+        "copyrightStatus": "Public Domain",
+        "assessmentDate": "2024-05-28T11:30:00Z",
+        "legal_status": "Public domain as a work of the U.S. federal government.",
+        "appliesTo": {
+          "@id": "9182f2d5-b032-4a08-8884-43d651f54ab1",
+          "@type": "CopyrightSubject"
+        },
+        "rightsHolder": {
+          "@id": "d48c9885-ce7e-46f9-bbe7-f70a93898521",
+          "@type": "RightsHolder"
+        }
+      }
+    ],
+    "IT数据管理领域": [
+      {
+        "@id": "d7486161-042c-4734-822e-333333333333",
+        "@type": "IT数据资产",
+        "storageLocation": "/code/apollo11/",
+        "serverName": "SRV-CODE-ARCH",
+        "lastModified": "2024-05-28T11:30:00Z",
+        "operatedBy": {
+          "@id": "d48c9885-ce7e-46f9-bbe7-f70a93898521",
+          "@type": "SysAdmin"
+        },
+        "sourceAsset": {
+          "@id": "9182f2d5-b032-4a08-8884-43d651f54ab1",
+          "@type": "DataOrigin"
+        }
+      }
+    ],
+    "人力资源领域": [
+      {
+        "@id": "a732296d-3184-4061-8935-1811a2810850",
+        "@type": "员工工作量记录",
+        "activityDate": "2024-05-28T11:30:00Z",
+        "activityDescription": "员工 Lucy (工号: 2002) 对珍善本 '阿波罗11号导航计算机源码' (统一编号: CODE-APOLLO) 进行了数字化操作。数字化详情包括文件数量: 1, 格式: TEXT。存储信息为服务器: SRV-CODE-ARCH, 路径: /code/apollo11/。该珍善本的法律状态为: Public domain as a work of the U.S. federal government。",
+        "relatedAsset": {
+          "@id": "9182f2d5-b032-4a08-8884-43d651f54ab1",
+          "@type": "WorkObject"
+        },
+        "assignedTo": {
+          "@id": "d48c9885-ce7e-46f9-bbe7-f70a93898521",
+          "@type": "Employee"
+        }
+      }
+    ]
+  },
+  "EVENT-038": {
+    "特藏保护领域": [
+      {
+        "@id": "a927718e-4127-462a-921d-720138981242",
+        "@type": "抢救性保护事件",
+        "asset_value": 500000,
+        "valuation_date": "2024-05-29",
+        "eventDate": "2024-05-29T14:00:00Z",
+        "hasParticipant": {
+          "@id": "93104d52-2c8d-4777-ba14-4c59981e2026",
+          "@type": "PreservationSpecialist"
+        },
+        "hasMeasure": {
+          "@id": "bnode_RescueProtectionMeasure_99914b932bd37a50b983c5e7c90ae93b",
+          "@type": "RescueProtectionMeasure",
+          "存储信息": [
+            {
+              "@id": "bnode_StorageInformation_2101f8787e3482511fdb596f0d484a35",
+              "@type": "StorageInformation",
+              "path": "/data/archive/bencao/",
+              "server_name": "SRV-RARE-02"
+            },
+            {
+              "@id": "bnode_StorageInformation_3624014d25fe20c0d710984a434e32ba",
+              "@type": "StorageInformation",
+              "path": "/data/siku/wenyuan/",
+              "server_name": "SRV-RARE-03"
+            },
+            {
+              "@id": "bnode_StorageInfo_2461423e58f78a62c7dbfe6bb7809bc6",
+              "@type": "StorageInfo",
+              "path": "/data/rare/GJ-001/",
+              "server_name": "SRV-RARE-01"
+            },
+            {
+              "@id": "bnode_StorageInformation_68de0cee25002fb6dab28e395aea1af3",
+              "@type": "StorageInformation",
+              "path": "/data/maps/KYWGQT/",
+              "server_name": "SRV-MAPS-01"
+            }
+          ],
+          "数字化详情": [
+            {
+              "@id": "bnode_DigitizationDetails_19b71e77a3faffc52a4fe10015e459dd",
+              "@type": "DigitizationDetails",
+              "file_count": 1900,
+              "resolution_dpi": 400,
+              "format": "JPEG"
+            },
+            {
+              "@id": "bnode_DigitizationDetails_bab6cb5d3423d6a090444e7bc30c7d4f",
+              "@type": "DigitizationDetails",
+              "file_count": 36000,
+              "resolution_dpi": 600,
+              "format": "TIFF"
+            },
+            {
+              "@id": "bnode_DigitalizationDetails_b3c3a77420605f91ba61e177ce86b3ae",
+              "@type": "DigitalizationDetails",
+              "file_count": "1200",
+              "resolution_dpi": "600",
+              "format": "TIFF"
+            }
+          ],
+          "数字化": {
+            "@id": "bnode_Digitalization_d8fb79e1145340d8aca1b93c176d3f7c",
+            "@type": "Digitalization",
+            "file_count": "25",
+            "resolution_dpi": "400",
+            "format": "TIFF"
+          }
+        },
+        "hasTarget": {
+          "@id": "305652fb-3112-47e9-bf65-cb3df3693247",
+          "@type": "ProtectedItem"
+        }
+      }
+    ],
+    "数字资源管理领域": [
+      {
+        "@id": "a9275151-5182-4114-8789-106579213123",
+        "@type": "DigitalObject",
+        "persistentIdentifier": "pending",
+        "format": "JPEG",
+        "creationDate": "2024-05-29T14:00:00Z",
+        "resolution": "400dpi",
+        "fileCount": 1900,
+        "sourceAsset": {
+          "@id": "305652fb-3112-47e9-bf65-cb3df3693247",
+          "@type": "SourceMaterial"
+        },
+        "digitizedBy": {
+          "@id": "93104d52-2c8d-4777-ba14-4c59981e2026",
+          "@type": "DigitizationOperator"
+        }
+      }
+    ],
+    "IT数据管理领域": [
+      {
+        "@id": "a9277028-1111-4777-a222-cb3df3693247",
+        "@type": "IT数据资产",
+        "storageLocation": "/data/archive/bencao/",
+        "serverName": "SRV-RARE-02",
+        "lastModified": "2024-05-29T14:00:00Z",
+        "operatedBy": {
+          "@id": "93104d52-2c8d-4777-ba14-4c59981e2026",
+          "@type": "SysAdmin"
+        },
+        "sourceAsset": {
+          "@id": "305652fb-3112-47e9-bf65-cb3df3693247",
+          "@type": "DataOrigin"
+        }
+      }
+    ],
+    "人力资源领域": [
+      {
+        "@id": "a927011d-6125-450a-912b-240212042211",
+        "@type": "员工工作量记录",
+        "activityDate": "2024-05-29T14:00:00Z",
+        "activityDescription": "员工小倩（工号1010）对珍善本《本草纲目金陵本》（统一编号GJ-005）进行了数字化处理，数字化详情包括文件数量1900，分辨率400DPI，格式为JPEG。处理后的数据存储在服务器SRV-RARE-02的路径/data/archive/bencao/下。该资产的估值为500000，估值日期为2024-05-29。",
+        "relatedAsset": {
+          "@id": "305652fb-3112-47e9-bf65-cb3df3693247",
+          "@type": "WorkObject"
+        },
+        "assignedTo": {
+          "@id": "93104d52-2c8d-4777-ba14-4c59981e2026",
+          "@type": "Employee"
+        }
+      }
+    ],
+    "财务资产领域": [
+      {
+        "@id": "a9094030-2212-452f-822e-131336183427",
+        "@type": "资产评估记录",
+        "valuationDate": "2024-05-29",
+        "handler": {
+          "@id": "93104d52-2c8d-4777-ba14-4c59981e2026",
+          "@type": "FinancialHandler"
+        },
+        "storageInfo": {
+          "@id": "bnode_StorageInfo_554a7969b39273cfc2d9d0891769ca37",
+          "@type": "StorageInfo",
+          "path": "/data/archive/bencao/",
+          "serverName": "SRV-RARE-02"
+        },
+        "asset_value": {
+          "@id": "bnode_MonetaryAmount_fe8ef5f4dad67427dca07241a0f367be",
+          "@type": "MonetaryAmount",
+          "currency": "CNY"
+        },
+        "relatedAsset": {
+          "@id": "305652fb-3112-47e9-bf65-cb3df3693247",
+          "@type": "FixedAsset"
+        },
+        "digitalizationDetails": {
+          "@id": "bnode_DigitalizationDetails_b0f8177ad048547a6936ebd3d9d2d66e",
+          "@type": "DigitalizationDetails",
+          "format": "JPEG",
+          "resolutionDPI": 400,
+          "fileCount": 1900
+        }
+      }
+    ]
+  },
+  "EVENT-039": {
+    "特藏保护领域": [
+      {
+        "@id": "b7f8d861-25d3-4c68-a410-faf3f34de12c_rescue_event",
+        "@type": "抢救性保护事件",
+        "hasMeasure": "数字化",
+        "eventDate": "2024-05-30T16:20:00Z",
+        "digitalizationDetails": {
+          "@id": "bnode_DigitalizationDetails_39b68369f52e48b7706e240aa2b87ba6",
+          "@type": "DigitalizationDetails",
+          "file_count": 1400
+        },
+        "hasParticipant": {
+          "@id": "621f4d77-6710-47f1-bb78-72fa1bcb90b0",
+          "@type": "PreservationSpecialist"
+        },
+        "hasTarget": {
+          "@id": "b7f8d861-25d3-4c68-a410-faf3f34de12c",
+          "@type": "ProtectedItem"
+        }
+      }
+    ],
+    "数字资源管理领域": [
+      {
+        "@id": "a7f8d861-25d3-4c68-a410-faf3f34de12c",
+        "@type": "数字对象",
+        "persistentIdentifier": "pending",
+        "creationDate": "2024-05-30T16:20:00Z",
+        "fileCount": 1400,
+        "security_level": "内部公开",
+        "digitizedBy": {
+          "@id": "621f4d77-6710-47f1-bb78-72fa1bcb90b0",
+          "@type": "DigitizationOperator"
+        },
+        "sourceAsset": {
+          "@id": "b7f8d861-25d3-4c68-a410-faf3f34de12c",
+          "@type": "SourceMaterial"
+        }
+      }
+    ],
+    "IT数据管理领域": [
+      {
+        "@id": "e726487e-2895-4422-835b-117541295988",
+        "@type": "IT数据资产",
+        "storageLocation": "file_count: 1400",
+        "lastModified": "2024-05-30T16:20:00Z",
+        "operatedBy": {
+          "@id": "621f4d77-6710-47f1-bb78-72fa1bcb90b0",
+          "@type": "SysAdmin"
+        },
+        "sourceAsset": {
+          "@id": "b7f8d861-25d3-4c68-a410-faf3f34de12c",
+          "@type": "DataOrigin"
+        }
+      }
+    ],
+    "人力资源领域": [
+      {
+        "@id": "b7f8d861-25d3-4c68-a410-faf3f34de12c_work_record_2024-05-30T16:20:00Z",
+        "@type": "员工工作量记录",
+        "activityDate": "2024-05-30T16:20:00Z",
+        "activityDescription": "员工阿强对古籍《武经总要》进行了数字化处理，共处理了1400个文件。",
+        "relatedAsset": {
+          "@id": "b7f8d861-25d3-4c68-a410-faf3f34de12c",
+          "@type": "WorkObject"
+        },
+        "assignedTo": {
+          "@id": "621f4d77-6710-47f1-bb78-72fa1bcb90b0",
+          "@type": "Employee"
+        }
+      }
+    ]
+  },
+  "EVENT-040": {
+    "特藏保护领域": [
+      {
+        "@id": "a001b2c3-d4e5-f678-90ab-cdef01234567",
+        "@type": "抢救性保护事件",
+        "eventDate": "2024-06-01T12:00:00Z",
+        "hasParticipant": {
+          "@id": "495502d3-e20d-4f60-bed9-7446c468bb70",
+          "@type": "PreservationSpecialist"
+        },
+        "hasMeasure": [
+          {
+            "@id": "bnode_Hasmeasure_000a8cee1ec14102060aa23c7d8a024c",
+            "@type": "Hasmeasure",
+            "details": "进行了脱酸处理",
+            "type": "修复"
+          },
+          {
+            "@id": "bnode_Hasmeasure_602ce0dc0d47bb83aad42ab22ff2861c",
+            "@type": "Hasmeasure",
+            "details": "file_count: 720",
+            "type": "数字化",
+            "storageInfo": "server_name: SRV-RARE-02"
+          }
+        ],
+        "hasTarget": {
+          "@id": "fe87894e-b923-4ffe-ab36-a760aba5c4f6",
+          "@type": "ProtectedItem"
+        }
+      }
+    ],
+    "数字资源管理领域": [
+      {
+        "@id": "a760aba5c4f6-digital-object",
+        "@type": "DigitalObject",
+        "persistentIdentifier": "a760aba5c4f6-digital-object",
+        "creationDate": "2024-06-01T12:00:00Z",
+        "fileCount": 720,
+        "sourceAsset": {
+          "@id": "fe87894e-b923-4ffe-ab36-a760aba5c4f6",
+          "@type": "SourceMaterial"
+        },
+        "digitizedBy": {
+          "@id": "495502d3-e20d-4f60-bed9-7446c468bb70",
+          "@type": "DigitizationOperator"
+        }
+      }
+    ],
+    "IT数据管理领域": [
+      {
+        "@id": "a7e1790c-032f-412e-8e3b-930491012586",
+        "@type": "IT数据资产",
+        "storageLocation": "file_count: 720",
+        "serverName": "SRV-RARE-02",
+        "lastModified": "2024-06-01T12:00:00Z",
+        "sourceAsset": {
+          "@id": "fe87894e-b923-4ffe-ab36-a760aba5c4f6",
+          "@type": "DataOrigin"
+        },
+        "operatedBy": {
+          "@id": "495502d3-e20d-4f60-bed9-7446c468bb70",
+          "@type": "SysAdmin"
+        }
+      }
+    ],
+    "人力资源领域": [
+      {
+        "@id": "a0210e30-749e-4360-9121-729019688321",
+        "@type": "员工工作量记录",
+        "activityDate": "2024-06-01T12:00:00Z",
+        "activityDescription": "对古籍《梦溪笔谈》进行了数字化处理，共计720个文件，并存储在服务器SRV-RARE-02上。同时，对该古籍进行了脱酸处理。",
+        "assignedTo": {
+          "@id": "495502d3-e20d-4f60-bed9-7446c468bb70",
+          "@type": "Employee"
+        },
+        "relatedAsset": {
+          "@id": "fe87894e-b923-4ffe-ab36-a760aba5c4f6",
+          "@type": "WorkObject"
+        }
+      }
+    ]
+  },
+  "EVENT-041": {
+    "图书馆流通领域": [
+      {
+        "@id": "a7e9a65b-8d0e-4a0e-b6fc-85c68cafca7a",
+        "@type": "借阅事件",
+        "expectedReturnDate": "2024-07-05",
+        "eventTimestamp": "2024-06-05T10:00:00Z",
+        "itemBorrowed": {
+          "@id": "ba7e9a65-8d0e-4a0e-b6fc-85c68cafca7a",
+          "@type": "古籍"
+        },
+        "borrower": {
+          "@id": "30e5f38e-e760-45e2-a492-d519539e8c0b",
+          "@type": "Patron"
+        }
+      }
+    ]
+  },
+  "EVENT-042": {},
+  "EVENT-043": {},
+  "EVENT-044": {},
+  "EVENT-045": {},
+  "EVENT-046": {
+    "特藏保护领域": [
+      {
+        "@id": "a7e6d2c3-1f8e-4b0c-9d1a-5f7b0c3d4e5f",
+        "@type": "抢救性保护事件",
+        "hasMeasure": "页面去酸、加固",
+        "eventDate": "2024-06-15T10:20:00Z",
+        "hasParticipant": {
+          "@id": "73aae776-f796-44ab-8484-6c761c3ace8b",
+          "@type": "PreservationSpecialist"
+        },
+        "hasTarget": {
+          "@id": "87b1e908-1cd4-46f7-9a3d-7875b3f3d885",
+          "@type": "ProtectedItem"
+        }
+      }
+    ],
+    "人力资源领域": [
+      {
+        "@id": "a9010166-7247-4933-8208-912196191771",
+        "@type": "员工工作量记录",
+        "activityDate": "2024-06-15T10:20:00Z",
+        "activityDescription": "页面去酸、加固",
+        "relatedAsset": {
+          "@id": "87b1e908-1cd4-46f7-9a3d-7875b3f3d885",
+          "@type": "WorkObject"
+        },
+        "assignedTo": {
+          "@id": "73aae776-f796-44ab-8484-6c761c3ace8b",
+          "@type": "Employee"
+        }
+      }
+    ]
+  },
+  "EVENT-047": {},
+  "EVENT-048": {
+    "人力资源领域": [
+      {
+        "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+        "@type": "员工工作量记录",
+        "activityDate": "2024-06-20T15:45:00Z",
+        "activityDescription": "员工对路径为 /data/temp/old_scans/ 的文件进行了操作。",
+        "assignedTo": {
+          "@id": "a0fdf26b-9d69-4b9e-98b0-43e3bf26be73",
+          "@type": "Employee"
+        }
+      }
+    ]
+  },
+  "EVENT-049": {},
+  "EVENT-050": {}
+}

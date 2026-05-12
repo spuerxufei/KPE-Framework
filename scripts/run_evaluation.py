@@ -21,6 +21,8 @@
 
 - 仅从Neo4j提取数据:
   python -m scripts.run_evaluation --extract-only
+- bpi图谱提取
+  python -m scripts.run_evaluation --run-mvp --bpi-stats
 """
 import json
 import os
@@ -56,15 +58,31 @@ DATA_DIR = BASE_DIR / "data"
 EVAL_DIR = DATA_DIR / "evaluation"
 
 # 默认使用 events.jsonl，如果检测到 events_bpi.jsonl 存在且指定了 --bpi-stats，会自动切换
-# (这部分逻辑在 main 函数中处理)
+# --- 1. 配置与路径定义 ---
+BASE_DIR = Path(__file__).resolve().parent.parent
+DATA_DIR = BASE_DIR / "data"
+EVAL_DIR = DATA_DIR / "evaluation"
+
+# 默认使用 events.jsonl
 INPUT_EVENTS_PATH_DEFAULT = EVAL_DIR / "1_input_events" / "events.jsonl"
-INPUT_EVENTS_BPI_PATH = EVAL_DIR / "1_input_events" / "events_bpi.jsonl"
+INPUT_EVENTS_BPI_PATH = EVAL_DIR / "1_input_events" / "events_bpi_sample.jsonl" # 确保这里是 _sample.jsonl
+
+# 【修复】分离领域模型路径
+DOMAIN_MODELS_RB50_PATH = DATA_DIR / "domain_models.json"
+DOMAIN_MODELS_BPI_PATH = DATA_DIR / "bpi_domain_models.json"
 
 GOLD_KGS_PATH = EVAL_DIR / "2_gold_standard_kgs" / "gold_kgs.json"
-DOMAIN_MODELS_PATH = DATA_DIR / "domain_models.json"
 RUNTIME_ID_MAP_PATH = EVAL_DIR / "runtime_id_map.json"
 GENERATED_KGS_PATH = EVAL_DIR / "3_generated_results" / "generated_kgs.json"
 EVALUATION_RESULTS_PATH = EVAL_DIR / "4_evaluation_results" / "evaluation_results.json"
+
+# 初始化全局变量（将在 main 函数中被动态赋予真实路径）
+INPUT_EVENTS_PATH = None
+GOLD_KGS_PATH = None
+RUNTIME_ID_MAP_PATH = None
+GENERATED_KGS_PATH = None
+EVALUATION_RESULTS_PATH = None
+DOMAIN_MODELS_PATH = None # <--- 动态模型路径
 
 API_ENDPOINT = "http://localhost:8000/v1/events/process"
 NEO4J_URI = "bolt://localhost:7687"
@@ -81,9 +99,18 @@ class PerformanceStats:
         self.api_failures = 0
         self.start_time = 0
         self.end_time = 0
+
+        # [回应 R1.5: 记录被过滤的事件]
+        self.filtered_events = []
+
+        # [回应 R1.7: Token 成本统计]
+        self.judge_prompt_tokens = 0
+        self.judge_completion_tokens = 0
+
         self.total_nodes = 0
         self.total_rels = 0
         self.domain_nodes = 0
+
 
 stats = PerformanceStats()
 
@@ -160,6 +187,11 @@ class Evaluator:
 
                 if not completion.choices:
                     raise ValueError("LLM API返回了空的 choices 列表。")
+
+                # [回应 R1.7: 累加 Token 消耗]
+                if completion.usage:
+                    stats.judge_prompt_tokens += completion.usage.prompt_tokens
+                    stats.judge_completion_tokens += completion.usage.completion_tokens
 
                 response_content = completion.choices[0].message.content
 
@@ -592,10 +624,18 @@ def extract_results_from_neo4j(input_events: List[Dict]) -> Dict:
                     domain_label = next((l for l in record['labels'] if l.endswith('Node')), None)
                     if not domain_label: continue
 
-                    # 从领域标签反向推导领域名称 (更健壮的逻辑)
+                    # 从领域标签反向推导领域名称 (中英文自适应逻辑)
                     domain_name_parts = domain_label.replace("Node", "")
                     domain_name_map = {"It/数据管理": "IT/数据管理领域"}  # 处理特殊情况
-                    domain_name = domain_name_map.get(domain_name_parts, f"{domain_name_parts}领域")
+
+                    if domain_name_parts in domain_name_map:
+                        domain_name = domain_name_map[domain_name_parts]
+                    elif domain_name_parts.isascii():
+                        # 【V3.6 关键修复】如果是纯英文字符（如 BPI 的 LoanBusiness），则不添加"领域"后缀
+                        domain_name = domain_name_parts
+                    else:
+                        # 是中文，且不在特殊映射表里，加上"领域"后缀
+                        domain_name = f"{domain_name_parts}领域"
 
                     reconstructed_obj = reconstruct_jsonld_from_neo4j(session, fragment_id)
                     if reconstructed_obj:
@@ -703,24 +743,37 @@ def run_llm_as_judge_evaluation(generated_kgs: Dict, input_events: List[Dict], g
 
 def main():
     """主函数，通过命令行参数控制执行流程。"""
-    parser = argparse.ArgumentParser(description="知识增殖引擎 V3.5 评估脚本")
-    parser.add_argument("--run-mvp", action="store_true", help="清空数据库并重新运行MVP。")
-    parser.add_argument("--extract-only", action="store_true", help="只提取数据，不评估。")
-    parser.add_argument("--evaluate-only", action="store_true", help="只进行评估。")
-    parser.add_argument("--bpi-stats", action="store_true", help="【新增】启用BPI模式：使用1000条数据，只生成并统计宏观指标，跳过LLM评估。")
+    parser = argparse.ArgumentParser(description="知识增殖引擎 V3.6 评估脚本")
+    parser.add_argument("--run-mvp", action="store_true", help="清空数据库并重新运行MVP生成所有数据。")
+    parser.add_argument("--extract-only", action="store_true", help="只从Neo4j提取数据并保存，不进行LLM评估。")
+    parser.add_argument("--evaluate-only", action="store_true", help="只进行LLM评估，基于已有的生成结果文件。")
+    parser.add_argument("--bpi-stats", action="store_true", help="【启用BPI模式】使用BPI抽样数据，将输出隔离到BPI专属文件。")
     args = parser.parse_args()
 
-    print("--- 终极评估脚本 V3.5 启动 ---")
+    print("--- 终极评估脚本 V3.6 启动 ---")
 
-    # 动态选择输入文件
-    if args.bpi_stats and INPUT_EVENTS_BPI_PATH.exists():
-        print(f"--- 模式: BPI大规模统计 (输入: {INPUT_EVENTS_BPI_PATH}) ---")
-        input_file = INPUT_EVENTS_BPI_PATH
+    # 声明全局变量
+    global INPUT_EVENTS_PATH, GOLD_KGS_PATH, RUNTIME_ID_MAP_PATH, GENERATED_KGS_PATH, EVALUATION_RESULTS_PATH, DOMAIN_MODELS_PATH
+
+    # 【动态路由逻辑】
+    if args.bpi_stats:
+        print(f"--- ⚠️ 模式: BPI 金融数据集泛化性验证 ---")
+        INPUT_EVENTS_PATH = INPUT_EVENTS_BPI_PATH
+        RUNTIME_ID_MAP_PATH = EVAL_DIR / "runtime_id_map_bpi.json"
+        GENERATED_KGS_PATH = EVAL_DIR / "3_generated_results" / "generated_kgs_bpi_sample.json"
+        DOMAIN_MODELS_PATH = DOMAIN_MODELS_BPI_PATH  # <--- BPI模型
     else:
-        print(f"--- 模式: 标准评估 (输入: {INPUT_EVENTS_PATH_DEFAULT}) ---")
-        input_file = INPUT_EVENTS_BPI_PATH if args.bpi_stats else INPUT_EVENTS_PATH_DEFAULT # 允许强制指定
+        print(f"--- 模式: RB-50 标准评估 ---")
+        INPUT_EVENTS_PATH = INPUT_EVENTS_PATH_DEFAULT
+        GOLD_KGS_PATH = EVAL_DIR / "2_gold_standard_kgs" / "gold_kgs.json"
+        RUNTIME_ID_MAP_PATH = EVAL_DIR / "runtime_id_map.json"
+        GENERATED_KGS_PATH = EVAL_DIR / "3_generated_results" / "generated_kgs.json"
+        EVALUATION_RESULTS_PATH = EVAL_DIR / "4_evaluation_results" / "evaluation_results.json"
+        DOMAIN_MODELS_PATH = DOMAIN_MODELS_RB50_PATH  # <--- 古籍模型
 
-    input_events = load_jsonl(input_file)
+    # ---------------- 路径配置完成 ----------------
+
+    input_events = load_jsonl(INPUT_EVENTS_PATH)
 
     runtime_id_map = {}
 
@@ -728,10 +781,11 @@ def main():
     if args.run_mvp:
         # 如果要运行MVP，那么ID映射必须在运行后重新生成
         runtime_id_map = run_mvp_pipeline_and_build_map(input_events)
-        # 【关键】如果是 BPI 统计模式，运行完 MVP 后，直接进行统计并退出
+        # 如果是 BPI 模式，在生成结束后直接统计并退出，不进行 LLM 裁判评估
         if args.bpi_stats:
-            collect_bpi_statistics()
-            print("--- BPI 统计完成，脚本退出。 ---")
+            extract_results_from_neo4j(input_events)  # 提取生成的JSON
+            collect_bpi_statistics()  # 打印统计信息
+            print("--- BPI 泛化性运行及统计完成，脚本安全退出。 ---")
             return
     elif RUNTIME_ID_MAP_PATH.exists():
         # 否则，尝试从文件中加载
@@ -765,7 +819,14 @@ def main():
         print("  - 黄金标准、领域模型和输入事件已加载。")
 
         run_llm_as_judge_evaluation(generated_kgs, input_events, gold_kgs, domain_models, runtime_id_map)
-
+    # [回应 R1.7: 输出 Token 成本报告]
+    print("\n=== [响应 R1.7] 裁判 LLM Token 成本分析 ===")
+    print(f"总计消耗 Prompt Tokens: {stats.judge_prompt_tokens}")
+    print(f"总计消耗 Completion Tokens: {stats.judge_completion_tokens}")
+    # 假设使用 gpt-4o 的大致价格 (每1M tokens: $5 input, $15 output)
+    estimated_cost = (stats.judge_prompt_tokens / 1_000_000 * 5.0) + (stats.judge_completion_tokens / 1_000_000 * 15.0)
+    print(f"估算总成本 (基于 gpt-4o 定价): ${estimated_cost:.4f}")
+    print("=========================================\n")
     print("\n--- 评估脚本执行完毕！ ---")
 
 

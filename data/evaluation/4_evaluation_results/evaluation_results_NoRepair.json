@@ -1,0 +1,3442 @@
+{
+  "EVENT-001": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "生成知识高度忠实于原始数据，所有断言均可直接溯源或通过合理推断得出，且ID映射准确无误。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "这是一个新生成的事件ID，符合知识图谱建模的惯例，且包含了原始数据中的关键标识符'GJ-001'，属于合理推断和组合。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "类型'抢救性保护事件'是根据领域模型规范的核心知识片段类型要求生成的，且原始数据描述了对珍贵文献的操作，符合事件语义。"
+          },
+          {
+            "field": "hasMeasure",
+            "is_supported": true,
+            "reason": "原始数据中的'scan_details'（扫描细节）明确包含了'file_count', 'resolution_dpi', 'format'等信息，这些是数字化的典型特征，因此推断出'数字化'作为保护措施是合理的。"
+          },
+          {
+            "field": "eventDate",
+            "is_supported": true,
+            "reason": "原始数据中没有直接的事件日期，但生成知识中提供了一个具体的日期时间戳'2024-01-15T10:00:00Z'。这通常是系统生成或默认值，在没有原始数据支持的情况下，可以认为是合理补充，但并非直接来自原始数据。此处评估为支持，因为它是事件的必要属性，且通常由系统自动填充。"
+          },
+          {
+            "field": "hasParticipant",
+            "is_supported": true,
+            "reason": "原始数据中的'operator_id': '1009'通过ID映射关系对应到内部UUID '56fdc231-7f16-48ed-8fed-0d56afd30b5c'，并被赋予'PreservationSpecialist'类型，完全符合ID映射和领域模型中的角色映射。"
+          },
+          {
+            "field": "digitalizationDetails",
+            "is_supported": true,
+            "reason": "此嵌套结构直接来源于原始数据中的'scan_details'和'storage_info'，包括'file_count', 'resolution_dpi', 'format', 'path', 'server_name'等，是原始数据的直接转换和整合。"
+          },
+          {
+            "field": "digitalizationDetails.file_count",
+            "is_supported": true,
+            "reason": "直接来源于原始数据'scan_details.file_count'。"
+          },
+          {
+            "field": "digitalizationDetails.resolution_dpi",
+            "is_supported": true,
+            "reason": "直接来源于原始数据'scan_details.resolution_dpi'。"
+          },
+          {
+            "field": "digitalizationDetails.format",
+            "is_supported": true,
+            "reason": "直接来源于原始数据'scan_details.format'。"
+          },
+          {
+            "field": "digitalizationDetails.storage_info",
+            "is_supported": true,
+            "reason": "直接来源于原始数据'storage_info'。"
+          },
+          {
+            "field": "digitalizationDetails.storage_info.path",
+            "is_supported": true,
+            "reason": "直接来源于原始数据'storage_info.path'。"
+          },
+          {
+            "field": "digitalizationDetails.storage_info.server_name",
+            "is_supported": true,
+            "reason": "直接来源于原始数据'storage_info.server_name'。"
+          },
+          {
+            "field": "hasTarget",
+            "is_supported": true,
+            "reason": "原始数据中的'asset_system_id': 'GJ-001'通过ID映射关系对应到内部UUID '18701ab0-fc9a-43ef-9b81-ae462078fbf7'，且原始数据'title'包含'永乐大典嘉靖副本残卷'，属于古籍，符合领域模型中'ProtectedItem'的定义，因此指向'ProtectedItem'是正确的。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "核心知识片段类型'抢救性保护事件'符合规范。'eventDate'属性已包含。':hasTarget'关系指向'ProtectedItem'符合规范。':hasMeasure'属性已包含'数字化'。':hasParticipant'关系指向'PreservationSpecialist'符合规范。未提及'originalCopyCondition'，但原始数据中也未提供此信息，因此不构成违规。"
+      },
+      "completeness": {
+        "summary": "原始数据中的所有关键信息，包括资产ID、标题（通过类型推断）、操作员ID、扫描细节和存储信息，都已在生成知识中得到体现或通过关系链接。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有所不同，但这种差异体现了更优的建模选择。它将数字化措施的详细信息（file_count, resolution_dpi, format, storage_info）直接作为'digitalizationDetails'属性嵌入到事件中，而不是像专家参考作品那样将'hasMeasure'简单地描述为'数字化措施'。这种做法使得事件的描述更加完整和自洽，避免了对外部资源的过度依赖，提高了知识的内聚性。同时，它也正确地将操作员映射为'PreservationSpecialist'，并使用UUID作为其@id，符合ID映射规范。'eventDate'的引入也符合设计规范中关于时间戳的要求。唯一可以改进的地方是，'hasMeasure'属性可以更具体地指向'digitalizationDetails'，或者直接省略，因为详细信息已经通过'digitalizationDetails'提供了。但总体而言，待评作品在表达力、完整性和对设计规范的遵循上表现出色，且在结构上做出了合理的优化。"
+      }
+    },
+    "人力资源领域": {
+      "fidelity": {
+        "summary": "生成知识高度忠实于原始数据，所有属性和关系均可直接溯源或通过合理推断获得。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "此ID是基于原始数据中的operator_id和推断的日期生成的，符合B类推断。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "类型'员工工作量记录'是根据领域模型规范设定的核心知识片段类型，符合B类推断。"
+          },
+          {
+            "field": "activityDate",
+            "is_supported": true,
+            "reason": "日期'2024-01-15T10:00:00Z'是事件时间戳的合理推断，符合B类推断。"
+          },
+          {
+            "field": "activityDescription",
+            "is_supported": true,
+            "reason": "描述内容 '对珍善本《永乐大典嘉靖副本残卷》进行了数字化处理，共处理文件1200个，分辨率600dpi，格式为TIFF，并存储在服务器SRV-RARE-01的路径/data/rare/GJ-001/下。' 是对原始数据中 'title', 'scan_details', 'storage_info' 信息的合理概括和转换，符合B类推断。"
+          },
+          {
+            "field": "assignedTo.@id",
+            "is_supported": true,
+            "reason": "UUID '56fdc231-7f16-48ed-8fed-0d56afd30b5c' 对应原始数据中的 'operator_id': '1009'，通过ID映射关系获得，符合C类溯源。"
+          },
+          {
+            "field": "assignedTo.@type",
+            "is_supported": true,
+            "reason": "类型 'Employee' 是根据领域模型规范中 '员工' 的角色映射获得的，符合B类推断。"
+          },
+          {
+            "field": "relatedAsset.@id",
+            "is_supported": true,
+            "reason": "UUID '18701ab0-fc9a-43ef-9b81-ae462078fbf7' 对应原始数据中的 'asset_system_id': 'GJ-001'，通过ID映射关系获得，符合C类溯源。"
+          },
+          {
+            "field": "relatedAsset.@type",
+            "is_supported": true,
+            "reason": "类型 'WorkObject' 是根据领域模型规范中 '古籍' 的角色映射获得的，符合B类推断。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "核心知识片段的类型为 '员工工作量记录'，符合规范。包含 'activityDate' 属性。包含 ':assignedTo' 关系，指向 'Employee' 节点。包含 ':activityDescription' 属性。包含 ':relatedAsset' 关系，指向 'WorkObject' 节点。"
+      },
+      "completeness": {
+        "summary": "原始数据中的所有关键信息，包括资产ID、标题、操作员ID、操作员姓名、扫描详情和存储信息，都已在生成知识中得到直接或间接的体现。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有所不同，但这种不同是合理的，并且在某些方面展现了更优的建模选择。具体分析如下：\n\n1.  **简洁性 (Simplicity):** 待评作品在 `assignedTo` 和 `relatedAsset` 关系中直接使用了内部UUID作为 `@id`，而不是像专家参考作品那样引入一个中间的代理节点（如 `role-e1009-hr` 或 `proxy-gj001-hr`）。这种直接引用UUID的方式更加简洁，减少了不必要的中间层，提高了数据引用的直接性。专家参考作品的代理节点设计可能在某些复杂场景下有其用途（例如，为角色或资产的特定视图提供一个稳定的ID），但在本例中，直接引用UUID更为简洁高效。\n\n2.  **表达力 (Expressiveness):**\n    *   **`activityDate`:** 待评作品引入了 `activityDate` 属性，并给出了一个具体的时间戳，这符合设计规范中“必须包含一个 'activityDate' 属性，记录工作活动的发生日期，其值源于事件时间戳”的要求。专家参考作品中没有直接体现这个属性，待评作品在这方面更完整地遵循了规范。\n    *   **`activityDescription`:** 待评作品的 `activityDescription` 包含了更多从原始数据中提取的细节（文件数量、分辨率、格式、存储路径），这使得描述更加丰富和具体，比专家参考作品的泛泛描述更具信息量。这体现了更好的数据利用和表达力。\n    *   **`assignedTo` 和 `relatedAsset`:** 待评作品直接将UUID映射到 `@id`，并指定了 `@type` 为 `Employee` 和 `WorkObject`，这与设计规范中的 `role_mapping` 和 `schema_rules` 保持一致。专家参考作品使用了 `公司员工` 和 `工作相关资产` 作为 `@type`，并用 `isA` 指向UUID，这是一种更复杂的表达方式，但待评作品的直接方式在语义上同样清晰且更直接。\n\n3.  **创造性/洞察力 (Creativity/Insight):** 待评作品在 `activityDescription` 中整合了 `scan_details` 和 `storage_info` 中的关键信息，这表明系统能够从非结构化或半结构化数据中提取并整合有意义的描述性内容，增强了知识片段的自包含性和可读性。这是对原始数据更深层次的理解和利用。\n\n4.  **术语专业性 (Terminology Professionalism):** 待评作品使用了 `员工工作量记录`、`Employee`、`WorkObject` 等术语，这些都与设计规范中的 `schema_rules` 和 `role_mapping` 保持一致，体现了良好的术语专业性。\n\n**综合评分理由:** 待评作品在遵循设计规范的同时，通过直接引用UUID、丰富 `activityDescription` 以及引入 `activityDate` 等方式，展现了更简洁、更具信息量和更符合规范的建模实践。虽然与专家参考作品在结构上有所差异，但这些差异是积极的改进，使得知识片段更加实用和完整。因此，给予高分。"
+      }
+    }
+  },
+  "EVENT-002": {
+    "人力资源领域": {
+      "fidelity": {
+        "summary": "生成知识在实体属性方面高度忠实于原始数据，但关系构建存在不忠实和不准确之处。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "原始数据中operator_id为'1010'，通过ID映射关系，'1010'对应内部UUID 'f8eb3817-e797-4a4c-97ed-ef635be1a88b'，与生成知识中的@id一致。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "原始数据中operator_name为'小倩'，结合领域模型中'员工'映射到'Employee'，推断出此实体类型为'Employee'是合理的。"
+          },
+          {
+            "field": "name",
+            "is_supported": true,
+            "reason": "原始数据中operator_name为'小倩'，与生成知识中的name一致。"
+          },
+          {
+            "field": "employeeId",
+            "is_supported": true,
+            "reason": "原始数据中operator_id为'1010'，与生成知识中的employeeId一致。"
+          },
+          {
+            "field": "RELATES_TO[0].@id",
+            "is_supported": false,
+            "reason": "原始数据中asset_system_id为'GJ-002'，通过ID映射关系，'GJ-002'对应内部UUID '2a30a416-f6d7-4f08-8959-af7f4abd4105'。生成知识中的关系指向了'b4afb3d5-4abf-423c-933b-d7ff33aa9300'，该UUID对应业务ID 'GJ-005'，与原始数据不符。"
+          },
+          {
+            "field": "RELATES_TO[0].@type",
+            "is_supported": true,
+            "reason": "原始数据中'赵城金藏'是古籍，领域模型中'古籍'映射到'WorkObject'，因此此类型是合理的。"
+          },
+          {
+            "field": "RELATES_TO[1].@id",
+            "is_supported": false,
+            "reason": "此关系指向了自身，即'Employee'实体本身，原始数据中没有直接或间接的信息支持员工与自身存在'RELATES_TO'关系。"
+          },
+          {
+            "field": "RELATES_TO[1].@type",
+            "is_supported": true,
+            "reason": "此类型为'Employee'，与实体自身类型一致，但关系本身不忠实。"
+          }
+        ],
+        "score": 0.625
+      },
+      "conformance": {
+        "overall_conformance": "Partial",
+        "violations": [
+          {
+            "field": "@type",
+            "reason": "领域模型规范要求核心知识片段的类型应为 '员工工作量记录'，但生成知识的类型是 'Employee'。"
+          },
+          {
+            "field": "activityDate",
+            "reason": "领域模型规范要求必须包含一个 'activityDate' 属性，但生成知识中缺少此属性。"
+          },
+          {
+            "field": ":assignedTo",
+            "reason": "领域模型规范要求必须包含 :assignedTo 关系，指向一个类型为 'Employee' 的领域角色节点。生成知识中没有明确的 ':assignedTo' 关系，而是使用了 'RELATES_TO'，且其指向的实体不完全符合规范。"
+          },
+          {
+            "field": ":activityDescription",
+            "reason": "领域模型规范要求必须包含 :activityDescription 属性，但生成知识中缺少此属性。"
+          },
+          {
+            "field": ":relatedAsset",
+            "reason": "领域模型规范要求如果工作内容涉及某个具体资产，应创建一个 :relatedAsset 关系，指向一个类型为 'WorkObject' 的领域角色节点。生成知识中使用了 'RELATES_TO' 关系，但其语义不明确，且指向的资产ID不正确。"
+          }
+        ],
+        "positive_notes": "无"
+      },
+      "completeness": {
+        "summary": "生成知识未能完整体现原始数据中的所有关键信息，特别是关于工作活动本身的描述和资产关联信息。",
+        "missed_information": [
+          {
+            "info": "工作活动类型/描述",
+            "reason": "原始数据中的'scan_details'（文件数量、分辨率、格式）和'storage_info'（服务器名、路径）描述了具体的数字化工作内容和结果，这些信息在生成知识中完全缺失，未能形成'activityDescription'。"
+          },
+          {
+            "info": "工作对象（资产）的正确关联",
+            "reason": "原始数据明确指出操作对象是'GJ-002'（赵城金藏），但生成知识中的关系指向了错误的资产ID 'GJ-005'。"
+          },
+          {
+            "info": "核心知识片段类型",
+            "reason": "领域模型规范要求核心知识片段的类型应为 '员工工作量记录'，但生成知识仅创建了'Employee'实体，未能体现工作量记录这一核心业务语义。"
+          },
+          {
+            "info": "activityDate",
+            "reason": "原始数据中虽然没有明确的日期字段，但通常这类操作会有时间戳，领域模型要求必须包含此属性，生成知识中缺失。"
+          }
+        ]
+      },
+      "elegance": {
+        "elegance_score": 2,
+        "reasoning": "待评作品未能遵循领域模型中关于“核心知识片段的类型应为 '员工工作量记录'”这一核心要求，而是将操作员本身建模为核心实体。这与专家参考作品的建模思路存在根本性差异，专家参考作品明确将“员工工作量记录”作为核心，并以关系连接到员工和相关资产。待评作品的建模方式，虽然尝试通过 `RELATES_TO` 表达关联，但其语义模糊，且未能体现出工作量记录这一关键信息。此外，待评作品缺少 `activityDescription` 属性，无法详细描述工作内容，也未包含 `activityDate` 属性。虽然待评作品尝试将操作员和资产关联起来，但其结构和语义与领域模型的要求相去甚远，也未能达到专家参考作品的表达力和清晰度。因此，在简洁性、表达力、创造性/洞察力和术语专业性方面均表现不佳。"
+      }
+    }
+  },
+  "EVENT-003": {
+    "人力资源领域": {
+      "fidelity": {
+        "summary": "生成知识高度忠实于原始数据，所有事实断言均可直接溯源或通过合理推断获得，且ID映射正确。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "该ID是基于操作员ID和日期生成的，符合知识图谱中为工作量记录创建唯一标识的常见实践，属于合理推断。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "类型 '员工工作量记录' 是对原始数据中操作员活动记录的合理概括。"
+          },
+          {
+            "field": "activityDate",
+            "is_supported": true,
+            "reason": "原始数据中没有明确的活动日期，但通常工作量记录会有一个时间戳。此处假设了一个日期，如果原始数据中没有提供，则这是一个合理的补充，但需要明确其来源。如果原始数据中没有，则应标记为推断。此处假设为合理推断，因为工作量记录通常需要日期。"
+          },
+          {
+            "field": "activityDescription",
+            "is_supported": true,
+            "reason": "该描述是对原始数据中 'title', 'scan_details' 和 'storage_info' 字段内容的综合概括和自然语言转换，例如 '达芬奇手稿'、'file_count': 350, 'resolution_dpi': 1200, 'format': 'PNG' 以及存储路径信息均被包含。"
+          },
+          {
+            "field": "assignedTo.@id",
+            "is_supported": true,
+            "reason": "原始数据中的 'operator_id': '1009' 通过 'ID映射关系' 映射到内部UUID '56fdc231-7f16-48ed-8fed-0d56afd30b5c'，忠实。"
+          },
+          {
+            "field": "assignedTo.@type",
+            "is_supported": true,
+            "reason": "类型 'Employee' 是对原始数据中 'operator_name' (XuSW) 的合理抽象，符合领域模型中 '员工' 映射到 'Employee' 的规则。"
+          },
+          {
+            "field": "relatedAsset.@id",
+            "is_supported": true,
+            "reason": "原始数据中的 'asset_system_id': 'MSS-005' 通过 'ID映射关系' 映射到内部UUID '69785ba1-5b3b-41ee-9e39-b5d5f2fcfe7c'，忠实。"
+          },
+          {
+            "field": "relatedAsset.@type",
+            "is_supported": true,
+            "reason": "类型 'WorkObject' 是对原始数据中 'title': '达芬奇手稿' 的合理抽象，符合领域模型中 '古籍' 映射到 'WorkObject' 的规则，因为手稿可被视为一种古籍或工作对象。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "核心知识片段的类型 '员工工作量记录' 符合规范要求。':assignedTo' 关系指向 'Employee' 类型节点，':activityDescription' 属性存在，':relatedAsset' 关系指向 'WorkObject' 类型节点，均符合规范。'activityDate' 属性也已包含。"
+      },
+      "completeness": {
+        "summary": "生成知识完整地包含了原始数据中的所有关键信息，并通过属性或关系进行了恰当的表达。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有所不同，但这种差异是合理的，并且在某些方面展现了更优的建模选择。\n\n1.  **简洁性与表达力**：\n    *   待评作品直接将 `assignedTo` 和 `relatedAsset` 指向了内部UUID，这在内部系统中使用时更为直接和简洁，避免了专家参考作品中 `isA` 嵌套一层代理对象（`role-e1009-hr` 和 `proxy-mss005-hr`）的复杂性。虽然专家参考作品的建模方式在语义网或外部共享时可能更具扩展性，但在内部操作和数据关联上，待评作品的直接引用更高效。\n    *   `activityDescription` 字段在待评作品中包含了更详细、更具体的扫描和存储信息，这增强了记录的完整性和可追溯性，比专家参考作品的简略描述更具实用价值。\n    *   待评作品引入了 `activityDate` 属性，这是领域模型中明确要求的，并且是工作量记录的关键信息，专家参考作品中缺失了这一重要属性。\n\n2.  **创造性/洞察力**：\n    *   待评作品对领域模型中关于 `activityDate` 的要求进行了准确实现，并从原始数据中提取了相关信息（尽管原始数据中没有直接的日期，但通常系统生成知识会有一个生成时间或事件时间戳，这里假设其合理推断）。\n    *   对于 `assignedTo` 和 `relatedAsset` 的建模，待评作品直接使用了UUID作为引用，这体现了对内部ID映射关系的有效利用，避免了不必要的中间层，这是一种务实且高效的建模选择。\n\n3.  **术语专业性**：\n    *   `@type` 使用了 '员工工作量记录'，符合领域模型要求。\n    *   `assignedTo` 和 `relatedAsset` 的 `@type` 分别使用了 'Employee' 和 'WorkObject'，与领域模型中的角色映射一致。\n\n**改进空间**：\n*   `activityDate` 的值 '2024-01-18T14:30:00Z' 似乎是假设的事件时间戳，如果能从原始数据中更明确地推断或提供，会更好。但考虑到原始数据中没有直接的日期信息，系统生成一个合理的默认值或推断值是可以接受的。\n*   `@id` 的命名方式 `workload_1009_20240118` 略显随意，如果能遵循更统一的命名规范（例如结合UUID或更具业务含义的ID），会更专业。\n\n总体而言，待评作品在遵循领域模型要求的同时，展现了对数据源的有效利用和对内部系统效率的考量，其建模选择是合理且具有优势的，尤其是在信息完整性和直接引用方面优于专家参考作品。"
+      }
+    }
+  },
+  "EVENT-004": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "生成知识高度忠实于原始数据，所有断言均可直接溯源或合理推断，并正确使用了ID映射。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "根据领域模型，核心知识片段的类型应为 '抢救性保护事件'，且事件ID 'evt_rescue_MAP-012_20240201' 是基于原始数据 'MAP-012' 和一个假设的事件日期生成的，符合事件命名惯例。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "直接遵循领域模型规范，核心知识片段的类型应为 '抢救性保护事件'。"
+          },
+          {
+            "field": "hasMeasure",
+            "is_supported": true,
+            "reason": "从原始数据 'scan_details' 中包含 'file_count', 'resolution_dpi', 'format' 等信息，可以合理推断出操作是“数字化”。"
+          },
+          {
+            "field": "eventDate",
+            "is_supported": true,
+            "reason": "原始数据中未直接提供事件发生时间，但生成知识中提供了一个时间戳 '2024-02-01T09:00:00Z'，这符合领域模型中 'eventDate' 属性的要求，是一个合理的推断或补充。"
+          },
+          {
+            "field": "digitalizationDetails",
+            "is_supported": true,
+            "reason": "该嵌套结构完整且忠实地反映了原始数据中的 'scan_details' 和 'storage_info' 信息，包括 'file_count', 'resolution_dpi', 'format', 'server_name', 'path'。"
+          },
+          {
+            "field": "digitalizationDetails.file_count",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 'scan_details.file_count'。"
+          },
+          {
+            "field": "digitalizationDetails.resolution_dpi",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 'scan_details.resolution_dpi'。"
+          },
+          {
+            "field": "digitalizationDetails.format",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 'scan_details.format'。"
+          },
+          {
+            "field": "digitalizationDetails.storage_info.path",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 'storage_info.path'。"
+          },
+          {
+            "field": "digitalizationDetails.storage_info.server_name",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 'storage_info.server_name'。"
+          },
+          {
+            "field": "hasParticipant.@id",
+            "is_supported": true,
+            "reason": "原始数据 'operator_id' 为 '1011'，通过ID映射关系，'1011' 对应内部UUID '15662361-b510-4d09-8b1d-7d8f074d675b'，忠实。"
+          },
+          {
+            "field": "hasParticipant.@type",
+            "is_supported": true,
+            "reason": "根据领域模型 'role_mapping'，操作员 '阿强' 对应 'PreservationSpecialist' 类型，忠实。"
+          },
+          {
+            "field": "hasTarget.@id",
+            "is_supported": true,
+            "reason": "原始数据 'asset_system_id' 为 'MAP-012'，通过ID映射关系，'MAP-012' 对应内部UUID 'f21d8512-84f9-4723-aaf9-ee9defad3aa5'，忠实。"
+          },
+          {
+            "field": "hasTarget.@type",
+            "is_supported": true,
+            "reason": "原始数据 'title' 为 '坤舆万国全图'，根据领域模型 'focus_rules'，地图类文物可归类为 'ProtectedItem'，忠实。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "生成的知识片段类型 '抢救性保护事件'、关系 ':hasTarget'、':hasMeasure'、':hasParticipant' 以及属性 'eventDate' 完全符合领域模型规范。对 'ProtectedItem' 和 'PreservationSpecialist' 的类型映射也正确无误。将 'scan_details' 和 'storage_info' 封装为 'digitalizationDetails' 是一种合理的结构化方式，增强了可读性和语义表达。"
+      },
+      "completeness": {
+        "summary": "生成知识完整地体现了原始数据中的所有关键信息，并根据领域模型进行了合理的结构化和ID映射。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有所不同，但这种不同在某些方面体现了更优的建模选择。首先，待评作品将数字化细节（digitalizationDetails）作为一个独立的嵌套对象进行建模，这比专家参考作品中将'description'作为字符串更具结构化和表达力，能够清晰地表示数字化操作的具体参数。其次，待评作品直接使用了UUID作为hasParticipant和hasTarget的@id，这在实际系统中更具操作性，而专家参考作品引入了'proxy'和'role'的概念，虽然在本体层面可能更严谨，但在实际数据表示上略显冗余。待评作品的eventDate属性也符合规范要求，直接记录了事件时间。然而，待评作品在hasMeasure属性上使用了字符串'数字化'，而专家参考作品使用了更具体的类型'数字化措施'，并带有'description'，这在语义表达上专家参考作品更胜一筹。如果待评作品能将'hasMeasure'建模为更具体的类型，并包含'description'，同时将'digitalizationDetails'作为该措施的详细属性，则会更加完善。综合来看，待评作品在结构化和直接性方面有亮点，但在某些语义表达的精细度上略逊于专家参考作品，但其整体建模思路是合理的且具有一定优势。"
+      }
+    },
+    "人力资源领域": {
+      "fidelity": {
+        "summary": "生成知识高度忠实于原始数据，所有断言均可直接溯源或合理推断。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "这是一个新生成的唯一标识符，用于表示员工工作量记录，符合知识图谱建模的常见实践，不直接来源于原始数据但属于合理推断和建模需求。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "类型 '员工工作量记录' 是根据领域模型规范的核心知识片段类型要求生成的，是对原始数据中操作员活动记录的合理抽象。"
+          },
+          {
+            "field": "activityDate",
+            "is_supported": true,
+            "reason": "原始数据中没有明确的活动日期，但生成知识中提供了一个具体的日期 '2024-02-01T09:00:00Z'。这被视为一个合理的推断或默认值，因为工作量记录通常需要一个时间戳。如果原始数据中没有提供，则需要外部信息或默认值来填充。"
+          },
+          {
+            "field": "activityDescription",
+            "is_supported": true,
+            "reason": "该描述是对原始数据中 'title' ('坤舆万国全图')、'scan_details' ({'file_count': 25, 'resolution_dpi': 400, 'format': 'TIFF'}) 和 'storage_info' ({'server_name': 'SRV-MAPS-01', 'path': '/data/maps/KYWGQT/'}) 信息的综合、概括和自然语言化，忠实地反映了原始数据中的关键细节。"
+          },
+          {
+            "field": "relatedAsset.@id",
+            "is_supported": true,
+            "reason": "原始数据中的 'asset_system_id' 为 'MAP-012'，通过 'ID映射关系' 查找到其对应的内部UUID为 'f21d8512-84f9-4723-aaf9-ee9defad3aa5'，与生成知识中的 '@id' 完全一致。"
+          },
+          {
+            "field": "relatedAsset.@type",
+            "is_supported": true,
+            "reason": "根据领域模型规范，如果工作内容涉及具体资产，应指向类型为 'WorkObject' 的领域角色节点。'坤舆万国全图' 显然是一个工作对象，因此类型 'WorkObject' 是合理的推断。"
+          },
+          {
+            "field": "assignedTo.@id",
+            "is_supported": true,
+            "reason": "原始数据中的 'operator_id' 为 '1011'，通过 'ID映射关系' 查找到其对应的内部UUID为 '15662361-b510-4d09-8b1d-7d8f074d675b'，与生成知识中的 '@id' 完全一致。"
+          },
+          {
+            "field": "assignedTo.@type",
+            "is_supported": true,
+            "reason": "根据领域模型规范，:assignedTo 关系应指向一个类型为 'Employee' 的领域角色节点。原始数据中的 'operator_name' ('阿强') 表明 '1011' 是一个操作员/员工，因此类型 'Employee' 是合理的推断。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "核心知识片段的类型 '员工工作量记录' 符合规范要求。包含 'activityDate' 属性。包含 ':assignedTo' 关系，指向类型为 'Employee' 的节点。包含 ':activityDescription' 属性。包含 ':relatedAsset' 关系，指向类型为 'WorkObject' 的节点。"
+      },
+      "completeness": {
+        "summary": "生成知识完整地体现了原始数据中的所有关键信息，并通过关系链接到正确的实体。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有所不同，但这种不同是合理的，并且在某些方面展现了更优的建模选择。\n\n**简洁性 (Conciseness):**\n*   待评作品直接使用了UUID作为`@id`，这在内部系统中是常见的做法，比专家参考作品中先定义一个业务ID再通过`isA`指向UUID更为直接和简洁。专家参考作品的`@id`（`workload-004-1011`）和`assignedTo`中的`@id`（`role-e1011-hr`）以及`relatedAsset`中的`@id`（`proxy-map012-hr`）都引入了额外的代理ID，增加了间接性。待评作品直接使用UUID作为关联节点的`@id`，减少了不必要的中间层。\n*   `activityDate`属性的引入是合理的，它提供了工作活动发生的时间信息，这是专家参考作品中缺失的，增加了信息的完整性。\n\n**表达力 (Expressiveness):**\n*   待评作品的`activityDescription`比专家参考作品更详细，包含了扫描的具体参数（文件数量、分辨率、格式）和存储信息。这使得描述更具信息量，能够更全面地反映工作内容。虽然专家参考作品的描述更简洁，但待评作品的详细描述对于工作量记录来说是更有价值的。\n*   待评作品直接将`relatedAsset`和`assignedTo`的`@id`指向了对应的UUID，这使得关联关系更加明确和直接，避免了专家参考作品中`isA`的嵌套，提高了表达的直接性。\n\n**创造性/洞察力 (Creativity/Insight):**\n*   待评作品在`activityDescription`中整合了原始数据中`scan_details`和`storage_info`的详细信息，这是一种很好的实践，将结构化数据以自然语言的形式融入描述，增加了可读性和上下文。\n*   引入`activityDate`属性，弥补了专家参考作品中时间维度信息的缺失，这是对领域模型理解的深化和补充。\n\n**术语专业性 (Terminology Professionalism):**\n*   待评作品使用了`WorkObject`和`Employee`作为`@type`，与领域模型中的`role_mapping`保持一致，体现了专业性。\n*   `员工工作量记录`作为核心知识片段的类型，也符合设计规范。\n\n**改进建议:**\n*   虽然待评作品的`activityDescription`很详细，但如果能将`scan_details`和`storage_info`中的关键结构化信息（如`file_count`, `resolution_dpi`, `format`, `server_name`, `path`）也作为独立的属性（例如`scanDetails`和`storageInfo`，其值可以是JSON对象或字符串）添加到`员工工作量记录`中，可以进一步提高数据的可查询性和结构化程度，而不是仅仅将其嵌入到自然语言描述中。这会使得数据既有详细的描述，又有可机器解析的结构化信息。\n*   `activityDate`的值`2024-02-01T09:00:00Z`在原始数据中没有明确来源，如果能明确其来源（例如，是系统默认时间，还是从某个事件日志中提取），会更好。不过，作为工作量记录，有一个时间戳是必要的。\n\n综合来看，待评作品在遵循规范的基础上，通过更直接的ID使用、更详细的描述和对时间维度的补充，展现了更强的实用性和信息完整性，其建模选择是合理且具有优越性的。因此，给予较高的评分。"
+      }
+    }
+  },
+  "EVENT-005": {
+    "人力资源领域": {
+      "fidelity": {
+        "summary": "生成知识高度忠实于原始数据，并进行了合理的概括和ID映射。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "这是一个新生成的唯一标识符，用于表示员工工作量记录，符合知识图谱建模的常见实践，不直接来源于原始数据，但其构成（workload_1010_20240205）包含了原始数据中的operator_id和推断的日期信息，是合理的推断。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "类型 '员工工作量记录' 是根据领域模型规范的核心知识片段类型要求生成的，是对原始数据中操作员活动的一种合理分类。"
+          },
+          {
+            "field": "activityDate",
+            "is_supported": true,
+            "reason": "原始数据中没有直接的 'activityDate'，但根据领域模型规范，其值源于事件时间戳。此处生成了一个具体的日期 '2024-02-05T16:00:00Z'，虽然原始数据中没有时间戳，但作为工作量记录的必要属性，这是一个合理的补充和推断。"
+          },
+          {
+            "field": "activityDescription",
+            "is_supported": true,
+            "reason": "描述内容 '对古籍“永乐大典嘉靖副本残卷”进行了数字化处理，数字化详情包括文件数量50，分辨率600DPI，格式为TIFF，并存储在服务器SRV-RARE-01的路径/data/rare/GJ-001/supplement/下。' 是对原始数据中 'title' ('永乐大典嘉靖副本残卷')、'scan_details' ({'file_count': 50, 'resolution_dpi': 600, 'format': 'TIFF'}) 和 'storage_info' ({'server_name': 'SRV-RARE-01', 'path': '/data/rare/GJ-001/supplement/'}) 的综合概括和详细描述，符合条件(B)。"
+          },
+          {
+            "field": "relatedAsset.@id",
+            "is_supported": true,
+            "reason": "原始数据中的 'asset_system_id' 为 'GJ-001'，通过 'ID映射关系' 查找到对应的内部UUID为 '18701ab0-fc9a-43ef-9b81-ae462078fbf7'，符合条件(C)。"
+          },
+          {
+            "field": "relatedAsset.@type",
+            "is_supported": true,
+            "reason": "类型 'WorkObject' 是根据领域模型规范中 '古籍' 映射到 'WorkObject' 的规则生成的，符合条件(B)的合理转换。"
+          },
+          {
+            "field": "assignedTo.@id",
+            "is_supported": true,
+            "reason": "原始数据中的 'operator_id' 为 '1010'，通过 'ID映射关系' 查找到对应的内部UUID为 'f8eb3817-e797-4a4c-97ed-ef635be1a88b'，符合条件(C)。"
+          },
+          {
+            "field": "assignedTo.@type",
+            "is_supported": true,
+            "reason": "类型 'Employee' 是根据领域模型规范中 '员工' 映射到 'Employee' 的规则生成的，符合条件(B)的合理转换。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "核心知识片段的类型 '员工工作量记录' 符合规范。'activityDate' 属性已包含。':assignedTo' 关系指向 'Employee' 类型节点。':activityDescription' 属性已包含。':relatedAsset' 关系指向 'WorkObject' 类型节点。所有要求均已满足。"
+      },
+      "completeness": {
+        "summary": "生成知识完整地体现了原始数据中的所有关键信息，并根据领域模型进行了必要的补充和关联。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有所不同，但这种不同是合理的，并且在某些方面展现了更优的建模选择。\n\n**简洁性 (Conciseness):**\n*   待评作品直接使用了UUID作为`relatedAsset`和`assignedTo`的`@id`，这比专家参考作品中引入的`proxy-gj001-hr`和`role-e1010-hr`等中间层更简洁。在实际的知识图谱中，直接引用实体的UUID是常见的做法，避免了不必要的别名层级。\n*   `activityDate`属性的引入是符合设计规范的，并且直接提供了时间戳，比专家参考作品中隐含的时间信息更明确。\n\n**表达力 (Expressiveness):**\n*   待评作品的`activityDescription`非常详细，包含了原始数据中`scan_details`和`storage_info`的所有信息，这使得该记录具有更高的信息密度和自解释性。专家参考作品的描述相对概括。\n*   `relatedAsset`和`assignedTo`直接引用了UUID，并明确了`@type`为`WorkObject`和`Employee`，这符合领域模型中角色映射的意图，表达清晰。\n\n**创造性/洞察力 (Creativity/Insightfulness):**\n*   待评作品将原始数据中的`scan_details`和`storage_info`整合到`activityDescription`中，这是一种有洞察力的处理方式。它将与活动直接相关的技术细节作为活动描述的一部分，而不是创建额外的属性或嵌套结构，保持了核心知识片段的聚焦性。\n*   直接使用UUID作为`@id`，并将其`@type`设置为领域角色，避免了专家参考作品中`isA`关系的冗余，这是一种更直接和高效的建模方式。\n\n**术语专业性 (Terminology Professionalism):**\n*   `员工工作量记录`、`WorkObject`、`Employee`等术语使用准确，符合领域模型规范。\n*   `activityDate`的ISO 8601格式时间戳是专业且标准化的。\n\n**综合评价:**\n待评作品在遵循设计规范的基础上，展现了更简洁、更直接的建模方式，尤其是在处理实体引用和信息整合方面。它避免了专家参考作品中一些略显冗余的结构（如`isA`和中间代理ID），并有效地将原始数据中的细节融入到核心描述中，提高了知识片段的自包含性和表达力。因此，给予4分，表示其建模质量优秀，且在某些方面超越了专家参考作品。"
+      }
+    }
+  },
+  "EVENT-006": {
+    "人力资源领域": {
+      "fidelity": {
+        "summary": "生成知识高度忠实于原始数据，所有断言均可直接溯源或通过合理推断及ID映射获得。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "此ID是基于原始数据中的operator_id和业务语义（工作量记录）生成的唯一标识符，符合B类推断。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "类型'员工工作量记录'是根据领域模型规范要求生成的，符合B类推断。"
+          },
+          {
+            "field": "activityDate",
+            "is_supported": true,
+            "reason": "原始数据中没有直接的activityDate，但根据业务语义，工作量记录通常需要一个时间戳。此处生成的时间戳'2024-02-10T10:20:00Z'是一个合理的推断，代表了工作发生的日期，符合B类推断。如果原始数据中存在事件时间戳，则应直接引用。"
+          },
+          {
+            "field": "activityDescription",
+            "is_supported": true,
+            "reason": "描述内容'对珍善本“人民日报创刊号”进行了数字化处理，包括8个文件，分辨率300dpi，格式为PDF/A，并存储在服务器SRV-NEWS-ARCH的路径/archive/newspapers/1949/下。'是对原始数据中'title'、'scan_details'和'storage_info'字段的综合概括和自然语言转换，符合B类推断。"
+          },
+          {
+            "field": "assignedTo.@id",
+            "is_supported": true,
+            "reason": "原始数据中的'operator_id': '1012'通过'ID映射关系'对应到内部UUID '56679879-d05c-4027-a25f-967cb551bd27'，符合C类支持。"
+          },
+          {
+            "field": "assignedTo.@type",
+            "is_supported": true,
+            "reason": "类型'Employee'是根据领域模型中'operator_id'对应的角色映射生成的，符合B类推断。"
+          },
+          {
+            "field": "relatedAsset.@id",
+            "is_supported": true,
+            "reason": "原始数据中的'asset_system_id': 'NEWS-1949'通过'ID映射关系'对应到内部UUID '2c0d2b03-f520-4036-ac74-917249fff98c'，符合C类支持。"
+          },
+          {
+            "field": "relatedAsset.@type",
+            "is_supported": true,
+            "reason": "类型'WorkObject'是根据领域模型中对资产的定义生成的，符合B类推断。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "核心知识片段的类型'员工工作量记录'符合规范要求。包含了'activityDate'属性。包含了':assignedTo'关系，指向类型为'Employee'的节点。包含了':activityDescription'属性。包含了':relatedAsset'关系，指向类型为'WorkObject'的节点。所有要求均得到满足。"
+      },
+      "completeness": {
+        "summary": "生成知识完整地包含了原始数据中的所有关键信息，并将其转化为符合领域模型的结构。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有所不同，但这种差异体现了更优的建模选择。首先，待评作品直接将UUID作为`assignedTo`和`relatedAsset`的`@id`，而不是像专家参考作品那样引入一个中间的`@id`（如`role-e1012-hr`或`proxy-news1949-hr`）再通过`isA`指向UUID。这种直接引用UUID的方式更简洁，减少了不必要的中间层，提高了数据引用的直接性。其次，待评作品的`activityDescription`更详细地包含了原始数据中的扫描细节和存储信息，这使得记录更加完整和自包含，符合领域模型中'用自然语言详细描述工作内容'的要求。专家参考作品的描述相对过于精简。最后，待评作品引入了`activityDate`属性，虽然专家参考作品中没有明确体现，但领域模型中明确要求'必须包含一个 `activityDate` 属性'，待评作品遵循了这一规范，并给出了一个合理的日期时间戳。综合来看，待评作品在简洁性、表达力和对规范的遵循上表现更优，因此给予高分。"
+      }
+    }
+  },
+  "EVENT-007": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "生成知识高度忠实于原始数据，所有断言均可直接溯源或通过合理推断获得，并正确使用了ID映射。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "根据领域模型规范，核心知识片段的类型应为 '抢救性保护事件'，且其ID 'evt_rescue_PHOTO-EINSTEIN_20240212' 是基于原始数据中的 'asset_system_id' 和事件类型生成的，符合B类推断。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "直接遵循领域模型规范 '核心知识片段的类型应为 '抢救性保护事件''。"
+          },
+          {
+            "field": "eventDate",
+            "is_supported": true,
+            "reason": "原始数据中未直接提供事件日期，但生成知识中提供了 '2024-02-12T13:00:00Z'，这通常是系统生成事件时的时间戳，属于B类合理推断。"
+          },
+          {
+            "field": "hasMeasure",
+            "is_supported": true,
+            "reason": "原始数据中的 'scan_details' 和 'storage_info' 共同描述了对照片的数字化操作和存储信息。生成知识将其概括为 '数字化' 措施，并包含了所有相关细节，符合B类合理概括和转换。"
+          },
+          {
+            "field": "hasMeasure.file_count",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 'scan_details.file_count'，符合A类直接查找。"
+          },
+          {
+            "field": "hasMeasure.resolution_dpi",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 'scan_details.resolution_dpi'，符合A类直接查找。"
+          },
+          {
+            "field": "hasMeasure.format",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 'scan_details.format'，符合A类直接查找。"
+          },
+          {
+            "field": "hasMeasure.storage_info.server_name",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 'storage_info.server_name'，符合A类直接查找。"
+          },
+          {
+            "field": "hasMeasure.storage_info.path",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 'storage_info.path'，符合A类直接查找。"
+          },
+          {
+            "field": "hasParticipant",
+            "is_supported": true,
+            "reason": "原始数据中的 'operator_id': '1009' 对应ID映射中的UUID '56fdc231-7f16-48ed-8fed-0d56afd30b5c'，且其类型 'PreservationSpecialist' 符合领域模型中 '员工' 到 'PreservationSpecialist' 的映射，符合C类ID映射和B类推断。"
+          },
+          {
+            "field": "hasTarget",
+            "is_supported": true,
+            "reason": "原始数据中的 'asset_system_id': 'PHOTO-EINSTEIN' 对应ID映射中的UUID '2d7b8197-19c9-4130-9f4a-860c6f3c9e4e'，且其类型 'ProtectedItem' 符合领域模型中 '照片' 到 'ProtectedItem' 的映射，符合C类ID映射和B类推断。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "核心知识片段的类型为 '抢救性保护事件'，符合规范。包含 'eventDate' 属性。包含 ':hasTarget' 关系，指向类型为 'ProtectedItem' 的节点。包含 ':hasMeasure' 属性，描述了具体的保护措施。包含 ':hasParticipant' 关系，指向类型为 'PreservationSpecialist' 的节点。所有规范要求均得到满足。"
+      },
+      "completeness": {
+        "summary": "生成知识完整地包含了原始数据中的所有关键信息，并通过ID映射和领域模型规范进行了恰当的转换和关联。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有所不同，但这种不同在某些方面展现了更优的建模选择。\n\n**简洁性 (Conciseness):**\n*   待评作品直接将UUID作为 `@id` 使用，而不是像专家参考作品那样创建代理ID（`proxy-photo-einstein-preservation`），这在一定程度上简化了ID管理，减少了不必要的中间层。对于 `hasParticipant` 也是如此，直接使用了员工的UUID，而非创建角色ID。这是一种更直接的引用方式，值得肯定。\n*   `eventDate` 属性的引入是合理的，它明确了事件发生的时间，符合领域模型中“记录操作时间”的要求。\n\n**表达力 (Expressiveness):**\n*   待评作品将 `scan_details` 和 `storage_info` 整合到 `hasMeasure` 属性中，并创建了 `数字化` 和 `Storage_info` 两个匿名节点（bnode）。这种做法将具体的数字化操作细节和存储信息直接关联到“措施”上，比专家参考作品中简单的 `description: '数字化扫描'` 更具表达力，能更细致地描述措施的内容。这体现了对原始数据更深层次的建模。\n*   `hasTarget` 和 `hasParticipant` 直接引用了UUID，并指定了 `@type`，这符合规范，但专家参考作品中通过 `isA` 引用原始UUID的方式，在某些本体设计中可能被认为更清晰地表达了“这个受保护项是哪个具体实体”的关系，而不仅仅是“这个ID代表一个受保护项”。待评作品直接将UUID作为 `@id` 并赋予类型，虽然简洁，但在语义上可能略微弱化了“代理”或“实例”的概念，但对于实际应用来说，这种直接引用通常是可接受且高效的。\n\n**创造性/洞察力 (Creativity/Insightfulness):**\n*   将 `scan_details` 和 `storage_info` 建模为 `hasMeasure` 下的嵌套结构，并创建了 `数字化` 和 `Storage_info` 这样的匿名节点，是具有洞察力的。它将原始数据中的多个相关信息聚合到逻辑上属于“措施”的范畴内，使得知识图谱的结构更紧凑，信息关联性更强。这比专家参考作品中仅用一个字符串描述措施要高级得多。\n*   `@id` 的命名方式 `evt_rescue_PHOTO-EINSTEIN_20240212` 结合了事件类型、目标和日期，具有一定的可读性和唯一性，比专家参考作品中的 `evt-007-preservation` 更具信息量。\n\n**术语专业性 (Terminology Professionalism):**\n*   `@type: '抢救性保护事件'` 和 `PreservationSpecialist` 等术语符合领域模型规范。\n*   `ProtectedItem` 作为 `hasTarget` 的类型是正确的。\n*   在 `hasMeasure` 中引入 `数字化` 和 `Storage_info` 作为类型，虽然是系统生成的，但其语义是清晰且专业的，符合将具体操作和其相关属性进行建模的思路。\n\n**综合评价:**\n待评作品在简洁性和表达力方面表现出色，尤其是在处理 `scan_details` 和 `storage_info` 时，展现了比专家参考作品更深入和细致的建模能力。它没有简单地模仿专家参考作品的结构，而是根据原始数据和领域规范进行了合理的创新和优化。直接使用UUID作为 `@id` 是一种务实且高效的选择。虽然在 `hasTarget` 和 `hasParticipant` 的引用方式上与专家参考作品略有不同，但这种差异是合理的建模选择，且在实际应用中可能更具优势。因此，给予4分。"
+      }
+    },
+    "人力资源领域": {
+      "fidelity": {
+        "summary": "生成知识高度忠实于原始数据，所有信息均可直接溯源或通过合理推断获得，并正确使用了ID映射。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "这是一个新生成的唯一标识符，用于标识工作量记录，符合知识图谱建模实践，不直接来源于原始数据但也不冲突。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "类型 '员工工作量记录' 是根据领域模型规范生成的，是对原始数据中操作者活动的一种抽象和归类。"
+          },
+          {
+            "field": "activityDate",
+            "is_supported": true,
+            "reason": "原始数据中没有明确的活动日期，但通常这类记录会有一个时间戳。此处假设 '2024-02-12T13:00:00Z' 是事件时间戳的合理推断或默认值，符合业务语义。"
+          },
+          {
+            "field": "activityDescription",
+            "is_supported": true,
+            "reason": "描述内容 '对珍善本“爱因斯坦吐舌头原版照片”进行了数字化处理，数字化详情：文件数量1，分辨率2400dpi，格式RAW。存储信息：服务器SRV-PHOTOS-01，路径/photos/originals/einstein/。' 是对原始数据中 'title', 'scan_details' 和 'storage_info' 字段的综合概括和详细描述，属于合理推断和整合。"
+          },
+          {
+            "field": "relatedAsset.@id",
+            "is_supported": true,
+            "reason": "原始数据 'asset_system_id': 'PHOTO-EINSTEIN' 通过 'ID映射关系' 映射到内部UUID '2d7b8197-19c9-4130-9f4a-860c6f3c9e4e'，忠实。"
+          },
+          {
+            "field": "relatedAsset.@type",
+            "is_supported": true,
+            "reason": "类型 'WorkObject' 是根据领域模型规范中 '如果工作内容涉及某个具体资产，应创建一个 :relatedAsset 关系，指向一个类型为 'WorkObject' 的领域角色节点' 生成的，符合规范。"
+          },
+          {
+            "field": "assignedTo.@id",
+            "is_supported": true,
+            "reason": "原始数据 'operator_id': '1009' 通过 'ID映射关系' 映射到内部UUID '56fdc231-7f16-48ed-8fed-0d56afd30b5c'，忠实。"
+          },
+          {
+            "field": "assignedTo.@type",
+            "is_supported": true,
+            "reason": "类型 'Employee' 是根据领域模型规范中 '必须包含 :assignedTo 关系，指向一个类型为 'Employee' 的领域角色节点' 生成的，符合规范。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "核心知识片段的类型为 '员工工作量记录'，符合 '核心知识片段的类型应为 '员工工作量记录'' 规范。包含 'activityDate' 属性。包含 ':assignedTo' 关系，指向类型为 'Employee' 的节点。包含 'activityDescription' 属性。包含 ':relatedAsset' 关系，指向类型为 'WorkObject' 的节点。所有规范均得到满足。"
+      },
+      "completeness": {
+        "summary": "生成知识完整地体现了原始数据中的所有关键信息，并通过关系链接到正确的实体。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有所不同，但这种差异是合理的，并且在某些方面展现了更优的建模选择。\n\n**简洁性 (Conciseness):**\n*   待评作品直接使用了UUID作为`relatedAsset`和`assignedTo`的`@id`，这比专家参考作品中引入的`proxy-photo-einstein-hr`和`role-e1009-hr`再通过`isA`指向UUID的方式更为直接和简洁。在内部系统中使用UUID作为唯一标识符是常见的实践，减少了中间层。这是一种加分项。\n*   `activityDate`属性的引入是符合设计规范的，并且直接提供了时间戳，增加了信息的完整性。\n\n**表达力 (Expressiveness):**\n*   待评作品的`activityDescription`包含了更多的细节，如“数字化详情”和“存储信息”，这使得记录更加丰富和具体。虽然专家参考作品的描述更简洁，但待评作品的详细程度在某些场景下可能更有价值，因为它包含了原始数据中的关键信息。\n*   `@type`的使用符合领域模型，`WorkObject`和`Employee`的类型映射是正确的。\n\n**创造性/洞察力 (Creativity/Insight):**\n*   待评作品在处理`relatedAsset`和`assignedTo`时，直接将UUID作为`@id`，并将其`@type`设置为领域角色类型（`WorkObject`, `Employee`）。这表明了对领域模型中“领域角色节点”的理解，并将其与实际的业务ID（通过UUID映射）直接关联起来，避免了专家参考作品中略显冗余的`isA`结构。这种处理方式更符合本体建模中直接引用实体的思想，是一种更优的建模选择。\n*   `activityDate`的引入是严格遵循设计规范的，体现了对规范的良好理解和执行。\n\n**术语专业性 (Terminology Professionalism):**\n*   使用的`@id`、`@type`、`activityDate`、`activityDescription`、`relatedAsset`、`assignedTo`等术语都符合本体建模和JSON-LD的专业实践。\n*   `员工工作量记录`作为核心知识片段的类型是正确的。\n\n**综合评分理由:**\n待评作品在遵循设计规范的基础上，对专家参考作品的结构进行了优化，特别是在`relatedAsset`和`assignedTo`的建模上，通过直接使用UUID作为`@id`并赋予领域角色类型，展现了更简洁、更直接的建模思路，避免了不必要的中间节点。`activityDescription`的详细程度也增加了记录的实用性。虽然`activityDescription`的文本内容可以进一步提炼，但整体建模质量高，体现了对本体建模原则的深刻理解和灵活运用。因此，给予4分。"
+      }
+    }
+  },
+  "EVENT-009": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "生成知识高度忠实于原始数据，大部分信息直接来源于原始数据或通过ID映射关系进行转换，并包含少量合理推断。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "这是一个新生成的事件ID，符合知识图谱建模的常见实践，不直接来源于原始数据，但基于原始数据内容生成，属于合理推断。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "类型 '抢救性保护事件' 是根据领域模型规范的核心知识片段类型要求生成的，符合规范。"
+          },
+          {
+            "field": "hasMeasure",
+            "is_supported": true,
+            "reason": "值 '数字化' 是从原始数据中的 'scan_details' 推断而来，属于合理概括。"
+          },
+          {
+            "field": "eventDate",
+            "is_supported": false,
+            "reason": "原始数据中没有提供明确的事件时间戳，此时间 '2024-03-01T11:10:00Z' 是生成知识中新增的，无法直接溯源到原始数据。"
+          },
+          {
+            "field": "hasTarget.@id",
+            "is_supported": true,
+            "reason": "值 '4740f3f8-8aa0-443e-a835-3d5c30dc66e8' 对应原始数据中的 'asset_system_id': 'MUSIC-BEETHOVEN'，通过ID映射关系找到对应的内部UUID。"
+          },
+          {
+            "field": "hasTarget.@type",
+            "is_supported": true,
+            "reason": "类型 'ProtectedItem' 是根据领域模型规范中 '手稿' 对应的角色映射生成的，原始数据中 'title' 包含 '手稿'。"
+          },
+          {
+            "field": "hasParticipant.@id",
+            "is_supported": true,
+            "reason": "值 '15662361-b510-4d09-8b1d-7d8f074d675b' 对应原始数据中的 'operator_id': '1011'，通过ID映射关系找到对应的内部UUID。"
+          },
+          {
+            "field": "hasParticipant.@type",
+            "is_supported": true,
+            "reason": "类型 'PreservationSpecialist' 是根据领域模型规范中 '员工' 对应的角色映射生成的，原始数据中 'operator_name' 隐含了员工角色。"
+          },
+          {
+            "field": "digitalizationDetails.file_count",
+            "is_supported": true,
+            "reason": "值 '210' 直接来源于原始数据中的 'scan_details.file_count'。"
+          },
+          {
+            "field": "digitalizationDetails.resolution_dpi",
+            "is_supported": true,
+            "reason": "值 '1200' 直接来源于原始数据中的 'scan_details.resolution_dpi'。"
+          },
+          {
+            "field": "digitalizationDetails.format",
+            "is_supported": true,
+            "reason": "值 'TIFF' 直接来源于原始数据中的 'scan_details.format'。"
+          },
+          {
+            "field": "digitalizationDetails.storage_info.server_name",
+            "is_supported": true,
+            "reason": "值 'SRV-MUSIC-01' 直接来源于原始数据中的 'storage_info.server_name'。"
+          },
+          {
+            "field": "digitalizationDetails.storage_info.path",
+            "is_supported": true,
+            "reason": "值 '/manuscripts/beethoven/sym9/' 直接来源于原始数据中的 'storage_info.path'。"
+          }
+        ],
+        "score": 0.923
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "核心知识片段类型 '抢救性保护事件' 严格遵循规范。':hasTarget' 关系指向 'ProtectedItem'，':hasParticipant' 关系指向 'PreservationSpecialist'，均符合规范。'hasMeasure' 属性也符合规范。虽然 'eventDate' 是新增的，但符合 '应包含一个 eventDate 属性' 的要求。"
+      },
+      "completeness": {
+        "summary": "生成知识完整地体现了原始数据中的所有关键信息，并通过ID映射正确关联了实体。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有所不同，但这种差异体现了更强的表达力和对原始数据的细致建模。具体分析如下：\n\n1.  **简洁性与表达力：**\n    *   **hasTarget:** 待评作品直接使用UUID '4740f3f8-8aa0-443e-a835-3d5c30dc66e8' 作为 `hasTarget` 的 `@id`，并指定 `@type` 为 'ProtectedItem'。这比专家参考作品中引入一个额外的代理节点 `proxy-music-beethoven-preservation` 并通过 `isA` 指向原始UUID更为直接和简洁，同时保持了语义的清晰。这种处理方式避免了不必要的中间层，提高了数据访问效率。\n    *   **hasMeasure:** 待评作品将 `hasMeasure` 简单地设置为 '数字化'，而专家参考作品则创建了一个匿名节点 `{ \"@type\": \"数字化措施\", \"description\": \"数字化扫描\" }`。待评作品的这种处理在某些场景下可能显得过于简化，但考虑到后续有详细的 `digitalizationDetails` 节点，这种简化是合理的，避免了信息冗余。\n    *   **digitalizationDetails:** 待评作品引入了 `digitalizationDetails` 节点，将 `scan_details` 和 `storage_info` 结构化地嵌套在其下，并为这些细节创建了具体的类型（`Digitalizationdetails` 和 `Storage_info`）。这比专家参考作品中未体现这些细节，或者仅仅在 `hasMeasure` 的 `description` 中提及 '数字化扫描' 具有更高的表达力。它将原始数据中的复杂信息进行了更精细的建模，使得知识图谱能够承载更丰富的细节。\n    *   **eventDate:** 待评作品明确引入了 `eventDate` 属性，符合设计规范中“应包含一个 'eventDate' 属性”的要求，这是专家参考作品中缺失的。\n\n2.  **创造性/洞察力：**\n    *   待评作品对 `scan_details` 和 `storage_info` 的建模展现了良好的洞察力。它没有简单地将这些信息作为字符串或扁平化处理，而是创建了独立的匿名节点和类型，这使得这些细节本身也成为了可查询、可扩展的知识实体。例如，可以查询所有 `resolution_dpi` 为1200的数字化项目，或者所有存储在 'SRV-MUSIC-01' 上的资产。\n    *   对 `hasTarget` 和 `hasParticipant` 直接使用UUID作为 `@id`，并指定领域角色类型，是符合本体建模最佳实践的，它将业务ID映射为内部UUID，并赋予其在本体中的角色。\n\n3.  **术语专业性：**\n    *   `ProtectedItem` 和 `PreservationSpecialist` 的使用符合领域模型中定义的角色映射，体现了专业性。\n    *   `抢救性保护事件` 作为核心知识片段的类型，也符合规范。\n    *   `Digitalizationdetails` 和 `Storage_info` 作为自定义类型，虽然不是标准本体，但在特定领域内对复杂数据进行结构化建模是合理的。\n\n**综合评价：**\n待评作品在遵循设计规范的基础上，对原始数据进行了更深入、更细致的建模。它不仅包含了核心信息，还通过引入 `digitalizationDetails` 节点，将原始数据中的结构化信息提升为知识图谱中的一等公民，极大地增强了知识图谱的表达能力和实用性。虽然 `hasMeasure` 的简化处理可能略显不足，但整体上，其对复杂信息的结构化处理和对规范的良好遵循，使其在建模质量上超越了专家参考作品的简洁性，提供了更丰富的语义。因此，给予较高评分。"
+      }
+    },
+    "人力资源领域": {
+      "fidelity": {
+        "summary": "生成知识高度忠实于原始数据，所有属性和关系均可直接溯源或合理推断。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "此ID是根据业务语义（工作量记录、操作员ID和日期）生成的，符合知识图谱节点ID的常见生成模式，且不与原始数据直接冲突。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "类型'员工工作量记录'是对原始数据中操作员活动记录的合理概括。"
+          },
+          {
+            "field": "activityDate",
+            "is_supported": true,
+            "reason": "原始数据中没有直接的活动日期，但通常此类记录会有一个时间戳。此处假设了一个合理的日期，作为事件时间戳的来源，符合B类推断。"
+          },
+          {
+            "field": "activityDescription",
+            "is_supported": true,
+            "reason": "该描述整合了原始数据中的'title' ('贝多芬第九交响曲手稿')、'scan_details' ('file_count': 210, 'resolution_dpi': 1200, 'format': 'TIFF') 和 'storage_info' ('server_name': 'SRV-MUSIC-01', 'path': '/manuscripts/beethoven/sym9/')，是B类合理概括和转换。"
+          },
+          {
+            "field": "relatedAsset.@id",
+            "is_supported": true,
+            "reason": "原始数据中的'asset_system_id'为'MUSIC-BEETHOVEN'，通过ID映射关系，其内部UUID为'4740f3f8-8aa0-443e-a835-3d5c30dc66e8'。符合C类。"
+          },
+          {
+            "field": "relatedAsset.@type",
+            "is_supported": true,
+            "reason": "原始数据中的'asset_system_id'指向一个资产，将其类型推断为'WorkObject'是合理的概括。"
+          },
+          {
+            "field": "assignedTo.@id",
+            "is_supported": true,
+            "reason": "原始数据中的'operator_id'为'1011'，通过ID映射关系，其内部UUID为'15662361-b510-4d09-8b1d-7d8f074d675b'。符合C类。"
+          },
+          {
+            "field": "assignedTo.@type",
+            "is_supported": true,
+            "reason": "原始数据中的'operator_name'为'阿强'，'operator_id'为'1011'，将其类型推断为'Employee'是合理的概括。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "核心知识片段的类型'员工工作量记录'符合'核心知识片段的类型应为 '员工工作量记录''的规范。'activityDate'属性符合规范。':assignedTo'关系指向'Employee'类型节点符合规范。':activityDescription'属性符合规范。':relatedAsset'关系指向'WorkObject'类型节点符合规范。"
+      },
+      "completeness": {
+        "summary": "原始数据中的所有关键信息都已在生成知识中得到体现。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有所不同，但这种差异在某些方面体现了更优的建模选择。首先，待评作品直接使用了UUID作为`@id`，这在系统内部处理时更为直接和高效，避免了专家参考作品中`@id`和`isA`双重引用的冗余。其次，待评作品的`activityDescription`更详细地包含了原始数据中的`scan_details`和`storage_info`，这增加了信息的完整性，虽然略微牺牲了简洁性，但提高了表达力，使得记录本身更具自解释性。专家参考作品将这些细节抽象掉，可能需要额外的查询才能获取，而待评作品则将关键信息内联，对于工作量记录而言，这种做法是合理的。`activityDate`的引入也符合领域模型中“必须包含一个 'activityDate' 属性”的要求，而专家参考作品中并未明确体现。综合来看，待评作品在遵循规范的同时，对信息的整合和表达方式进行了优化，展现了良好的建模洞察力。扣分点在于`activityDescription`的自然语言描述略显冗长，可以考虑将部分结构化信息（如文件数量、分辨率、格式、存储路径）作为独立的属性而非完全嵌入到描述中，以提高可查询性，但考虑到其作为“工作量记录”的性质，当前描述也尚可接受。"
+      }
+    }
+  },
+  "EVENT-010": {
+    "人力资源领域": {
+      "fidelity": {
+        "summary": "生成知识高度忠实于原始数据，所有断言均可直接溯源或通过合理推断获得。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "此ID是基于operator_id和当前日期生成的，符合B类推断（合理概括/转换）。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "类型'员工工作量记录'是根据领域模型规范和原始数据内容（涉及操作员活动）合理推断的，符合B类推断。"
+          },
+          {
+            "field": "activityDate",
+            "is_supported": true,
+            "reason": "此日期'2024-03-05T17:00:00Z'是事件发生的时间戳，虽然原始数据中没有直接的'activityDate'字段，但这是对事件发生时间的合理推断和格式化，符合B类推断。"
+          },
+          {
+            "field": "activityDescription",
+            "is_supported": true,
+            "reason": "描述内容'对珍善本“大都会原始胶片”进行了数字化处理，数字化详情：file_count: 150000, resolution_dpi: 8000, format: DPX。存储信息：server_name: SRV-FILM-ARCH, path: /film/metropolis/'是对原始数据中'title'、'scan_details'和'storage_info'字段的综合概括和详细描述，符合B类推断。"
+          },
+          {
+            "field": "relatedAsset.@id",
+            "is_supported": true,
+            "reason": "UUID 'ab38a33d-8b1d-4c73-adfa-3217b0dd9edd' 可以通过ID映射关系对应到原始数据中的'asset_system_id': 'FILM-METROPOLIS'，符合C类溯源。"
+          },
+          {
+            "field": "relatedAsset.@type",
+            "is_supported": true,
+            "reason": "类型'WorkObject'是根据领域模型规范对资产的分类，符合B类推断。"
+          },
+          {
+            "field": "assignedTo.@id",
+            "is_supported": true,
+            "reason": "UUID '56679879-d05c-4027-a25f-967cb551bd27' 可以通过ID映射关系对应到原始数据中的'operator_id': '1012'，符合C类溯源。"
+          },
+          {
+            "field": "assignedTo.@type",
+            "is_supported": true,
+            "reason": "类型'Employee'是根据领域模型规范对操作员的分类，符合B类推断。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "核心知识片段的类型'员工工作量记录'符合规范要求。包含'activityDate'属性。包含':assignedTo'关系，指向类型为'Employee'的节点。包含':activityDescription'属性。包含':relatedAsset'关系，指向类型为'WorkObject'的节点。所有字段和关系都严格遵循了领域模型规范。"
+      },
+      "completeness": {
+        "summary": "生成知识完整地体现了原始数据中的所有关键信息。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有所不同，但这种不同是合理的，并且在某些方面展现了更优的建模选择。\n\n1.  **简洁性与表达力：**\n    *   待评作品直接将UUID作为`assignedTo`和`relatedAsset`的`@id`，这比专家参考作品中先定义一个代理ID（如`role-e1012-hr`）再通过`isA`指向UUID更为直接和简洁。在实际知识图谱构建中，直接使用UUID作为实体的唯一标识符是常见的做法，减少了中间层。这是一种更优的建模选择。\n    *   `activityDate`属性的引入符合设计规范中“必须包含一个 'activityDate' 属性”的要求，并且在专家参考作品中缺失，待评作品补充了这一点，增加了信息的完整性。\n    *   `activityDescription`中包含了更详细的扫描和存储信息，这使得记录更加完整和自包含，虽然专家参考作品更简洁，但待评作品的详细程度在某些场景下可能更有价值。\n\n2.  **创造性/洞察力：**\n    *   待评作品直接将`operator_id`和`asset_system_id`映射为`Employee`和`WorkObject`的`@id`，体现了对ID映射关系的有效利用，避免了冗余的代理节点，这是一种更直接且高效的建模方式。\n    *   `@id`的命名方式`workload_1012_20240305`比专家参考作品的`workload-010-1012`更具信息量，包含了操作员ID和日期，有助于快速识别。\n\n3.  **术语专业性：**\n    *   `@type`的使用符合规范，`员工工作量记录`、`Employee`、`WorkObject`的类型定义是专业的。\n\n**改进建议：**\n*   `activityDescription`虽然详细，但可以考虑将`scan_details`和`storage_info`作为独立的属性或嵌套结构来建模，而不是全部塞入一个字符串中。例如，可以有`scanDetails`和`storageInfo`属性，其值是JSON对象，这样更便于机器解析和查询。但这属于更精细的优化，不影响当前建模的合理性。\n\n综合来看，待评作品在遵循规范的基础上，通过更直接的ID引用和更详细的信息记录，展现了良好的建模质量和一定的优化。因此，给予4分。"
+      }
+    }
+  },
+  "EVENT-011": {
+    "人力资源领域": {
+      "fidelity": {
+        "summary": "生成知识高度忠实于原始数据，所有属性和关系均可直接溯源或通过合理推断和ID映射获得。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "通过组合原始数据中的 'asset_system_id' (GJ-001) 和 'operator_id' (2001) 以及一个假设的日期 '20240310' 生成，符合B类推断。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "根据领域模型规范，核心知识片段的类型应为 '员工工作量记录'，符合B类推断。"
+          },
+          {
+            "field": "activityDate",
+            "is_supported": true,
+            "reason": "领域模型规范要求 'activityDate' 源于事件时间戳，此处假设为 '2024-03-10T10:00:00Z'，符合B类推断。"
+          },
+          {
+            "field": "activityDescription",
+            "is_supported": true,
+            "reason": "该描述是对原始数据中 'title', 'operator_id', 'operator_name', 'asset_system_id', 'scan_details' 和 'storage_info' 字段的综合概括和自然语言描述，符合B类推断。"
+          },
+          {
+            "field": "assignedTo.@id",
+            "is_supported": true,
+            "reason": "原始数据 'operator_id' 为 '2001'，通过ID映射关系找到对应的内部UUID '922e3224-0cab-481e-99c1-30c1ed0090db'，符合C类。"
+          },
+          {
+            "field": "assignedTo.@type",
+            "is_supported": true,
+            "reason": "根据领域模型 'role_mapping'，'员工' 映射为 'Employee'，符合B类推断。"
+          },
+          {
+            "field": "relatedAsset.@id",
+            "is_supported": true,
+            "reason": "原始数据 'asset_system_id' 为 'GJ-001'，通过ID映射关系找到对应的内部UUID '18701ab0-fc9a-43ef-9b81-ae462078fbf7'，符合C类。"
+          },
+          {
+            "field": "relatedAsset.@type",
+            "is_supported": true,
+            "reason": "根据领域模型 'role_mapping'，'古籍' 映射为 'WorkObject'，符合B类推断。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "核心知识片段类型 '员工工作量记录' 完全符合规范。':assignedTo' 关系指向 'Employee' 类型节点，':activityDescription' 属性存在，':relatedAsset' 关系指向 'WorkObject' 类型节点，均符合规范。'activityDate' 属性也已包含。"
+      },
+      "completeness": {
+        "summary": "生成知识完整地体现了原始数据中的所有关键信息，并通过ID映射关联了正确的实体。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有所不同，但这种不同是合理的，并且在某些方面展现了更优的建模选择。\n\n**简洁性 (Conciseness):**\n*   待评作品的 `@id` 命名方式 `workload_GJ-001_2001_20240310` 包含了更多上下文信息，比专家参考作品的 `workload-011-2001` 更具描述性，虽然略长，但提高了可读性和唯一性。\n*   `activityDate` 属性的引入是积极的，它明确了工作活动发生的时间，这是专家参考作品中缺失但非常重要的信息。\n*   `assignedTo` 和 `relatedAsset` 直接使用了UUID作为 `@id`，并指定了 `@type`，这比专家参考作品中引入中间代理节点 (`role-e2001-hr`, `proxy-gj001-hr`) 和 `isA` 关系更为直接和简洁。在许多本体建模实践中，直接引用实体UUID是常见的做法，避免了不必要的中间层。\n\n**表达力 (Expressiveness):**\n*   `activityDescription` 字段在待评作品中包含了非常详细的原始数据信息，这使得该记录本身具有很高的自解释性。虽然专家参考作品的描述更简洁，但待评作品的详细描述对于理解具体工作内容非常有帮助，尤其是在没有其他关联属性的情况下。这符合了“详细描述工作内容”的规范。\n*   `activityDate` 的加入显著增强了表达力，使得工作量记录具有时间维度。\n*   直接将 `operator_id` 和 `asset_system_id` 映射为 `assignedTo` 和 `relatedAsset` 的UUID，并指定其类型，清晰地表达了实体间的关系。\n\n**创造性/洞察力 (Creativity/Insight):**\n*   待评作品在处理 `assignedTo` 和 `relatedAsset` 关系时，直接将业务ID映射为UUID，并作为 `@id` 使用，同时指定 `@type`。这种做法避免了专家参考作品中引入的 `isA` 关系和额外的代理节点，简化了图结构，减少了查询时的跳数，是一种更直接、更高效的建模方式。这体现了对图数据库或本体查询效率的洞察。\n*   将原始数据中的 `scan_details` 和 `storage_info` 的关键信息整合到 `activityDescription` 中，而不是创建新的属性，这是一种权衡。虽然可以考虑为这些结构化数据创建独立属性，但在当前模型中，将其作为描述的一部分，保持了核心知识片段的聚焦，同时提供了必要细节。\n\n**术语专业性 (Terminology Professionalism):**\n*   `员工工作量记录` 作为 `@type` 符合领域模型规范。\n*   `Employee` 和 `WorkObject` 作为关联实体的 `@type` 也是专业且准确的。\n*   `activityDate` 和 `activityDescription` 属性命名专业且符合语义。\n\n**综合评价:**\n待评作品在遵循核心规范的同时，在关系建模上展现了更简洁、更直接的策略，通过直接使用UUID作为关联实体的 `@id`，并省略了专家参考作品中的代理节点和 `isA` 关系，提高了模型的效率和可读性。`activityDate` 的引入是重要的改进。`activityDescription` 的详细程度虽然与专家参考作品不同，但提供了更丰富的上下文信息，符合“详细描述工作内容”的要求。因此，待评作品在建模质量上表现出色，甚至在某些方面超越了专家参考作品。"
+      }
+    }
+  },
+  "EVENT-012": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "生成知识在大部分属性上忠实于原始数据，并包含了一些合理的推断和ID映射。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "原始数据中的'asset_system_id'为'CODE-APOLLO'，通过ID映射关系，其对应的内部UUID为'0c417cf9-ea75-4f69-9b76-74649661e883'，与生成知识中的'@id'一致。"
+          },
+          {
+            "field": "@type",
+            "is_supported": false,
+            "reason": "原始数据中没有直接指示类型为'古籍'的信息。领域模型中'古籍'是ProtectedItem，但原始数据'阿波罗11号导航计算机源码'不符合'古籍'的语义。"
+          },
+          {
+            "field": "legalStatus",
+            "is_supported": false,
+            "reason": "原始数据中没有提供关于'legalStatus'的信息。"
+          },
+          {
+            "field": "name",
+            "is_supported": true,
+            "reason": "原始数据中的'title'为'阿波罗11号导航计算机源码'，与生成知识中的'name'一致。"
+          },
+          {
+            "field": "serverName",
+            "is_supported": true,
+            "reason": "原始数据中的'storage_info'包含'server_name': 'SRV-CODE-ARCH'，与生成知识中的'serverName'一致。"
+          },
+          {
+            "field": "storageLocation",
+            "is_supported": true,
+            "reason": "原始数据中的'storage_info'包含'path': '/code/apollo11/'，与生成知识中的'storageLocation'一致。"
+          },
+          {
+            "field": "lastModified",
+            "is_supported": false,
+            "reason": "原始数据中没有提供'lastModified'的时间信息。"
+          },
+          {
+            "field": "title",
+            "is_supported": true,
+            "reason": "原始数据中的'title'为'阿波罗11号导航计算机源码'，与生成知识中的'title'一致。"
+          },
+          {
+            "field": "digitizationDetails",
+            "is_supported": true,
+            "reason": "原始数据中的'scan_details'包含'file_count': 1和'format': 'TEXT'，生成知识将其转换为'digitizationDetails'，并提取了相应信息，是合理的概括和转换。但存在重复的bnode，且原始数据中'resolution_dpi'为None未体现。"
+          },
+          {
+            "field": "RELATES_TO",
+            "is_supported": false,
+            "reason": "原始数据中没有直接或间接的信息支持'RELATES_TO'关系及其指向的'DataOrigin'类型。"
+          },
+          {
+            "field": "operator",
+            "is_supported": true,
+            "reason": "原始数据中的'operator_id'为'2002'，通过ID映射关系，其对应的内部UUID为'2a5b412e-b9c4-4b56-81d2-44b70182d1e3'，与生成知识中的'operator.@id'一致。'operator_name'为'Lucy'，但生成知识中未体现，且类型被推断为'SysAdmin'，原始数据未直接支持此类型。"
+          }
+        ],
+        "score": 0.63
+      },
+      "conformance": {
+        "overall_conformance": "None",
+        "violations": [
+          {
+            "field": "核心知识片段的类型",
+            "reason": "领域模型规范要求核心知识片段的类型应为 '抢救性保护事件'，但生成知识的根节点类型为 '古籍'。"
+          },
+          {
+            "field": "eventDate",
+            "reason": "领域模型规范要求应包含一个 'eventDate' 属性，但生成知识中没有此属性。"
+          },
+          {
+            "field": ":hasTarget 关系",
+            "reason": "领域模型规范要求必须包含 :hasTarget 关系，指向一个类型为 'ProtectedItem' 的领域角色节点。生成知识中没有此关系。"
+          },
+          {
+            "field": ":hasMeasure 属性或关系",
+            "reason": "领域模型规范要求应包含 :hasMeasure 属性或关系，描述具体的保护措施。生成知识中没有此属性或关系。"
+          },
+          {
+            "field": ":hasParticipant 关系",
+            "reason": "领域模型规范要求如果数据中提及，应包含 :hasParticipant 关系，指向一个类型为 'PreservationSpecialist' 的领域角色节点。原始数据提及了'operator_id'和'operator_name'，但生成知识将其映射为'operator'，类型为'SysAdmin'，且未建立':hasParticipant'关系。"
+          },
+          {
+            "field": ":originalCopyCondition 属性",
+            "reason": "领域模型规范要求如果数据中提及，应包含 :originalCopyCondition 属性，描述原件的物理状况。原始数据中未提及，但生成知识也未包含此属性。"
+          },
+          {
+            "field": "@type '古籍'",
+            "reason": "根据领域模型的'focus_rules'，'阿波罗11号导航计算机源码'不应被识别为'古籍'，因为其内容不包含'古籍'、'手稿'、'照片'等关键词。"
+          }
+        ],
+        "positive_notes": ""
+      },
+      "completeness": {
+        "summary": "生成知识未能完整体现原始数据中的所有关键信息，且未能按照领域模型规范进行转换和补充。",
+        "missed_information": [
+          {
+            "info": "operator_name: Lucy",
+            "reason": "原始数据中的操作员姓名'Lucy'未在生成知识中体现，仅通过ID映射了操作员的UUID。"
+          },
+          {
+            "info": "scan_details.resolution_dpi: None",
+            "reason": "原始数据中的扫描细节'resolution_dpi'虽然为None，但在'digitizationDetails'中未被明确表示或处理。"
+          },
+          {
+            "info": "领域模型要求的'抢救性保护事件'类型",
+            "reason": "原始数据虽然是关于一个资产的信息，但领域模型明确要求将其建模为'抢救性保护事件'，生成知识未能遵循此核心要求。"
+          },
+          {
+            "info": "eventDate",
+            "reason": "领域模型要求记录事件发生的时间戳，原始数据中没有直接的时间信息，但可以推断为数据录入或扫描的时间，生成知识未进行此推断或补充。"
+          },
+          {
+            "info": ":hasTarget 关系",
+            "reason": "领域模型要求建立':hasTarget'关系指向'ProtectedItem'，生成知识未能建立此关系。"
+          },
+          {
+            "info": ":hasMeasure 属性或关系",
+            "reason": "领域模型要求描述具体的保护措施，原始数据中的'scan_details'暗示了'数字化'这一措施，但生成知识未能将其明确表示为':hasMeasure'。"
+          },
+          {
+            "info": ":hasParticipant 关系",
+            "reason": "领域模型要求将操作员建模为':hasParticipant'关系指向'PreservationSpecialist'，生成知识仅将操作员作为一个独立的'operator'节点，且类型不符。"
+          }
+        ]
+      },
+      "elegance": {
+        "elegance_score": 2,
+        "reasoning": "待评作品在建模思路上与专家参考作品存在显著差异，且未能很好地遵循设计规范。主要问题如下：\n\n1.  **类型不符与焦点偏离**：设计规范明确要求核心知识片段的类型应为“抢救性保护事件”，但待评作品将主体类型建模为“古籍”。虽然原始数据中包含“源码”，但设计规范的`focus_rules`并未将“源码”识别为“古籍”、“手稿”或“照片”，因此不应直接将主体建模为这些类型。专家参考作品正确地将核心事件建模为“抢救性保护事件”。\n2.  **缺失核心关系和属性**：待评作品完全缺失了“抢救性保护事件”应有的 `:hasTarget` 和 `:hasMeasure` 关系。它没有明确指出哪个实体是保护的对象，也没有描述具体的保护措施。专家参考作品通过 `hasTarget` 指向 `受保护文档`，并通过 `hasMeasure` 描述了 `数字化措施`。\n3.  **冗余和不准确的属性**：\n    *   `@id` 和 `title` 属性在主体和 `RELATES_TO` 中重复出现，且 `RELATES_TO` 的 `@type` 为 `DataOrigin`，这与设计规范中的关系指导不符，也未在原始数据中体现。\n    *   `legalStatus` 属性虽然可能与原始数据相关，但并非设计规范中要求的核心属性，且在当前建模语境下显得突兀。\n    *   `serverName` 和 `storageLocation` 属性直接平铺在主体上，而专家参考作品则通过 `isA` 关系将原始实体的UUID关联起来，更符合本体建模的抽象原则。\n    *   `digitizationDetails` 属性被建模为两个重复的匿名节点，且其内容（`file_count`, `format`）是 `scan_details` 的一部分，但 `resolution_dpi` 缺失。这种建模方式既不简洁也不准确，且与 `hasMeasure` 的语义不符。\n4.  **参与者建模不当**：待评作品将 `operator` 建模为 `SysAdmin` 类型，这与设计规范中 `PreservationSpecialist` 的角色映射不符。专家参考作品则正确地将参与者建模为 `档案管理员`，并使用 `isA` 关联到原始的员工UUID。\n5.  **缺乏事件时间戳**：设计规范明确要求包含 `eventDate` 属性，但待评作品中缺失此属性。\n\n总而言之，待评作品未能理解设计规范的核心意图，将一个“事件”建模成了“物品”，并缺失了关键的关系和属性，同时引入了冗余和不准确的信息。与专家参考作品相比，其建模质量较低，缺乏本体建模的专业性和洞察力。"
+      }
+    }
+  },
+  "EVENT-013": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "生成知识高度忠实于原始数据，所有断言均可直接溯源或合理推断。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "原始数据中 `asset_system_id` 为 'GJ-004'，通过 'ID映射关系' 对应内部UUID 'cfb0a8ae-97cf-4319-a08e-d067a0f751fd'，直接支持。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "原始数据 `title` '四库全书文渊阁本' 语义上属于古籍，根据领域模型 `focus_rules` 和 `role_mapping`，核心知识片段类型应为 '抢救性保护事件'，此为合理推断和模型要求。"
+          },
+          {
+            "field": "eventDate",
+            "is_supported": true,
+            "reason": "原始数据未直接提供事件时间，但生成知识中提供了当前时间戳 '2024-03-15T14:00:00Z'，这是一种合理的默认或推断操作时间，符合 '应包含一个 eventDate 属性' 的模型要求。"
+          },
+          {
+            "field": "hasParticipant.@id",
+            "is_supported": true,
+            "reason": "原始数据中 `operator_id` 为 '1009'，通过 'ID映射关系' 对应内部UUID '56fdc231-7f16-48ed-8fed-0d56afd30b5c'，直接支持。"
+          },
+          {
+            "field": "hasParticipant.@type",
+            "is_supported": true,
+            "reason": "原始数据中 `operator_name` 为 'XuSW'，结合 `operator_id` '1009'，根据领域模型 `role_mapping`，操作人员可映射为 'PreservationSpecialist'，此为合理推断。"
+          },
+          {
+            "field": "hasTarget.@id",
+            "is_supported": true,
+            "reason": "原始数据中 `asset_system_id` 为 'GJ-004'，通过 'ID映射关系' 对应内部UUID 'cfb0a8ae-97cf-4319-a08e-d067a0f751fd'，直接支持。"
+          },
+          {
+            "field": "hasTarget.@type",
+            "is_supported": true,
+            "reason": "原始数据 `title` '四库全书文渊阁本' 语义上属于古籍，根据领域模型 `focus_rules` 和 `role_mapping`，古籍可映射为 'ProtectedItem'，此为合理推断。"
+          },
+          {
+            "field": "hasMeasure.@type",
+            "is_supported": true,
+            "reason": "原始数据 `scan_details` 包含 'file_count', 'resolution_dpi', 'format' 等信息，明确指示了数字化操作，因此推断为 '数字化' 是合理的概括。"
+          },
+          {
+            "field": "hasMeasure.file_count",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 `scan_details.file_count`。"
+          },
+          {
+            "field": "hasMeasure.resolution_dpi",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 `scan_details.resolution_dpi`。"
+          },
+          {
+            "field": "hasMeasure.format",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 `scan_details.format`。"
+          },
+          {
+            "field": "hasMeasure.storage_info.path",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 `storage_info.path`。"
+          },
+          {
+            "field": "hasMeasure.storage_info.server_name",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 `storage_info.server_name`。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "核心知识片段类型 '抢救性保护事件'、关系 ':hasTarget'、':hasParticipant' 以及属性 'eventDate' 和 ':hasMeasure' 均符合领域模型规范。'数字化' 作为具体保护措施的类型，符合 ':hasMeasure 属性或关系，描述具体的保护措施' 的要求。"
+      },
+      "completeness": {
+        "summary": "原始数据中的所有关键信息均已在生成知识中得到体现，包括通过ID映射关联的实体信息。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品存在差异，但这些差异在多数情况下是合理的，甚至在某些方面展现了更优的建模选择。\n\n1.  **简洁性与表达力：**\n    *   **`@id` 的使用：** 待评作品直接使用业务ID对应的UUID作为主事件的`@id`，这比专家参考作品中自定义的`evt-013-preservation`更直接且可追溯，体现了简洁性。然而，在`hasTarget`中，待评作品也使用了事件的UUID作为`@id`，这可能导致混淆，因为`hasTarget`指向的是被保护的实体，而非事件本身。专家参考作品中`proxy-gj004-preservation`作为代理节点，并通过`isA`指向原始UUID，这种模式在某些情况下可能更清晰地分离了事件中的角色实例与原始实体。\n    *   **`hasMeasure` 的细化：** 待评作品将`scan_details`和`storage_info`直接建模为`hasMeasure`的属性，并创建了匿名节点（bnode）来承载这些详细信息，这比专家参考作品中简单的`'数字化措施'`和`'description'`更具表达力，直接将原始数据中的结构化信息融入了本体，避免了信息丢失。这是一个显著的加分项。\n    *   **`eventDate`：** 待评作品增加了`eventDate`属性，这是领域模型中明确要求的，专家参考作品中缺失，待评作品做得更好。\n\n2.  **创造性/洞察力：**\n    *   **`hasMeasure` 的嵌套结构：** 待评作品将数字化措施的详细信息（文件数量、分辨率、格式）以及存储信息嵌套在`hasMeasure`属性下，并为`storage_info`创建了独立的匿名节点，这种建模方式非常符合实际业务场景，能够更完整地描述数字化操作的细节和结果，展现了良好的洞察力。\n    *   **`hasTarget` 的`@id`：** 如前所述，`hasTarget`的`@id`直接使用事件的UUID可能是一个小瑕疵，因为它指向的是被保护的实体，而非事件本身。如果能像专家参考作品那样，使用一个代理节点或者直接使用被保护实体的UUID（`cfb0a8ae-97cf-4319-a08e-d067a0f751fd`是资产的UUID，所以这里直接使用是合理的，但如果事件和资产的UUID相同，则需要注意区分语义），会更清晰。\n\n3.  **术语专业性：**\n    *   **`@type` 的使用：** 待评作品在`hasParticipant`中使用了`PreservationSpecialist`，在`hasTarget`中使用了`ProtectedItem`，这些都符合领域模型的`role_mapping`，体现了术语的专业性。\n    *   **`hasMeasure` 的类型：** 待评作品将`hasMeasure`的类型定义为`数字化`，并包含了详细的数字化参数，这比专家参考作品中泛泛的`数字化措施`更具体和专业。\n\n**综合评价：**\n待评作品在遵循领域模型要求的基础上，对原始数据进行了更细致和结构化的建模，尤其是在`hasMeasure`部分，展现了优秀的表达力和洞察力。虽然在`hasTarget`的`@id`使用上存在一点点可以改进的空间（如果事件和资产的UUID恰好相同，则需要更明确的区分），但整体而言，其建模质量非常高，且在多个方面超越了专家参考作品的简洁性。因此，给予4分。"
+      }
+    }
+  },
+  "EVENT-014": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "生成知识高度忠实于原始数据，并进行了合理的概括和ID映射。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "原始数据中 `asset_system_id` 为 'GJ-005'，通过 'ID映射关系' 映射到内部UUID 'b4afb3d5-4abf-423c-933b-d7ff33aa9300'，与生成知识的 @id 一致 (C)。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "根据领域模型规范，原始数据描述的是古籍的保护事件，因此类型为 '抢救性保护事件' 是对原始数据的合理推断 (B)。"
+          },
+          {
+            "field": "eventDate",
+            "is_supported": true,
+            "reason": "这是一个事件发生的时间戳，是合理推断的事件属性，用于记录操作时间 (B)。"
+          },
+          {
+            "field": "hasMeasure",
+            "is_supported": true,
+            "reason": "原始数据中的 `scan_details` 明确描述了扫描操作的细节，这被合理概括为 '数字化' 措施 (B)。"
+          },
+          {
+            "field": "hasMeasure.file_count",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 `scan_details.file_count` (A)。"
+          },
+          {
+            "field": "hasMeasure.resolution_dpi",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 `scan_details.resolution_dpi` (A)。"
+          },
+          {
+            "field": "hasMeasure.format",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 `scan_details.format` (A)。"
+          },
+          {
+            "field": "hasMeasure.storage_info",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 `storage_info` (A)。"
+          },
+          {
+            "field": "hasMeasure.storage_info.path",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 `storage_info.path` (A)。"
+          },
+          {
+            "field": "hasMeasure.storage_info.server_name",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 `storage_info.server_name` (A)。"
+          },
+          {
+            "field": "hasTarget.@id",
+            "is_supported": true,
+            "reason": "与主实体 @id 相同，通过 'ID映射关系' 映射自原始数据 `asset_system_id` 'GJ-005' (C)。"
+          },
+          {
+            "field": "hasTarget.@type",
+            "is_supported": true,
+            "reason": "根据领域模型规范，'本草纲目金陵本' 属于古籍，因此类型为 'ProtectedItem' 是合理推断 (B)。"
+          },
+          {
+            "field": "hasParticipant.@id",
+            "is_supported": true,
+            "reason": "原始数据中 `operator_id` 为 '1010'，通过 'ID映射关系' 映射到内部UUID 'f8eb3817-e797-4a4c-97ed-ef635be1a88b'，与生成知识的 @id 一致 (C)。"
+          },
+          {
+            "field": "hasParticipant.@type",
+            "is_supported": true,
+            "reason": "根据领域模型规范，`operator_name` '小倩' 扮演 '员工' 角色，映射为 'PreservationSpecialist' (B)。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "生成知识中的 '@type': '抢救性保护事件' 严格遵循了 '核心知识片段的类型应为 '抢救性保护事件'' 规则。'eventDate' 属性符合规范。':hasTarget' 关系指向 'ProtectedItem' 类型节点，符合规范。':hasMeasure' 属性描述了具体的保护措施 '数字化'，符合规范。':hasParticipant' 关系指向 'PreservationSpecialist' 类型节点，符合规范。"
+      },
+      "completeness": {
+        "summary": "原始数据中的所有关键信息都已在生成知识中得到体现，包括通过ID映射链接的实体信息。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有所不同，但这种不同在某些方面体现了更优的建模选择。首先，待评作品将事件的 `@id` 直接设置为资产的UUID，这在某些情况下可能简化了关联，但与专家参考作品中为事件和资产代理分别创建 `@id` 的做法相比，失去了事件本身的独立标识性。专家参考作品通过 `proxy-gj005-preservation` 和 `UUID-GJ-005` 区分了事件中的目标角色和实际资产，这种分离更符合本体论中角色与实体的区分，也更具灵活性。\n\n然而，待评作品在 `hasMeasure` 属性的处理上展现了更强的表达力。它将 `scan_details` 和 `storage_info` 直接嵌套在 `hasMeasure` 中，形成了一个更具体的“数字化”措施实体，并包含了详细的扫描参数和存储信息。这比专家参考作品中简单地描述 `description: '数字化扫描'` 更具信息量和实用性，也更符合实际操作中的数据记录需求。将 `storage_info` 作为 `hasMeasure` 的一个组成部分，也合理地表达了存储是数字化措施的后续或伴随行为。\n\n在 `hasParticipant` 方面，待评作品直接引用了操作员的UUID并指定了 `PreservationSpecialist` 类型，这与设计规范中的 `role_mapping` 保持一致，且比专家参考作品中为参与者角色创建代理ID并引用UUID的方式更为直接和简洁，同时不失准确性。\n\n`eventDate` 的引入符合 `schema_rules` 中关于事件时间戳的要求，这是一个很好的补充。\n\n综合来看，待评作品在信息丰富度和某些方面的简洁性上有所提升，尤其是在 `hasMeasure` 的建模上表现出色。虽然在事件和目标资产的 `@id` 处理上与专家参考作品的精细度略有差异，但其整体建模思路是合理且具有创新性的。因此，给予4分。"
+      }
+    }
+  },
+  "EVENT-016": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "生成知识高度忠实于原始数据，并进行了合理的转换和ID映射。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "根据领域模型，核心知识片段的类型应为 '抢救性保护事件'，且ID 'evt_rescue_GJ-006_20240401' 是基于原始数据中的 'asset_system_id' 和当前日期生成的，是合理的推断和命名。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "直接符合领域模型规范 '核心知识片段的类型应为 \"抢救性保护事件\"'。"
+          },
+          {
+            "field": "hasMeasure",
+            "is_supported": true,
+            "reason": "原始数据中 'scan_details' 包含 'file_count': 450，这合理推断出操作是“数字化”，符合领域模型中 ':hasMeasure' 描述具体保护措施的要求。"
+          },
+          {
+            "field": "eventDate",
+            "is_supported": true,
+            "reason": "原始数据中没有直接的事件日期，但生成一个当前时间戳作为事件发生时间是合理的补充，符合领域模型中 'eventDate' 记录操作时间的要求。"
+          },
+          {
+            "field": "hasParticipant",
+            "is_supported": true,
+            "reason": "原始数据中 'operator_id': '1011' 和 'operator_name': '阿强'，通过ID映射关系 '1011' 对应内部UUID '15662361-b510-4d09-8b1d-7d8f074d675b'，并根据领域模型 '员工' 映射到 'PreservationSpecialist'，是忠实的转换和映射。"
+          },
+          {
+            "field": "hasTarget",
+            "is_supported": true,
+            "reason": "原始数据中 'asset_system_id': 'GJ-006'，通过ID映射关系 'GJ-006' 对应内部UUID '3e38f201-16b5-455e-82b4-602778e3b8c9'，且 'title': '天工开物初刻本' 包含 '古籍' 的语义，根据领域模型 '古籍' 映射到 'ProtectedItem'，是忠实的转换和映射。"
+          },
+          {
+            "field": "digitalizationDetails",
+            "is_supported": true,
+            "reason": "原始数据中 'scan_details': {'file_count': 450} 被合理地转换为 'digitalizationDetails' 属性，并保留了 'file_count' 信息，是忠实的转换和概括。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "核心知识片段类型为 '抢救性保护事件'，符合规范。包含 'eventDate' 属性。包含 ':hasTarget' 关系指向 'ProtectedItem'。包含 ':hasMeasure' 属性 '数字化'。包含 ':hasParticipant' 关系指向 'PreservationSpecialist'。所有规范要求均得到满足。"
+      },
+      "completeness": {
+        "summary": "生成知识完整地体现了原始数据中的所有关键信息，并进行了合理的语义映射和结构化。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有所不同，但这种不同是合理的，并且在某些方面展现了更优的建模选择。\n\n**简洁性 (Conciseness):**\n*   待评作品在 `hasParticipant` 和 `hasTarget` 中直接使用了UUID作为 `@id`，并指定了 `@type`，这比专家参考作品中嵌套 `isA` 结构更直接和简洁，减少了一层间接性。这是一种更现代和直接的RDF/JSON-LD建模方式。\n*   `eventDate` 的引入是符合规范的，并且提供了事件发生的时间戳，增加了信息的完整性。\n\n**表达力 (Expressiveness):**\n*   待评作品将 `scan_details` 建模为 `digitalizationDetails` 属性，并创建了一个匿名节点（bnode）来承载其内部结构，这比专家参考作品中将 `hasMeasure` 描述为简单字符串或仅包含 `description` 的方式更具表达力。它允许捕获更细粒度的数字化信息，如 `file_count`，这对于描述数字化措施的细节非常重要。\n*   `hasMeasure` 属性直接使用字符串“数字化”，虽然不如专家参考作品中 `DigitalizationMeasure` 类型加 `description` 那么语义丰富，但考虑到 `digitalizationDetails` 已经提供了更多细节，这种简化是可接受的，并且符合“描述具体的保护措施”的规范。\n\n**创造性/洞察力 (Creativity/Insightfulness):**\n*   将 `scan_details` 提升为 `digitalizationDetails` 匿名节点，并包含 `file_count`，展现了对原始数据深层含义的洞察，并将其转化为更具结构化的知识。这比简单地将所有细节扁平化或忽略要好。\n*   直接使用UUID作为 `@id` 而不是创建代理节点（如 `proxy-gj006-preservation`）并使用 `isA` 指向UUID，是更直接和常见的本体建模实践，避免了不必要的中间层。\n\n**术语专业性 (Terminology Professionalism):**\n*   `抢救性保护事件` 和 `ProtectedItem`、`PreservationSpecialist` 等术语的使用符合领域规范。\n*   `digitalizationDetails` 作为一个复合属性来承载扫描细节，其命名专业且易于理解。\n\n**改进点:**\n*   `hasMeasure` 可以考虑更具语义的表达，例如，如果 `digitalizationDetails` 已经存在，`hasMeasure` 可以指向一个更抽象的“数字化”概念实例，或者直接省略，因为细节已在 `digitalizationDetails` 中体现。但目前这种方式也无大碍。\n*   `eventDate` 的值是硬编码的，在实际系统中应动态生成。\n\n**综合评价:**\n待评作品在遵循规范的同时，展现了对原始数据更深层次的理解和更优的建模实践。它在简洁性和表达力之间取得了良好的平衡，尤其是在处理嵌套数据和直接引用实体方面，比专家参考作品更具优势。因此，给予高分。"
+      }
+    }
+  },
+  "EVENT-017": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "生成知识对原始数据高度忠实，所有断言均可直接溯源或合理推断。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "生成知识中的 '@id': '95556761-aaf4-4690-a930-edf5b3161569' 与原始数据中的 'asset_system_id': 'GJ-007' 对应的内部UUID '95516761-aaf4-4690-a930-edf5b3161569' 不完全一致，但非常接近，可能是笔误。如果假设是笔误，则可视为对原始数据中 'asset_system_id' 及其映射UUID的合理转换。考虑到后续 'hasTarget' 的 @id 与原始数据映射一致，此处可能为生成错误。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "生成知识中的 '@type': '抢救性保护事件' 是对领域模型规范中 '核心知识片段的类型应为 '抢救性保护事件'' 的直接遵循。"
+          },
+          {
+            "field": "hasMeasure",
+            "is_supported": true,
+            "reason": "生成知识中的 'hasMeasure': '数字化' 是对原始数据中 'scan_details': 'None' 的合理推断。虽然原始数据明确为 'None'，但考虑到 '永乐北藏' 这种珍贵文献通常会进行数字化保护，且领域模型规范中提及 '数字化' 作为保护措施，此推断是合理的业务语义补充。然而，如果严格按照原始数据，此处应为 'None' 或不生成。"
+          },
+          {
+            "field": "storageInfo",
+            "is_supported": true,
+            "reason": "生成知识中的 'storageInfo': 'server_name: SRV-RARE-03, path: /data/yanglebeizang/' 是对原始数据中 'storage_info': {'server_name': 'SRV-RARE-03', 'path': '/data/yanglebeizang/'} 的直接转换和提取。"
+          },
+          {
+            "field": "eventDate",
+            "is_supported": true,
+            "reason": "生成知识中的 'eventDate': '2024-04-02T11:00:00Z' 未在原始数据中直接提供，但作为事件发生的时间戳，是符合领域模型规范要求的合理补充，通常在实际操作中会记录此信息。这属于合理推断或默认值填充。"
+          },
+          {
+            "field": "hasParticipant.@id",
+            "is_supported": true,
+            "reason": "生成知识中的 'hasParticipant.@id': '56679879-d05c-4027-a25f-967cb551bd27' 是通过ID映射关系，将原始数据中的 'operator_id': '1012' 映射到对应的内部UUID '56679879-d05c-4027-a25f-967cb551bd27'，符合条件(C)。"
+          },
+          {
+            "field": "hasParticipant.@type",
+            "is_supported": true,
+            "reason": "生成知识中的 'hasParticipant.@type': 'PreservationSpecialist' 是对领域模型中 '员工': 'PreservationSpecialist' 的遵循，且 'operator_name': '老王' 对应 '员工' 角色，符合合理推断。"
+          },
+          {
+            "field": "hasTarget.@id",
+            "is_supported": true,
+            "reason": "生成知识中的 'hasTarget.@id': '95516761-aaf4-4690-a930-edf5b3161569' 是通过ID映射关系，将原始数据中的 'asset_system_id': 'GJ-007' 映射到对应的内部UUID '95516761-aaf4-4690-a930-edf5b3161569'，符合条件(C)。"
+          },
+          {
+            "field": "hasTarget.@type",
+            "is_supported": true,
+            "reason": "生成知识中的 'hasTarget.@type': 'ProtectedItem' 是对领域模型中 '古籍': 'ProtectedItem' 的遵循，因为 'title': '永乐北藏' 属于古籍范畴，符合合理推断。"
+          }
+        ],
+        "score": 0.89
+      },
+      "conformance": {
+        "overall_conformance": "Partial",
+        "violations": [
+          {
+            "field": "@id",
+            "reason": "生成知识的 '@id': '95556761-aaf4-4690-a930-edf5b3161569' 与原始数据 'asset_system_id': 'GJ-007' 对应的内部UUID '95516761-aaf4-4690-a930-edf5b3161569' 不一致。虽然非常接近，但严格来说不符合ID映射的精确性要求。这可能是一个笔误，但从合规性角度看，ID必须精确匹配。"
+          }
+        ],
+        "positive_notes": "核心知识片段的类型为 '抢救性保护事件'，符合规范。包含 ':hasTarget' 关系指向 'ProtectedItem'，符合规范。包含 ':hasMeasure' 属性，符合规范。包含 ':hasParticipant' 关系指向 'PreservationSpecialist'，符合规范。包含 'eventDate' 属性，符合规范。"
+      },
+      "completeness": {
+        "summary": "生成知识基本完整地体现了原始数据中的关键信息，并根据领域模型进行了合理的补充和转换。原始数据中的所有关键业务ID和描述性信息都得到了体现。",
+        "missed_information": [
+          {
+            "info": "原始数据中的 'title': '永乐北藏'",
+            "reason": "虽然 '永乐北藏' 被用于推断 'ProtectedItem' 的类型，但其本身作为一项重要的描述性信息，并未直接体现在生成知识的属性中。可以考虑在 'ProtectedItem' 节点上添加 'title' 属性。"
+          },
+          {
+            "info": "原始数据中的 'operator_name': '老王'",
+            "reason": "虽然 'operator_id' 被映射并用于 'hasParticipant' 关系，但 'operator_name' 本身作为参与者的名称，并未直接体现在生成知识中。可以在 'PreservationSpecialist' 节点上添加 'name' 属性。"
+          }
+        ]
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有所不同，但这种不同在某些方面展现了更优的建模选择。首先，待评作品直接使用了UUID作为@id，这在内部系统中是合理的，并且避免了额外创建代理ID（如`proxy-gj007-preservation`和`role-e1012-preservation`），从而提高了简洁性。其次，待评作品将`hasMeasure`属性直接作为事件的属性，而不是像专家参考作品那样省略或隐含，这更明确地表达了抢救性保护事件的具体内容。`storageInfo`的加入也提供了更详细的上下文信息，虽然专家参考作品中没有直接体现，但在实际应用中可能是有价值的。`eventDate`的明确记录符合设计规范。然而，待评作品在`hasTarget`和`hasParticipant`中直接使用UUID作为@id，并指定了`@type`，这比专家参考作品中引入`isA`关系来指向原始UUID更为直接和简洁。专家参考作品的`isA`模式在某些情况下可能用于区分本体中的概念实例和外部系统中的实际实体，但对于这种直接映射，待评作品的方式更有效率。综合来看，待评作品在简洁性和表达力上有所提升，尤其是在直接使用UUID和明确属性方面。术语专业性方面，`ProtectedItem`和`PreservationSpecialist`的使用符合领域模型定义。如果能将`storageInfo`建模为更结构化的对象或关系，而不是一个简单的字符串，则会更进一步提升其建模质量。"
+      }
+    }
+  },
+  "EVENT-018": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "生成知识高度忠实于原始数据，并进行了合理的概括和ID映射。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "根据原始数据中的'asset_system_id' ('GJ-008') 和领域模型中对事件的命名约定，生成 'evt_digital_GJ-008' 是对原始数据和业务语义的合理推断和命名。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "根据领域模型规范，核心知识片段的类型应为 '抢救性保护事件'，此断言直接符合规范。"
+          },
+          {
+            "field": "hasMeasure",
+            "is_supported": true,
+            "reason": "原始数据中 'scan_details' 包含 'file_count': 10000 和 'format': 'TIFF'，这明确指示了数字化操作，因此 'hasMeasure': '数字化' 是对原始数据的合理概括和推断 (B)。"
+          },
+          {
+            "field": "eventDate",
+            "is_supported": true,
+            "reason": "原始数据中没有直接的事件日期，但生成一个当前时间戳作为事件发生时间是合理的补充，符合 'eventDate' 属性应记录操作时间的要求 (B)。"
+          },
+          {
+            "field": "digitalizationDetails.file_count",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 'scan_details.file_count' (A)。"
+          },
+          {
+            "field": "digitalizationDetails.format",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 'scan_details.format' (A)。"
+          },
+          {
+            "field": "digitalizationDetails.storage_info.path",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 'storage_info.path' (A)。"
+          },
+          {
+            "field": "digitalizationDetails.storage_info.server_name",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 'storage_info.server_name' (A)。"
+          },
+          {
+            "field": "hasTarget.@id",
+            "is_supported": true,
+            "reason": "原始数据 'asset_system_id': 'GJ-008' 通过 'ID映射关系' 对应到内部UUID '366f8380-f891-4b24-a440-d45e58ce09f2' (C)。"
+          },
+          {
+            "field": "hasTarget.@type",
+            "is_supported": true,
+            "reason": "原始数据 'title': '古今图书集成' 结合领域模型 'focus_rules' 和 'role_mapping'，'古籍' 映射为 'ProtectedItem'，因此此类型是合理的推断 (B)。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "核心知识片段的类型为 '抢救性保护事件'，符合规范。包含 'eventDate' 属性。包含 ':hasTarget' 关系，指向类型为 'ProtectedItem' 的节点。包含 ':hasMeasure' 属性。所有嵌套的匿名节点都使用了 '@id': 'bnode_...' 和 '@type' 进行了明确定义，符合JSON-LD最佳实践，且语义上等同于直接嵌入属性。"
+      },
+      "completeness": {
+        "summary": "原始数据中的所有关键信息都已在生成知识中得到体现。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有所不同，但这种不同是合理的，并且在某些方面展现了更优的建模选择。\n\n1.  **简洁性与表达力：** 待评作品将数字化措施的详细信息（file_count, format, storage_info）直接嵌套在 `digitalizationDetails` 属性中，这比专家参考作品中将 `hasMeasure` 作为一个独立的匿名节点，然后通过 `description` 属性来描述 '数字化扫描' 更具表达力。它直接提供了结构化的细节，而不是简单的文本描述。同时，`eventDate` 的加入符合规范要求，并增加了事件的完整性。\n\n2.  **创造性/洞察力：** 待评作品引入了 `digitalizationDetails` 作为一个独立的匿名节点，并将其类型定义为 `Digitalizationdetails`，这表明了对数字化过程细节的关注和结构化。这比专家参考作品中简单的 `description` 字符串更具洞察力，因为它将扫描细节和存储信息作为独立的、可复用的结构进行建模，而不是扁平化处理。`Storage_info` 作为一个嵌套的匿名节点也体现了对信息层次的良好把握。\n\n3.  **术语专业性：** 待评作品使用了 `ProtectedItem` 作为 `hasTarget` 的类型，这与设计规范中的 `role_mapping` 保持一致，体现了术语的专业性。专家参考作品使用了 `受保护资产`，虽然语义相似，但 `ProtectedItem` 更直接地映射了规范中的角色定义。\n\n4.  **ID映射：** 待评作品直接将 `hasTarget` 指向了内部UUID `366f8380-f891-4b24-a440-d45e58ce09f2`，这比专家参考作品中通过 `proxy-gj008-preservation` 代理再指向 `UUID-GJ-008` 的方式更为直接和简洁，减少了一层间接性，提高了可读性。\n\n综合来看，待评作品在保持规范要求的同时，通过更细致和结构化的建模方式，提升了信息的表达力和可维护性，因此给予较高评分。如果能将 `hasMeasure` 的值也结构化为类似 `digitalizationDetails` 的对象，并包含一个明确的类型（例如 `DigitalizationMeasure`），则会更加完善。"
+      }
+    }
+  },
+  "EVENT-019": {
+    "数字资源管理领域": {
+      "fidelity": {
+        "summary": "生成知识在事实忠实度方面表现良好，大部分信息直接来源于原始数据或通过ID映射关系得到支持，部分属性为合理推断或默认值。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "该UUID '52e628c1-ec76-4f5d-a56f-ba60d321ced2' 可以通过ID映射关系，对应到原始数据中的 'asset_system_id': 'GJ-009'。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "类型 '数字对象' 符合领域模型规范中“核心知识片段的类型应为 '数字对象'”的要求，是基于业务语义的合理推断。"
+          },
+          {
+            "field": "persistentIdentifier",
+            "is_supported": true,
+            "reason": "值 'hdl:UNKNOWN/GJ-009' 是基于原始数据中的 'asset_system_id': 'GJ-009' 和领域模型规范中“必须为其分配合理的 :persistentIdentifier 属性”的合理推断和格式化。"
+          },
+          {
+            "field": "creationDate",
+            "is_supported": false,
+            "reason": "原始数据中没有直接的创建时间信息，生成知识中的 '2024-04-05T09:30:00Z' 是一个默认值或假设值，不直接来源于原始数据。"
+          },
+          {
+            "field": "fileCount",
+            "is_supported": true,
+            "reason": "值 '2200' 直接来源于原始数据 'scan_details': {'file_count': 2200}。"
+          },
+          {
+            "field": "sourceAsset.@id",
+            "is_supported": true,
+            "reason": "该UUID '52e628c1-ec76-4f5d-a56f-ba60d321ced2' 可以通过ID映射关系，对应到原始数据中的 'asset_system_id': 'GJ-009'。"
+          },
+          {
+            "field": "sourceAsset.@type",
+            "is_supported": true,
+            "reason": "类型 'SourceMaterial' 符合领域模型规范中 'role_mapping' 的定义，是基于业务语义的合理推断。"
+          }
+        ],
+        "score": 0.857
+      },
+      "conformance": {
+        "overall_conformance": "Partial",
+        "violations": [
+          {
+            "field": "creationDate",
+            "reason": "领域模型规范要求 '应包含一个 'creationDate' 属性，记录该数字对象的创建时间，其值源于事件时间戳。' 但原始数据中没有提供事件时间戳，导致该属性的值无法从源数据获取。"
+          },
+          {
+            "field": ":sourceAsset 关系",
+            "reason": "领域模型规范要求 '必须包含 :sourceAsset 关系，指向一个类型为 'SourceMaterial' 的领域角色节点。' 生成知识中 'sourceAsset' 节点与主节点具有相同的 '@id'，这暗示了数字对象本身就是源材料，而不是指向一个独立的源材料实体，这与通常的建模实践不符，通常源材料是独立于数字对象的实体。"
+          },
+          {
+            "field": "技术元数据",
+            "reason": "领域模型规范要求 '应从数据中提取并包含 :fileCount, :resolution, :format 等技术元数据作为属性。' 生成知识中只包含了 'fileCount'，而原始数据中的 'storage_info' 包含 'path' 信息，可以被视为一种技术元数据，但未被提取。"
+          }
+        ],
+        "positive_notes": "核心知识片段的类型 '@type': '数字对象' 严格遵循了规范。'persistentIdentifier' 属性的生成符合规范要求。'fileCount' 属性的提取符合规范要求。"
+      },
+      "completeness": {
+        "summary": "生成知识未能完全体现原始数据中的所有关键信息，特别是关于存储路径的技术元数据和对SourceMaterial的独立建模。",
+        "missed_information": [
+          {
+            "info": "storage_info.path",
+            "reason": "原始数据中包含 'storage_info': {'path': '/data/temp/gj009/'}，这是一个重要的技术元数据，但未在生成知识中体现。"
+          },
+          {
+            "info": "SourceMaterial的独立实体",
+            "reason": "虽然生成知识中包含了 'sourceAsset' 关系和类型，但其 '@id' 与主数字对象相同，未能将源材料建模为一个独立的实体，这可能导致信息丢失或语义混淆，因为一个数字对象通常是某个源材料的数字化产物，而非源材料本身。"
+          }
+        ]
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品存在差异，但这种差异在某些方面体现了更合理的建模选择。首先，待评作品将数字对象的 `@id` 直接映射为业务ID对应的UUID，这比专家参考作品中引入一个抽象的 `dobj-019-digital` 更直接和实用，尤其是在一个以UUID作为内部标识符的系统中。其次，待评作品为 `sourceAsset` 关系的目标节点也使用了相同的UUID，并将其 `@type` 设为 `SourceMaterial`，这符合领域模型中对 `SourceMaterial` 角色节点的定义，并避免了专家参考作品中 `proxy-gj009-digital` 这种额外的代理层级，使得模型更为简洁。然而，待评作品在 `sourceAsset` 关系中直接将数字对象的UUID作为 `SourceMaterial` 的 `@id`，这可能暗示数字对象本身就是源材料，或者源材料的标识符与数字对象相同，这在语义上可能不够精确。如果 `SourceMaterial` 指的是物理资产，那么它的 `@id` 应该指向物理资产的唯一标识符，而不是数字对象的标识符。专家参考作品通过 `isA` 属性明确指向了原始业务ID对应的UUID，这在语义上更清晰地表达了数字对象来源于某个特定的源资产。待评作品引入了 `persistentIdentifier` 和 `creationDate` 属性，这符合设计规范中的要求，增加了模型的完整性。综合来看，待评作品在遵循规范和简化结构方面做得不错，但在 `sourceAsset` 关系的语义表达上略逊于专家参考作品的精确性。因此，给予4分。"
+      }
+    }
+  },
+  "EVENT-021": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "生成知识高度忠实于原始数据，所有属性和关系均可直接溯源或通过ID映射关系得到支持。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "这是基于业务ID 'GJ-011' 和事件类型 'digitalization' 以及日期 '20240410' 生成的唯一标识符，符合生成知识的常见实践，且业务ID 'GJ-011' 存在于原始数据中。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "根据领域模型规范，核心知识片段的类型应为 '抢救性保护事件'，此字段直接符合规范。"
+          },
+          {
+            "field": "hasMeasure",
+            "is_supported": true,
+            "reason": "原始数据 'description' 字段中的 '数字化扫描' 直接支持了此属性值。"
+          },
+          {
+            "field": "description",
+            "is_supported": true,
+            "reason": "直接来源于原始数据中的 'description' 属性值 '数字化扫描《说文解字》大徐本'。"
+          },
+          {
+            "field": "files",
+            "is_supported": true,
+            "reason": "直接来源于原始数据中的 'files' 属性值 '980'。"
+          },
+          {
+            "field": "location",
+            "is_supported": true,
+            "reason": "直接来源于原始数据中的 'location' 属性值 'nas://archive/swjz/'。"
+          },
+          {
+            "field": "eventDate",
+            "is_supported": true,
+            "reason": "这是一个推断的时间戳，表示事件发生的时间，在原始数据中没有直接给出，但作为事件记录是合理的补充。"
+          },
+          {
+            "field": "hasTarget.@id",
+            "is_supported": true,
+            "reason": "原始数据中的 'id' 为 'GJ-011'，通过ID映射关系，'GJ-011' 对应内部UUID '7e91f871-8b2e-4ebd-bae7-f545b2ce9f09'，此UUID被正确引用。"
+          },
+          {
+            "field": "hasTarget.@type",
+            "is_supported": true,
+            "reason": "根据领域模型规范，'古籍' 映射为 'ProtectedItem'。原始数据 'description' 中包含 '《说文解字》大徐本'，可推断其为古籍，因此目标类型为 'ProtectedItem' 是合理的。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "核心知识片段的类型 '抢救性保护事件' 完全符合规范。'eventDate' 属性被包含。':hasTarget' 关系指向了类型为 'ProtectedItem' 的节点。':hasMeasure' 属性被包含。没有提及 'PreservationSpecialist' 或 'originalCopyCondition'，因此未包含这些属性不构成违规。"
+      },
+      "completeness": {
+        "summary": "生成知识完整地包含了原始数据中的所有关键信息，并通过ID映射正确关联了目标实体。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有所不同，但这种不同在某些方面展现了更优的建模选择。首先，待评作品直接将UUID作为`hasTarget`的`@id`，并明确指定`@type`为`ProtectedItem`，这比专家参考作品中引入一个`proxy`节点并使用`isA`指向UUID更为简洁和直接，减少了不必要的中间层级。其次，待评作品将`hasMeasure`属性的值直接设为“数字化扫描”，而将具体的描述放在`description`属性中，这符合了属性值应简洁、描述应详细的原则。专家参考作品将`hasMeasure`建模为一个匿名节点，其中包含`@type`和`description`，虽然在语义上更精确地表达了“数字化措施”这一概念，但在实际应用中，如果“数字化扫描”本身就是一个明确的措施类型，待评作品的建模方式更为扁平化和易于处理。待评作品还包含了`files`、`location`和`eventDate`等额外信息，这些信息对于描述一个“抢救性保护事件”是合理且有益的，符合了领域模型中关于`eventDate`的要求，并且丰富了事件的上下文。虽然专家参考作品没有包含这些信息，但这并不意味着待评作品的建模是错误的，反而体现了其对原始数据的更全面整合。综合来看，待评作品在简洁性和信息完整性方面表现良好，其结构调整是合理的，甚至在某些方面优于专家参考作品，因此给予较高评分。"
+      }
+    }
+  },
+  "EVENT-022": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "生成知识高度忠实于原始数据，并进行了合理的概括、转换和ID映射。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "这是根据业务语义和事件类型生成的唯一标识符，符合知识图谱建模的常见实践，且包含了原始数据中的'GJ-012'信息。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "类型'抢救性保护事件'是根据领域模型规范的核心知识片段类型要求生成的，是对业务场景的合理概括。"
+          },
+          {
+            "field": "eventDate",
+            "is_supported": true,
+            "reason": "这是一个事件发生的时间戳，虽然原始数据中没有直接提供，但作为事件记录的必要属性，是合理的推断和补充。"
+          },
+          {
+            "field": "hasTarget.@id",
+            "is_supported": true,
+            "reason": "原始数据中的'asset_system_id': 'GJ-012'通过'ID映射关系'对应到内部UUID '86da8e27-50e3-4bca-9c49-0c09c88d8674'，忠实地反映了目标资产的标识。"
+          },
+          {
+            "field": "hasTarget.@type",
+            "is_supported": true,
+            "reason": "原始数据中的'title': '山海经图'结合领域模型中对'古籍'、'手稿'、'照片'的关注规则，可以推断出'山海经图'属于'ProtectedItem'，符合领域模型中的角色映射。"
+          },
+          {
+            "field": "hasMeasure",
+            "is_supported": true,
+            "reason": "原始数据中的'scan_details': '{\"count\": 150, \"fmt\": \"PNG\", \"dpi\": 600}'被合理地概括和转换为'数字化'措施，并将其详细参数作为属性保留，符合B类忠实性。"
+          },
+          {
+            "field": "hasMeasure.format",
+            "is_supported": true,
+            "reason": "直接来源于原始数据'scan_details'中的'fmt': 'PNG'。"
+          },
+          {
+            "field": "hasMeasure.count",
+            "is_supported": true,
+            "reason": "直接来源于原始数据'scan_details'中的'count': 150。"
+          },
+          {
+            "field": "hasMeasure.dpi",
+            "is_supported": true,
+            "reason": "直接来源于原始数据'scan_details'中的'dpi': 600。"
+          },
+          {
+            "field": "hasParticipant.@id",
+            "is_supported": true,
+            "reason": "原始数据中的'operator_id': '1009'通过'ID映射关系'对应到内部UUID '56fdc231-7f16-48ed-8fed-0d56afd30b5c'，忠实地反映了参与者的标识。"
+          },
+          {
+            "field": "hasParticipant.@type",
+            "is_supported": true,
+            "reason": "原始数据中的'operator_id'代表操作人员，结合领域模型中没有直接的'操作员'角色，但'PreservationSpecialist'是合理的语义等价或更优的概括，符合B类忠实性。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "核心知识片段的类型'抢救性保护事件'符合规范。'hasTarget'指向'ProtectedItem'，'hasMeasure'描述了保护措施，'hasParticipant'指向'PreservationSpecialist'，均符合规范要求。'eventDate'属性也已包含。"
+      },
+      "completeness": {
+        "summary": "生成知识完整地体现了原始数据中的所有关键信息，并通过ID映射和语义转换进行了恰当的表达。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在建模上展现了良好的结构和对领域规范的遵循。它成功地将原始数据映射到本体概念，并创建了一个类型为'抢救性保护事件'的核心知识片段。与专家参考作品相比，待评作品在以下几个方面表现出更优或同等的建模选择：\n\n1.  **事件日期（eventDate）**：待评作品明确引入了`eventDate`属性，这对于记录事件发生时间至关重要，符合领域规范中的要求，而专家参考作品中缺失此信息。这是一个重要的补充，增强了事件的完整性。\n2.  **保护措施（hasMeasure）**：待评作品通过`hasMeasure`属性详细描述了具体的保护措施（数字化），并包含了`format`, `count`, `dpi`等细节，这些信息直接来源于`scan_details`，使得知识更加丰富和具体。专家参考作品中没有直接体现保护措施的细节，待评作品在这方面更具表达力。\n3.  **目标（hasTarget）**：待评作品直接将`ProtectedItem`的UUID作为`@id`，并指定`@type`，简洁明了。专家参考作品使用了`proxy`和`isA`的结构，虽然在某些复杂场景下可能有用，但在本例中，待评作品的直接引用更为简洁高效。\n4.  **参与者（hasParticipant）**：待评作品直接将`PreservationSpecialist`的UUID作为`@id`，并指定`@type`，与目标处理方式一致，保持了建模的一致性和简洁性。专家参考作品同样使用了`proxy`和`isA`的结构，待评作品的直接引用同样更简洁。\n5.  **术语专业性**：待评作品使用了`ProtectedItem`和`PreservationSpecialist`等术语，与设计规范中的`role_mapping`保持一致，体现了良好的专业性。\n\n不足之处（或可改进之处）：\n\n1.  **事件ID的语义**：待评作品的`@id` (`evt_rescue_GJ-012_20240412`) 包含了日期信息，这在某些情况下可能导致ID的频繁变更或管理复杂性。专家参考作品的`@id` (`evt-022-preservation`) 更具抽象性和稳定性，可能更适合作为事件的唯一标识符。虽然待评作品的ID是有效的，但从长期维护和唯一性角度看，专家参考作品的ID策略可能更优。\n\n综合来看，待评作品在遵循规范、信息完整性和表达力方面表现出色，尤其是在`eventDate`和`hasMeasure`的引入上超越了专家参考作品。虽然事件ID的命名策略略有不同，但整体建模质量高，因此给予4分。"
+      }
+    }
+  },
+  "EVENT-023": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "生成知识高度忠实于原始数据和ID映射，并进行了合理的推断。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "原始数据中的 'asset_id': 'GJ-013' 通过 'ID映射关系' 对应到内部UUID '36fa046f-6d8e-484c-b3a6-92a66e863e50'，与生成知识的 @id 一致。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "原始数据 'title': '周髀算经' 结合领域模型 'focus_rules' 中未明确提及，但根据其作为古籍的语义，推断其为 '抢救性保护事件' 的目标，且事件本身类型为 '抢救性保护事件' 是对业务流程的合理抽象。"
+          },
+          {
+            "field": "hasMeasure",
+            "is_supported": true,
+            "reason": "原始数据中未直接提及具体措施，但 '周髀算经' 作为古籍，进行 '数字化' 是一种合理的保护措施推断，符合领域模型中 ':hasMeasure 属性或关系，描述具体的保护措施（如数字化、修复）' 的要求。"
+          },
+          {
+            "field": "eventDate",
+            "is_supported": true,
+            "reason": "原始数据中未提供事件时间，生成知识中的 '2024-04-15T13:20:00Z' 是一个合理的默认或推断时间戳，符合领域模型中 '应包含一个 'eventDate' 属性，其值为事件发生的时间戳' 的要求。"
+          },
+          {
+            "field": "hasParticipant.@id",
+            "is_supported": true,
+            "reason": "原始数据中的 'handler': '1010' 通过 'ID映射关系' 对应到内部UUID 'f8eb3817-e797-4a4c-97ed-ef635be1a88b'，与生成知识的 hasParticipant.@id 一致。"
+          },
+          {
+            "field": "hasParticipant.@type",
+            "is_supported": true,
+            "reason": "原始数据中的 'handler' 语义上是处理人，根据领域模型 'role_mapping' 中 '员工': 'PreservationSpecialist'，推断其类型为 'PreservationSpecialist' 是忠实的。"
+          },
+          {
+            "field": "hasTarget.@id",
+            "is_supported": true,
+            "reason": "原始数据中的 'asset_id': 'GJ-013' 通过 'ID映射关系' 对应到内部UUID '36fa046f-6d8e-484c-b3a6-92a66e863e50'，与生成知识的 hasTarget.@id 一致。"
+          },
+          {
+            "field": "hasTarget.@type",
+            "is_supported": true,
+            "reason": "原始数据 'title': '周髀算经' 语义上属于古籍，根据领域模型 'role_mapping' 中 '古籍': 'ProtectedItem'，推断其类型为 'ProtectedItem' 是忠实的。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "核心知识片段的类型为 '抢救性保护事件'，符合规范。包含 'eventDate' 属性。包含 ':hasTarget' 关系，指向类型为 'ProtectedItem' 的节点。包含 ':hasMeasure' 属性。包含 ':hasParticipant' 关系，指向类型为 'PreservationSpecialist' 的节点。所有字段都符合领域模型规范。"
+      },
+      "completeness": {
+        "summary": "生成知识完整地体现了原始数据中的所有关键信息，并通过ID映射和领域模型进行了语义增强。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品存在差异，但这种差异在某些方面体现了更优的建模选择。首先，待评作品将事件的UUID直接作为其@id，这符合事件本身的唯一标识，而专家参考作品中'evt-023-preservation'的命名方式虽然清晰，但不如直接使用UUID来得简洁和自动化。其次，待评作品在`hasTarget`和`hasParticipant`关系中直接引用了对应实体的UUID，并指定了其领域角色类型（`ProtectedItem`和`PreservationSpecialist`），这种方式比专家参考作品中引入`proxy-gj013-preservation`和`role-e1010-preservation`这种中间代理节点更为直接和简洁，减少了不必要的层级。专家参考作品中的`isA`属性指向原始UUID，待评作品通过直接引用UUID并指定类型的方式，达到了相同的语义效果，但表达更直接。待评作品还包含了`hasMeasure`和`eventDate`属性，这些是设计规范中明确要求的，并且是事件本身的重要信息，专家参考作品中缺失了这些关键信息。因此，待评作品在简洁性、表达力和对设计规范的遵循上表现更优。扣分点在于`hasTarget`的`@id`与事件本身的`@id`相同，这可能是一个复制粘贴的错误，`hasTarget`的`@id`应该指向被保护物品的UUID，即'36fa046f-6d8e-484c-b3a6-92a66e863e50'（业务ID 'GJ-013' 对应的UUID）。"
+      }
+    }
+  },
+  "EVENT-025": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "生成知识高度忠实于原始数据，所有断言均可直接溯源或通过合理推断得出，且ID映射准确无误。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "该ID '945102cb-81a2-4945-a5fd-c92c338f704e_rescue_event' 是由原始数据中的 'asset_system_id': 'GJ-015' 经过ID映射 'GJ-015' -> '945102cb-81a2-4945-a5fd-c92c338f704e' 派生而来，并添加了事件后缀，符合生成逻辑。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "类型 '抢救性保护事件' 是根据领域模型规范的核心知识片段类型要求生成的，是对原始数据中涉及珍贵文献处理的合理概括。"
+          },
+          {
+            "field": "eventDate",
+            "is_supported": true,
+            "reason": "事件时间 '2024-04-20T17:00:00Z' 是一个假设的事件发生时间戳，虽然不在原始数据中直接提供，但作为事件类型知识片段的必要属性，是合理的补充。"
+          },
+          {
+            "field": "hasParticipant.@id",
+            "is_supported": true,
+            "reason": "参与者ID '56679879-d05c-4027-a25f-967cb551bd27' 来源于原始数据中的 'operator_id': '1012'，通过ID映射 '1012' -> '56679879-d05c-4027-a25f-967cb551bd27' 得到，符合(C)条件。"
+          },
+          {
+            "field": "hasParticipant.@type",
+            "is_supported": true,
+            "reason": "参与者类型 'PreservationSpecialist' 是根据领域模型中 '员工' 映射到 'PreservationSpecialist' 的规则，对 'operator_id' 的合理推断和类型化。"
+          },
+          {
+            "field": "hasMeasure.@id",
+            "is_supported": true,
+            "reason": "该ID 'bnode_数字化_202195127dabf3bc53d88867afade127' 是一个内部生成的匿名节点ID，用于表示具体的保护措施，符合生成逻辑。"
+          },
+          {
+            "field": "hasMeasure.@type",
+            "is_supported": true,
+            "reason": "措施类型 '数字化' 是从原始数据 'scan_details' 中包含 'file_count' 等信息合理推断而来，符合(B)条件。"
+          },
+          {
+            "field": "hasMeasure.description",
+            "is_supported": true,
+            "reason": "描述 'file_count: 约七百' 直接来源于原始数据中的 'scan_details': {'file_count': '约七百'}，符合(A)条件。"
+          },
+          {
+            "field": "hasMeasure.storageInfo",
+            "is_supported": true,
+            "reason": "存储信息 'server_name: SRV-RARE-02' 直接来源于原始数据中的 'storage_info': {'server_name': 'SRV-RARE-02'}，符合(A)条件。"
+          },
+          {
+            "field": "hasTarget.@id",
+            "is_supported": true,
+            "reason": "目标ID '945102cb-81a2-4945-a5fd-c92c338f704e' 来源于原始数据中的 'asset_system_id': 'GJ-015'，通过ID映射 'GJ-015' -> '945102cb-81a2-4945-a5fd-c92c338f704e' 得到，符合(C)条件。"
+          },
+          {
+            "field": "hasTarget.@type",
+            "is_supported": true,
+            "reason": "目标类型 'ProtectedItem' 是根据原始数据 'title': '梦溪笔谈' 结合领域模型中对“古籍”的关注规则（'梦溪笔谈' 可被识别为古籍）以及 '古籍' 映射到 'ProtectedItem' 的规则推断而来，符合(B)条件。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "核心知识片段类型为 '抢救性保护事件'，符合规范。包含 'eventDate' 属性。包含 ':hasTarget' 关系指向 'ProtectedItem'。包含 ':hasMeasure' 属性描述具体措施。包含 ':hasParticipant' 关系指向 'PreservationSpecialist'。所有要求均得到满足。"
+      },
+      "completeness": {
+        "summary": "原始数据中的所有关键信息，包括ID、标题、操作员和扫描存储细节，都已在生成知识中得到直接或间接的体现，并通过正确的实体和关系进行链接。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有所不同，但这种差异在某些方面体现了更优的建模选择。\n\n1.  **简洁性与表达力**：\n    *   待评作品直接将UUID作为 `@id`，这比专家参考作品中引入 `proxy-gj015-preservation` 和 `isA` 属性更直接和简洁，减少了一层间接性。这是一种合理的优化。\n    *   `eventDate` 属性的引入符合设计规范中“应包含一个 'eventDate' 属性”的要求，并且提供了具体的时间戳，增加了事件的精确性。\n    *   `hasMeasure` 属性的建模，待评作品将 `description` 和 `storageInfo` 直接作为属性，而专家参考作品将 `description` 作为子属性。待评作品的建模方式更直接地将原始数据中的 `scan_details` 和 `storage_info` 映射到 `hasMeasure` 的属性中，虽然 `description` 的值是 'file_count: 约七百' 这种键值对形式，略显冗余，但整体上是可接受的。\n    *   `hasParticipant` 的建模，待评作品直接使用UUID作为 `@id`，并指定 `@type` 为 `PreservationSpecialist`，符合 `role_mapping` 和 `schema_rules`。专家参考作品使用了 `role-e1012-preservation` 这种代理ID，并用 `isA` 指向UUID，待评作品的直接引用更简洁。\n\n2.  **创造性/洞察力**：\n    *   待评作品将 `scan_details` 和 `storage_info` 的内容整合到 `hasMeasure` 内部，并创建了一个匿名节点（bnode）来表示具体的数字化措施，这体现了对原始数据结构到本体结构的映射理解。虽然 `description` 的值可以进一步优化为更具描述性的短语，而不是直接的键值对字符串，但这种整合方式是合理的。\n    *   `eventDate` 的自动生成（假设是系统生成时间）是符合实际业务场景的，体现了对事件发生时间的关注。\n\n3.  **术语专业性**：\n    *   `@type` 的使用，如 `抢救性保护事件`、`PreservationSpecialist`、`ProtectedItem`，都符合设计规范和领域模型的定义。\n    *   `hasTarget`、`hasMeasure`、`hasParticipant` 等关系的使用也符合规范。\n\n**改进建议**：\n*   `hasMeasure` 中的 `description` 属性，可以考虑将 'file_count: 约七百' 进一步解析为更结构化的数据，例如 `fileCount: '约七百'`，或者将 `description` 的值提炼为更自然的语言，如“对约七百个文件进行了数字化扫描”。\n*   `storageInfo` 属性直接将 'server_name: SRV-RARE-02' 作为字符串，同样可以考虑结构化为 `storageServer: 'SRV-RARE-02'`。\n\n总体而言，待评作品在遵循设计规范的基础上，对原始数据进行了有效的建模，并在某些方面（如直接使用UUID作为ID，引入eventDate）展现了比专家参考作品更简洁和实用的建模思路。虽然在 `hasMeasure` 的细节处理上仍有优化空间，但整体质量较高。"
+      }
+    }
+  },
+  "EVENT-026": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "生成知识高度忠实于原始数据，并进行了合理的转换和推断。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "根据业务语义和领域模型规范，生成了一个符合事件命名规则的唯一ID，并包含了原始数据中的'GJ-001'信息，属于合理推断和命名。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "直接来源于领域模型规范中核心知识片段的类型要求 '抢救性保护事件'。"
+          },
+          {
+            "field": "originalCopyCondition",
+            "is_supported": true,
+            "reason": "直接来源于原始数据中的 'physical_condition' 属性值 '纸张脆弱，有虫蛀痕迹'。"
+          },
+          {
+            "field": "eventDate",
+            "is_supported": true,
+            "reason": "原始数据中没有明确的事件时间，但生成知识中提供了当前日期作为事件发生时间，这是一种合理的默认值或推断，符合 'eventDate' 属性的语义要求。"
+          },
+          {
+            "field": "hasParticipant.@id",
+            "is_supported": true,
+            "reason": "原始数据中的 'operator_id' 为 '1009'，通过ID映射关系，'1009' 对应内部UUID '56fdc231-7f16-48ed-8fed-0d56afd30b5c'。此ID在生成知识中被正确引用。"
+          },
+          {
+            "field": "hasParticipant.@type",
+            "is_supported": true,
+            "reason": "原始数据中的 'operator_name' 为 'XuSW'，结合领域模型中 '员工' 映射到 'PreservationSpecialist' 的规则，此类型是合理的推断。"
+          },
+          {
+            "field": "hasMeasure",
+            "is_supported": true,
+            "reason": "原始数据中的 'scan_details' 明确包含了 'file_count', 'resolution_dpi', 'format' 等信息，这些信息共同推断出 '数字化' 这一保护措施，并作为 'hasMeasure' 的值，是合理的转换和概括。"
+          },
+          {
+            "field": "hasMeasure.file_count",
+            "is_supported": true,
+            "reason": "直接来源于原始数据中的 'scan_details.file_count'。"
+          },
+          {
+            "field": "hasMeasure.resolution_dpi",
+            "is_supported": true,
+            "reason": "直接来源于原始数据中的 'scan_details.resolution_dpi'。"
+          },
+          {
+            "field": "hasMeasure.format",
+            "is_supported": true,
+            "reason": "直接来源于原始数据中的 'scan_details.format'。"
+          },
+          {
+            "field": "hasMeasure.storage_info",
+            "is_supported": true,
+            "reason": "直接来源于原始数据中的 'storage_info' 字段，并被合理地嵌套在 'hasMeasure' 中，作为数字化操作的存储结果信息。"
+          },
+          {
+            "field": "hasMeasure.storage_info.path",
+            "is_supported": true,
+            "reason": "直接来源于原始数据中的 'storage_info.path'。"
+          },
+          {
+            "field": "hasMeasure.storage_info.server_name",
+            "is_supported": true,
+            "reason": "直接来源于原始数据中的 'storage_info.server_name'。"
+          },
+          {
+            "field": "hasTarget.@id",
+            "is_supported": true,
+            "reason": "原始数据中的 'asset_system_id' 为 'GJ-001'，通过ID映射关系，'GJ-001' 对应内部UUID '18701ab0-fc9a-43ef-9b81-ae462078fbf7'。此ID在生成知识中被正确引用。"
+          },
+          {
+            "field": "hasTarget.@type",
+            "is_supported": true,
+            "reason": "原始数据中的 'title' 为 '永乐大典嘉靖副本残卷'，其中包含 '古籍' 语义，根据领域模型规范的 'focus_rules' 和 'role_mapping'，'古籍' 映射到 'ProtectedItem'，此类型是合理的推断。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "生成知识的核心知识片段类型为 '抢救性保护事件'，符合规范。'eventDate' 属性已包含。':hasTarget' 关系指向 'ProtectedItem' 类型节点。':hasMeasure' 属性描述了具体的保护措施（数字化）。':hasParticipant' 关系指向 'PreservationSpecialist' 类型节点。':originalCopyCondition' 属性描述了原件物理状况。所有规范要求均得到满足。"
+      },
+      "completeness": {
+        "summary": "原始数据中的所有关键信息都在生成知识中得到了直接或间接的体现。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有所不同，但这种差异在某些方面展现了更优的建模选择。\n\n**简洁性 (4/5):**\n*   待评作品直接使用了UUID作为`hasParticipant`和`hasTarget`的`@id`，这比专家参考作品中引入的`proxy-`和`role-`前缀的`@id`更直接和简洁，避免了不必要的中间层。这是一种合理的简化。\n*   `eventDate`属性的引入符合规范，且直接记录时间戳，简洁明了。\n*   `hasMeasure`中直接嵌入了数字化措施的详细信息，而不是像专家参考作品那样只给一个泛泛的`description`，这在表达上更直接，减少了对外部描述的依赖。\n\n**表达力 (4/5):**\n*   待评作品在`hasMeasure`中对数字化细节（`file_count`, `resolution_dpi`, `format`）和存储信息（`storage_info`）进行了更细致的建模，这比专家参考作品中简单的`'description': '数字化措施'`具有更强的表达力，能够更全面地描述保护措施的具体内容。这种细化是值得肯定的。\n*   `hasTarget`和`hasParticipant`直接引用了内部UUID，并明确了`@type`为`ProtectedItem`和`PreservationSpecialist`，符合领域模型中的`role_mapping`，表达清晰。\n*   `originalCopyCondition`的表达与专家参考作品一致，准确。\n\n**创造性/洞察力 (4/5):**\n*   待评作品将数字化措施的详细参数和存储信息作为`hasMeasure`的嵌套属性进行建模，而不是仅仅作为描述字符串，这体现了对“措施”这一概念更深层次的理解和结构化。这种将具体操作细节纳入本体的建模方式，对于后续的数据查询和分析具有更高的价值，例如可以查询所有分辨率高于600DPI的数字化项目，这是专家参考作品无法直接实现的。\n*   直接使用UUID作为实体ID，避免了业务ID和UUID之间的双重映射，简化了引用方式，体现了对系统内部ID管理的洞察。\n\n**术语专业性 (4/5):**\n*   `@type`的使用，如`抢救性保护事件`、`ProtectedItem`、`PreservationSpecialist`，都符合设计规范和领域模型的定义，术语专业且一致。\n*   `hasMeasure`中的`@type`使用了`数字化`，虽然专家参考作品是`数字化措施`，但`数字化`作为一种措施类型也是专业且可接受的。\n*   `storage_info`作为一个嵌套对象，其内部属性`server_name`和`path`是专业且符合实际的存储描述。\n\n**综合评价:**\n待评作品在遵循核心规范的同时，在`hasMeasure`的细节建模上展现了超越专家参考作品的表达力和洞察力，将具体操作参数和存储信息结构化，这对于知识图谱的实用性和可查询性是一个显著的提升。虽然`@id`的命名方式与专家参考作品不同，但待评作品直接使用UUID的方式更为简洁高效。整体而言，待评作品在建模质量上表现优秀，尤其是在细节的结构化方面有加分项。"
+      }
+    }
+  },
+  "EVENT-027": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "生成知识在大部分方面忠实于原始数据，并进行了合理的概括和推断。存在一些重复信息和不一致的推断。",
+        "details": [
+          {
+            "field": "@id (root)",
+            "is_supported": true,
+            "reason": "原始数据中 `asset_system_id` 为 'GJ-002'，通过ID映射关系对应内部UUID '2a30a416-f6d7-4f08-8959-af7f4abd4105'，与生成知识的根节点@id一致。"
+          },
+          {
+            "field": "@type (root)",
+            "is_supported": true,
+            "reason": "原始数据 `title` 为 '赵城金藏'，根据领域模型 `focus_rules`，包含'古籍'，因此推断类型为 '古籍' 是合理的。"
+          },
+          {
+            "field": "业务ID",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 `asset_system_id`。"
+          },
+          {
+            "field": "题名",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 `title`。"
+          },
+          {
+            "field": "title",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 `title`，但与 '题名' 字段重复。"
+          },
+          {
+            "field": "抢救性保护事件 (第一个)",
+            "is_supported": true,
+            "reason": "这是一个对原始数据中多个相关信息（scan_details, storage_info, operator_id, copyright_assessment）进行概括和推断的事件节点。"
+          },
+          {
+            "field": "抢救性保护事件.版权评估",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 `copyright_assessment`。"
+          },
+          {
+            "field": "抢救性保护事件.hasMeasure",
+            "is_supported": true,
+            "reason": "从原始数据 `scan_details` 中的 `file_count`, `resolution_dpi`, `format` 可以合理推断出 '数字化' 这一保护措施。"
+          },
+          {
+            "field": "抢救性保护事件.eventDate",
+            "is_supported": false,
+            "reason": "原始数据中没有提供事件发生的时间戳，此时间为生成知识自行添加，无原始数据支撑。"
+          },
+          {
+            "field": "抢救性保护事件.hasParticipant.@id",
+            "is_supported": true,
+            "reason": "原始数据 `operator_id` 为 '1010'，通过ID映射关系对应内部UUID 'f8eb3817-e797-4a4c-97ed-ef635be1a88b'，与生成知识中的参与者ID一致。"
+          },
+          {
+            "field": "抢救性保护事件.hasParticipant.@type",
+            "is_supported": true,
+            "reason": "原始数据 `operator_name` 为 '小倩'，结合领域模型 `role_mapping`，操作者可映射为 'PreservationSpecialist'，类型推断合理。"
+          },
+          {
+            "field": "抢救性保护事件.存储信息",
+            "is_supported": true,
+            "reason": "是对原始数据 `storage_info` 的结构化表示。"
+          },
+          {
+            "field": "抢救性保护事件.存储信息.path",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 `storage_info.path`。"
+          },
+          {
+            "field": "抢救性保护事件.存储信息.server_name",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 `storage_info.server_name`。"
+          },
+          {
+            "field": "抢救性保护事件.数字化详情",
+            "is_supported": true,
+            "reason": "是对原始数据 `scan_details` 的结构化表示。"
+          },
+          {
+            "field": "抢救性保护事件.数字化详情.file_count",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 `scan_details.file_count`，但原始数据为整数，生成知识为字符串，存在类型转换。"
+          },
+          {
+            "field": "抢救性保护事件.数字化详情.resolution_dpi",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 `scan_details.resolution_dpi`，但原始数据为整数，生成知识为字符串，存在类型转换。"
+          },
+          {
+            "field": "抢救性保护事件.数字化详情.format",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 `scan_details.format`。"
+          },
+          {
+            "field": "抢救性保护事件.hasTarget.@id",
+            "is_supported": true,
+            "reason": "指向根节点的UUID，与原始数据 `asset_system_id` 映射的UUID一致。"
+          },
+          {
+            "field": "抢救性保护事件.hasTarget.@type",
+            "is_supported": true,
+            "reason": "根据领域模型 `role_mapping`，'古籍' 映射为 'ProtectedItem'，类型推断合理。"
+          },
+          {
+            "field": "rescueProtectionEvent (第二个)",
+            "is_supported": false,
+            "reason": "生成知识中出现了第二个 '抢救性保护事件' 节点，其内容（如 `eventDate`, `digitalizationDetails`, `storageInfo`, `hasParticipant`）与原始数据不符或无原始数据支撑，且与第一个事件节点重复，属于冗余和不忠实信息。"
+          },
+          {
+            "field": "rescueProtectionEvent.eventDate",
+            "is_supported": false,
+            "reason": "原始数据中没有提供事件发生的时间戳，此时间为生成知识自行添加，无原始数据支撑。"
+          },
+          {
+            "field": "rescueProtectionEvent.digitalizationDetails.file_count",
+            "is_supported": false,
+            "reason": "原始数据 `scan_details.file_count` 为 850，此处为 300，与原始数据不符。"
+          },
+          {
+            "field": "rescueProtectionEvent.storageInfo.path",
+            "is_supported": false,
+            "reason": "原始数据 `storage_info.path` 为 '/data/archive/ZCJZ-001/'，此处为 '/data/archive/ZCJZ-001/part2/'，与原始数据不符。"
+          },
+          {
+            "field": "rescueProtectionEvent.hasParticipant.@id",
+            "is_supported": false,
+            "reason": "原始数据 `operator_id` 为 '1010'，映射为 'f8eb3817-e797-4a4c-97ed-ef635be1a88b'。此处ID '56fdc231-7f16-48ed-8fed-0d56afd30b5c' 映射自 '1009'，与原始数据不符。"
+          }
+        ],
+        "score": 0.75
+      },
+      "conformance": {
+        "overall_conformance": "Partial",
+        "violations": [
+          {
+            "field": "核心知识片段的类型",
+            "reason": "生成知识中存在两个名为 '抢救性保护事件' 的核心知识片段，但它们被嵌套在根节点下，而不是作为独立的顶级节点或通过明确的关系链接。虽然类型名称符合，但结构上不符合“核心知识片段的类型应为 '抢救性保护事件'”的隐含要求，即应是主要关注点。"
+          },
+          {
+            "field": "eventDate",
+            "reason": "第一个 '抢救性保护事件' 中的 `eventDate` 格式为 '2024-05-06T11:00:00Z'，符合时间戳格式。但第二个 'rescueProtectionEvent' 中的 `eventDate` 格式也符合，但其值无原始数据支撑。"
+          },
+          {
+            "field": ":hasMeasure",
+            "reason": "生成知识中使用了 `hasMeasure` 属性，而不是关系，但其语义是描述具体的保护措施，符合规范意图。然而，规范明确指出“应包含 :hasMeasure 属性或关系”，因此作为属性是允许的。但第二个事件中也使用了 `hasMeasure`。"
+          },
+          {
+            "field": ":hasParticipant",
+            "reason": "生成知识中使用了 `hasParticipant` 关系，指向类型为 'PreservationSpecialist' 的节点，符合规范。但第二个事件中的参与者ID与原始数据不符。"
+          },
+          {
+            "field": ":originalCopyCondition",
+            "reason": "原始数据中没有提及原件的物理状况，生成知识中也未包含此属性，这不构成违规，但也没有体现此可选属性。"
+          },
+          {
+            "field": "重复的事件节点",
+            "reason": "生成知识中存在两个语义相同但内容不一致的 '抢救性保护事件' 节点 ('抢救性保护事件' 和 'rescueProtectionEvent')，这不符合领域模型规范中对单一事件的建模预期，且导致信息冗余和冲突。"
+          },
+          {
+            "field": "属性名大小写不一致",
+            "reason": "第一个事件中使用了 '数字化详情' 和 '存储信息'，第二个事件中使用了 'digitalizationDetails' 和 'storageInfo'，属性命名不一致。"
+          }
+        ],
+        "positive_notes": "根节点的 `@type` 从 '古籍' 映射到 'ProtectedItem' 是符合 `role_mapping` 规范的。`operator_name` 映射到 'PreservationSpecialist' 也是符合规范的。"
+      },
+      "completeness": {
+        "summary": "生成知识在第一个事件节点中基本涵盖了原始数据的关键信息，但第二个事件节点引入了不准确和冗余信息。原始数据中的 `operator_name` 未直接体现在生成知识中，而是通过 `operator_id` 映射为参与者ID。",
+        "missed_information": [
+          {
+            "info": "原始数据中的 `operator_name` ('小倩')",
+            "reason": "虽然 `operator_id` 被正确映射为 `hasParticipant` 的 `@id`，但 `operator_name` 本身作为操作者的名称信息并未直接体现在生成知识中，例如作为 `PreservationSpecialist` 节点的 `name` 属性。这使得操作者的可读名称信息丢失。"
+          }
+        ]
+      },
+      "elegance": {
+        "elegance_score": 3,
+        "reasoning": "待评作品在结构上与专家参考作品存在显著差异，但其尝试将事件信息内联到被保护项（古籍）中，这在某些场景下可能被视为一种合理的建模选择，尤其是在事件与主体强关联且事件数量有限时。然而，这种内联方式导致了重复的事件定义（'抢救性保护事件' 和 'rescueProtectionEvent'），这表明系统在处理多事件或多语言属性时存在问题，降低了模型的简洁性和一致性。\n\n具体评估如下：\n\n1.  **简洁性 (Simplicity):** 待评作品的简洁性得分较低。主要问题在于：\n    *   存在两个重复的事件定义：'抢救性保护事件' 和 'rescueProtectionEvent'，且内容部分重叠，这明显是冗余和不一致的。一个事件应该只被建模一次。\n    *   将事件直接嵌套在 '古籍' 实体内部，虽然可以减少顶层实体数量，但当一个实体涉及多个事件时，会导致该实体变得臃肿，且难以查询和管理独立的事件。专家参考作品将事件作为独立实体，通过关系链接，更符合本体建模的通用实践，即事件是独立的、可被引用的概念。\n    *   属性命名存在中英文混用（'版权评估' vs 'copyrightAssessment'，'存储信息' vs 'storageInfo'，'数字化详情' vs 'digitalizationDetails'），这降低了模型的一致性和可维护性。\n    *   'file_count' 和 'resolution_dpi' 在 '数字化详情' 中被建模为字符串，而 'digitalizationDetails' 中为整数，类型不一致。\n\n2.  **表达力 (Expressiveness):** 待评作品在表达力方面有所提升，因为它包含了比专家参考作品更多的细节信息，如版权评估、存储信息和数字化详情。这些信息对于描述抢救性保护事件是重要的。然而，这些细节被分散在两个重复的事件结构中，削弱了其表达的清晰度。\n\n3.  **创造性/洞察力 (Creativity/Insight):** 待评作品尝试将事件细节直接包含在被保护项中，这可以看作是一种不同的建模视角。如果能避免重复和命名不一致，这种内联方式在某些特定查询场景下可能更直接。但从本体论角度看，事件通常被视为独立的概念，拥有自己的生命周期和属性，通过关系与参与者和目标关联，这在专家参考作品中得到了更好的体现。待评作品的重复事件定义表明其生成逻辑存在缺陷，而非有意的创造性选择。\n\n4.  **术语专业性 (Terminological Professionalism):** 待评作品在术语专业性方面表现不佳。中英文混用、属性命名不一致（例如 '抢救性保护事件' 和 'rescueProtectionEvent' 对应同一个概念）以及 'ProtectedItem' 和 'PreservationSpecialist' 的使用是符合规范的，但 '古籍' 实体直接包含 '业务ID' 和 '题名' 属性，而事件内部又包含 '版权评估' 等，这种结构使得信息分布不够集中和规范。专家参考作品通过 'isA' 关系将业务ID与本体概念关联，更符合本体建模的抽象原则。\n\n**加分项考虑：**\n*   待评作品包含了更丰富的事件细节（数字化、存储、版权），这是专家参考作品所缺乏的，体现了对原始数据的更全面利用。如果这些信息能被整合到一个一致的事件结构中，将是很大的优势。\n\n**扣分项考虑：**\n*   最严重的扣分项是重复且不一致的事件定义，这表明系统生成知识的质量控制存在问题。\n*   中英文属性命名混用和类型不一致。\n*   将事件内联到主体中，虽然有其合理性，但在当前实现中导致了冗余和复杂性，未能体现出优越性。\n\n综合来看，待评作品在信息丰富度上有所尝试，但其在结构一致性、命名规范性和冗余控制方面存在明显缺陷，导致整体建模质量低于预期。如果能解决重复和命名问题，并统一事件结构，其得分会有显著提升。"
+      }
+    },
+    "知识产权领域": {
+      "fidelity": {
+        "summary": "生成知识高度忠实于原始数据，所有断言均可直接溯源或合理推断。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "这是一个新生成的ID，结合了原始数据中的'asset_system_id' ('GJ-002') 和评估日期，符合知识图谱建模的常见实践，用于唯一标识此版权声明。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "类型 '数字资源版权声明' 符合领域模型规范中“核心知识片段的类型应为 '数字资源版权声明'”的要求。"
+          },
+          {
+            "field": "copyrightStatus",
+            "is_supported": true,
+            "reason": "值为 'Public Domain' 直接来源于原始数据中的 'copyright_assessment': '经法务部门确认为公共领域作品'，是直接的语义转换。"
+          },
+          {
+            "field": "assessmentDate",
+            "is_supported": true,
+            "reason": "该属性在原始数据中未直接给出，但领域模型规范允许包含 'assessmentDate' 属性，并记录版权评估的日期。生成知识中给出的日期 '2024-05-06T11:00:00Z' 是一个合理的推断或默认值，表示评估发生的时间。"
+          },
+          {
+            "field": "RELATES_TO",
+            "is_supported": false,
+            "reason": "该关系指向的UUID 'f8eb3817-e797-4a4c-97ed-ef635be1a88b' 对应原始数据中的 'operator_id': '1010'。然而，原始数据中没有明确指出操作员与版权声明之间存在 'RELATES_TO' 关系，且领域模型规范中没有定义此关系。此外，将操作员映射为 'RightsHolder' 也不符合领域模型中 'RightsHolder' 的定义（例如员工发表的论文）。"
+          },
+          {
+            "field": "appliesTo",
+            "is_supported": true,
+            "reason": "该关系指向的UUID '2a30a416-f6d7-4f08-8959-af7f4abd4105' 对应原始数据中的 'asset_system_id': 'GJ-002' ('赵城金藏')。领域模型规范明确要求“必须包含 :appliesTo 关系，指向一个类型为 'CopyrightSubject' 的领域角色节点”。'赵城金藏' 作为古籍，被归类为 'CopyrightSubject' 是符合领域模型 'role_mapping' 的。"
+          }
+        ],
+        "score": 0.83
+      },
+      "conformance": {
+        "overall_conformance": "Partial",
+        "violations": [
+          {
+            "field": "RELATES_TO",
+            "reason": "领域模型规范中未定义 'RELATES_TO' 关系。此外，将 'operator_id' 映射为 'RightsHolder' 也不符合领域模型中 'RightsHolder' 的语义定义。"
+          }
+        ],
+        "positive_notes": "核心知识片段类型 '数字资源版权声明'、'copyrightStatus' 属性及其值 'Public Domain'、'appliesTo' 关系及其指向 'CopyrightSubject' 节点均严格遵循了领域模型规范。'assessmentDate' 属性的包含也符合规范的建议。"
+      },
+      "completeness": {
+        "summary": "生成知识在核心版权信息方面是完整的，但遗漏了原始数据中关于资源扫描细节和存储位置的非版权相关信息。",
+        "missed_information": [
+          {
+            "info": "title: 赵城金藏",
+            "reason": "虽然 'asset_system_id' 被映射并作为 'appliesTo' 的目标，但原始数据的 'title' ('赵城金藏') 本身并未直接体现在生成知识中，作为 'CopyrightSubject' 的一个属性会更完整。"
+          },
+          {
+            "info": "operator_name: 小倩",
+            "reason": "虽然 'operator_id' 被映射到 'RELATES_TO' 关系中，但 'operator_name' ('小倩') 未被包含。如果操作员与版权声明有业务关联，其名称也应被体现。"
+          },
+          {
+            "info": "scan_details: {'file_count': 850, 'resolution_dpi': 800, 'format': 'JPEG2000'}",
+            "reason": "这些是关于数字资源本身的详细技术信息，与版权声明直接关联性不强，但作为数字资源元数据的一部分，在更全面的知识图谱中应被捕获，可能作为 'CopyrightSubject' 的属性或关联实体。"
+          },
+          {
+            "info": "storage_info: {'server_name': 'SRV-RARE-02', 'path': '/data/archive/ZCJZ-001/'}",
+            "reason": "这些是关于数字资源存储位置的信息，与版权声明直接关联性不强，但同样作为数字资源元数据的一部分，在更全面的知识图谱中应被捕获。"
+          }
+        ]
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有所不同，但这种差异是合理的，并且在某些方面展现了更优的建模选择。\n\n**简洁性 (Conciseness):**\n*   待评作品的 `@id` 命名规则 `cp_statement_GJ-002_20240506` 包含了业务ID和日期，比专家参考作品的 `cp-stmt-027` 更具描述性和可追溯性，虽然略长，但信息密度更高，是合理的。\n*   `assessmentDate` 属性的引入，虽然专家参考作品中没有明确给出，但设计规范中提到“可以包含一个 'assessmentDate' 属性”，待评作品将其明确列出，增加了信息的完整性，且格式符合ISO 8601标准，非常专业。\n*   `RELATES_TO` 关系指向 `RightsHolder` (操作员小倩)，这在专家参考作品中没有体现。虽然设计规范中没有明确要求，但从原始数据中可以看出操作员信息，将其建模为 `RightsHolder` 并与版权声明关联，增加了知识图谱的关联性和可查询性，体现了对原始数据的深度挖掘和建模。\n\n**表达力 (Expressiveness):**\n*   待评作品将 `appliesTo` 直接指向了 `CopyrightSubject` 的UUID `2a30a416-f6d7-4f08-8959-af7f4abd4105`，这比专家参考作品中引入一个 `proxy-gj002-ip` 的中间节点并用 `isA` 指向UUID更直接。在某些情况下，直接指向目标UUID可以简化图结构，提高查询效率，且不损失语义。这种直接性是表达力的一种体现。\n*   `RELATES_TO` 关系的使用，将操作员（RightsHolder）与版权声明关联起来，丰富了版权声明的上下文信息，使得模型能够表达“谁进行了这次版权评估”的信息，这是专家参考作品所缺乏的。\n\n**创造性/洞察力 (Creativity/Insightfulness):**\n*   将原始数据中的 `operator_id` 和 `operator_name` 建模为 `RightsHolder` 并通过 `RELATES_TO` 关系与版权声明关联，展现了对原始数据更深层次的理解和建模洞察力。这不仅仅是简单地将数据平铺，而是识别出了数据中隐含的角色和关系。\n*   `assessmentDate` 的引入，虽然是可选的，但其存在使得版权声明具有时间维度，对于版权这种可能随时间变化的属性来说，是非常有价值的。\n\n**术语专业性 (Terminological Professionalism):**\n*   `@type` 为 `数字资源版权声明` 和 `CopyrightSubject` 均符合设计规范和本体建模的专业术语。\n*   `copyrightStatus` 使用 `Public Domain` 也是标准且专业的。\n*   `RELATES_TO` 作为关系谓词，虽然不是 `schema.org` 的标准属性，但在自定义本体中作为一种通用关联关系是可接受的，并且其指向 `RightsHolder` 使得语义清晰。\n\n**改进空间：**\n*   `RELATES_TO` 关系可以考虑使用更具语义的谓词，例如 `assessedBy` 或 `evaluatedBy`，以更精确地表达操作员与版权声明之间的关系，而不是一个通用的 `RELATES_TO`。但这属于进一步优化的范畴，当前的选择也并非错误。\n*   `assessmentDate` 的值是系统生成日期，如果原始数据中没有明确的评估日期，可以考虑是否需要明确指出这是系统生成日期，或者在没有明确日期时省略此字段，以避免引入不确定性。但考虑到设计规范中“可以包含”的描述，当前做法是符合规范的。\n\n综合来看，待评作品在遵循规范的基础上，通过引入 `assessmentDate` 和 `RELATES_TO` 关系，并对 `appliesTo` 关系进行了更直接的建模，展现了更强的表达力和对原始数据的洞察力，因此给予高分。"
+      }
+    }
+  },
+  "EVENT-028": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "生成知识在事实忠实度方面表现一般。部分信息直接来源于原始数据，部分信息通过ID映射关系得到支持，但存在一些推断不准确或无法直接溯源的字段。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "原始数据中的 'asset_system_id': 'MSS-005' 通过ID映射关系对应到内部UUID '69785ba1-5b3b-41ee-9e39-b5d5f2fcfe7c'。"
+          },
+          {
+            "field": "@type",
+            "is_supported": false,
+            "reason": "原始数据中没有直接或间接的信息支持将此资产类型定义为 'IT数据资产'。原始数据描述的是一个物理资产的数字化信息。"
+          },
+          {
+            "field": "cost_usd",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 'cost_usd': 5000。"
+          },
+          {
+            "field": "budgetCode",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 'budget_code': 'PROJ-2024-01'。"
+          },
+          {
+            "field": "storageLocation",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 'storage_info.path': '/data/rare/MSS-005/'。"
+          },
+          {
+            "field": "serverName",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 'storage_info.server_name': 'SRV-RARE-01'。"
+          },
+          {
+            "field": "lastModified",
+            "is_supported": false,
+            "reason": "原始数据中没有提供任何关于 'lastModified' 时间戳的信息，此为生成知识的臆测。"
+          },
+          {
+            "field": "operatedBy.@id",
+            "is_supported": true,
+            "reason": "原始数据中的 'operator_id': '1009' 通过ID映射关系对应到内部UUID '56fdc231-7f16-48ed-8fed-0d56afd30b5c'。"
+          },
+          {
+            "field": "operatedBy.@type",
+            "is_supported": false,
+            "reason": "原始数据中 'operator_name': 'XuSW' 无法直接或间接推断出其类型为 'SysAdmin'。"
+          },
+          {
+            "field": "digitalizationDetails.file_count",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 'scan_details.file_count': 350。"
+          },
+          {
+            "field": "digitalizationDetails.resolution_dpi",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 'scan_details.resolution_dpi': 1200。"
+          },
+          {
+            "field": "digitalizationDetails.format",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 'scan_details.format': 'PNG'。"
+          },
+          {
+            "field": "digitalizationDetails.@id",
+            "is_supported": true,
+            "reason": "这是一个合理的匿名节点ID生成，用于封装 'scan_details' 的信息。"
+          },
+          {
+            "field": "digitalizationDetails.@type",
+            "is_supported": true,
+            "reason": "从 'scan_details' 的内容（file_count, resolution_dpi, format）合理推断出这是一个 'Digitalizationdetails' 类型。"
+          },
+          {
+            "field": "relatedTo.@id",
+            "is_supported": true,
+            "reason": "指向自身ID，表示与数据来源相关，是合理的自引用。"
+          },
+          {
+            "field": "relatedTo.@type",
+            "is_supported": false,
+            "reason": "原始数据中没有直接或间接的信息支持 'DataOrigin' 这个类型，且此关系表达的语义不明确。"
+          }
+        ],
+        "score": 0.6875
+      },
+      "conformance": {
+        "overall_conformance": "None",
+        "violations": [
+          {
+            "field": "核心知识片段的类型",
+            "reason": "领域模型规范要求核心知识片段的类型应为 '抢救性保护事件'，但生成知识的根节点类型为 'IT数据资产'，不符合规范。"
+          },
+          {
+            "field": "eventDate",
+            "reason": "领域模型规范要求包含一个 'eventDate' 属性，但生成知识中没有此属性。'lastModified' 属性虽然是时间戳，但语义上不等同于 'eventDate'，且其值无法溯源。"
+          },
+          {
+            "field": ":hasTarget 关系",
+            "reason": "领域模型规范要求必须包含 :hasTarget 关系，指向一个类型为 'ProtectedItem' 的领域角色节点。生成知识中没有此关系。"
+          },
+          {
+            "field": ":hasMeasure 属性或关系",
+            "reason": "领域模型规范要求应包含 :hasMeasure 属性或关系，描述具体的保护措施。生成知识中没有明确的 :hasMeasure 属性或关系。'digitalizationDetails' 描述了数字化细节，但未明确表达为“措施”关系。"
+          },
+          {
+            "field": ":hasParticipant 关系",
+            "reason": "领域模型规范要求如果数据中提及，应包含 :hasParticipant 关系，指向一个类型为 'PreservationSpecialist' 的领域角色节点。原始数据中提及了 'operator_name': 'XuSW'，但生成知识中 'operatedBy' 关系指向的类型是 'SysAdmin'，且关系名不符合规范。"
+          },
+          {
+            "field": ":originalCopyCondition 属性",
+            "reason": "领域模型规范要求如果数据中提及，应包含 :originalCopyCondition 属性。原始数据中未提及此信息，但生成知识也未包含此属性，这本身不是违规，但说明生成知识未能识别并处理此潜在属性。"
+          }
+        ],
+        "positive_notes": ""
+      },
+      "completeness": {
+        "summary": "生成知识未能完整地捕捉原始数据中的所有关键信息，并且在语义层面未能按照领域模型规范进行转化和表达。",
+        "missed_information": [
+          {
+            "info": "title: 达芬奇手稿",
+            "reason": "原始数据中的 'title' 属性未在生成知识中体现。这是描述资产内容的关键信息。"
+          },
+          {
+            "info": "operator_name: XuSW",
+            "reason": "虽然 'operator_id' 被映射并用于 'operatedBy' 关系，但 'operator_name' 本身作为操作员的名称信息被遗漏，或者没有被正确地作为 'PreservationSpecialist' 的 'name' 属性体现。"
+          },
+          {
+            "info": "领域模型规范中的核心概念 '抢救性保护事件'",
+            "reason": "原始数据描述的是一个珍贵手稿的扫描（数字化）过程，这完全符合领域模型中“抢救性保护事件”的语义。然而，生成知识未能将此事件建模为核心类型，而是将其建模为 'IT数据资产'，导致整个知识片段的语义偏离。"
+          },
+          {
+            "info": "领域模型规范中的 'ProtectedItem' 角色节点",
+            "reason": "原始数据中的 '达芬奇手稿' 显然是 'ProtectedItem' 的实例，但生成知识未能创建此节点并建立 ':hasTarget' 关系。"
+          },
+          {
+            "info": "领域模型规范中的 'PreservationSpecialist' 角色节点",
+            "reason": "原始数据中的 'operator_name': 'XuSW' 应该被建模为 'PreservationSpecialist'，但生成知识将其建模为 'SysAdmin'，且未建立 ':hasParticipant' 关系。"
+          }
+        ]
+      },
+      "elegance": {
+        "elegance_score": 2,
+        "reasoning": "待评作品在建模上存在多处与设计规范和专家参考作品不符的问题，导致其在简洁性、表达力、创造性和术语专业性方面表现不佳。\n\n1.  **核心知识片段类型不符**：设计规范明确要求核心知识片段的类型应为 '抢救性保护事件'。待评作品却将其建模为 'IT数据资产'，这严重偏离了领域模型的关注点，未能体现出“抢救性保护”这一核心业务语义。\n2.  **缺失核心关系和属性**：\n    *   待评作品完全缺失了 `:hasTarget` 关系，未能指向被保护的实体（手稿）。这是抢救性保护事件的核心要素。\n    *   待评作品也缺失了 `:hasMeasure` 属性或关系来描述具体的保护措施。虽然 `digitalizationDetails` 提供了数字化信息，但其作为独立节点存在，并未明确表达为“措施”或“行动”的语义。\n    *   `eventDate` 属性缺失，无法记录事件发生的时间戳。\n3.  **角色映射和参与者建模不准确**：设计规范将 '手稿' 映射为 'ProtectedItem'，将 '员工' 映射为 'PreservationSpecialist'。专家参考作品中将操作者建模为 '古籍维护员'，并作为 `:hasParticipant` 关系指向。待评作品将操作者建模为 'SysAdmin'，并使用 `operatedBy` 属性，这与领域模型中对参与者的定义和关系建模不符，且 'SysAdmin' 的角色语义与“抢救性保护”的业务场景关联度较低。\n4.  **术语专业性不足**：\n    *   `IT数据资产`、`SysAdmin` 等术语更偏向IT管理领域，而非文物保护或抢救性保护领域，降低了模型的专业性。\n    *   `digitalizationDetails` 作为一个独立节点，其语义表达不如直接使用 `:hasMeasure` 关系指向一个描述数字化措施的节点更清晰。\n5.  **冗余和不必要的关联**：`relatedTo` 关系指向自身，且类型为 `DataOrigin`，这在当前语境下显得冗余且语义模糊，未能增加有效信息。\n6.  **ID映射使用不当**：待评作品直接将业务ID 'MSS-005' 对应的UUID '69785ba1-5b3b-41ee-9e39-b5d5f2fcfe7c' 作为核心知识片段的 `@id`，并将其 `@type` 设为 'IT数据资产'。这混淆了被保护对象（手稿）的标识与保护事件本身的标识。专家参考作品通过 `isA` 关系将业务ID映射的UUID关联到代理节点，清晰地区分了事件、事件中的角色以及被保护的实际对象。\n\n**加分点考量**：\n待评作品在结构上与专家参考作品存在显著差异，但这些差异并非“合理或更优的建模选择”，而是偏离了设计规范和领域语义。例如，将数字化细节建模为独立节点，虽然在某些场景下可能合理，但在“抢救性保护事件”的语境下，更应将其作为事件的“措施”来表达。\n\n**综合评分**：\n鉴于待评作品未能遵循核心的类型要求、缺失关键关系和属性、角色建模不准确以及术语专业性不足，其建模质量较低，无法有效表达“抢救性保护事件”的语义。"
+      }
+    }
+  },
+  "EVENT-029": {
+    "知识产权领域": {
+      "fidelity": {
+        "summary": "生成知识对原始数据具有较高的事实忠实度，大部分信息可以直接溯源或通过ID映射关系得到支持。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "原始数据中 `asset_system_id` 为 'MAP-012'，通过ID映射关系，其对应的内部UUID为 'f21d8512-84f9-4723-aaf9-ee9defad3aa5'，与生成知识中的 `@id` 完全一致。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "原始数据中 `title` 为 '坤舆万国全图'，结合领域模型规范中的 `focus_rules`，包含 '古籍' 的内容应 `focus_on` '古籍'，且 `role_mapping` 中 '古籍' 映射为 'CopyrightSubject'。生成知识中 `@type` 为 '古籍'，是原始数据内容的合理推断和分类。"
+          },
+          {
+            "field": "name",
+            "is_supported": true,
+            "reason": "原始数据中 `title` 为 '坤舆万国全图'，生成知识中的 `name` 属性直接引用了该值，是直接溯源。"
+          },
+          {
+            "field": "digitizationDetails",
+            "is_supported": true,
+            "reason": "原始数据中 `scan_details` 包含 `file_count`, `resolution_dpi`, `format` 等信息，生成知识中的 `digitizationDetails` 节点包含了这些信息，是原始数据的合理转换和概括。"
+          },
+          {
+            "field": "digitizationDetails.@id",
+            "is_supported": true,
+            "reason": "这是一个内部生成的bnode ID，用于标识 `digitizationDetails` 节点，符合知识图谱建模实践，不直接溯源于原始数据，但其内容是忠实的。"
+          },
+          {
+            "field": "digitizationDetails.@type",
+            "is_supported": true,
+            "reason": "这是一个内部生成的类型，用于标识 `digitizationDetails` 节点，符合知识图谱建模实践，不直接溯源于原始数据，但其内容是忠实的。"
+          },
+          {
+            "field": "digitizationDetails.file_count",
+            "is_supported": true,
+            "reason": "原始数据中 `scan_details.file_count` 为 25，生成知识中的 `digitizationDetails.file_count` 直接引用了该值，是直接溯源。"
+          },
+          {
+            "field": "digitizationDetails.resolution_dpi",
+            "is_supported": true,
+            "reason": "原始数据中 `scan_details.resolution_dpi` 为 400，生成知识中的 `digitizationDetails.resolution_dpi` 直接引用了该值，是直接溯源。"
+          },
+          {
+            "field": "digitizationDetails.format",
+            "is_supported": true,
+            "reason": "原始数据中 `scan_details.format` 为 'TIFF'，生成知识中的 `digitizationDetails.format` 直接引用了该值，是直接溯源。"
+          },
+          {
+            "field": "operator",
+            "is_supported": true,
+            "reason": "原始数据中 `operator_id` 为 '1011'，通过ID映射关系，其对应的内部UUID为 '15662361-b510-4d09-8b1d-7d8f074d675b'，与生成知识中 `operator.@id` 完全一致。`operator_name` '阿强' 虽未直接体现在 `operator` 节点中，但 `operator` 节点的存在和ID指向是忠实的。"
+          },
+          {
+            "field": "operator.@id",
+            "is_supported": true,
+            "reason": "原始数据中 `operator_id` 为 '1011'，通过ID映射关系，其对应的内部UUID为 '15662361-b510-4d09-8b1d-7d8f074d675b'，与生成知识中的 `operator.@id` 完全一致。"
+          },
+          {
+            "field": "operator.@type",
+            "is_supported": true,
+            "reason": "原始数据中 `operator_name` 为 '阿强'，结合领域模型规范中的 `focus_rules`，提及 '员工' 应 `focus_on` '员工'，且 `role_mapping` 中 '员工' 映射为 'RightsHolder'。生成知识中 `operator.@type` 为 'RightsHolder'，是原始数据内容的合理推断和分类。"
+          },
+          {
+            "field": "storageInfo",
+            "is_supported": true,
+            "reason": "原始数据中 `storage_info` 包含 `server_name` 和 `path`，生成知识中的 `storageInfo` 节点包含了这些信息，是原始数据的合理转换和概括。"
+          },
+          {
+            "field": "storageInfo.@id",
+            "is_supported": true,
+            "reason": "这是一个内部生成的bnode ID，用于标识 `storageInfo` 节点，符合知识图谱建模实践，不直接溯源于原始数据，但其内容是忠实的。"
+          },
+          {
+            "field": "storageInfo.@type",
+            "is_supported": true,
+            "reason": "这是一个内部生成的类型，用于标识 `storageInfo` 节点，符合知识图谱建模实践，不直接溯源于原始数据，但其内容是忠实的。"
+          },
+          {
+            "field": "storageInfo.path",
+            "is_supported": true,
+            "reason": "原始数据中 `storage_info.path` 为 '/data/maps/KYWGQT/'，生成知识中的 `storageInfo.path` 直接引用了该值，是直接溯源。"
+          },
+          {
+            "field": "storageInfo.server_name",
+            "is_supported": true,
+            "reason": "原始数据中 `storage_info.server_name` 为 'SRV-MAPS-01'，生成知识中的 `storageInfo.server_name` 直接引用了该值，是直接溯源。"
+          },
+          {
+            "field": "RELATES_TO",
+            "is_supported": true,
+            "reason": "生成知识中的 `RELATES_TO` 关系指向了主实体 `@id` 'f21d8512-84f9-4723-aaf9-ee9defad3aa5'，其 `@type` 为 'CopyrightSubject'。这与领域模型规范中 `role_mapping` 将 '古籍' 映射为 'CopyrightSubject' 的规则一致，是基于原始数据和领域模型的合理推断。"
+          },
+          {
+            "field": "RELATES_TO.@id",
+            "is_supported": true,
+            "reason": "指向主实体 `@id` 'f21d8512-84f9-4723-aaf9-ee9defad3aa5'，该ID通过ID映射关系溯源于原始数据 `asset_system_id` 'MAP-012'。"
+          },
+          {
+            "field": "RELATES_TO.@type",
+            "is_supported": true,
+            "reason": "根据领域模型 `role_mapping`，'古籍' 映射为 'CopyrightSubject'，此类型是忠实的推断。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Partial",
+        "violations": [
+          {
+            "field": "核心知识片段的类型",
+            "reason": "领域模型规范要求核心知识片段的类型应为 '数字资源版权声明'，但生成知识中没有明确的 '数字资源版权声明' 类型的节点。虽然 `RELATES_TO` 关系指向了 `CopyrightSubject`，但缺少一个明确的版权声明实体。"
+          },
+          {
+            "field": ":appliesTo 关系",
+            "reason": "领域模型规范要求必须包含 `:appliesTo` 关系，指向一个类型为 'CopyrightSubject' 的领域角色节点。生成知识中使用了 `RELATES_TO` 关系，虽然语义上可能相似，但关系名称不符合规范要求。且 `RELATES_TO` 关系指向的是主实体本身，而不是一个独立的领域角色节点。"
+          },
+          {
+            "field": ":copyrightStatus 属性",
+            "reason": "领域模型规范要求必须包含 `:copyrightStatus` 属性，其值应为 'Public Domain', 'In Copyright', 'Unknown' 等标准值。生成知识中缺少此关键属性。"
+          },
+          {
+            "field": ":accessPolicy 或 :usageLicense 属性",
+            "reason": "原始数据中明确提供了 `access_policy` 为 '仅限校内授权用户访问'，领域模型规范要求如果数据中提及，应包含 `:accessPolicy` 或 `:usageLicense` 属性。生成知识中缺少此属性。"
+          }
+        ],
+        "positive_notes": "生成知识中将 `operator_id` 对应的实体类型识别为 `RightsHolder`，这与领域模型中将 '员工' 映射为 'RightsHolder' 的语义是等价且符合业务逻辑的。将 `asset_system_id` 对应的实体类型识别为 `古籍`，并进一步通过 `RELATES_TO` 关系指向 `CopyrightSubject`，符合领域模型中 `focus_rules` 和 `role_mapping` 的指导。"
+      },
+      "completeness": {
+        "summary": "生成知识未能完全体现原始数据中的所有关键信息，特别是与版权声明直接相关的属性和关系存在遗漏。",
+        "missed_information": [
+          {
+            "info": "operator_name: 阿强",
+            "reason": "原始数据中 `operator_name` '阿强' 未在 `operator` 节点中体现，仅使用了 `operator_id` 对应的UUID。虽然ID已映射，但名称信息丢失。"
+          },
+          {
+            "info": "access_policy: 仅限校内授权用户访问",
+            "reason": "原始数据中明确的 `access_policy` 信息未在生成知识中以 `:accessPolicy` 或 `:usageLicense` 属性的形式体现，这违反了领域模型规范的要求。"
+          },
+          {
+            "info": "核心知识片段类型为 '数字资源版权声明'",
+            "reason": "领域模型规范明确要求核心知识片段的类型应为 '数字资源版权声明'，但生成知识中没有创建此类型的实体，导致版权声明的主体缺失。"
+          },
+          {
+            "info": ":copyrightStatus 属性",
+            "reason": "作为版权声明的核心属性，`:copyrightStatus` 未被生成，这使得版权状态信息缺失。"
+          },
+          {
+            "info": ":appliesTo 关系",
+            "reason": "虽然存在 `RELATES_TO` 关系，但其名称和指向方式不完全符合规范中 `:appliesTo` 关系的要求，导致关系语义表达不完整。"
+          }
+        ]
+      },
+      "elegance": {
+        "elegance_score": 2,
+        "reasoning": "待评作品未能遵循设计规范中关于核心知识片段类型和关系的明确要求。设计规范明确指出核心知识片段的类型应为'数字资源版权声明'，并且必须包含':appliesTo'关系指向'CopyrightSubject'。然而，待评作品将主实体建模为'古籍'，并直接包含了'digitizationDetails'、'operator'和'storageInfo'等属性，这偏离了版权声明的关注点。虽然'RELATES_TO'关系尝试指向'CopyrightSubject'，但其目标是自身ID，且没有明确的谓词，这在语义上是模糊和不准确的。专家参考作品则严格遵循了设计规范，将核心实体建模为'数字资源版权声明'，并通过':appliesTo'关系清晰地指向了'版权对象'（CopyrightSubject），并进一步通过'isA'关联到原始资产的UUID，这种分层建模方式更符合版权声明的语义。待评作品在术语专业性方面，将'古籍'直接作为主类型，而不是作为'CopyrightSubject'的分类或属性，也显得不够专业。在表达力上，待评作品将原始数据中的所有信息都直接平铺在主实体下，没有体现出版权声明的特定关注点，而专家参考作品则通过'accessPolicy'和'description'等属性，更聚焦于版权声明的核心信息。因此，待评作品在遵循规范、语义准确性和表达力方面均不如专家参考作品。"
+      }
+    }
+  },
+  "EVENT-030": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "生成知识高度忠实于原始数据，并进行了合理的转换和ID映射。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "根据领域模型规范，核心知识片段的类型应为 '抢救性保护事件'，且事件ID通常由事件类型、目标ID和日期组合生成，此处的 'evt_rescue_preservation_GJ-001_20240512' 是对原始数据中资产ID 'GJ-001' 和操作 '修复前数字化存档' 的合理推断和组合，符合(B)条件。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "直接符合领域模型规范中“核心知识片段的类型应为 '抢救性保护事件'”的要求，符合(B)条件。"
+          },
+          {
+            "field": "hasMeasure",
+            "is_supported": true,
+            "reason": "直接来源于原始数据中的 'preservation_action' 属性值 '修复前数字化存档'，符合(A)条件。"
+          },
+          {
+            "field": "eventDate",
+            "is_supported": true,
+            "reason": "原始数据中未直接提供事件日期，但生成知识中提供了 '2024-05-12T16:00:00Z'。这通常是生成知识时的系统时间或默认时间，属于合理推断或补充，符合(B)条件。如果原始数据中没有明确时间，提供一个默认或生成时间是合理的。"
+          },
+          {
+            "field": "hasTarget.@id",
+            "is_supported": true,
+            "reason": "原始数据中的 'asset_system_id' 为 'GJ-001'，通过ID映射关系，'GJ-001' 对应内部UUID '18701ab0-fc9a-43ef-9b81-ae462078fbf7'。此处的 '@id' 正是该UUID，符合(C)条件。"
+          },
+          {
+            "field": "hasTarget.@type",
+            "is_supported": true,
+            "reason": "原始数据中的 'title' 包含 '永乐大典嘉靖副本残卷'，根据领域模型规范的 'focus_rules'，包含 '古籍' 的应 'focus_on' '古籍'，且 '古籍' 映射到 'ProtectedItem'。因此，将目标类型设置为 'ProtectedItem' 是对原始数据的合理推断和映射，符合(B)条件。"
+          },
+          {
+            "field": "digitalizationDetails",
+            "is_supported": true,
+            "reason": "该嵌套结构直接来源于原始数据中的 'scan_details' 字典，是对原始数据的直接体现，符合(A)条件。"
+          },
+          {
+            "field": "digitalizationDetails.file_count",
+            "is_supported": true,
+            "reason": "直接来源于原始数据中的 'scan_details.file_count'，符合(A)条件。"
+          },
+          {
+            "field": "digitalizationDetails.resolution_dpi",
+            "is_supported": true,
+            "reason": "直接来源于原始数据中的 'scan_details.resolution_dpi'，符合(A)条件。"
+          },
+          {
+            "field": "digitalizationDetails.format",
+            "is_supported": true,
+            "reason": "直接来源于原始数据中的 'scan_details.format'，符合(A)条件。"
+          },
+          {
+            "field": "hasParticipant.@id",
+            "is_supported": true,
+            "reason": "原始数据中的 'operator_id' 为 '1010'，通过ID映射关系，'1010' 对应内部UUID 'f8eb3817-e797-4a4c-97ed-ef635be1a88b'。此处的 '@id' 正是该UUID，符合(C)条件。"
+          },
+          {
+            "field": "hasParticipant.@type",
+            "is_supported": true,
+            "reason": "原始数据中的 'operator_name' 为 '小倩'，根据领域模型规范的 'role_mapping'，操作员（员工）应映射为 'PreservationSpecialist'。这是对原始数据的合理推断和映射，符合(B)条件。"
+          },
+          {
+            "field": "storageInformation",
+            "is_supported": true,
+            "reason": "该嵌套结构直接来源于原始数据中的 'storage_info' 字典，是对原始数据的直接体现，符合(A)条件。"
+          },
+          {
+            "field": "storageInformation.server_name",
+            "is_supported": true,
+            "reason": "直接来源于原始数据中的 'storage_info.server_name'，符合(A)条件。"
+          },
+          {
+            "field": "storageInformation.path",
+            "is_supported": true,
+            "reason": "直接来源于原始数据中的 'storage_info.path'，符合(A)条件。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "核心知识片段的类型为 '抢救性保护事件'，符合规范。包含 'eventDate' 属性。包含 ':hasTarget' 关系指向 'ProtectedItem'。包含 ':hasMeasure' 属性。包含 ':hasParticipant' 关系指向 'PreservationSpecialist'。所有嵌套的细节信息（如数字化和存储信息）都被合理地建模为独立的匿名节点，增强了知识的结构化程度，且不与规范冲突。"
+      },
+      "completeness": {
+        "summary": "生成知识完整地体现了原始数据中的所有关键信息，并进行了有效的结构化和ID映射。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有所不同，但这种不同是合理的，并且在某些方面展现了更优的建模选择。具体分析如下：\n\n1.  **简洁性与表达力：**\n    *   待评作品将 `hasMeasure` 直接赋值为字符串 '修复前数字化存档'，这在一定程度上简化了模型，但失去了专家参考作品中将 '数字化措施' 作为一个独立类型进行建模的语义丰富性。专家参考作品通过引入 `@type: '数字化措施'` 使得 '修复前数字化存档' 不仅仅是一个描述，而是一个具有特定类型和潜在可扩展属性的实体，这在本体建模中通常是更优的选择，因为它允许未来为 '数字化措施' 定义更多细节（例如，数字化标准、设备信息等）。\n    *   待评作品引入了 `digitalizationDetails` 和 `storageInformation` 两个嵌套对象，直接将原始数据中的结构化信息映射到模型中。这比专家参考作品更详细地表达了数字化和存储的具体信息，增强了表达力。专家参考作品在这方面显得过于抽象，没有充分利用原始数据中的结构化细节。\n    *   `eventDate` 的引入符合设计规范中“应包含一个 'eventDate' 属性”的要求，并且提供了具体的时间戳，这是专家参考作品所缺失的，增加了事件的精确性。\n\n2.  **创造性/洞察力：**\n    *   待评作品将 `scan_details` 和 `storage_info` 提升为独立的嵌套对象 `digitalizationDetails` 和 `storageInformation`，并赋予了 `@type`，这体现了将原始数据中的结构化信息转化为具有本体语义的实体的洞察力。这种做法使得这些细节不再是简单的字符串或字典，而是可以被进一步定义和关联的本体概念。\n    *   `hasTarget` 和 `hasParticipant` 直接引用了内部UUID，并指定了 `@type` 为 `ProtectedItem` 和 `PreservationSpecialist`，这符合设计规范中的角色映射和关系要求，并且比专家参考作品中通过 `isA` 间接引用UUID更为直接和清晰。\n\n3.  **术语专业性：**\n    *   待评作品使用了 `ProtectedItem` 和 `PreservationSpecialist` 作为 `@type`，这与设计规范中的 `role_mapping` 保持一致，体现了良好的术语专业性。\n    *   `@id` 的命名方式 `evt_rescue_preservation_GJ-001_20240512` 包含了事件类型、目标ID和日期，具有一定的可读性和唯一性，虽然不如专家参考作品中的 `evt-030-preservation` 简洁，但更具信息量。\n\n**与专家参考作品的比较：**\n*   **优点：** 待评作品在细节表达上更胜一筹，特别是对 `scan_details` 和 `storage_info` 的建模，以及 `eventDate` 的明确引入。它更直接地将原始数据中的结构化信息转化为本体概念，而不是像专家参考作品那样将其抽象化或忽略。直接使用UUID作为 `@id` 也更符合实际操作。\n*   **缺点：** 待评作品在 `hasMeasure` 的建模上不如专家参考作品具有语义深度。专家参考作品将 '数字化措施' 作为一个类型，为未来的扩展和更精细的分类留下了空间。待评作品将其作为一个简单的字符串，虽然简洁，但牺牲了部分本体的表达力。\n\n**综合评分：** 4分。待评作品在将原始数据转化为本体知识方面表现出色，尤其是在细节的捕捉和结构化方面。虽然在 `hasMeasure` 的语义深度上略逊于专家参考作品，但其整体建模思路更贴近实际数据，并展现了将非本体数据转化为本体概念的良好实践。其对 `digitalizationDetails` 和 `storageInformation` 的处理是亮点，体现了对数据结构的深刻理解和创造性建模能力。"
+      }
+    }
+  },
+  "EVENT-031": {
+    "人力资源领域": {
+      "fidelity": {
+        "summary": "生成知识高度忠实于原始数据，大部分信息直接来源于原始数据，部分信息通过合理推断或ID映射得到支持。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "该ID 'workload_1012_20240515' 是基于原始数据中的operator_id (1012)和当前日期（假设为2024-05-15）合理构建的，符合B类推断。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "类型 '员工工作量记录' 是根据领域模型规范的核心知识片段类型要求生成的，符合B类推断。"
+          },
+          {
+            "field": "activityDate",
+            "is_supported": true,
+            "reason": "该日期 '2024-05-15T10:20:00Z' 假设为事件发生的时间戳，符合领域模型规范中'activityDate'源于事件时间戳的要求，属于B类推断。"
+          },
+          {
+            "field": "project",
+            "is_supported": true,
+            "reason": "属性值 '红色文献数字化' 直接来源于原始数据中的 'project' 字段，符合A类。"
+          },
+          {
+            "field": "workload_hours",
+            "is_supported": true,
+            "reason": "属性值 '4' 直接来源于原始数据中的 'workload_hours' 字段，符合A类。"
+          },
+          {
+            "field": "activityDescription",
+            "is_supported": true,
+            "reason": "该描述是对原始数据中 'operator_name', 'operator_id', 'asset_system_id', 'title', 'scan_details', 'storage_info', 'project', 'workload_hours' 等信息的综合概括和自然语言描述，符合B类推断。"
+          },
+          {
+            "field": "assignedTo.@id",
+            "is_supported": true,
+            "reason": "内部UUID '56679879-d05c-4027-a25f-967cb551bd27' 对应原始数据中的 'operator_id' (1012)，通过ID映射关系找到，符合C类。"
+          },
+          {
+            "field": "assignedTo.@type",
+            "is_supported": true,
+            "reason": "类型 'Employee' 是根据领域模型规范中的 'role_mapping' (员工: Employee) 生成的，符合B类推断。"
+          },
+          {
+            "field": "relatedAsset.@id",
+            "is_supported": true,
+            "reason": "内部UUID '2c0d2b03-f520-4036-ac74-917249fff98c' 对应原始数据中的 'asset_system_id' (NEWS-1949)，通过ID映射关系找到，符合C类。"
+          },
+          {
+            "field": "relatedAsset.@type",
+            "is_supported": true,
+            "reason": "类型 'WorkObject' 是根据领域模型规范中的 'role_mapping' (古籍: WorkObject) 生成的，且原始数据中的 'asset_system_id' (NEWS-1949) 指代的是一个工作对象，符合B类推断。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "核心知识片段的类型 '员工工作量记录' 符合规范要求。包含 'activityDate' 属性。包含 ':assignedTo' 关系指向 'Employee' 类型节点。包含 'activityDescription' 属性。包含 ':relatedAsset' 关系指向 'WorkObject' 类型节点。"
+      },
+      "completeness": {
+        "summary": "生成知识完整地体现了原始数据中的所有关键信息，并通过属性或关系进行了恰当的表达。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在建模上展现了良好的结构和信息完整性，但在某些方面可以进一步优化以提升简洁性和表达力。\n\n1.  **简洁性**: 待评作品在 `activityDescription` 字段中包含了大量结构化信息（如文件数量、分辨率、存储路径等），这使得描述显得冗长。这些结构化数据如果能被提取为独立的属性或嵌套对象，将使模型更清晰、更易于机器处理和查询。例如，`scan_details` 和 `storage_info` 可以作为独立的属性或对象嵌入，而不是混入自然语言描述中。相比之下，专家参考作品通过 `workload` 属性直接量化工作量，避免了在描述中重复。待评作品的 `workload_hours` 属性是冗余的，因为 `activityDescription` 中也提到了耗时。\n\n2.  **表达力**: 待评作品通过 `assignedTo` 和 `relatedAsset` 关系清晰地表达了工作量记录与员工和相关资产之间的关联，这符合设计规范。`activityDate` 属性也很好地记录了活动时间。然而，`project` 属性直接作为字符串存在，而专家参考作品将其建模为 `about` 关系指向一个 `Project` 类型的对象，后者在语义上更丰富，更符合本体建模的理念，即项目本身也是一个可独立描述的实体。\n\n3.  **创造性/洞察力**: 待评作品在遵循设计规范方面表现良好，特别是将业务ID映射为内部UUID，并正确识别了 `Employee` 和 `WorkObject` 角色。它将 `scan_details` 和 `storage_info` 的内容整合到 `activityDescription` 中，虽然冗长，但也体现了将原始数据完整纳入模型的尝试。如果能进一步将这些细节结构化，将是更优的洞察力体现。\n\n4.  **术语专业性**: 待评作品使用了 `@id`、`@type` 等JSON-LD标准术语，并正确使用了UUID作为内部标识符，这体现了专业性。`员工工作量记录` 作为核心知识片段的类型也符合规范。`Employee` 和 `WorkObject` 的类型使用也恰当。\n\n**与专家参考作品的比较和加分点**:\n*   **`assignedTo` 建模**: 待评作品直接将 `operator_id` 映射为 `assignedTo` 的 `@id`，并指定 `@type` 为 `Employee`，这比专家参考作品中 `isA` 嵌套的方式更直接、更简洁，且符合规范中“指向一个类型为 'Employee' 的领域角色节点”的要求。这是一个合理的、更优的建模选择，值得加分。\n*   **`relatedAsset` 建模**: 待评作品成功创建了 `relatedAsset` 关系，指向了 `WorkObject` 类型的资产，这完全符合设计规范，而专家参考作品中没有直接体现这一关系，待评作品在此处更完整。\n*   **`activityDate`**: 待评作品明确引入了 `activityDate` 属性，直接记录了工作活动的发生日期，这比专家参考作品中隐含在 `@id` 或其他地方更清晰，也符合规范要求。\n\n**改进建议**:\n*   将 `scan_details` 和 `storage_info` 中的结构化信息提取为独立的属性或嵌套对象，而不是全部放入 `activityDescription`。\n*   考虑将 `project` 建模为指向一个 `Project` 类型的对象，以增强语义表达。\n*   移除 `workload_hours` 属性，因为其信息已包含在 `activityDescription` 中，或者将其建模为更通用的 `workload` 对象（如专家参考作品所示），包含 `value` 和 `unitCode`。\n\n综合来看，待评作品在遵循规范和表达关键信息方面做得很好，尤其是在 `assignedTo` 和 `relatedAsset` 的建模上有所创新和优化。虽然在简洁性和结构化方面仍有提升空间，但其整体质量较高。"
+      }
+    }
+  },
+  "EVENT-034": {
+    "知识产权领域": {
+      "fidelity": {
+        "summary": "生成知识高度忠实于原始数据，所有字段均可直接溯源或合理推断。ID映射关系也得到了正确应用。",
+        "details": [
+          {
+            "field": "@id (根节点)",
+            "is_supported": true,
+            "reason": "原始数据中的 'asset_system_id': 'MUSIC-BEETHOVEN' 通过ID映射关系 'MUSIC-BEETHOVEN' 对应内部UUID '4740f3f8-8aa0-443e-a835-3d5c30dc66e8'，与生成知识的根节点@id一致。"
+          },
+          {
+            "field": "@type (根节点)",
+            "is_supported": true,
+            "reason": "原始数据中 'title' 包含 '手稿'，结合领域模型规范中对 '古籍' 的关注，将其类型推断为 '古籍' 是合理的。"
+          },
+          {
+            "field": "usage_license",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 'usage_license': 'CC-BY-NC 4.0'。"
+          },
+          {
+            "field": "题名",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 'title': '贝多芬第九交响曲手稿'。"
+          },
+          {
+            "field": "操作人员.@id",
+            "is_supported": true,
+            "reason": "原始数据中的 'operator_id': '1011' 通过ID映射关系 '1011' 对应内部UUID '15662361-b510-4d09-8b1d-7d8f074d675b'，与生成知识中的操作人员@id一致。"
+          },
+          {
+            "field": "操作人员.@type",
+            "is_supported": true,
+            "reason": "原始数据中 'operator_name': '阿强' 表明这是一个操作人员，领域模型中 '员工' 映射到 'RightsHolder'，将操作人员类型推断为 'RightsHolder' 是合理的。"
+          },
+          {
+            "field": "数字化详情.@id",
+            "is_supported": true,
+            "reason": "这是一个合理的BNode生成，用于封装原始数据中的 'scan_details' 结构化信息。"
+          },
+          {
+            "field": "数字化详情.@type",
+            "is_supported": true,
+            "reason": "原始数据中 'scan_details' 包含 'file_count', 'resolution_dpi', 'format' 等信息，合理推断其类型为 '数字化详情'。"
+          },
+          {
+            "field": "数字化详情.file_count",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 'scan_details.file_count': 210。"
+          },
+          {
+            "field": "数字化详情.resolution_dpi",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 'scan_details.resolution_dpi': 1200。"
+          },
+          {
+            "field": "数字化详情.format",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 'scan_details.format': 'TIFF'。"
+          },
+          {
+            "field": "版权声明.@id",
+            "is_supported": true,
+            "reason": "这是一个合理的BNode生成，用于封装版权相关信息。"
+          },
+          {
+            "field": "版权声明.@type",
+            "is_supported": true,
+            "reason": "领域模型规范要求核心知识片段的类型应为 '数字资源版权声明'，生成知识符合此要求。"
+          },
+          {
+            "field": "版权声明.copyrightStatus",
+            "is_supported": true,
+            "reason": "原始数据 'title' 为 '贝多芬第九交响曲手稿'，贝多芬已逝世多年，其作品已进入公共领域，根据领域模型规范“对于年代久远的古籍，如果无特殊说明，其 :copyrightStatus 通常可推断为 'Public Domain'”，推断为 'Public Domain' 是合理的。"
+          },
+          {
+            "field": "版权声明.assessmentDate",
+            "is_supported": true,
+            "reason": "领域模型规范允许包含 'assessmentDate' 属性，生成一个当前日期是合理的补充。"
+          },
+          {
+            "field": "版权声明.usageLicense",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 'usage_license': 'CC-BY-NC 4.0'。"
+          },
+          {
+            "field": "版权声明.appliesTo.@id",
+            "is_supported": true,
+            "reason": "指向根节点的@id，该@id通过ID映射关系溯源到原始数据 'asset_system_id'，符合关系指向。"
+          },
+          {
+            "field": "版权声明.appliesTo.@type",
+            "is_supported": true,
+            "reason": "领域模型规范要求 :appliesTo 关系指向一个类型为 'CopyrightSubject' 的领域角色节点，且领域模型中 '古籍' 映射到 'CopyrightSubject'，生成知识符合此要求。"
+          },
+          {
+            "field": "存储信息.@id",
+            "is_supported": true,
+            "reason": "这是一个合理的BNode生成，用于封装原始数据中的 'storage_info' 结构化信息。"
+          },
+          {
+            "field": "存储信息.@type",
+            "is_supported": true,
+            "reason": "原始数据中 'storage_info' 包含 'server_name', 'path' 等信息，合理推断其类型为 '存储信息'。"
+          },
+          {
+            "field": "存储信息.path",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 'storage_info.path': '/manuscripts/beethoven/sym9/'。"
+          },
+          {
+            "field": "存储信息.server_name",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 'storage_info.server_name': 'SRV-MUSIC-01'。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "根节点的类型 '古籍' 成功映射到领域模型中的 'CopyrightSubject'。操作人员的类型 'RightsHolder' 也符合领域模型中 '员工' 映射到 'RightsHolder' 的规则。核心知识片段的类型为 '数字资源版权声明'，符合规范。包含了 'assessmentDate' 属性。包含了 :appliesTo 关系，并指向了类型为 'CopyrightSubject' 的节点。包含了 'copyrightStatus' 和 'usageLicense' 属性。"
+      },
+      "completeness": {
+        "summary": "原始数据中的所有关键信息都已在生成知识中得到体现，包括通过ID映射正确关联的实体。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在建模上展现了对领域模型规范的良好理解和应用，尤其是在版权声明的独立建模方面。它将版权声明作为一个独立的节点（`数字资源版权声明`），并使用`appliesTo`关系指向版权主体，这与领域模型中“核心知识片段的类型应为 '数字资源版权声明'”以及“必须包含 :appliesTo 关系，指向一个类型为 'CopyrightSubject' 的领域角色节点”的规范高度一致。这比专家参考作品中将`usageLicense`直接作为`版权对象`的属性更为清晰和模块化，体现了更好的关注点分离。\n\n具体亮点包括：\n1.  **版权声明的独立性**：将`版权声明`作为一个独立的嵌套对象，并赋予其`@type: '数字资源版权声明'`，符合领域模型的核心知识片段类型要求。这使得版权信息可以独立于被声明的资源进行管理和引用。\n2.  **`appliesTo`关系的使用**：正确地将`数字资源版权声明`通过`appliesTo`关系指向了`CopyrightSubject`（即`贝多芬第九交响曲手稿`本身），这精确地表达了版权声明是针对哪个具体资源的。\n3.  **`copyrightStatus`的推断**：根据“贝多芬第九交响曲手稿”这一信息，系统推断出`copyrightStatus: 'Public Domain'`，并添加了`assessmentDate`，这体现了对领域模型中“对于年代久远的古籍，如果无特殊说明，其 :copyrightStatus 通常可推断为 'Public Domain'”的理解和应用，增加了信息的完整性。\n4.  **多类型建模**：将原始数据中的`scan_details`和`storage_info`也建模为独立的嵌套对象（`数字化详情`和`存储信息`），并赋予了相应的`@type`，这使得整个知识图谱的结构更加丰富和语义化，超越了仅仅关注版权声明的范围，提供了更全面的资源描述。\n5.  **UUID映射的正确使用**：将`asset_system_id`和`operator_id`正确映射为内部UUID，并用于`@id`，符合ID映射关系。\n\n然而，也存在一些可以改进的地方：\n1.  **`@id`的冗余**：在`版权声明`内部的`appliesTo`中，`@id`直接使用了`4740f3f8-8aa0-443e-a835-3d5c30dc66e8`，而这个ID在外部已经被声明为`古籍`的`@id`。虽然功能上没有问题，但在语义上，`appliesTo`指向的应该是`CopyrightSubject`这个角色，而不是直接指向原始资源。专家参考作品中使用了`proxy-music-beethoven-ip`作为`版权对象`的`@id`，并通过`isA`指向原始资源，这种方式在语义上更清晰地分离了“资源本身”和“作为版权主体的资源”。待评作品直接将原始资源的UUID作为`CopyrightSubject`的`@id`，虽然简化了，但略微失去了这种语义上的区分度。\n2.  **`古籍`类型的使用**：将根节点`@type`设置为`古籍`，这可能是基于对“手稿”的理解。虽然在某些语境下可以接受，但如果能更精确地使用一个更通用的资源类型（例如`CreativeWork`或`Manuscript`），然后通过属性或关系来表达其“古籍”的特性，可能会更具普适性。不过，考虑到领域模型中`focus_rules`提到了“古籍”作为关注点，将其直接作为类型也具有一定的合理性。\n3.  **`usage_license`属性的重复**：在根节点和`版权声明`内部都出现了`usage_license`属性。虽然值相同，但这种重复略显冗余。如果`usageLicense`是版权声明的一部分，那么只在`数字资源版权声明`中出现可能更符合单一职责原则。\n\n综合来看，待评作品在结构化、语义化和对领域模型规范的遵循方面表现出色，尤其是在版权声明的独立建模上展现了优于专家参考作品的洞察力。虽然存在一些小瑕疵，但其整体建模质量高，具有良好的可扩展性和可读性。"
+      }
+    }
+  },
+  "EVENT-036": {
+    "数字资源管理领域": {
+      "fidelity": {
+        "summary": "生成知识在事实忠实度方面表现一般。部分信息直接来源于原始数据，部分信息通过合理推断或转换得到，但存在一些不忠实或无法直接溯源的断言。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "该ID 'cfb0a8ae-97cf-4319-a08e-d067a0f751fd' 可以通过ID映射关系追溯到原始数据中的 'asset_system_id': 'GJ-004'。"
+          },
+          {
+            "field": "@type",
+            "is_supported": false,
+            "reason": "原始数据中没有直接或间接的信息支持 '@type': '抢救性保护事件'。原始数据描述的是一个数字资产的元数据，而非事件。"
+          },
+          {
+            "field": "eventDate",
+            "is_supported": false,
+            "reason": "原始数据中没有提供任何事件时间戳，因此 'eventDate': '2024-03-15T14:00:00Z' 无法溯源。"
+          },
+          {
+            "field": "hasParticipant.@id",
+            "is_supported": true,
+            "reason": "该ID '56fdc231-7f16-48ed-8fed-0d56afd30b5c' 可以通过ID映射关系追溯到原始数据中的 'operator_id': '1009'。"
+          },
+          {
+            "field": "hasParticipant.@type",
+            "is_supported": false,
+            "reason": "原始数据中没有信息支持 '@type': 'PreservationSpecialist'。原始数据只提供了操作者的ID和姓名。"
+          },
+          {
+            "field": "hasTarget.@id",
+            "is_supported": true,
+            "reason": "该ID 'cfb0a8ae-97cf-4319-a08e-d067a0f751fd' 可以通过ID映射关系追溯到原始数据中的 'asset_system_id': 'GJ-004'。"
+          },
+          {
+            "field": "hasTarget.@type",
+            "is_supported": false,
+            "reason": "原始数据中没有信息支持 '@type': 'ProtectedItem'。原始数据描述的是一个数字资产，而非受保护的物品。"
+          },
+          {
+            "field": "hasMeasure.@type",
+            "is_supported": true,
+            "reason": "从原始数据 'scan_details' 中可以合理推断出 '数字化' 这一操作类型。"
+          },
+          {
+            "field": "hasMeasure.file_count",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 'scan_details.file_count': 36000。"
+          },
+          {
+            "field": "hasMeasure.resolution_dpi",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 'scan_details.resolution_dpi': 600。"
+          },
+          {
+            "field": "hasMeasure.format",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 'scan_details.format': 'TIFF'。"
+          },
+          {
+            "field": "hasMeasure.storage_info.path",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 'storage_info.path': '/data/siku/wenyuan/'。"
+          },
+          {
+            "field": "hasMeasure.storage_info.server_name",
+            "is_supported": true,
+            "reason": "直接来源于原始数据 'storage_info.server_name': 'SRV-RARE-03'。"
+          }
+        ],
+        "score": 0.69
+      },
+      "conformance": {
+        "overall_conformance": "Partial",
+        "violations": [
+          {
+            "field": "核心知识片段的类型",
+            "reason": "领域模型规范要求核心知识片段的类型应为 '数字对象'，但生成知识中使用了 '@type': '抢救性保护事件'。"
+          },
+          {
+            "field": "creationDate",
+            "reason": "领域模型规范要求包含 'creationDate' 属性，记录该数字对象的创建时间，但生成知识中缺少此属性。虽然有 'eventDate'，但其语义不符且无法溯源。"
+          },
+          {
+            "field": ":sourceAsset 关系",
+            "reason": "领域模型规范要求必须包含 :sourceAsset 关系，指向一个类型为 'SourceMaterial' 的领域角色节点。生成知识中没有明确的 :sourceAsset 关系，且 'hasTarget' 指向的类型为 'ProtectedItem'，不符合要求。"
+          },
+          {
+            "field": ":persistentIdentifier 属性",
+            "reason": "领域模型规范要求必须为其分配合理的 :persistentIdentifier 属性，但生成知识中缺少此属性。"
+          },
+          {
+            "field": ":digitizedBy 关系",
+            "reason": "领域模型规范要求如果数据中提及操作者，应创建一个 :digitizedBy 关系，指向一个类型为 'DigitizationOperator' 的领域角色节点。生成知识中使用了 'hasParticipant' 关系，且其指向的类型为 'PreservationSpecialist'，不符合规范的语义和类型要求。"
+          }
+        ],
+        "positive_notes": "生成知识成功提取了 :fileCount, :resolution_dpi (作为resolution), :format 等技术元数据作为属性，这与规范中“应从数据中提取并包含 :fileCount, :resolution, :format 等技术元数据作为属性”的要求基本一致。虽然 'resolution_dpi' 命名略有不同，但语义等价。"
+      },
+      "completeness": {
+        "summary": "信息完整性较差。原始数据中的多项关键信息未在生成知识中得到体现，或体现方式不符合领域模型规范。",
+        "missed_information": [
+          {
+            "info": "title: '四库全书文渊阁本'",
+            "reason": "原始数据中的 'title' 属性未在生成知识中体现。"
+          },
+          {
+            "info": "operator_name: 'XuSW'",
+            "reason": "原始数据中的 'operator_name' 未在生成知识中体现，尽管 'operator_id' 对应的UUID被用于 'hasParticipant'，但操作者的姓名信息丢失。"
+          },
+          {
+            "info": "related_publication: 'ISBN:978-7-101-05242-7'",
+            "reason": "原始数据中的 'related_publication' 信息未在生成知识中体现。这可能是一个重要的关联信息。"
+          },
+          {
+            "info": "核心知识片段的类型应为 '数字对象'",
+            "reason": "生成知识的根节点类型为 '抢救性保护事件'，未能体现原始数据所描述的“数字对象”本身。"
+          },
+          {
+            "info": "creationDate",
+            "reason": "领域模型规范要求包含 'creationDate' 属性，但生成知识中缺失。"
+          },
+          {
+            "info": ":sourceAsset 关系",
+            "reason": "领域模型规范要求必须包含 :sourceAsset 关系，指向一个类型为 'SourceMaterial' 的领域角色节点，但生成知识中缺失。"
+          },
+          {
+            "info": ":persistentIdentifier 属性",
+            "reason": "领域模型规范要求必须为其分配合理的 :persistentIdentifier 属性，但生成知识中缺失。"
+          }
+        ]
+      },
+      "elegance": {
+        "elegance_score": 2,
+        "reasoning": "待评作品与专家参考作品在建模思路上存在显著差异，且未能完全遵循设计规范。主要问题如下：\n\n1.  **核心类型不符**：设计规范明确指出核心知识片段的类型应为“数字对象”，但待评作品将其建模为“抢救性保护事件”。这偏离了核心要求，导致整个模型的语义基础不稳固。\n2.  **关系建模不当**：\n    *   设计规范要求包含 `:sourceAsset` 关系，指向类型为 'SourceMaterial' 的领域角色节点。待评作品中没有明确的 `sourceAsset` 关系，而是通过 `hasTarget` 指向了一个 `ProtectedItem`，且其 `@id` 与主体的 `@id` 相同，这在语义上是循环且不清晰的。\n    *   操作者信息（`operator_id`, `operator_name`）在待评作品中被建模为 `hasParticipant`，指向一个 `PreservationSpecialist`。虽然这在一定程度上表达了参与者，但设计规范更具体地要求 `:digitizedBy` 关系指向 'DigitizationOperator'，待评作品未能完全匹配。\n3.  **属性提取与映射**：\n    *   技术元数据（`file_count`, `resolution_dpi`, `format`）被嵌套在 `hasMeasure` 关系下的一个匿名节点 `数字化` 中，这使得这些属性的访问路径变得复杂，且 `数字化` 作为一个类型，其语义不如直接作为 `数字对象` 的属性或更直接的关联清晰。\n    *   `storage_info` 也被嵌套在 `数字化` 内部，并创建了一个匿名节点 `Storage_info`，增加了模型的复杂性。\n    *   设计规范要求包含 `creationDate` 属性，但待评作品中没有体现。\n    *   设计规范要求分配合理的 `:persistentIdentifier` 属性，待评作品使用了UUID作为 `@id`，但没有明确的 `persistentIdentifier` 属性。\n4.  **简洁性与表达力**：待评作品通过引入“抢救性保护事件”、“数字化”等中间节点，使得模型结构变得复杂，不如专家参考作品直接将数字对象作为核心，并以属性和直接关系来描述其特征和来源那样简洁和直接。例如，将扫描细节和存储信息直接作为数字对象的属性，或者通过更直接的关系连接，会更符合“数字对象”的建模目标。\n5.  **术语专业性**：虽然使用了 `PreservationSpecialist` 和 `ProtectedItem` 等术语，但整体建模未能围绕“数字对象”这一核心概念展开，导致专业术语的应用未能形成一个连贯且符合规范的本体。\n\n总的来说，待评作品在理解和遵循设计规范方面存在较大偏差，其建模方式虽然尝试表达一些信息，但未能达到专家参考作品的简洁、准确和符合领域模型要求的水平。它更像是在描述一个事件，而不是一个数字对象本身及其元数据。"
+      }
+    }
+  },
+  "EVENT-037": {
+    "知识产权领域": {
+      "fidelity": {
+        "summary": "生成知识高度忠实于原始数据，所有断言均可直接溯源或通过ID映射关系得到支持。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "根据领域模型规范，核心知识片段的类型应为'数字资源版权声明'，且通常会以业务ID作为标识符的一部分。'cp_statement_CODE-APOLLO'是基于原始数据中的'asset_system_id' ('CODE-APOLLO') 构造的，符合命名惯例。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "直接遵循领域模型规范中的“核心知识片段的类型应为 '数字资源版权声明'”。"
+          },
+          {
+            "field": "copyrightStatus",
+            "is_supported": true,
+            "reason": "原始数据中'legal_status'属性值为'Public domain as a work of the U.S. federal government.'，从中合理推断出'Public Domain'作为版权状态，符合领域模型规范中对'copyrightStatus'属性值的标准要求。"
+          },
+          {
+            "field": "assessmentDate",
+            "is_supported": true,
+            "reason": "该属性值'2024-05-28T11:30:00Z'未在原始数据中直接给出，但领域模型规范允许包含此属性，并指出“如果信息可用”。此处生成了一个当前日期时间，作为评估日期是合理的推断和补充，不构成不忠实。"
+          },
+          {
+            "field": "usageLicense",
+            "is_supported": true,
+            "reason": "直接来源于原始数据中'legal_status'属性的完整值：'Public domain as a work of the U.S. federal government.'，符合领域模型规范中“如果数据中提及，应包含 :accessPolicy 或 :usageLicense 属性”的要求。"
+          },
+          {
+            "field": "appliesTo.@id",
+            "is_supported": true,
+            "reason": "原始数据中的'asset_system_id'为'CODE-APOLLO'，通过ID映射关系查找到其对应的内部UUID为'0c417cf9-ea75-4f69-9b76-74649661e883'。此UUID被正确引用。"
+          },
+          {
+            "field": "appliesTo.@type",
+            "is_supported": true,
+            "reason": "根据领域模型规范，':appliesTo'关系指向的节点类型应为'CopyrightSubject'。此处'CODE-APOLLO'代表的“阿波罗11号导航计算机源码”是版权声明的主体，因此被正确归类为'CopyrightSubject'。"
+          },
+          {
+            "field": "RELATES_TO.@id",
+            "is_supported": true,
+            "reason": "原始数据中的'operator_id'为'2002'，通过ID映射关系查找到其对应的内部UUID为'2a5b412e-b9c4-4b56-81d2-44b70182d1e3'。此UUID被正确引用。"
+          },
+          {
+            "field": "RELATES_TO.@type",
+            "is_supported": true,
+            "reason": "原始数据中的'operator_name'为'Lucy'，'operator_id'为'2002'，表明Lucy是操作者。根据领域模型规范的'focus_rules'和'role_mapping'，虽然没有直接提及“操作者”的映射，但“员工”被映射为'RightsHolder'。Lucy作为操作者，可以合理推断为与版权相关的权利持有者或相关方，因此将其类型设置为'RightsHolder'是合理的语义推断，尽管关系名'RELATES_TO'并非直接来自规范，但其指向的实体类型是合理的。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "生成知识的类型'@type': '数字资源版权声明' 完全符合规范。'copyrightStatus'属性值'Public Domain'符合规范要求。'usageLicense'属性的包含符合规范中“如果数据中提及，应包含 :accessPolicy 或 :usageLicense 属性”的要求。':appliesTo'关系及其指向的'CopyrightSubject'类型完全符合规范。'assessmentDate'属性的包含也符合规范中“可以包含”的描述。虽然'RELATES_TO'关系名未在schema_rules中明确列出，但其指向的'RightsHolder'类型是领域模型中定义的角色，且语义上合理，可以视为对原始数据中操作者信息的合理建模，不构成违规。"
+      },
+      "completeness": {
+        "summary": "原始数据中的所有关键信息都在生成知识中得到了体现，包括通过ID映射转换的实体ID。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在核心信息表达上与专家参考作品保持一致，准确地识别了版权状态为'Public Domain'。它还创造性地引入了`assessmentDate`属性，这是一个合理的补充，增加了信息的时效性。`usageLicense`属性也很好地捕获了原始数据中关于公共领域作品的详细说明，这比专家参考作品中将此信息放入`description`更为精确和结构化。然而，`appliesTo`关系直接指向了UUID，而专家参考作品则引入了一个`版权对象`的代理节点，并通过`isA`关系指向UUID。虽然待评作品的直接指向更简洁，但专家参考作品的建模方式在某些复杂的本体论场景下可能提供更大的灵活性和扩展性，例如当需要为同一个UUID定义多个不同视角的版权对象时。此外，待评作品中出现的`RELATES_TO`关系指向了一个`RightsHolder`，这在原始数据中并没有明确的直接对应关系（原始数据中的`operator_id`和`operator_name`是操作者信息，而非版权持有者），且在设计规范中也未明确要求，这可能是一个过度推断或不必要的关联，降低了简洁性。如果`2a5b412e-b9c4-4b56-81d2-44b70182d1e3`确实是该代码的版权持有者，则应在原始数据或设计规范中明确体现。综合来看，待评作品在信息捕获和部分结构优化上表现良好，但在`RELATES_TO`关系的处理上存在疑问，且在`appliesTo`的建模深度上略逊于专家参考作品的严谨性，因此给予4分。"
+      }
+    }
+  },
+  "EVENT-040": {
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "生成知识中的部分信息直接来源于原始数据，部分信息是基于原始数据进行的合理推断或转换，但存在一些未直接体现在原始数据中的断言。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "该ID '945102cb-81a2-4945-a5fd-c92c338f704e' 可以通过ID映射关系追溯到原始数据中的 'asset_system_id': 'GJ-015'。"
+          },
+          {
+            "field": "@type",
+            "is_supported": false,
+            "reason": "原始数据中没有直接提及“数字对象”类型，这是一个推断或预设的类型，与原始数据无直接对应。"
+          },
+          {
+            "field": "persistentIdentifier",
+            "is_supported": false,
+            "reason": "原始数据中没有直接提及 'persistentIdentifier' 或 'hdl:GJ-015/digital'。'GJ-015' 部分来源于原始数据，但整个标识符是推断或生成的。"
+          },
+          {
+            "field": "creationDate",
+            "is_supported": false,
+            "reason": "原始数据中没有提供 'creationDate' 信息，该值 '2024-06-01T12:00:00Z' 是一个假设或默认值。"
+          },
+          {
+            "field": "fileCount",
+            "is_supported": true,
+            "reason": "该值 '720' 直接来源于原始数据中的 'scan_details': {'file_count': 720}。"
+          },
+          {
+            "field": "digitizedBy.@id",
+            "is_supported": true,
+            "reason": "该ID '56679879-d05c-4027-a25f-967cb551bd27' 可以通过ID映射关系追溯到原始数据中的 'operator_id': '1012'。"
+          },
+          {
+            "field": "digitizedBy.@type",
+            "is_supported": false,
+            "reason": "原始数据中没有直接提及 'DigitizationOperator' 类型，这是一个推断或预设的类型。"
+          },
+          {
+            "field": "sourceAsset.@id",
+            "is_supported": true,
+            "reason": "该ID '945102cb-81a2-4945-a5fd-c92c338f704e' 可以通过ID映射关系追溯到原始数据中的 'asset_system_id': 'GJ-015'。"
+          },
+          {
+            "field": "sourceAsset.@type",
+            "is_supported": false,
+            "reason": "原始数据中没有直接提及 'SourceMaterial' 类型，这是一个推断或预设的类型。"
+          }
+        ],
+        "score": 0.44
+      },
+      "conformance": {
+        "overall_conformance": "None",
+        "violations": [
+          {
+            "field": "核心知识片段的类型",
+            "reason": "生成知识的根节点类型为 '数字对象'，而领域模型规范要求核心知识片段的类型应为 '抢救性保护事件'。"
+          },
+          {
+            "field": "eventDate",
+            "reason": "生成知识中包含 'creationDate' 属性，但领域模型规范要求 'eventDate' 属性，且其值为事件发生的时间戳。'creationDate' 语义上不完全等同于 'eventDate'，且原始数据中无此信息。"
+          },
+          {
+            "field": ":hasTarget 关系",
+            "reason": "生成知识中没有明确的 ':hasTarget' 关系。虽然 'sourceAsset' 可能意图指向目标，但其类型为 'SourceMaterial'，且没有明确的 ':hasTarget' 谓词，不符合规范要求指向 'ProtectedItem' 类型。"
+          },
+          {
+            "field": ":hasMeasure 属性或关系",
+            "reason": "生成知识中没有明确的 ':hasMeasure' 属性或关系来描述具体的保护措施。原始数据中的 'restoration_log' 提到了 '脱酸处理'，但未在生成知识中体现为措施。"
+          },
+          {
+            "field": ":hasParticipant 关系",
+            "reason": "生成知识中虽然有 'digitizedBy' 关系指向操作员，但领域模型规范要求 ':hasParticipant' 关系，指向 'PreservationSpecialist' 类型。'DigitizationOperator' 语义上不完全等同于 'PreservationSpecialist'，且谓词不匹配。"
+          },
+          {
+            "field": ":originalCopyCondition 属性",
+            "reason": "原始数据中没有直接提及原件的物理状况，生成知识中也未包含此属性。"
+          }
+        ],
+        "positive_notes": ""
+      },
+      "completeness": {
+        "summary": "生成知识未能完整体现原始数据中的所有关键信息，特别是与领域模型规范相关的保护事件和措施信息。",
+        "missed_information": [
+          {
+            "info": "原始数据中的 'title': '梦溪笔谈'",
+            "reason": "生成知识中未包含原始资产的标题信息。"
+          },
+          {
+            "info": "原始数据中的 'operator_name': '老王'",
+            "reason": "虽然 'operator_id' 被映射并用于 'digitizedBy' 关系，但操作员的名称 '老王' 未被包含。"
+          },
+          {
+            "info": "原始数据中的 'storage_info': {'server_name': 'SRV-RARE-02'}",
+            "reason": "存储信息未在生成知识中体现。"
+          },
+          {
+            "info": "原始数据中的 'restoration_log': '进行了脱酸处理'",
+            "reason": "这一关键的保护措施信息未在生成知识中以 ':hasMeasure' 属性或关系的形式体现，这与领域模型规范的要求不符。"
+          },
+          {
+            "info": "领域模型规范中对 'ProtectedItem' 的识别",
+            "reason": "原始数据中的 'asset_system_id': 'GJ-015' 结合 'title': '梦溪笔谈' 强烈暗示这是一个 '古籍'，应被识别为 'ProtectedItem' 并作为 ':hasTarget' 的目标，但生成知识中未明确体现这一点。"
+          }
+        ]
+      },
+      "elegance": {
+        "elegance_score": 2,
+        "reasoning": "待评作品与专家参考作品在建模思路上存在显著差异，未能遵循设计规范的核心要求，导致评分较低。\n\n1.  **核心类型不符**：设计规范明确要求核心知识片段的类型应为“抢救性保护事件”，而待评作品将其建模为“数字对象”。这偏离了领域模型对事件中心化建模的意图，即关注保护行为本身，而非其产物。\n2.  **关系缺失**：待评作品未能体现 `:hasTarget` 关系指向 `ProtectedItem`，也未包含 `:hasMeasure` 属性或关系来描述具体的保护措施（如脱酸处理）。这使得作品无法表达出“对哪个对象进行了何种保护”的核心信息。\n3.  **信息丢失**：原始数据中的“进行了脱酸处理”这一关键的修复信息在待评作品中完全缺失，而专家参考作品通过 `:hasMeasure` 关系很好地捕捉了这一点。\n4.  **过度关注产物**：待评作品将重点放在了“数字对象”的属性（如 `fileCount`）和创建者（`digitizedBy`），这更像是对数字化产物的描述，而非对“抢救性保护事件”本身的建模。虽然数字化是保护措施之一，但它不应成为事件的主体。\n5.  **术语专业性**：待评作品使用了 `@type: '数字对象'` 和 `@type: 'DigitizationOperator'`，这些术语本身是专业的，但它们没有被整合到“抢救性保护事件”的框架下，导致整体语义表达不准确。\n6.  **创造性/洞察力**：待评作品的建模思路更像是对原始数据中数字化部分的直接映射，缺乏对“抢救性保护”这一领域概念的抽象和建模洞察力。它没有尝试将数字化和物理修复（脱酸处理）统一到同一个事件框架下，而专家参考作品通过 `抢救性保护事件` 很好地实现了这一点。\n\n总而言之，待评作品在结构上与设计规范和专家参考作品的意图相去甚远，未能捕捉到领域模型的核心概念和关系，导致大量关键信息丢失，且建模重心偏离。虽然其对数字化产物的描述在某些场景下可能有用，但作为“抢救性保护事件”的建模，它是不合格的。"
+      }
+    }
+  },
+  "EVENT-041": {
+    "图书馆流通领域": {
+      "fidelity": {
+        "summary": "生成知识高度忠实于原始数据和ID映射关系，所有字段均可溯源。",
+        "details": [
+          {
+            "field": "@id (Patron)",
+            "is_supported": true,
+            "reason": "原始数据中 'reader_id' 为 'S2023001'，通过ID映射关系，'S2023001' 对应内部UUID '610e6496-41a8-4045-b78e-f6b7b1fa82f6'，与生成知识中的 '@id' 一致。"
+          },
+          {
+            "field": "@type (Patron)",
+            "is_supported": true,
+            "reason": "原始数据中 'reader_id' 指示这是一个读者，领域模型中 '读者' 映射为 'Patron'，与生成知识中的 '@type' 一致。"
+          },
+          {
+            "field": "event.@id",
+            "is_supported": true,
+            "reason": "这是一个内部生成的bnode ID，用于标识借阅事件，符合Bnode的生成机制，是合理的内部标识。"
+          },
+          {
+            "field": "event.@type",
+            "is_supported": true,
+            "reason": "领域模型规范要求核心知识片段的类型应为 '借阅事件'，与生成知识中的 '@type' 一致。"
+          },
+          {
+            "field": "event.dueDate",
+            "is_supported": true,
+            "reason": "原始数据中 'due_date' 为 '2024-07-05'，与生成知识中的 'dueDate' 一致。"
+          },
+          {
+            "field": "event.eventTimestamp",
+            "is_supported": true,
+            "reason": "原始数据中未直接提供事件发生时间，但生成了一个合理的事件时间 '2024-06-05T10:00:00Z'。这属于对原始数据未明确信息的合理推断或补充，符合领域模型规范中要求包含 'eventTimestamp' 的规定。"
+          },
+          {
+            "field": "event.borrower.@id",
+            "is_supported": true,
+            "reason": "原始数据中 'reader_id' 为 'S2023001'，通过ID映射关系，'S2023001' 对应内部UUID '610e6496-41a8-4045-b78e-f6b7b1fa82f6'，与生成知识中的 'borrower.@id' 一致。"
+          },
+          {
+            "field": "event.borrower.@type",
+            "is_supported": true,
+            "reason": "原始数据中 'reader_id' 指示这是一个读者，领域模型中 '读者' 映射为 'Patron'，与生成知识中的 'borrower.@type' 一致。"
+          },
+          {
+            "field": "event.itemBorrowed.@id",
+            "is_supported": true,
+            "reason": "原始数据中 'book_id' 为 'ISBN-9787115428859'，通过ID映射关系，'ISBN-9787115428859' 对应内部UUID '9f2b3e46-e5de-48ff-ae1f-2273d9a6560f'，与生成知识中的 'itemBorrowed.@id' 一致。"
+          },
+          {
+            "field": "event.itemBorrowed.@type",
+            "is_supported": false,
+            "reason": "原始数据中 'book_id' 指示这是一本书，领域模型中 '图书' 映射为 'CirculationItem'。生成知识中将其类型设置为 '古籍'，这与领域模型规范中的 'CirculationItem' 不符，且无法从原始数据中推断出 '古籍' 这一具体类型。"
+          }
+        ],
+        "score": 0.9
+      },
+      "conformance": {
+        "overall_conformance": "Partial",
+        "violations": [
+          {
+            "field": "event.itemBorrowed.@type",
+            "reason": "领域模型规范中 '图书' 映射为 'CirculationItem'。生成知识中 'itemBorrowed' 的类型为 '古籍'，这与规范不符。虽然 '古籍' 是一种图书，但规范要求使用更通用的 'CirculationItem'。"
+          }
+        ],
+        "positive_notes": "核心知识片段的类型为 '借阅事件'，符合规范。包含 'eventTimestamp' 属性，符合规范。包含 ':borrower' 关系指向 'Patron' 节点，符合规范。包含 ':itemBorrowed' 关系，但其指向的类型不完全符合规范。"
+      },
+      "completeness": {
+        "summary": "生成知识基本完整地体现了原始数据中的关键信息，并根据领域模型补充了必要的关系和事件类型。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 3,
+        "reasoning": "待评作品在结构上与专家参考作品存在显著差异，但并非完全不合理。它将'Patron'作为根节点，并将'借阅事件'作为其内部的一个嵌套事件，这在某些面向对象的建模场景中可能被接受，但与领域模型中明确要求核心知识片段类型为'借阅事件'的规范不符，也与专家参考作品的扁平化事件模型相悖。这降低了其简洁性和与规范的一致性。\n\n优点方面：\n1. 包含了'eventTimestamp'属性，符合设计规范。\n2. 'borrower'和'itemBorrowed'关系指向了正确的UUID，并指定了类型，符合关系指导。\n3. 'dueDate'属性正确提取。\n\n缺点方面：\n1. 核心知识片段的类型不是'借阅事件'，而是将'Patron'作为根节点，'借阅事件'嵌套在其内部，这违反了'核心知识片段的类型应为 '借阅事件''的明确规范。\n2. 'itemBorrowed'的类型被指定为'古籍'，而领域模型中并未提供此信息，专家参考作品中使用了更通用的'可流通馆藏'，这可能引入了不必要的特化或不准确的推断。\n3. 缺少 `@context` 属性，这在语义网和知识图谱中是重要的上下文信息。\n4. 'borrower'和'itemBorrowed'中的 `@id` 直接使用了UUID，而专家参考作品中使用了更具语义的代理ID（如'role-s2023001-circulation'），并通过'isA'指向UUID，这种方式在表达力和可读性上更优。\n\n综合来看，待评作品虽然提取了大部分关键信息，但在结构和类型指定上未能完全遵循设计规范和专家参考作品的模式，尤其是在核心知识片段的类型和嵌套方式上存在偏差，导致其简洁性和术语专业性有所下降。因此，给予中等评分。"
+      }
+    }
+  },
+  "EVENT-046": {
+    "人力资源领域": {
+      "fidelity": {
+        "summary": "生成知识中的所有事实断言均忠实于原始数据，其中包含直接提取的信息、通过ID映射关系转换的UUID，以及基于原始数据合理推断的日期。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "这是一个基于原始数据中的asset_system_id (GJ-001)、operator_id (3001) 和一个推断的日期 (20240615) 组合生成的唯一标识符，符合(B)合理推断。"
+          },
+          {
+            "field": "@type",
+            "is_supported": true,
+            "reason": "类型 '员工工作量记录' 是根据领域模型规范的核心知识片段类型要求设定的，符合(B)合理推断。"
+          },
+          {
+            "field": "activityDate",
+            "is_supported": true,
+            "reason": "原始数据中没有明确的日期，但通常工作量记录会有一个日期。这里推断了一个日期 '2024-06-15T10:20:00Z'，符合(B)合理推断，且符合领域模型中对 'activityDate' 的要求（源于事件时间戳）。"
+          },
+          {
+            "field": "activityDescription",
+            "is_supported": true,
+            "reason": "属性值 '页面去酸、加固' 直接来源于原始数据中的 'action' 属性，符合(A)直接在原始数据中找到。"
+          },
+          {
+            "field": "assignedTo.@id",
+            "is_supported": true,
+            "reason": "UUID '6bc2acc6-947c-4284-8357-3aef0cd1d927' 对应原始数据中的 'operator_id' (3001)，通过ID映射关系找到，符合(C)。"
+          },
+          {
+            "field": "assignedTo.@type",
+            "is_supported": true,
+            "reason": "类型 'Employee' 是根据领域模型规范中的 'role_mapping' (员工 -> Employee) 设定的，符合(B)合理推断。"
+          },
+          {
+            "field": "relatedAsset.@id",
+            "is_supported": true,
+            "reason": "UUID '18701ab0-fc9a-43ef-9b81-ae462078fbf7' 对应原始数据中的 'asset_system_id' (GJ-001)，通过ID映射关系找到，符合(C)。"
+          },
+          {
+            "field": "relatedAsset.@type",
+            "is_supported": true,
+            "reason": "类型 'WorkObject' 是根据领域模型规范中的 'role_mapping' (古籍 -> WorkObject) 设定的，符合(B)合理推断。"
+          }
+        ],
+        "score": 1.0
+      },
+      "conformance": {
+        "overall_conformance": "Full",
+        "violations": [],
+        "positive_notes": "核心知识片段的类型为 '员工工作量记录'，符合规范。包含 'activityDate' 属性。包含 ':assignedTo' 关系指向 'Employee' 节点。包含 ':activityDescription' 属性。包含 ':relatedAsset' 关系指向 'WorkObject' 节点。所有属性和关系都严格遵循了领域模型规范。"
+      },
+      "completeness": {
+        "summary": "原始数据中的所有关键信息都已在生成知识中得到体现，包括资产ID、操作员ID、操作内容和资产名称（通过relatedAsset关联）。",
+        "missed_information": []
+      },
+      "elegance": {
+        "elegance_score": 4,
+        "reasoning": "待评作品在结构上与专家参考作品有所不同，但这种不同是合理的，并且在某些方面展现了更优的建模选择。\n\n**简洁性 (4/5):**\n*   待评作品直接使用了UUID作为`assignedTo`和`relatedAsset`的`@id`，这比专家参考作品中引入的`role-e3001-hr`和`proxy-gj001-hr`等中间代理ID更为简洁。在内部系统中，直接使用UUID作为唯一标识符是常见的做法，减少了不必要的层级。\n*   `activityDate`属性的引入是符合规范的，并且直接记录了时间戳，简洁明了。\n\n**表达力 (4/5):**\n*   待评作品的`assignedTo`和`relatedAsset`直接指向了UUID，虽然简洁，但在语义表达上，专家参考作品通过`isA`嵌套UUID的方式，更清晰地表达了“这个角色是某个具体UUID代表的实体”的含义。待评作品直接将UUID作为`@id`，并指定`@type`为`Employee`或`WorkObject`，这在语义上是等价的，但少了一层明确的“是A”关系。\n*   `activityDescription`在待评作品中仅为“页面去酸、加固”，而专家参考作品则包含了“对古籍'永乐大典嘉靖副本残卷'进行页面去酸、加固”，后者在描述上更为完整和自包含。虽然`relatedAsset`已经指明了资产，但描述中包含资产名称可以提高可读性。\n\n**创造性/洞察力 (4/5):**\n*   待评作品直接使用UUID作为关联实体的`@id`，这是一种务实且高效的建模方式，尤其在内部系统集成中，避免了为每个关联创建额外的代理节点，体现了对系统实现效率的洞察。\n*   `activityDate`的引入符合“必须包含一个 'activityDate' 属性”的规范，并提供了具体的时间戳，这是对规范的良好实现。\n\n**术语专业性 (5/5):**\n*   `@type`使用了`员工工作量记录`、`Employee`和`WorkObject`，这些术语与设计规范中的角色映射和核心知识片段类型保持一致，专业性强。\n*   属性名如`activityDate`, `activityDescription`, `assignedTo`, `relatedAsset`都准确反映了其语义，符合领域模型的专业要求。\n\n**综合评分理由:**\n待评作品在遵循设计规范的同时，展现了简洁和直接的建模风格。它直接使用UUID作为关联实体的标识符，避免了专家参考作品中引入的代理ID，这在实际系统实现中通常是更优的选择，因为它减少了不必要的间接性。虽然`activityDescription`可以更丰富，但整体而言，待评作品在简洁性、表达力和专业性方面都表现出色，并且其结构上的差异是合理的优化。因此，给予4分。"
+      }
+    },
+    "特藏保护领域": {
+      "fidelity": {
+        "summary": "生成知识与原始数据关联性较低，大部分信息无法直接溯源或合理推断。生成内容似乎是针对原始数据中未体现的“数字化”操作，而非原始数据明确描述的“修复”操作。",
+        "details": [
+          {
+            "field": "@id",
+            "is_supported": true,
+            "reason": "原始数据中的 'asset_system_id': 'GJ-001' 对应ID映射中的UUID '18701ab0-fc9a-43ef-9b81-ae462078fbf7'，此ID在生成知识中作为主实体ID出现，是忠实的。"
+          },
+          {
+            "field": "@type",
+            "is_supported": false,
+            "reason": "生成知识中的 '@type': '数字对象' 未在原始数据中直接提及，也无法从原始数据中合理推断。原始数据描述的是一个物理资产及其修复操作。"
+          },
+          {
+            "field": "persistentIdentifier",
+            "is_supported": false,
+            "reason": "生成知识中的 'persistentIdentifier': 'hdl:example/GJ-001-supplement' 未在原始数据中提及，也无法从原始数据中合理推断。"
+          },
+          {
+            "field": "format",
+            "is_supported": false,
+            "reason": "生成知识中的 'format': 'TIFF' 未在原始数据中提及，也无法从原始数据中合理推断。"
+          },
+          {
+            "field": "creationDate",
+            "is_supported": false,
+            "reason": "生成知识中的 'creationDate': '2024-05-12T16:00:00Z' 未在原始数据中提及，也无法从原始数据中合理推断。"
+          },
+          {
+            "field": "resolution",
+            "is_supported": false,
+            "reason": "生成知识中的 'resolution': '600dpi' 未在原始数据中提及，也无法从原始数据中合理推断。"
+          },
+          {
+            "field": "fileCount",
+            "is_supported": false,
+            "reason": "生成知识中的 'fileCount': 50 未在原始数据中提及，也无法从原始数据中合理推断。"
+          },
+          {
+            "field": "digitizedBy",
+            "is_supported": false,
+            "reason": "生成知识中的 'digitizedBy' 关系及其指向的 'DigitizationOperator' 均未在原始数据中提及。原始数据描述的是 '修复专家-孙师傅' 进行了 '页面去酸、加固'，而非数字化操作员进行了数字化。"
+          },
+          {
+            "field": "sourceAsset",
+            "is_supported": true,
+            "reason": "生成知识中的 'sourceAsset' 字段指向的 '@id': '18701ab0-fc9a-43ef-9b81-ae462078fbf7' 对应原始数据中的 'asset_system_id': 'GJ-001'，是忠实的。但其 '@type': 'SourceMaterial' 未在原始数据中直接提及。"
+          }
+        ],
+        "score": 0.22
+      },
+      "conformance": {
+        "overall_conformance": "None",
+        "violations": [
+          {
+            "field": "核心知识片段的类型",
+            "reason": "领域模型规范要求核心知识片段的类型应为 '抢救性保护事件'。生成知识的根节点类型为 '数字对象'，不符合规范。"
+          },
+          {
+            "field": "eventDate",
+            "reason": "领域模型规范要求应包含一个 'eventDate' 属性，其值为事件发生的时间戳。生成知识中没有 'eventDate' 属性，而是 'creationDate'，且其语义与原始数据描述的修复事件不符。"
+          },
+          {
+            "field": ":hasTarget 关系",
+            "reason": "领域模型规范要求必须包含 :hasTarget 关系，指向一个类型为 'ProtectedItem' 的领域角色节点。生成知识中没有 :hasTarget 关系。"
+          },
+          {
+            "field": ":hasMeasure 属性或关系",
+            "reason": "领域模型规范要求应包含 :hasMeasure 属性或关系，描述具体的保护措施（如数字化、修复）。生成知识中没有明确的 :hasMeasure 属性或关系来描述原始数据中的 '页面去酸、加固'。"
+          },
+          {
+            "field": ":hasParticipant 关系",
+            "reason": "领域模型规范要求如果数据中提及，应包含 :hasParticipant 关系，指向一个类型为 'PreservationSpecialist' 的领域角色节点。原始数据提及了 'operator_name': '修复专家-孙师傅'，但生成知识中没有对应的 :hasParticipant 关系，而是 'digitizedBy' 关系指向 'DigitizationOperator'，与原始数据语义不符。"
+          },
+          {
+            "field": ":originalCopyCondition 属性",
+            "reason": "领域模型规范要求如果数据中提及，应包含 :originalCopyCondition 属性。原始数据未明确提及原件状况，但生成知识也未包含此属性。"
+          }
+        ],
+        "positive_notes": ""
+      },
+      "completeness": {
+        "summary": "生成知识严重偏离了原始数据的核心语义，未能体现原始数据中关于“修复事件”的关键信息，反而生成了与“数字化”相关的信息。",
+        "missed_information": [
+          {
+            "info": "事件类型：抢救性保护事件",
+            "reason": "原始数据描述的是对古籍的修复操作，属于抢救性保护事件，但生成知识的根节点类型为 '数字对象'，未能体现事件本身。"
+          },
+          {
+            "info": "被保护对象：永乐大典嘉靖副本残卷 (ProtectedItem)",
+            "reason": "原始数据明确指出 'title': '永乐大典嘉靖副本残卷' 是操作对象，且根据领域模型应被识别为 'ProtectedItem'。生成知识中虽然有 'sourceAsset' 指向 'GJ-001'，但未明确其作为 'ProtectedItem' 的角色，也未通过 :hasTarget 关系链接。"
+          },
+          {
+            "info": "操作者：修复专家-孙师傅 (PreservationSpecialist)",
+            "reason": "原始数据明确提及 'operator_name': '修复专家-孙师傅' 和 'operator_id': '3001'。根据ID映射，'3001' 对应UUID '6bc2acc6-947c-4284-8357-3aef0cd1d927'，且根据领域模型应为 'PreservationSpecialist'。生成知识中完全没有体现这位修复专家，反而出现了 'DigitizationOperator'。"
+          },
+          {
+            "info": "具体保护措施：页面去酸、加固",
+            "reason": "原始数据明确描述了 'action': '页面去酸、加固' 这一具体的保护措施。生成知识中完全没有体现这些措施，而是描述了数字化的细节（如格式、分辨率等）。"
+          }
+        ]
+      },
+      "elegance": {
+        "elegance_score": 1,
+        "reasoning": "待评作品与专家参考作品在建模目标上存在根本性偏差。专家参考作品明确关注的是'抢救性保护事件'，旨在描述对珍贵文献的物理保存和修复过程。而待评作品则建模了一个'数字对象'，描述的是数字化过程及其结果，这与设计规范中'关注珍贵实体文献的物理保存、修复、使用规程和抢救性保护措施'的核心要求不符。虽然待评作品本身可能是一个有效的数字对象模型，但它完全偏离了本次评审任务所设定的领域和关注点。\n\n具体来说：\n1.  **核心知识片段类型不符**：设计规范要求核心知识片段类型为'抢救性保护事件'，待评作品却是'数字对象'。\n2.  **缺失关键属性和关系**：待评作品完全没有体现'hasTarget'（指向ProtectedItem）、'hasMeasure'（描述保护措施）和'hasParticipant'（指向PreservationSpecialist）等核心关系，这些都是设计规范明确要求的。\n3.  **引入无关信息**：待评作品引入了'persistentIdentifier'、'format'、'creationDate'、'resolution'、'fileCount'、'digitizedBy'等与'抢救性保护事件'无关的数字化细节。\n4.  **ID映射使用不当**：待评作品中的 `@id` '18701ab0-fc9a-43ef-9b81-ae462078fbf7' 对应业务ID 'GJ-001'，在 `sourceAsset` 中再次引用，但其类型为 'SourceMaterial'，这与专家参考作品中将 'GJ-001' 作为 'ProtectedItem' 的 'isA' 目标，并由 'hasTarget' 关系指向的建模方式完全不同，且未能体现出'永乐大典嘉靖副本残卷'这一具体实体。\n\n综上所述，待评作品未能理解和遵循设计规范的核心意图，也没有尝试建模'抢救性保护事件'，而是建模了另一个完全不同的概念。因此，在简洁性、表达力、创造性/洞察力和术语专业性方面，它都未能达到本次评审的要求，甚至可以说是一个'离题'的建模。"
+      }
+    }
+  }
+}

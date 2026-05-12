@@ -157,90 +157,66 @@ class InputAdapter:
 
     def transform_and_standardize(self, event: RawBusinessEvent) -> StandardizedDataObject:
         """
-        【V3.2 终极重构版】
+        【V3.3 全英文适配版】
         统一处理所有预定义实体的身份解析和名称捕获。
-        此方法现在是配置驱动的，不再包含硬编码的实体处理逻辑。
         """
-        print(f"--- [适配器 V3.2] 开始处理事件: {event.event_id} ---")
+        print(f"--- [适配器] 开始处理事件: {event.event_id} ---")
 
-        # 在需要时才创建服务实例 (保持按需连接的最佳实践)
         identity_service = EntityIdentityService(evaluation_mode=self.evaluation_mode)
         payload = event.payload
         identified_entities = []
 
-        # --- 1. 【核心重构】统一的、配置驱动的多实体身份解析 ---
-
-        # 定义我们能够识别的所有实体类型及其可能的ID和名称字段
-        # 这个定义可以被移到类的配置或外部文件中，以获得更高的灵活性 原方案！！！！！！！
-        # entity_definitions = {
-        #     "古籍": {"id_keys": ["asset_system_id", "asset_id", "id", "book_id"], "name_keys": ["title", "name"]},
-        #     "员工": {"id_keys": ["operator_id", "handler", "user_id", "trainee_id"],
-        #              "name_keys": ["operator_name", "user_name"]},
-        #     "读者": {"id_keys": ["reader_id"], "name_keys": ["reader_name", "user_name"]}
-        #     # 未来可以轻松扩展，例如:
-        #     # "出版社": {"id_keys": ["publisher_id"], "name_keys": ["publisher_name"]}
-        # }
-        # 修改 entity_definitions BPI方案
+        # --- 1. 【英文实体定义适配】 ---
         entity_definitions = {
-            "古籍": {"id_keys": ["asset_system_id", "asset_id", "id", "book_id"], "name_keys": ["title", "name"]},
-
-            # 【BPI 适配】 员工ID在CSV中是 "org:resource"，在payload里被我们映射为 "operator_id"
-            "员工": {
-                "id_keys": ["operator_id", "handler", "user_id", "org:resource"],
-                "name_keys": ["operator_name"]  # BPI数据没有名字，只有ID，这没关系
+            "LoanApplication": {
+                "id_keys": ["application_id", "case_id"],
+                "name_keys": ["application_type"]
             },
-
-            "读者": {"id_keys": ["reader_id"], "name_keys": ["reader_name", "user_name"]},
-
-            # 【BPI 适配】 贷款申请ID
-            "贷款申请": {
-                "id_keys": ["application_id", "case:concept:name"],
-                "name_keys": []
+            "Employee": {
+                "id_keys": ["operator_id", "org:resource"],
+                "name_keys": ["operator_name"]
             }
         }
 
-        # 遍历所有定义的实体类型，尝试在payload中找到它们
-        for entity_type, definition in entity_definitions.items():
+        for entity_type, defn in entity_definitions.items():
+            business_key = next((payload.get(k) for k in defn["id_keys"] if payload.get(k) is not None), None)
 
-            # 查找业务ID (逻辑不变)
-            business_key = next((payload.get(key) for key in definition["id_keys"] if payload.get(key) is not None),
-                                None)
-
-            # 如果找到了业务ID，就继续处理
             if business_key:
-                # 查找名称 (逻辑不变)
-                entity_name = next(
-                    (payload.get(key) for key in definition["name_keys"] if payload.get(key) is not None), None)
-
-                # 创建人类可读的标签 (逻辑不变)
+                entity_name = next((payload.get(k) for k in defn["name_keys"] if payload.get(k) is not None), None)
                 label = f"{entity_name}({business_key})" if entity_name else f"{entity_type}({business_key})"
 
-                # 【核心修改】调用V3.2的身份服务，统一传递业务ID和名称（可能为None）
-                uuid = identity_service.get_or_create_uuid(
-                    business_key=business_key,
-                    entity_name=entity_name
-                )
+                uuid = identity_service.get_or_create_uuid(business_key=business_key, entity_name=entity_name)
 
-                # 封装为IdentifiedEntity对象 (逻辑不变)
                 identified_entities.append(IdentifiedEntity(
                     business_key=str(business_key),
                     entity_type=entity_type,
                     label=label,
                     uuid=uuid
                 ))
-
-                log_name_part = f" (名称: '{entity_name}')" if entity_name else ""
+                log_name_part = f" (Name: '{entity_name}')" if entity_name else ""
                 print(f"    - 已解析实体 [{entity_type}]: 业务ID '{business_key}'{log_name_part} -> 内部UUID '{uuid}'")
 
-        # --- 2. 数据格式化 (逻辑不变) ---
+        # --- 2. 【全英文数据格式化】 ---
         key_to_name_map = {
-            "asset_system_id": "珍善本统一编号", "title": "题名", "operator_id": "操作人员工号",
-            "operator_name": "操作人员姓名", "scan_details": "数字化详情", "storage_info": "存储信息",
-            "physical_condition": "物理状况", "copyright_assessment": "版权评估", "budget_code": "预算代码",
-            "reader_id": "读者ID", "user_name": "用户名", "book_id": "图书ID", "due_date": "应还日期"
+            "loan_goal": "Loan Purpose",
+            "application_type": "Application Type",
+            "requested_amount": "Requested Loan Amount",
+            "offered_amount": "Offered Amount by Bank",
+            "number_of_terms": "Number of Terms",
+            "monthly_cost": "Monthly Payment",
+            "credit_score": "Credit Score",
+            "accepted": "Offer Accepted by Client",
+            "selected": "Offer Selected",
+            "activity_name": "Activity Name",
+            "lifecycle_status": "Lifecycle Status",
+            "event_origin": "Event Origin System",
+            "operator_id": "Operator ID",
+            "application_id": "Loan Application ID"
         }
-        print("    - [输入] 适配器接收到的原始载荷: ", payload)
-        markdown_rows = ["| 属性名 | 属性值 |", "|---|---|"]
+
+        print("    - [输入] 原始载荷: ", payload)
+        # Markdown 表头也改为英文
+        markdown_rows = ["| Business Attribute | Value |", "|---|---|"]
         for key, value in payload.items():
             friendly_name = key_to_name_map.get(key, key)
             if isinstance(value, dict):
@@ -249,16 +225,12 @@ class InputAdapter:
                 value_str = str(value)
             markdown_rows.append(f"| {friendly_name} | {value_str} |")
         markdown_str = "\n".join(markdown_rows)
-        print("    - [输出] 适配器格式化后的Markdown: \n", markdown_str)
+        print("    - [输出] 格式化后的 Markdown: \n", markdown_str)
 
-        # --- 3. 封装为新的标准数据对象 (逻辑不变) ---
-        # 注意：这里我们不再将 event_timestamp 加入 payload
-        # 我们遵循V3.0.1的设计，让时间戳作为框架级的元数据在StandardizedDataObject中传递
         standardized_data = StandardizedDataObject(
             source_event_id=event.event_id,
-            event_timestamp=event.event_timestamp,  # 确保传递时间戳
+            event_timestamp=event.event_timestamp,
             identified_entities=identified_entities,
             source_data_markdown=markdown_str
         )
-        print(f"--- [适配器 V3.2] 事件处理完成 ---")
         return standardized_data

@@ -3,56 +3,60 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![Docker](https://img.shields.io/badge/docker-compose-green.svg)](https://www.docker.com/)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.xxxxxxx.svg)](https://doi.org/10.5281/zenodo.xxxxxxx) <!-- Replace with your actual Zenodo DOI later -->
 
 **Official implementation and dataset for the paper:**
+
 > **Knowledge Proliferation: A Domain-Driven Framework for Real-time, Multi-faceted Knowledge Graph Generation from Business Data**
 
 ---
 
 ## 📖 Introduction
 
-In modern enterprise architectures, data persistence often suffers from **"Semantic Reduction"**—the stripping of multidimensional business contexts into flat storage records. To address this, we propose the **Knowledge Proliferation Engine (KPE)**.
+The Knowledge Proliferation Engine (KPE) is a **Domain-Driven Design (DDD)** guided architectural framework that transforms passive business data persistence into **active, real-time knowledge creation**.
 
-KPE is a Domain-Driven Design (DDD) guided architectural framework that transforms passive data persistence into **active knowledge creation**. By positioning Bounded Contexts as **"Cognitive Firewalls"** for Large Language Models (LLMs), KPE automatically translates raw business events into **Natively Federated Knowledge Graphs**, ensuring strict schema compliance and precise entity alignment across heterogeneous domains.
+By treating DDD Bounded Contexts as **"Cognitive Firewalls"** for Large Language Models, KPE automatically translates raw business events (JSON logs) into a **Natively Federated Knowledge Graph** with high factual fidelity, strict schema conformance, and precise cross-domain entity alignment.
 
 ## 🌟 Key Features
 
-*   **Architecture as Cognitive Firewall:** Decomposes complex generation tasks into domain-specific sub-tasks to prevent LLM cognitive overload.
-*   **V3.1 Identity Model:** Implements a **Pure Shared Kernel** (`:CoreEntity`) + **Domain Proxy** (`:Role`) pattern to handle multi-identity entities (e.g., an employee acting as both an "Operator" and a "Reader").
-*   **Dynamic Prompt Engineering:** Retrieves schema rules and few-shot examples dynamically based on the target Bounded Context.
-*   **Self-Healing Mechanism:** Includes a recursive validation and type-inference loop to fix malformed LLM outputs (e.g., "Ghost Nodes") in real-time.
-*   **Event-Driven & Asynchronous:** Built on **Celery** and **Redis** for high throughput and decoupling.
+- **Cognitive Firewall Architecture**: Bounded Contexts isolate LLM reasoning, dramatically reducing cognitive overload and hallucinations.
+- **Federated Identity-Role Model**: Pure Shared Kernel (`:CoreEntity`) + Domain Proxies (`:Role`) for accurate multi-faceted identity resolution.
+- **Dynamic Prompting + Recursive Repair**: Context-aware schema injection and self-healing mechanism for "Ghost Nodes".
+- **Deterministic Robustness**: 100% programmatic JSON-LD compliance and relational link integrity.
+- **Event-Driven & Scalable**: Built on Celery + Redis + Neo4j, supports large-scale enterprise logs.
+- **Zero-Shot Generalization**: Successfully validated on both curated (RB-50) and real-world (BPI-2017) datasets.
 
 ## 📂 Project Structure
 
 ```text
 KPE-Framework/
-├── app/                        # Core Application Code
-│   ├── main.py                 # FastAPI Entry Point
-│   ├── models.py               # Pydantic Data Contracts
-│   ├── celery_app.py           # Async Task Configuration
-│   ├── tasks.py                # Celery Task Definitions
-│   ├── services/               # Core Logic
-│   │   ├── adapter.py          # ACL & Identity Resolution
-│   │   ├── identifier.py       # LLM-based Context Mapping
-│   │   ├── dispatcher.py       # Pattern-Match Task Dispatching
-│   │   ├── translator.py       # Dynamic Prompting & Translation
-│   │   └── writer.py           # Idempotent Graph Persistence
-│   └── repositories/           # Data Access Layer
-├── data/                       # Datasets & Domain Models
-│   ├── domain_models.json      # Declarative Domain Definitions (Schema & Rules)
-│   └── evaluation/             # Evaluation Data
-│       ├── 1_input_events/     # Raw Event Logs (RB-50, BPI-2017)
-│       ├── 2_gold_standard_kgs/# Expert Annotations
-│       ├── 3_generated_results/# Output from the system
-│       └── 4_evaluation_results/# LLM-as-a-Judge Scores
-├── scripts/                    # Utilities & Experiments
-│   ├── run_evaluation.py       # Main Experiment Runner (Pipeline + Judging)
-│   ├── ours_rag.py             # Advanced Graph-RAG Implementation
-│   └── ... (Baseline scripts)
-├── docker-compose.yml          # Infrastructure (Neo4j, Redis)
-└── requirements.txt            # Python Dependencies
+├── app/                          # Core Application
+│   ├── main.py
+│   ├── models.py
+│   ├── celery_app.py
+│   ├── tasks.py
+│   ├── services/
+│   │   ├── adapter.py            # Anticorruption Layer + Identity Resolution
+│   │   ├── identifier.py         # Context Mapping
+│   │   ├── dispatcher.py         # Task Dispatching (supports ablation modes)
+│   │   ├── translator.py         # Dynamic Prompting + Recursive Repair
+│   │   └── ...
+├── data/
+│   ├── domain_models.json
+│   └── evaluation/
+│       ├── 1_input_events/       # Raw events (RB-50 + BPI-2017)
+│       ├── 2_gold_standard_kgs/
+│       ├── 3_generated_results/  # generated_kgs_bpi_sample.json, etc.
+│       ├── 4_evaluation_results/ # All evaluation JSONs
+│       └── baseline_results/
+├── scripts/                      # Experiment & Analysis Scripts
+│   ├── run_evaluation.py
+│   ├── analyze_bpi_results.py
+│   ├── evaluate_bpi_generalization.py
+│   └── ...
+├── docker-compose.yml
+├── .env.example
+├── requirements.txt
+└── README.md
 
 🚀 Quick Start
 1. Prerequisites
@@ -95,11 +99,14 @@ Start Neo4j (Graph DB) and Redis (Message Broker):
 docker-compose up -d
 
 Neo4j Browser: http://localhost:7474 (User: neo4j, Pass: password123)
-🔬 Reproducing Experiments
-This repository contains all scripts to reproduce the results reported in the paper.
-Experiment 1: Knowledge Generation Quality (RQ1)
-To run the full pipeline (Generation + Evaluation) on the RB-50 dataset:
-Start the Worker: Open a terminal and run the Celery worker.
+## 🔬 Reproducing Experiments
+
+This repository contains all scripts and data necessary to fully reproduce the experimental results reported in the paper.
+
+### Experiment 1: Knowledge Generation Quality (RB-50, RQ1 & RQ3)
+```bash
+# Run the full pipeline (generation + evaluation)
+python -m scripts.run_evaluation --run-mvp --evaluate
 
 1.Start the Worker: Open a terminal and run the Celery worker.
 # Windows
@@ -122,12 +129,23 @@ To benchmark the downstream reasoning capability:
 3.(Optional) Run Baselines:
 To run baselines like Naive-KG or Monolithic-KG, change APP_MODE in .env and repeat the generation process, then run their respective scripts in scripts/.
 
-Experiment 3: Generalization on BPI-2017 (RQ4)
+Experiment 3: BPI-2017 Zero-Shot Generalization (RQ4)
 To test on real-world financial logs:
 1.Generate the BPI dataset subset:
   python scripts/extract_real_bpi.py
 2.Update scripts/run_evaluation.py to point to events_bpi.jsonl.
 3.Run the pipeline again to generate the financial knowledge graph.
+# Run BPI-2017 generalization evaluation
+python -m scripts.evaluate_bpi_generalization
+# Or analyze the results
+python -m scripts.analyze_bpi_results
+
+Experiment 4:Ablation Studies (NoDynamicPrompt / NoRepair)
+1、Edit .env and set APP_MODE to one of the following:
+Ours_No_DynamicPrompt
+Ours_No_Repair
+2、Run the evaluation pipeline:
+python -m scripts.run_evaluation --run-mvp --evaluate
 
 📊 Datasets
 We provide two datasets in data/evaluation/:
